@@ -1,7 +1,5 @@
 ## Shorcuts 
 
-<kbd style="font-size: 23px;">CTRL</kbd>
-
 |Keys|Description|
 |----|-----------|
 |**ALT+U**|Deshacer|
