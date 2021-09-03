@@ -2,7 +2,7 @@
 
 |Keys|Description|
 |----|-----------|
-|<kbd><b>ALT</b></kbd> <b>+</b> <kbd><b>U</b></kbd>|Deshacer|
+|**ALT+U**|Deshacer|
 |**Alt+E**|rehacer|
 |**Alt+I**|Activa o desactivar auto_indent|
 |**Ctrl+W** o **F6**|Busca la cadena de caracteres y sitúa el cursor en la coincidencia.|
