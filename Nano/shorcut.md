@@ -1,6 +1,6 @@
 ## Shorcuts 
 
-<kbd style="background:black;">Ctrl<kbd>
+<kbd style="font-size: 23px;">CTRL</kbd>
 
 |Keys|Description|
 |----|-----------|
