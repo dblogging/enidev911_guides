@@ -4,7 +4,7 @@
 
 |Keys|Description|
 |----|-----------|
-|**Alt+U**|Deshacer|
+|**ALT+U**|Deshacer|
 |**Alt+E**|rehacer|
 |**Ctrl+K**|Cortar|
 |**Ctrl+U**|Pegar|
