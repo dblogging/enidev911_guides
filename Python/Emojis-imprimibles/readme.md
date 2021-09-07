@@ -1,3 +1,16 @@
+## Animal-reptile  
+
+|Demo|Código|
+|----|------|
+|crocodrilo(🐊)|u'\U0001F40A'|
+|tortuga(🐢)|u'\U0001F422'|
+|lagarto(🦎)|u'\U0001F98E'|
+|serpiente(🐍)|u'\U0001F40D'|
+|caradragón(🐲)|u'\U0001F432'|
+
+
+
+
 ## Food
 
 |Demo|Código|
@@ -25,3 +38,10 @@
 |papel-02(📜)|u'\U0001F4DC'|
 |papel-03(📄)|u'\U0001F4C4'|
 |papel-04(📰)|u'\U0001F4F0'|
+|papel-05(🗞)|u'\U0001F5DE'|
+|papel-06(📑)|u'\U0001F4D1'|
+|papel-07(🔖)|u'\U0001F516'|
+|papel-08(🏷)|u'\U0001F3F7'|
+
+
+
