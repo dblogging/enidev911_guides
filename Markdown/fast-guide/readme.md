@@ -162,7 +162,9 @@ Para los encabezamientos de los dos primeros niveles existe también otra manera
 </table>
 
 Es decir para los encabezamientos principales se subraya el texto con el signo igual(=). Para los encabezamientos de segundo nivel se utilizan guiones(-) para subrayar. Es indiferente el número de signos iguales o guiones que se empleen, con uno es suficiente.  
+
 [volver a índice](#top)
+
 ---
 
 ### <a name="mark2">Enlaces</a>
