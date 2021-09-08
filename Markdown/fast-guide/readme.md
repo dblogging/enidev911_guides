@@ -1,7 +1,7 @@
 
 ## Guía rápida Markdown y Pygments Lexers  
 
-Esta guía rápida sirve para recordar todas las posibilidades que ofrecen markdown y Pygments para editar y formatear texto y comunmente empleo para crear los artículos de Blog. Espero que no solo me sirva de guía a mí, si no a cualquiera que se acerque por primera vez a markdown o Pygments.  
+Esta guía rápida sirve para recordar todas las posibilidades que ofrecen markdown y Pygments para editar y formatear texto y comúnmente empleo para crear los artículos de Blog. Espero que no solo me sirva de guía a mí, si no a cualquiera que se acerque por primera vez a markdown o Pygments.  
 
 ---  
 
@@ -16,8 +16,8 @@ A continuación sigue una lista detallada de todas las características que se p
     * [Cabeceras](#mark1)
     * [Enlaces](#mark2)
     * [Parrafos](#mark3)
-    * [Formato]('#')
-    * [Citas]('#')
+    * [Formato](#mark4)
+    * [Citas](#mark5)
     * [Listas]('#')
     * [Listas de definiciones]('#')
     * [Imágines]('#')
@@ -161,8 +161,10 @@ Para los encabezamientos de los dos primeros niveles existe también otra manera
 	</tbody>
 </table>
 
-Es decir para los encabezamientos principales se subraya el texto con el signo igual(=). Para los encabezamientos de segundo nivel se utilizan guiones(-) para subrayar. Es indiferente el número de signos iguales o guiones que se empleen, con uno es suficiente.  
+Es decir para los encabezamientos principales se subraya el texto con el signo igual(=). Para los encabezamientos de segundo nivel se utilizan guiones(-) para subrayar. Es indiferente el número de signos iguales o guiones que se empleen, con uno es suficiente.
+
 [volver a índice](#top)
+
 ---
 
 ### <a name="mark2">Enlaces</a>
@@ -231,6 +233,8 @@ Existe una manera adicional de crear enlaces automáticos para direcciones URL, 
 			</td>
 		</tr>
 </table>
+
+>**Consideración**: Markdown no tiene la opción de publicar links que se abran en una nueva pestaña del navegador. Para eso habría que utilizar HTML.
 		
 [volver a índice](#top)
 
@@ -240,6 +244,156 @@ Existe una manera adicional de crear enlaces automáticos para direcciones URL, 
 
 Para crear párrafos se deja una línea en blanco. De este mondo:  
 
+<table>
+		<thead>
+		<tr>
+			<th style="width: 50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre class="no_mrkdwn">Este es el primer párrado&nbsp;<br><br>Este es el segundo párrado</pre>
+			</td>
+			<td>
+				<p>Este es el primer párrafo</p>
+				<p>Este es el segundo párrafo</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+Para crear un salto de línea dentro de un parráfo, simplemente se dejan dos espacios al final de la última palabra de esa línea, de este modo:  
+
+<table>
+		<thead>
+		<tr>
+			<th style="width: 50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre class="no_mrkdwn">Esta es la primera línea&nbsp;&nbsp;<br>y este es la segunda línea</pre>
+			</td>
+			<td>
+				<p>Esta es la primera línea<br>y este es el salto de línea</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+[volver a índice](#top)
+
+---
+
+### <a name="mark4">Formato</a>
+
+El formato básico del texto, es decir negritas y cursivas, se pueden realizar de varias maneras:  
+
+<table>
+	<thead>
+		<tr>
+			<th style="width: 50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre class="no_mrkdwn">**Esto es negrita**</pre>
+			</td>
+			<td>
+				<b>Esto es negrita</b>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre class="no_mrkdwn">__Esto también es negrita__</pre>
+			</td>
+			<td>
+				<b>Esto también es negrita</b>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre class="no_mrkdwn">*Esto es cursiva*</pre>
+			</td>
+			<td>
+				<i>Esto es cursiva</i>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre class="no_mrkdwn">_Esto también es cursiva_</pre>
+			</td>
+			<td>
+				<i>Esto también es cursiva</i>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre class="no_mrkdwn">***Esto es negrita y cursiva***</pre>
+			</td>
+			<td>
+				<b><i>Esto es negrita y cursiva</i></b>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre class="no_mrkdwn">___Esto también es negrita y cursiva___</pre>
+			</td>
+			<td>
+				<b><i>Esto también es negrita y cursiva</i></b>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+Se pueden emplear indistintamente tanto el asterisco * como el guión bajo _ siempre y cuando no se mezclen y lo que determina el formato es el número de ellos antes y después del bloque de texto a formatear. Uno es cursiva, dos es negrita, y tres ambas a la vez, así de sencillo.
+
+[volver a índice](#top)
+
+---
+
+### <a name="mark5">Citas</a>
+
+Para crear bloques de cita, se emplea el carácter mayor que > antes del bloque de texto. En la siguiente tabla se pueden ver las opciones para crearlos:  
 
 
+<table>
+	<thead>
+		<tr>
+			<th style="width: 50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre class="no_mrkdwn">Esto es una línea normal<br><br>>Esto es parte de un bloque de cita.<br>>Esto es parte del mismo bloque de cita.</pre>
+			</td>
+			<td>
+				<p>Esto de una línea normal</p>
+				<blockquote>
+				<p>Esto es parte de un bloque de cita. Esto es parte del mismo bloque de cita.</p>
+				</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre class="no_mrkdwn">>Esto es parte de un bloque de cita. Esto continúa el bloque incluso aunque no hay símbolo 'mayor que'.</pre>
+			</td>
+			<td>
+				<blockquote>
+					<p>Esto es parte de un bloque de cita. Esto continúa el bloque incluso aunque no hay símbolo 'mayor que'.</p>
+				</blockquote>
+			</td>
+		</tr>
+	</tbody>
+</table> 
 
+
+[volver a índice](#top)
