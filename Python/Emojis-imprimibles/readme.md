@@ -1,3 +1,16 @@
+## Office
+|Demo|Código|
+|----|------|
+|portfolio(💼)|u'\U0001F4BC'|
+|file-folder(📁)|u'\U0001F4C1'|
+|open-file-folder(📂)|u'\U0001F4C2'|
+|index-file-folder(🗂)|u'\U0001F5C2'|
+|calendar(📅)|u'\U0001F4C5'|
+|tear-off-calendar(📆)|u'\U0001F4C6'|
+
+
+
+
 ## Animal-reptile  
 
 |Demo|Código|
@@ -7,6 +20,26 @@
 |lagarto(🦎)|u'\U0001F98E'|
 |serpiente(🐍)|u'\U0001F40D'|
 |caradragón(🐲)|u'\U0001F432'|
+|dragón(🐉)|u'\U0001F4090'|
+|dinosaurio1(🦕)|u'\U0001F995'|
+|t-rex(🦖)|u'\U0001F996'|
+
+
+## Animal-marino  
+
+
+
+## Light y Video
+
+|camara-video(🎥)|u'\U0001F3A5'|
+|film-frames(🎞)|u'\U0001F39E'|
+|film-projector(📽)|u'\U0001F4FD'|
+|clapper-board(🎬)|u'\U0001F3AC'|
+|tv(📺)|u'\U0001F4FA'|
+|camara(📷)|u'\U0001F4F7'|
+|camara-flash(📸)|u'\U0001F4F8'|
+|video-camera(📹)|u'\U0001F4F9'|
+|videocassete(📼)|u'\U0001F4FC'|
 
 
 
