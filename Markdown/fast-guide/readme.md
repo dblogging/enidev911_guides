@@ -1,4 +1,3 @@
-<a name="top"></a>
 
 ## Guía rápida Markdown y Pygments Lexers  
 
@@ -8,26 +7,27 @@ Esta guía rápida sirve para recordar todas las posibilidades que ofrecen markd
 
 A continuación sigue una lista detallada de todas las características que se pueden emplear en Markdown y Markdown Extra (empleando *Python Markdown*) y los lexers más comunes de Pygments para resaltar el código fuente.  
 
+<a name="top"></a>
 
 - [Markdown]('#')
-    - [¿Que es Markdown?]('#')
+    * [¿Que es Markdown?]('#')
 
 - [Sintaxys Markdown]('#')
-    - [Cabeceras]('#mark1')
-    - [Enlaces]('#mark2')
-    - [Parrafos]('#')
-    - [Formato]('#')
-    - [Citas]('#')
-    - [Listas]('#')
-    - [Listas de definiciones]('#')
-    - [Imágines]('#')
-    - [Tablas]('#')
-    - [Código]('#')
-    - [Lineas Horizontales]('#')
-    - [Escapar caracteres]('#')
-    - [Notas a pie de página]('#')
-    - [Abreviaturas]('#')
-    - [Indentificadores de cabecera]('#')
+    * [Cabeceras](#mark1)
+    * [Enlaces](#mark2)
+    * [Parrafos](#mark3)
+    * [Formato]('#')
+    * [Citas]('#')
+    * [Listas]('#')
+    * [Listas de definiciones]('#')
+    * [Imágines]('#')
+    * [Tablas]('#')
+    * [Código]('#')
+    * [Lineas Horizontales]('#')
+    * [Escapar caracteres]('#')
+    * [Notas a pie de página]('#')
+    * [Abreviaturas]('#')
+    * [Indentificadores de cabecera]('#')
 
 - [Pygments]('#')
     - Lexers de Pygments más comunes para resaltado de sintaxis  
@@ -46,8 +46,7 @@ Markdown es un lenguaje de marcado ligero parecido al que se emplea en muchas wi
 Sintaxis Markdown
 -----------------  
 
-<a name="mark1"></a>
-### <a id='s1'>Cabeceras</a>
+### <a name='mark1'>Cabeceras</a>
 
 Los encabezamintos HTML se producen colocando un número determinado de almohadillas # antes del texto correspondiente al nivel de encabezamiento deseado (HTML ofrece hasta seis niveles). Los encabezamiento posibles se puedenver en la siguiente tabla:  
 
@@ -163,11 +162,10 @@ Para los encabezamientos de los dos primeros niveles existe también otra manera
 </table>
 
 Es decir para los encabezamientos principales se subraya el texto con el signo igual(=). Para los encabezamientos de segundo nivel se utilizan guiones(-) para subrayar. Es indiferente el número de signos iguales o guiones que se empleen, con uno es suficiente.  
-
+[volver a índice](#top)
 ---
 
-<a name="mark2"></a>
-### <a id="s2">Enlaces</a>
+### <a name="mark2">Enlaces</a>
 
 Existen también dos maneras de crear enlaces, se pueden ver en la siguiente tabla:  
 
@@ -185,7 +183,7 @@ Existen también dos maneras de crear enlaces, se pueden ver en la siguiente tab
 				<pre class="no_mrkdwn">[Con titulo](https://eniblog.com "titulo")</pre>
 			</td>
 			<td>
-				<a href="#mark3" title="titulo">Con titulo</a>
+				<a href="#mark2" title="titulo">Con titulo</a>
 			</td>
 		</tr>
 			<tr>
@@ -193,11 +191,55 @@ Existen también dos maneras de crear enlaces, se pueden ver en la siguiente tab
 				<pre class="no_mrkdwn">[Sin titulo](https://eniblog.com)</pre>
 			</td>
 			<td>
-				<a href="#mark3">Sin titulo</a>
+				<a href="#mark2">Sin titulo</a>
+			</td>
+		</tr>
+		</tr>
+			<tr>
+			<td>
+				<pre class="no_mrkdwn">[Enlace 1][1], [Enlace 2][2], [Enlace 3][3]
+
+ [1]: http://eniblog.com/tips
+ [2]: http://eniblog.com/tips "Tips"
+ [3]: http://eniblog.com/</pre>
+			</td>
+			<td>
+				<a href="#mark2">Enlace1</a>,
+				<a href="#mark2" title="Tips">Enlace2</a>,
+				<a href="#mark2">Enlace3</a>
 			</td>
 		</tr> 	
 	</tbody>
 </table>
+
+Existe una manera adicional de crear enlaces automáticos para direcciones URL, simplemente encerrarla entre los caracteres < que y > que:
+
+<table>
+		<thead>
+		<tr>
+			<th style="width: 50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre class="no_mrkdwn">&lt;http://eniblog.com></pre>
+			</td>
+			<td>
+				<a href="#mark2">http://eniblog.com</a>
+			</td>
+		</tr>
+</table>
+		
+[volver a índice](#top)
+
+---
+
+### <a name="mark3">Párrafos</a>
+
+Para crear párrafos se deja una línea en blanco. De este mondo:  
+
 
 
 
