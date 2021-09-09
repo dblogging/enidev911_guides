@@ -9,16 +9,16 @@ A continuación sigue una lista detallada de todas las características que se p
 
 <a name="top"></a>
 
-- [Markdown]('#')
-    * [¿Que es Markdown?]('#')
+- [Markdown](#mark)
+    * [¿Que es Markdown?](#mark-0)
 
-- [Sintaxys Markdown]('#')
+- [Sintaxys Markdown](#mark0)
     * [Cabeceras](#mark1)
     * [Enlaces](#mark2)
     * [Parrafos](#mark3)
     * [Formato](#mark4)
     * [Citas](#mark5)
-    * [Listas]('#')
+    * [Listas](#mark6)
     * [Listas de definiciones]('#')
     * [Imágines]('#')
     * [Tablas]('#')
@@ -32,17 +32,17 @@ A continuación sigue una lista detallada de todas las características que se p
 - [Pygments]('#')
     - Lexers de Pygments más comunes para resaltado de sintaxis  
 
-## Markdown  
+## <a name="mark0">Markdown</a>
 
 Este es el lenguaje de marcado que permite formatear el texto fácilmente sin la necesidad de emplear HTML o emplear un editor visual.  
 
-
-**¿Que es Markdown?**  
+## <a name="mark-0">¿Que es Markdown?</a>
 
 Markdown es un lenguaje de marcado ligero parecido al que se emplea en muchas wikis y basado originalmente en convenciones existentes en el marcado de los correos electronicos. Emplea texto plano, procurando que sea legible pero consiguiendo que se convierte en XHTML correctamente formateado. Aunque no es muy conocido, empieza a ser muy popular y utilizado por programadores y blogueros que escriben sus artículos en este formato.  
 
 ---
 
+<a name="mark0"></a>
 Sintaxis Markdown
 -----------------  
 
@@ -384,16 +384,117 @@ Para crear bloques de cita, se emplea el carácter mayor que > antes del bloque 
 		</tr>
 		<tr>
 			<td>
-				<pre class="no_mrkdwn">>Esto es parte de un bloque de cita. Esto continúa el bloque incluso aunque no hay símbolo 'mayor que'.</pre>
+				<pre class="no_mrkdwn">>Esto es parte de un bloque de cita. <br>Esto continúa el bloque incluso aunque no hay símbolo 'mayor que'.<br><br>La línea en blanco finaliza el bloque</pre>
 			</td>
 			<td>
 				<blockquote>
 					<p>Esto es parte de un bloque de cita. Esto continúa el bloque incluso aunque no hay símbolo 'mayor que'.</p>
 				</blockquote>
+				<p>La Línea en blanco finaliza el bloque</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre>Esto es una línea normal<br><br>>Esto es parte de un bloque de cita.<br>>Esto es parte del mismo bloque de cita.<br>><br>>>Esto de otro bloque de cita anidado.<br>>>Esto es parte del bloque anidado. <br>><br>>Esto es parte del bloque de cita del primer nivel.
+				</pre>
+			</td>
+			<td>
+				<p>Esto es una línea normal</p>
+				<blockquote>
+					<p>Esto es parte de un bloque de cita. Esto es parte del mismo bloque de cita.</p> <blockquote>
+						<p>Esto es otro bloque de cita anidado. Esto es parte del bloque anidado.</p>
+					</blockquote>
+
+				<p>Esto de parte del bloque de cita de primer nivel.</p>
+				</blockquote>
 			</td>
 		</tr>
 	</tbody>
-</table> 
-
+</table>
 
 [volver a índice](#top)
+
+---
+
+### <a name="mark6">Listas</a>
+
+Markdown permite crear dos tipos de listas, ordenadas y desordenadas, es decir numeradas o listas de puntos. Para distinguir los tipos y como se crean, nada mejor que verlo con ejemplos:  
+
+
+<table>
+	<thead>
+		<tr>
+			<th style="width:50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre>Lista numerada (ordenada)<br><br>1. Este es el primer elemento<br>2. Este es el segundo elemento<br>3. Este es el tercer elemento
+				</pre>
+			</td>
+			<td>
+				<p>Lista numerada (ordenada)</p>
+				<ol>
+					<li>Este es el primer elemento</li>
+					<li>Este es el segundo elemento</li		<li>Este es el tercer elemento</li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre>Lista de puntos (desordenada)<br><br>* Un elemento de la lista<br>* Otro elemento de la lista<br>* Tercer elemento de la lista</pre>
+			</td>
+			<td>
+				<p>Lista de puntos (desordenada)</p>
+				<ul>
+					<li>Un elemento de la lista</li>
+					<li>Otro elemento de la lista</li>
+					<li>Tercer elemento de la lista</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre>Se pueden emplear también + y -<br>en vez de *<br><br>* Un elemento de la lista<br>+ Otro elemento de la lista<br>- Tercer elemento de la lista</pre> 
+			</td>
+			<td>
+				<p>Se pueden emplear también + y - en vez *</p>
+				<ul>
+					<li>Un elemento de la lista</li>
+					<li>Otro elemento de la lista</li>
+					<li>Tercer elemento de la lista</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre>Se pueden mezclar distintos tipos<br>de listas y anidar unas dentro de<br>otras.<br><br>1. Esto es una lista ordenada<br>2. Segundo elemento de la lista ordenada<br>    1. Esta es una lista ordenada<br> anidada dentro de otra<br>        * Lista desordenada anidada a tercer nivel<br>        * Segundo elemento de esta lista<br>    2. Este es el segundo elemento<br>de la lista ordenada anidada</pre>
+			</td>
+			<td>
+				<p>Se pueden mezclar distintos tipos de listas y anidar unas dentro de otras.</p>
+				<ol>
+					<li>Esto es una lista ordenada</li>
+					<li>Segundo elemento de la lista ordenada</li>
+					<ol>
+						<li>Esta es una lista ordenada anidada dentro de otra</li>
+						<ul>
+							<li>Lista desordenada anidada a tercer nivel</li>
+							<li>Segundo elemento de esta lista</li>
+						</ul>
+						<li>Este es el segundo elemento de la lista ordenada anidada</li>
+					</ol>
+
+				</ol>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+[volver a índice](#top)
+
+---
+
+### <a name="mark6">Listas de definiciones</a>
+

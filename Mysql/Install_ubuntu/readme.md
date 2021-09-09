@@ -1,3 +1,6 @@
+## Instalar MySQL en distros basadas en Debian
+
+
 
 ```bash
 sudo apt install mysql-server
