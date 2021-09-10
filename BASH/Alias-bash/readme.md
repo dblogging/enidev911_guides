@@ -70,5 +70,6 @@ alias a="git add ."
 alias p="git push origin"
 alias p="git pull"
 alias f="git fetch"
+alias l="git log"
 ```
 

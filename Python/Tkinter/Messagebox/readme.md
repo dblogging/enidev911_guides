@@ -56,3 +56,12 @@ pregunta = messagebox.askquestion('Diálogo', '¿Estás seguro de salir de la ap
 <p align="center">
     <img src="img/04.png">
 </p>
+
+```python
+from tkinter import messagebox
+pregunta = messagebox.askokcancel('Diálogo', '¿Estás seguro de modificar esta fila?')
+```
+
+<p align="center">
+    <img src="img/05.png">
+</p>
