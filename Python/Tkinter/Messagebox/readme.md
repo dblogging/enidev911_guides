@@ -65,3 +65,31 @@ pregunta = messagebox.askokcancel('Diálogo', '¿Estás seguro de modificar esta
 <p align="center">
     <img src="img/05.png">
 </p>
+
+
+```python
+from tkinter import messagebox
+pregunta = messagebox.askretrycancel('Diálogo', '¿Quieres volver a intentar la petición?')
+```
+<p align="center">
+    <img src="img/06.png">
+</p>
+
+```python
+from tkinter import messagebox
+pregunta = messagebox.askyesno('Diálogo', '¿Quieres crear una nueva base de datos?')
+```
+
+<p align="center">
+    <img src="img/07.png">
+</p>
+
+```python
+from tkinter import messagebox
+pregunta = messagebox.askyesnocancel('Diálogo', '¿Quieres descargar la información en un nuevo archivo?')
+
+```
+
+<p align="center">
+    <img src="img/08.png">    
+</p>
