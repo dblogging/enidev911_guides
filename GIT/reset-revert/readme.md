@@ -22,6 +22,13 @@ git reset --soft HEAD~1
 
 **solución si hemos subido el commit a nuestro repositorio remoto(hemos realizado push):** 
 
-En caso de que queramos borrar un commit que ya hemos subido al servidor remoto, la mejor opción es 
+En caso de que queramos borrar un commit que ya hemos subido al servidor remoto, la mejor opción es realizar un nuevo commit que borre el commit que queremos eliminar utilizando el comando **revert**. De esta forma cualquier usuario que se tenga actualizado el contenido del repositorio remoto puede obtener el cambio simplemente haciendo pull. Por lo tanto para borrar el último commit teniendo en cuenta que el commit esta subido en un repositorio remoto debemos usar:  
+
+
+```bash
+git revert HEAD
+```
+
+
 
 
