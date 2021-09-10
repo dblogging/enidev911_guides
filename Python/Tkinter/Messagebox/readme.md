@@ -33,11 +33,6 @@ message = messagebox.showwarning(title='Advertencia', message='Cruce con cuidado
     <img src="img/02.png">
 </p>
 
-```python
-from tkinter import messagebox
-
-message = messagebox.showwarning(title='Advertencia', message='Cruce con cuidado la calle.')
-```
 ## Cuadro de mensaje de error.
 
 ```python
@@ -48,4 +43,16 @@ message = messagebox.showerror(title='Error', message='Error al abrir el archivo
 
 <p align="center">
     <img src="img/03.png">
+</p>
+
+## Cuadro de mensajes de preguntas  
+
+```python
+from tkinter import messagebox
+
+pregunta = messagebox.askquestion('Diálogo', '¿Estás seguro de salir de la aplicación?')
+
+```
+<p align="center">
+    <img src="img/04.png">
 </p>
