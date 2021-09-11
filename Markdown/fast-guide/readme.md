@@ -19,7 +19,7 @@ A continuación sigue una lista detallada de todas las características que se p
     * [Formato](#mark4)
     * [Citas](#mark5)
     * [Listas](#mark6)
-    * [Listas de definiciones]('#')
+    * [Listas de definiciones](#mark7)
     * [Imágines]('#')
     * [Tablas]('#')
     * [Código]('#')
@@ -496,5 +496,33 @@ Markdown permite crear dos tipos de listas, ordenadas y desordenadas, es decir n
 
 ---
 
-### <a name="mark6">Listas de definiciones</a>
+### <a name="mark7">Listas de definiciones</a>  
+
+Se pueden crear listas de definiciones, que están compuestas de términos y las definiciones de los mismos, como si fuera un diccionario. Su creación es muy simple:  
+
+<table>
+	<thead>
+		<tr>
+			<th style="width:50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre>Primer Termino<br> : Primera definición<br><br>Segundo termino<br> : segunda definición
+				</pre>
+			</td>
+			<td>
+				<p><b>Primer término</b><br>&nbsp;&nbsp;&nbsp;Primera definición</p>
+				<p><b>Segundo término</b><br>&nbsp;&nbsp;&nbsp;Segunda definición</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
 
