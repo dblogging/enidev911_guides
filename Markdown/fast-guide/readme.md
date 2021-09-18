@@ -1,5 +1,5 @@
 
-## Guía rápida Markdown y Pygments Lexers  
+## Guía rápida Markdown y Pygments Lexers
 
 Esta guía rápida sirve para recordar todas las posibilidades que ofrecen markdown y Pygments para editar y formatear texto y comúnmente empleo para crear los artículos de Blog. Espero que no solo me sirva de guía a mí, si no a cualquiera que se acerque por primera vez a markdown o Pygments.  
 
@@ -20,9 +20,9 @@ A continuación sigue una lista detallada de todas las características que se p
     * [Citas](#mark5)
     * [Listas](#mark6)
     * [Listas de definiciones](#mark7)
-    * [Imágines]('#')
-    * [Tablas]('#')
-    * [Código]('#')
+    * [Imágines](#mark8)
+    * [Tablas](#mark9)
+    * [Código](#mark10)
     * [Lineas Horizontales]('#')
     * [Escapar caracteres]('#')
     * [Notas a pie de página]('#')
@@ -496,7 +496,7 @@ Markdown permite crear dos tipos de listas, ordenadas y desordenadas, es decir n
 
 ---
 
-### <a name="mark7">Listas de definiciones</a>  
+### <a name="mark7">Listas de definiciones</a>
 
 Se pueden crear listas de definiciones, que están compuestas de términos y las definiciones de los mismos, como si fuera un diccionario. Su creación es muy simple:  
 
@@ -514,22 +514,202 @@ Se pueden crear listas de definiciones, que están compuestas de términos y las
 				</pre>
 			</td>
 			<td>
-				<p><b>Primer término</b><br>&nbsp;&nbsp;&nbsp;Primera definición</p>
-				<p><b>Segundo término</b><br>&nbsp;&nbsp;&nbsp;Segunda definición</p>
+				<p><b>Primer término</b><br>&nbsp;&nbsp;&nbsp;&nbsp;Primera definición</p>
+				<p><b>Segundo término</b><br>&nbsp;&nbsp;&nbsp;&nbsp;Segunda definición</p>
 			</td>
 		</tr>
 		<tr>
 			<td>
+				<pre>Se pueden aplicar más de una<br>definición a un término<br><br>Primer término<br> : Primera definición<br> : Segunda definición<br><br>Segundo término<br> : Segunda definición</pre>
+			</td>
+			<td>
+				<p>Se pueden aplicar más de una definición a un término</p>
+				<p><b>Primer término</b><br>&nbsp;&nbsp;&nbsp;&nbsp;Primera definición<br>&nbsp;&nbsp;&nbsp;&nbsp;Segunda definición</p>
+				<p><b>Segundo término</b><br>&nbsp;&nbsp;&nbsp;&nbsp;Segunda definición</p>
+
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre>Se pueden aplicar más de un<br>término a una definición<br><br>Primer término<br>Segundo término<br> : Primera definición<br><br>Tercer término<br> : Segunda definición</pre>
+			</td>
+			<td>
+				<p>Se pueden aplicar más de un término a una definición</p>
+				<p><b>Primer término</b><br><b>Segundo término</b><br>&nbsp;&nbsp;&nbsp;&nbsp;Primera definición
+				<p><b>Tercer término</b><br>&nbsp;&nbsp;&nbsp;&nbsp;Segunda definición</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre>Una definición puede contar de<br>varios párrafos.<br><br>Primer término<br> : Primera definición<br><br>Segundo párrafo de la primera<br>definición<br><br>Segundo término<br> : Segunda definición</pre>
+			</td>
+			<td>
+				<p>Una definición puede contar de varios párrafos.</p>
+				<p><b>Primer término</b><br>&nbsp;&nbsp;&nbsp;&nbsp;Primera definición<br>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;Segundo parráfo de la primera definición</p>
+				<p><b>Segundo término</b><br>&nbsp;&nbsp;&nbsp;&nbsp;Segunda definición<br></p>
 			</td>
 		</tr>
 	</tbody>
 </table>
 
+[volver a índice](#top)
+
+---
+
+### <a name="mark8">Imágenes</a>
+
+La manera de enlazar imágines es básicamente la misma de crear enlaces, con una única diferencia, se añade el carácter de exclamación <mark>!</mark> al principio de la pareja de corchetes que definen el nombre del enlace.  
+
+Ejemplos:  
+
+<table>
+	<thead>
+		<tr>
+			<th style="width:50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre>![Con titulo](pictures/logo.png "logo")</pre>
+			</td>
+			<td>
+				<img src="pictures/logo.png" alt="logo" title="logo">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre>![Sin tituo](pictures/logo.png)</pre>
+			</td>
+			<td>
+				<img src="pictures/logo.png" alt="logo">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre>![Imagen 1][1]  ![Imagen 2][2]<br><br>[1]: pictures/avatar.png<br>[2]: pictures/spy.png "spy"</pre>
+			</td>
+			<td>
+				<img src="pictures/logo.png"> <img src="pictures/spy.png" width="120" title="spy">
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+[volver a índice](#top)
+
+---
+
+### <a name="mark9">Tablas</a>
+
+Crear tablas es sumamente sencillo, simplemente debemos indicar cuales son los elementos de la cabecera y separar los campos con el símbolo.  
 
 
 
+Ejemplos:  
 
+<table>
+	<thead>
+		<tr>
+			<th style="width:50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre>Cabecera A | Cabecera B<br>-- | --<br>Campo A0 | Campo B0<br>Campo A1 | Campo B1</pre>
+			</td>
+			<td>
+				<table>
+					<thead>
+						<tr>
+							<th style="width:50%;">Cabecera A</th>
+							<th>Cabecera B</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Campo A0</td>
+							<td>Campo B0</td>
+						</tr>
+						<tr>
+							<td>Campo A1</td>
+							<td>Campo B1</td>
+						</tr>
+					</tbody>
+				</table>	
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre>Si prefiere, por estética, se pueden<br>alinear las columnas e incluso comenzar y finalizar<br>las filas con el símbolo |, pero no es necesario<br><br>| Cabecera A | Cabecera B |<br>| ---------- | ---------- |<br>| Campo A0   | Campo B0   |<br>| Campo A1   | Campo B1   |</pre>
+			</td>
+			<td>
+				<p>Si prefiere, por estética, se pueden alinear las columnas e incluso comenzar y finalizar las filas con el símbolo |, pero no es necesario</p>
+				<table>
+					<thead>
+						<tr>
+							<th style="width:50%;">Cabecera A</th>
+							<th>Cabecera B</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Campo A0</td>
+							<td>Campo B0</td>
+						</tr>
+						<tr>
+							<td>Campo A1</td>
+							<td>Campo B1</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre>Se puede especificar la alineación de<br>cada columna mediante la adición de dos<br>puntos a las líneas de separación. Dos puntos<br>a la izquierda de la línea de separación hará<br>que columna esté alineada a la izquierda, dos<br>puntos a la derecha de la línea hará que la<br>columna esté alineada a la derecha, dos puntos<br>en ambos lados significa que la columna se<br>alinea al centro.<br><br>| Elemento | Cantidad | Precio |<br>| :------- | :------: | -----: |<br>| Item 1   | 15       | $1.200 |<br>| Item 2   | 103      | $2.500 |</pre>
+			</td>
+			<td>
+				<p>Se puede especificar la alineación de cada columna mediante la adición de dos puntos a las líneas de separación. Dos puntos a la izquierda de la línea de separación hará que la columna esté alineada a la izquierda, dos puntos a la derecha de la línea de separación hará que la columna esté alineada a la derecha, dos puntos en ambos lados significa que la columna se alinea al centro.</p>
+				<table>
+					<thead>
+						<tr>
+							<th style="text-align: left;">Elemento</th>
+							<th style="text-align: center;">Cantidad</th>
+							<th style="text-align: right;">Precio</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td style="text-align: left;">Item 1</td>
+							<td style="text-align: center;">15</td>
+							<td style="text-align: right;">$1.200</td>
+						</tr>
+						<tr>
+							<td style="text-align: left;">Item 2</td>
+							<td style="text-align: center;">103</td>
+							<td style="text-align: right;">$2.500</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
+[volver a índice](#top)
+
+---
+
+### <a name="mark10">Código</a>
+
+Se pueden crear bloques de código para albergar extractos de código fuente de un lenguaje de programación o para reproducir literalmente cualquier tipo de texto que sea interpretado por markdown. Lo único necesario es que cada línea de este bloque empiece por al menos 4 espacios o 1 tabulado.  
+
+<b>De todos modos, es mucho más recomendable para estas tareas emplear el resaltado de código que especifica en esta [sección](#).</b>
 
 People
 

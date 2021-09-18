@@ -79,3 +79,32 @@ Este plugin agrega varios alias para comandos útiles de Python
 |pygrep <texto\>| Busca el argumento <texto\> en archivos .py|
 
 
+
+
+
+## Modificando el prompt <img src="assets/terminal.png" width="28"/>
+
+Personalmente prefiero que solo me muestre el directorio actual en lugar de todo el path.  
+
+1. Primero tendremos que abrir el archivo de configuración con nuestro editor en mi caso uso nano:  
+
+
+```bash
+nano ~/.p10k.zsh
+```
+
+2. Buscamos el parámetro (en nano podemos usar <kbd>Ctrl</kbd>+<kbd>w</kbd> para buscar)
+
+
+```
+POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
+```
+
+Lo remplazamos por lo siguiente:  
+
+```
+POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last
+```
+
+
+

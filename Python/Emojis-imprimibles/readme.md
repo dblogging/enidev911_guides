@@ -11,7 +11,7 @@
 
 
 
-## Animal-reptile  
+## Animal-reptile
 
 |Demo|Código|
 |----|------|
@@ -25,7 +25,7 @@
 |t-rex(🦖)|u'\U0001F996'|
 
 
-## Animal-marino  
+## Animal-marino
 
 
 

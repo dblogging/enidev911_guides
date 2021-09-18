@@ -1,4 +1,4 @@
-## ALIAS EN BASH  
+## ALIAS EN BASH
 
 **Crear un Alias**  
 
@@ -68,7 +68,7 @@ alias v="git remote -v"
 alias ci="git commit -m"
 alias a="git add ."
 alias p="git push origin"
-alias p="git pull"
+alias pl="git pull"
 alias f="git fetch"
 alias l="git log"
 ```

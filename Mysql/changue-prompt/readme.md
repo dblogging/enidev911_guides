@@ -1,3 +1,6 @@
+## Cambiar el prompt del cliente MySQL desde variables de entorno y BASH
+
+
 En los sistemas se suele personalizar el **prompt** para ofrecer cierta información a simple vista. En MySQL también lo podemos personalizar mediante la variable de entorno **MYSQL_PS1** o con el parámetro **prompt**.  
 
 Por ejemplo, mediante **MYSQL_PS1="(\u@\h)[\d]> "** indicamos al cliente de **MySQL** que queremos que nos muestre el usuario con el que conectamos, el host al que nos hemos conectado y la base de datos.
@@ -6,7 +9,7 @@ Una vez dentro de la sesión interactiva podemos cambiar el prompt usando \R.
 
 
 
-## Cambiar el prompt en la configuración de MySQL/MariaDB  
+## Cambiar el prompt en la configuración de MySQL/MariaDB
 
 Editamos el archivo de configuración de MySQL/MariaDB
 
@@ -25,9 +28,11 @@ prompt=\\u@\\h [\\d]>\\_
 	<img src="img/01.png">
 </p>
 
+Para ver los caractes de a continuación es necesario instalar la siguiente fuente:  
 
 
-## Algunos ejemplos:  
+
+## Algunos ejemplos:
 
 **Para el usuario** 
 
