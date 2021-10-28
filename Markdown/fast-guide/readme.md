@@ -23,13 +23,13 @@ A continuación sigue una lista detallada de todas las características que se p
     * [Imágines](#mark8)
     * [Tablas](#mark9)
     * [Código](#mark10)
-    * [Lineas Horizontales]('#')
-    * [Escapar caracteres]('#')
-    * [Notas a pie de página]('#')
-    * [Abreviaturas]('#')
-    * [Indentificadores de cabecera]('#')
+    * [Lineas Horizontales](#mark11)
+    * [Escapar caracteres](#mark12)
+    * [Notas a pie de página](#mark13)
+    * [Abreviaturas](#mark14)
+    * [Indentificadores de cabecera](#mark15)
 
-- [Pygments]('#')
+- [Pygments](#mark16)
     - Lexers de Pygments más comunes para resaltado de sintaxis  
 
 ## <a name="mark0">Markdown</a>
@@ -526,7 +526,6 @@ Se pueden crear listas de definiciones, que están compuestas de términos y las
 				<p>Se pueden aplicar más de una definición a un término</p>
 				<p><b>Primer término</b><br>&nbsp;&nbsp;&nbsp;&nbsp;Primera definición<br>&nbsp;&nbsp;&nbsp;&nbsp;Segunda definición</p>
 				<p><b>Segundo término</b><br>&nbsp;&nbsp;&nbsp;&nbsp;Segunda definición</p>
-
 			</td>
 		</tr>
 		<tr>
@@ -710,6 +709,513 @@ Ejemplos:
 Se pueden crear bloques de código para albergar extractos de código fuente de un lenguaje de programación o para reproducir literalmente cualquier tipo de texto que sea interpretado por markdown. Lo único necesario es que cada línea de este bloque empiece por al menos 4 espacios o 1 tabulado.  
 
 <b>De todos modos, es mucho más recomendable para estas tareas emplear el resaltado de código que especifica en esta [sección](#).</b>
+
+Ejemplos:
+
+<table>
+	<thead>
+		<tr>
+			<th style="width:50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre>Esto es un parráfo normal</pre>
+			</td>
+			<td>
+				<p>Esto es un parráfo normal</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre>    Esto es un parráfo de código.</pre>
+			</td>
+			<td>
+				<code>Esto es un parráfo de código.</code>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+Existe otro modo de crear un bloque de código, encerrándolo entre dos líneas formadas por tres o más caracteres tilde ~
+
+<table>
+	<thead>
+		<tr>
+			<th style="width:50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre>Esto es un parráfo normal</pre>
+			</td>
+			<td>
+				<p>Esto es un parráfo normal</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre>~~~<br>Esto es un parráfo de código<br>~~~</pre>
+			</td>
+			<td>
+				<code>Esto es un parráfo de código.</code>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+Por último existe una opción para resaltar pequeños trozos de código dentro de parráfos de texto normal.  
+Para lograr esto debemos encerrar el código entre dos acentos graves `
+
+<table>
+	<thead>
+		<tr>
+			<th style="width:50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre>Esto es un parráfo normal, con un<br>trozo de código, `import this`<br>insertado en el medio del mismo.</pre>
+			</td>
+			<td>
+				<p>Esto es un parráfo normal, con un trozo de código, <code>import this</code> insertado en el medio del mismo.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+[volver a índice](#top)
+
+---
+
+### <a name="mark11">Líneas Horizontales</a>
+
+Para crear líneas horizontales se debe crear una línea rodeaba de líneas en blanco y compuesta por 3 o más símbolos, que pueden ser guiones, asteriscos o guiones bajos. Pueden crearse espacios entre caracteres si así se deses por estética.
+
+<table>
+	<thead>
+		<tr>
+			<th style="width:50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre>
+				***
+				</pre>
+			</td>
+			<td>
+				<hr style="width:352px;">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre>
+				- - -
+				</pre>
+			</td>
+			<td>
+				<hr>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre>
+					___
+				</pre>
+			</td>
+			<td>
+				<hr>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+[volver a índice](#top)
+
+---
+
+### <a name="mark12">Escapar Carácteres</a>
+
+¿Que ocurre cuando queremos mostrar un carácter que markdown emplea para el marcado? Es posible que dependiendo de donde y como se emplee esté símbolo, sea interpretado por markdown y nos estropee el formato del texto. En este caso lo que se necesita es *escapar* el carácter con el símbolo backslash \. En esta tabla se muestran los símbolos que pueden ser escapados por markdown.  
+
+<table>
+	<thead>
+		<tr>
+			<th style="width:50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre>\\ \` \* \_ \{\} \[\] \(\) \# \+ \- \. \!
+				\: \|
+				</pre>
+			</td>
+			<td>
+				<p><b>\ ` * _ {} [] () # + - . ! : |</b></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+[volver a índice](#top)
+
+---
+
+### <a name="mark13">Notas a pie de página</a>
+
+Las notas de páginas se crean de una manera muy sencilla en Markdown. Cada nota de pie página se compone de dos elementos: un marcador al lado del texto que se convierte en un superíndice y de una definición que se puede colocar en una lista de notas al pie al final de documento. Ejemplo:  
+
+<table>
+	<thead>
+		<tr>
+			<th style="width:50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre>Esto es un texto con nota al pie<br>[^1]
+				<br><br>[^1]: Esto es una nota al pie de página.</pre>
+			</td>
+			<td>
+				<p>Esto es un texto con nota al pie
+				<sup id="fnref:1"><a href="#fn:1">1</a></sup></p>
+				<div class="footnotes">
+					<hr>
+					<ol>
+						<li id="fn:1">
+							<p>Esto es una nota al pie de página. 
+								<a href="#fnref:1">↩</a></p>
+						</li>
+					</ol>
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+Las definiciones de la nota al pie se pueden encontrar en cualquier parte del documento, pero las notas siempre se mostrarán en el orden en que están vinculados en el texto. Hay que tener en cuenta que no puede hacer dos enlaces a la misma nota al pie: si se intenta, la referencia de la nota segunda quedará como texto sin formato.  
+
+Cada marcador de nota debe tener un nombre distinto. Ese nombre se utiliza para vincular la nota a la que hace referencia a las definiciones de la nota, pero no tiene ningún efecto sobre la numeración de las notas al pie. Los nombres pueden contener cualquier carácter válido que sirva para la identificación de un atributo HTML (es decir, que cumpla con la expresión regular [A-Za-z][-A-Za-z0-9_:.]*), no tienen porque ser necesariamente números. Ejemplo:  
+
+<table>
+	<thead>
+		<tr>
+			<th style="width:50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre>Esto es un texto con nota al pie<br>[^nota1] y esta es otra nota [^nota2]
+				<br><br>[^nota1]: Esto es una nota al pie de página.<br>[^nota2]: Esto es la segunda nota al<br>pie.</pre>
+			</td>
+			<td>
+				<p>Esto es un texto con nota al pie
+				<sup id="fnref:1"><a href="#fn:1">1</a></sup> y esta es otra nota
+				<sup id="fnref:2"><a href="fn:2">2</a></sup>
+			</p>
+				<div class="footnotes">
+					<hr>
+					<ol>
+						<li id="fn:1">
+							<p>Esto es una nota al pie de página. 
+								<a href="#fnref:1">↩</a></p>
+						</li>
+					</ol>
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+[volver a índice](#top)
+
+---
+
+### <a name="mark14">Abreviaturas</a>
+
+Para crear abreviaturas HTML lo único necesario es crear una lista de ellas (normalmente al final del texto) y en cualquier lugar del texto que aparezca la abreviatura se aplicará automáticamente. Las listas de abreviaturas se crean como las listas de enlaces, pero precedidas por un asterisco.
+
+<table>
+	<thead>
+		<tr>
+			<th style="width:50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre>La especificación HTML es mantenida por el<br>W3C.<br><br>*[HTML]: Hyper Text Markup Language<br>*[W3C]: World Wide Web Consortium</pre>
+			</td>
+			<td>
+				<p>La especificación <abbr title="Hyper Text Markup Language">HTML</abbr> es mantenida por el <abbr title="World Wide Web Consortium">W3C</abbr>.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+Las abreviaturas son sensibles a mayúsculas, por lo que hay que tenerlo en cuenta. Se pueden crear abreviaturas de más de una palabra.
+
+[volver a índice](#top)
+
+---
+
+### <a name="mark15">Identificadores de Cabecera</a>
+
+Los identificadores de cabecera nos permiten establecer un Identificador a las cabeceras para luego poder enlazarlas en cualquier otro lugar del texto.
+
+<table>
+	<thead>
+		<tr>
+			<th style="width:50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre>### Esto es una cabecera con un Id<br>{#cabecera1}<br><br>[Enlace a esa cabecera](#cabecera1)</pre>
+			</td>
+			<td>
+				<h3 id="cabecera1">Esto es una cabecera con Id</h3>
+				<p><a href="#cabecera1">Enlace a esa cabecera</a></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+En Markdown Python todas las cabeceras llevan por defecto asociado un Id que depende del texto de la misma, aunque siempre prevalece la que nosotros establezcamos.
+
+[volver a índice](#top)
+
+---
+
+### <a name="mark16">Pygments: Resaltado de Sintaxis para Código Fuente</a>
+
+Para introducir ejemplos de código fuente en el sitio, habilitar el resaltado (o coloreado) de sintaxis mejora la presentación y legibilidad de los mismos. Existen diversos motores que nos permiten realizar esta función y Pugments es uno de los mejores. Está realizado en Python.  
+
+Resaltar código con markdown y Pygments es realmente sencillo, solamente hay que hacer lo mismo que haríamos con markdown, pero añadiendo un **lexer** de Pygments en la primera línea. Un lexer es un indentificador del lenguaje que queremos resaltar para que el coloreado se haga correctamente. Los lexer se construyen empleando 2 caracteres `~` seguidos del nombre del lexer, por ejemplo, `~~~python` sería el lexer empleado para identificar un fragmento de código en lenguaje Python o en su lugar puede emplear también el acento grave.  
+
+Lo podemos ver mejor con un ejemplo:
+
+<table>
+	<thead>
+		<tr>
+			<th style="width:50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre>```python<br>import lifetime<br><br>for each_day in lifetime.days():<br>&nbsp;&nbsp;&nbsp;&nbsp;carpe_diem()<br>```</pre>
+			</td>
+			<td>
+				<pre><span style="color: darkblue;">import</span> <span>lifetine</span><br><br><span style="color: darkblue;">for </span>each_day <span style="color: darkblue;">in</span> <span>lifetime.days</span><span style="color: darkblue;">()</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span>carpe_diem</span><span style="color: darkblue;">()</span>
+				</pre>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+Lexers de Pygments más comunes para resaltado de sintaxys  
+
+A continuación muestro una relación de los lexers más comunes empleados para el resaltado de código fuente.  
+
+- `apache` - configuración Apache
+
+```apache
+<VirtualHost *:80>
+DocumentRoot /www/example1
+ServerName www.example1.com
+
+# Other directives here
+
+</VirtualHost>
+```
+
+- `bash` y `console` - Bash y Shell
+
+```bash
+#!/bin/bash
+echo "Hola mundo"
+```
+
+- `bat` - Archivos Batch DOS/Windows
+
+```bat
+@echo ¡Hola, Mundo!
+```
+
+- `boo` - Boo
+
+```boo
+print "Hello, world"
+```
+
+- `c` - C
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    printf("¡Hola, mundo!\n");
+    return 0;
+}
+```
+
+- `cpp` - C++
+
+```cpp
+#include <iostream.h>
+using namespace std;
+
+int main() {
+  cout << "¡Hola, mundo!" << endl;
+  return 0;
+}
+```
+- `csharp`- C#
+
+```csharp
+using System;
+
+class MainClass
+{
+	public static void Main()
+	{
+		System.Console.WriteLine("¡Hola, mundo!");
+	}
+}
+```
+
+- `css` - Cascade Style Sheet (CSS)
+
+```css
+</pre>
+   </td>
+   <td class="get">
+<css>
+body {
+    font: 75% georgia, sans-serif;
+    color: #555753;
+    background: #fff;
+    margin: 0;
+    padding: 5px;
+}
+```
+
+- `diff` ó `udiff` - Diff
+
+```diff
+--- /path/to/original ''timestamp''
++++ /path/to/new      ''timestamp''
+@@ -1,3 +1,9 @@
++This is an important
++notice! It should
++therefore be located at
++the beginning of this
++document!
++
+ This part of the
+ document has stayed the
+ same from version to
+```
+
+- `erlang` - Erlang
+
+```erlang
+-module (hola).
+-export ([hola_mundo/0]).
+
+hola_mundo() -> io:fwrite("Hola mundo!\n").
+```
+
+- `go` - Go
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+   fmt.Println("Hello World!")
+}
+```
+
+- `haskell` - Haskell
+
+```haskell
+holaMundo :: IO ()
+holaMundo = putStrLn "Hola mundo!"
+```
+
+- `html` - HTML
+
+```html
+<html>
+  <head>
+    <title>Hola Mundo</title>
+  </head>
+  <body>
+
+¡Hola Mundo!
+   </body>
+</html>
+```
+
+- `java` - Java
+
+```java
+public class HolaMundo {
+       public static void main(String[] args) {
+          System.out.println("¡Hola, mundo!");
+       }
+}
+```
+
+- `js` - javascript
+
+```js
+<script type="text/javascript">
+  document.write("¡Hola, mundo!");
+</script>
+```
+
+- `latex` - LaTex
+
+```latex
+\documentclass[12pt]{article}
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\begin{document}
+
+\section*{Notes for My Paper}
+```
+
+- `cl` - Common Lisp
+
+```cl
+(format t "¡Hola, mundo!")
+```
+
+
 
 People
 

@@ -1,5 +1,5 @@
 
-## Crear un nuevo archivo  
+## Crear un nuevo archivo
 
 <p align="center">
     <img src="img/01_new_file.png">

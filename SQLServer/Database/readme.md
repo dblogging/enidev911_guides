@@ -1,4 +1,4 @@
-## Northwind 
+## Northwind
 
 Las múltiples versiones de SQL server en ocasiones nos dificultan **restaurar bases de datos .bak**  
 para ello es mejor descargar y restaurar el script Notrhwinden SQL Server.  

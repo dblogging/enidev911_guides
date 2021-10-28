@@ -1,4 +1,4 @@
-## Escribir un archivo usando el operador Redirection.  
+## Escribir un archivo usando el operador Redirection.
 
 En Bash, la redirección de la salida(output) le permite capturar la salida de un comando y escribirla en un archivo.  
 
