@@ -28,6 +28,6 @@ Explicación:
 
 <hr>
 
-[volver a índice](../../tkinter/readme.md)
+- <a href="../">volver a índice</a>
 
 <hr>
