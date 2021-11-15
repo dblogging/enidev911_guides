@@ -1,4 +1,10 @@
-## Entorno Virtuales  
+## Entorno Virtuales
+
+
+
+### introducción
+
+Las aplicaciones en Python usualmente hacen uso de paquetes y módulos que no forman parte de la librería estándar. Las aplicaciones a veces necesitan una versión específica de una librería, debido a que dicha aplicación 
 
 Python 3.3 y posteriores ya incluyen un módulo estándar **venv** para trabajar con un entorno virtual.
 

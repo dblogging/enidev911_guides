@@ -9,7 +9,7 @@ A continuación sigue una lista detallada de todas las características que se p
 
 <a name="top"></a>
 
-- [Markdown](#mark)
+- [Markdown](#mark0)
     * [¿Que es Markdown?](#mark-0)
 
 - [Sintaxys Markdown](#mark0)
@@ -28,8 +28,9 @@ A continuación sigue una lista detallada de todas las características que se p
     * [Notas a pie de página](#mark13)
     * [Abreviaturas](#mark14)
     * [Indentificadores de cabecera](#mark15)
+    * [Extras](#mark16)
 
-- [Pygments](#mark16)
+- [Pygments](#mark17)
     - Lexers de Pygments más comunes para resaltado de sintaxis  
 
 ## <a name="mark0">Markdown</a>
@@ -769,7 +770,8 @@ Existe otro modo de crear un bloque de código, encerrándolo entre dos líneas 
 </table>
 
 Por último existe una opción para resaltar pequeños trozos de código dentro de parráfos de texto normal.  
-Para lograr esto debemos encerrar el código entre dos acentos graves `
+Para lograr esto debemos encerrar el código entre dos acentos graves (`)
+
 
 <table>
 	<thead>
@@ -1005,7 +1007,30 @@ En Markdown Python todas las cabeceras llevan por defecto asociado un Id que dep
 
 ---
 
-### <a name="mark16">Pygments: Resaltado de Sintaxis para Código Fuente</a>
+### <a name="mark16">Extras</a>
+
+Ejemplo de como dibujar una casilla de verificación en GitHub Markdown:  
+
+### Sistema solar exploración, 1950s - 1960s
+
+- [ ] Mercury
+- [x] Venus 
+- [x] Earth (Orbit/Moon)
+- [x] Mars
+- [ ] Jupiter
+- [ ] Saturn
+- [ ] Uranus
+- [ ] Neptune
+- [ ] Comet Haley
+
+Así es como uno podría hacer lo mismo en una tabla con emojis:
+
+
+Function | MySQL / MariaDB | PostgreSQL | SQLite
+:------------ | :-------------| :-------------| :-------------
+substr | :heavy_check_mark: |  :white_check_mark: | :heavy_check_mark:
+
+### <a name="mark17">Pygments: Resaltado de Sintaxis para Código Fuente</a>
 
 Para introducir ejemplos de código fuente en el sitio, habilitar el resaltado (o coloreado) de sintaxis mejora la presentación y legibilidad de los mismos. Existen diversos motores que nos permiten realizar esta función y Pugments es uno de los mejores. Está realizado en Python.  
 
