@@ -28,6 +28,6 @@ Explicación:
 
 <hr>
 
-[volver a índice](../readme.md)
+[volver a índice](../../tkinter/readme.md)
 
 <hr>
