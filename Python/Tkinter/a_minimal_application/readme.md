@@ -28,6 +28,6 @@ Explicación:
 
 <hr>
 
-- <a href="../">volver a índice</a>
+- <a href="../#top">volver a índice</a>
 
 <hr>
