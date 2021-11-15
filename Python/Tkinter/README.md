@@ -15,7 +15,7 @@ A continuación sigue una lista detallada de todas las características que se p
     * [¿Que es Tkinter?](#mark-0)
     * [Una aplicación mínima](./a_minimal_application/readme.md)
 
-- [Sintaxys Markdown](#mark0)
+- [Widgets](#mark0)
     * [Cabeceras](#mark1)
     * [Enlaces](#mark2)
     * [Parrafos](#mark3)

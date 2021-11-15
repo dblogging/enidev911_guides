@@ -27,3 +27,7 @@ Explicación:
 - **28** Inicia el bucle principal de la aplicación, esperando evento de mouse y teclado.
 
 <hr>
+
+[volver a índice](../readme.md)
+
+<hr>
