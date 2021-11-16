@@ -1,4 +1,4 @@
-## 10. El widget Entry  
+## 10. El widget Entry
 
 El próposito de un widget Entry es permitir que el usuario vea y modifique una *sola* línea de texto.  
 
@@ -15,9 +15,9 @@ Normalmente, la selección la realiza el usuario con el ratón y el texto selecc
 
 - Las posiciones dentro del texto mostrado del widget se dan como *índice*. Hay varias formas de especificar un índice:  
     - Como índices normales de Python, comenzando desde 0
-    - La constante tk.END se refiere a la posición después del texto existente.
-    - La constante tk.INSERT se refiere a la posición actual del cursor de inserción.
-    - La constante tk.ANCHOR se refiere al primer carácter de la selección, si hay una selección.  
+    - La constante <font color="blue">tk.END</font> se refiere a la posición después del texto existente.
+    - La constante <font color="blue">tk.INSERT</font> se refiere a la posición actual del cursor de inserción.
+    - La constante <font color="blue">tk.ANCHOR</font> se refiere al primer carácter de la selección, si hay una selección.  
 
 Para crear un nuevo widget Entry en una ventana raíz o un marco llamado *parent*:  
 
@@ -56,7 +56,7 @@ Este constructor devuelve un nuevo widget Entry. Las opciones incluyen:
 
 
 
-## Los métodos sobre objetos Entry incluyen:  
+## Los métodos sobre objetos Entry incluyen:
 
 **.delete(*first*, *last=None*)**
 
@@ -79,4 +79,5 @@ Cambie el contenido de la entrada para que carácter dado sea *index* el caráct
 **.insert(*index*, *s*)**
 
 Inserta una cadena *s* antes del carácter *index* dado.
+
 

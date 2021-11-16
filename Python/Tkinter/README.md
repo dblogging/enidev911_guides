@@ -22,7 +22,7 @@ A continuación sigue una lista detallada de todas las características que se p
 	
 
 - [Widgets](#mark0)
-    * [Cabeceras](#mark1)
+    * [Entry](./widgets/Entry/readme.md)
     * [Enlaces](#mark2)
     * [Parrafos](#mark3)
     * [Formato](#mark4)
