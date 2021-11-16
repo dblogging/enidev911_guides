@@ -52,5 +52,37 @@ Este método registra un widget(w) con el administrador de geometría de cuadrí
 				<p>Acholchado interno en el eje x. Esta dimensión se agrega dentro del widget dentro de sus lados izquierdo y derecho.</p>
 			</td>
 		</tr>
+		<tr>
+			<td>
+				<pre>ipady</pre>
+			</td>
+			<td>
+				<p>Acholchado interno en el eje y. Esta dimensión se agrega dentro del widget dentro de sus bordes superior e inferior.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre>padx</pre>
+			</td>
+			<td>
+				<p>Acholchado externo en el eje x. Esta dimensión se agrega a la izquierda y a la derecha fuera del widget.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre>pady</pre>
+			</td>
+			<td>
+				<p>Acholchado externo en el eje y. Esta dimensión se agrega por encima y por debajo del widget.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre>row</pre>
+			</td>
+			<td>
+				<p>El número de fila en el que desea insertar el widget, contando desde 0. El valor predeterminado es la siguiente fila desocupada con el número más alto.</p>
+			</td>
+		</tr>
 	</tbody>
 </table>

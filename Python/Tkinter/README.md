@@ -16,6 +16,11 @@ A continuación sigue una lista detallada de todas las características que se p
     * [Definiciones](#mark-1)
     * [Una aplicación mínima](./a_minimal_application/readme.md)
 
+- [Gestión de diseño](#mark)
+	* [Método **.grid()**]()
+	* [Método **.pack()**]()
+	
+
 - [Widgets](#mark0)
     * [Cabeceras](#mark1)
     * [Enlaces](#mark2)
