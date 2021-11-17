@@ -1,4 +1,4 @@
-## Solicitar números hasta que se introduzca un negativo.  
+## Solicitar números hasta que se introduzca un negativo.
 
 Antes que nada vamos a declarar la lista en donde vamos a ir almacenando los números. Luego haremos un ciclo while infinito que se va a romper únicamente **cuando el número sea negativo**.. 
 
@@ -21,7 +21,7 @@ print(lista)
 Fijate en que la condición de salida es que el número sea menor que 0, ya que en ese caso rompemos el ciclo con **break** 
 
 
-## Convertir decimal a hexadecimal  
+## Convertir decimal a hexadecimal
 
 Veamos como convertir un número decimal en base 10 a un número hexadecimal en base 16. 
 
@@ -66,7 +66,7 @@ def decimal_a_hexadecimal(decimal):
 ```
 
 
-## Obtener dígito verificador  
+## Obtener dígito verificador
 El **algoritmo para obtener el dígito verificador** corresponde al método para validar el RUN o RUT. El Rol Único Nacional(RUN) y el Rol Único Tributario(RUT) chilenos (ambos coinciden en el RUN si se trata de personas naturales) poseen un dígito verificador que evita engaños y suplantaciones de identidad.  
 
 El dígito verificador se obtiene a partir de un algoritmo conocido como *Módulo 11.* Existen otras maneras de obtener el dígito verificador de los números de identificación del mundo, pero en **Chile** se aplica exclusivamente el Módulo 11. El Módulo 11 consiste en la aplicación de operaciones aritméticas a cada dígito del número del RUT.  

@@ -81,3 +81,32 @@ Cambie el contenido de la entrada para que carácter dado sea *index* el caráct
 Inserta una cadena *s* antes del carácter *index* dado.
 
 
+Tk nos provee una función específica para retornar el texto seleccionado, pero haciendo uso del metodo *index()* junto con las constantes <font color="blue">tk.SEL_FIRST</font> y <font color="blue">tk.SEL_LAST</font> que retornan los índices de inicio y fin de la selección podemos construirla manualmente:  
+
+```python
+#!/usr/bin/env python
+# python3
+from tkinter import *
+from tkinter import ttk
+
+app = Tk()
+entry = Entry(app)
+entry.pack()
+
+entry.insert(0, 'Hello World!')
+
+def get_selection():
+	# Comprobamos que exista una selección
+	if entry.select_present():
+		# Obtener los índice del inicio y fin de selección
+		first = entry.index(SEL_FIRST)
+		last = entry.index(SEL_LAST)
+		print(entry.get()[first:last])
+	else:
+		print('No hay selección')
+
+btn = ttk.Button(app, text='Get selection', command=get_selection)		
+btn.pack()
+
+app.mainloop()	
+```

@@ -1,4 +1,4 @@
-## El widget Listbox  
+## El widget Listbox
 
 El propósito de un widget de cuadro de lista es mostrar un conjunto de líneas de texto. Por lo general, están destinados a permitir al usuario seleccionar uno o más elementos de una lista. Todas las líneas de texto usan la misma fuente. Si necesita algo más parecido a un editor de texto, revise la [Sección24, "El widget Text"](#).  
 

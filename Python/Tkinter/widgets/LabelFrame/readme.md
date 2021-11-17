@@ -1,6 +1,6 @@
 
 
-## El widget **LabelFrame**  
+## El widget **LabelFrame**
 
 El widget **LabelFrame** al igual como el widget **Frame**, es un contenedor especial, un área rectangular que puede contener otros widgets. Sin embargo, a diferencia del widget **Frame**. Sin embargo, a diferencia del widget **Frame**, el widget **LabelFrame** le permite mostrar una etíqueta como parte del borde alrededor del área.   
 
@@ -21,7 +21,7 @@ Para crear un nuevo widget LabelFrame dentro de una ventana padre:
 
 El constructor retorna el nuevo widget **LabelFrame**, Options:  
 
-## Table de opciones.  
+## Table de opciones.
 
 |Opción| Descripción|
 |------|------------|
