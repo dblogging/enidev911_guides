@@ -12,7 +12,7 @@
 ```
 ---
 
-## Iniciando un repositorio 
+## Iniciando un repositorio
 
 - Iniciamos GIT en la carpeta donde está el proyecto  
 ```bash   

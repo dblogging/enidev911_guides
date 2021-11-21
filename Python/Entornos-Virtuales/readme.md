@@ -37,4 +37,11 @@ deactivate
 ```
 
 
+He encontrado este fragmento como una solución alternativa. Es una eliminación más elegante de bibliotecas que rehacer el entorno virtual:
+
+
+```python
+pip freeze | xargs pip uninstall -y
+```
+
 
