@@ -36,7 +36,7 @@ Estos pasos sirven para trabajar una página para un repositorio existente.
 
 <img src="img/05.png">
 
-## Agregar un tema 
+## Agregar un tema
 
 1. En GitHub, navegue hasta el repositorio de su sitio.
 2. Debajo del nombre de su repositorio, hacemos clic en Settings. 

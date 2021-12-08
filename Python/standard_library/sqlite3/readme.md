@@ -117,3 +117,29 @@ run_query(sql)
 ```
 
 
+### <a name="#7">Excepciones SQLite3</a>
+
+Las excepciones son errores en tiempo de ejecución. En **Python**, todas las excepciones son instancias de la clase derivada BaseException.
+
+En SQLite3, tenemos las siguientes excepciones principales de Python: 
+
+
+**DatabaseError**  
+
+Cualquier error relacionado con la base de datos genera el DatabaseError.
+
+
+**IntegrityError**
+
+IntegrityError es una subclase de DatabaseError y se genera cuando hay un problema de integridad de los datos, por ejemplo, los datos foráneos no se actualizan en todas las tablas, lo que resulta en una inconsistencia de los datos.
+
+**ProgrammingError**
+
+La excepción ProgrammingError se produce cuando hay errores de sintaxis o no se encuentra la tabla o se llama a la función con un número incorrecto de parámetros.  
+
+
+**OperationalError**  
+
+Esta excepción se produce cuando fallan las operaciones de la base de datos, por ejemplo, una desconexión inusual. Esto no es culpa de los programadores
+
+

@@ -1,0 +1,1 @@
+La sentencia **with** en Python es usada a menudo en el manejo de excepciones para hacer que el código sea más limpio y mucho más legible
