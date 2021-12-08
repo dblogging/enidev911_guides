@@ -1,4 +1,4 @@
-## ¿Por qué y cómo hacer un Requirement.txt?  
+## ¿Por qué y cómo hacer un Requirement.txt?
 
     pip freeze > requirements.txt
 
