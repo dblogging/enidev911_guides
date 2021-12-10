@@ -43,7 +43,6 @@ Markdown es un lenguaje de marcado ligero parecido al que se emplea en muchas wi
 
 ## <a name="mark0">Sintaxis Markdown</a>
 
-<br>
 
 ### <a name='mark1' style="text-decoration:underline;">Cabeceras</a>
 
@@ -161,6 +160,8 @@ Es decir para los encabezamientos principales se subraya el texto con el signo i
 
 ---
 
+<br>
+
 ### <a name="mark2" style="text-decoration:underline;">Enlaces</a>
 
 Existen también dos maneras de crear enlaces, se pueden ver en la siguiente tabla:  
@@ -229,6 +230,8 @@ Existe una manera adicional de crear enlaces automáticos para direcciones URL, 
 
 ---
 
+<br>
+
 ### <a name="mark3" style="text-decoration:underline;">Párrafos</a>
 
 Para crear párrafos se deja una línea en blanco. De este mondo:  
@@ -277,6 +280,8 @@ Para crear un salto de línea dentro de un parráfo, simplemente se dejan dos es
 [volver a índice](#top)
 
 ---
+
+<br>
 
 ### <a name="mark4" style="text-decoration:underline;">Formato</a>
 
@@ -347,6 +352,8 @@ Se pueden emplear indistintamente tanto el asterisco * como el guión bajo _ sie
 
 ---
 
+<br>
+
 ### <a name="mark5" style="text-decoration:underline;">Citas</a>
 
 Para crear bloques de cita, se emplea el carácter mayor que > antes del bloque de texto. En la siguiente tabla se pueden ver las opciones para crearlos:  
@@ -390,10 +397,8 @@ Para crear bloques de cita, se emplea el carácter mayor que > antes del bloque 
 			<td>
 				<p>Esto es una línea normal</p>
 				<blockquote>
-					<p>Esto es parte de un bloque de cita. Esto es parte del mismo bloque de cita.</p> <blockquote>
-						<p>Esto es otro bloque de cita anidado. Esto es parte del bloque anidado.</p>
-					</blockquote>
-
+					<p>Esto es parte de un bloque de cita. Esto es parte del mismo bloque de cita.</p><blockquote>
+					<p>Esto es otro bloque de cita anidado. Esto es parte del bloque anidado.</p></blockquote>
 				<p>Esto de parte del bloque de cita de primer nivel.</p>
 				</blockquote>
 			</td>
@@ -404,6 +409,8 @@ Para crear bloques de cita, se emplea el carácter mayor que > antes del bloque 
 [volver a índice](#top)
 
 ---
+
+<br>
 
 ### <a name="mark6" style="text-decoration:underline;">Listas</a>
 
