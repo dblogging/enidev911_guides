@@ -3,8 +3,6 @@
 
 Esta guía rápida sirve para recordar todas las posibilidades que ofrecen markdown y Pygments para editar y formatear texto y comúnmente empleo para crear los artículos de Blog. Espero que no solo me sirva de guía a mí, si no a cualquiera que se acerque por primera vez a markdown o Pygments.  
 
----  
-
 A continuación sigue una lista detallada de todas las características que se pueden emplear en Markdown y Markdown Extra (empleando *Python Markdown*) y los lexers más comunes de Pygments para resaltar el código fuente.  
 
 <a name="top"></a>
@@ -41,16 +39,15 @@ Este es el lenguaje de marcado que permite formatear el texto fácilmente sin la
 
 Markdown es un lenguaje de marcado ligero parecido al que se emplea en muchas wikis y basado originalmente en convenciones existentes en el marcado de los correos electronicos. Emplea texto plano, procurando que sea legible pero consiguiendo que se convierte en XHTML correctamente formateado. Aunque no es muy conocido, empieza a ser muy popular y utilizado por programadores y blogueros que escriben sus artículos en este formato.  
 
----
+<br>
 
-<a name="mark0"></a>
-Sintaxis Markdown
------------------  
+## <a name="mark0">Sintaxis Markdown</a>
 
-### <a name='mark1'>Cabeceras</a>
+<br>
+
+### <a name='mark1' style="text-decoration:underline;">Cabeceras</a>
 
 Los encabezamintos HTML se producen colocando un número determinado de almohadillas # antes del texto correspondiente al nivel de encabezamiento deseado (HTML ofrece hasta seis niveles). Los encabezamiento posibles se puedenver en la siguiente tabla:  
-
 
 <table>
 	<thead>
@@ -61,12 +58,8 @@ Los encabezamintos HTML se producen colocando un número determinado de almohadi
 	</thead>
 	<tbody>
 		<tr>
-			<td>
-				<pre class="no_mrkdwn"># Esto es un h1</pre>
-			</td>
-			<td>
-				<h1>Esto es un h1</h1>
-			</td>
+			<td><pre class="no_mrkdwn"># Esto es un h1</pre></td>
+			<td><h2 style="font-size:30px;">Esto es un h1</h2></td>
 		</tr>
 		<tr>
 			<td>
@@ -111,9 +104,9 @@ Los encabezamintos HTML se producen colocando un número determinado de almohadi
 	</tbody>
 </table>
 
-Se puede encerrar cada encabezado entre almohadillas, por motivos puramente estéticos, porque no es necesario en absoluto, es decir, se puede hacer esto:  
+Markdown también nos permite encerrar cada encabezado entre almohadillas. Pero con el único fin de esto es un **motivo estético** porque no es necesario en absoluto, es decir, que podemos hacer lo siguiente:
 
-
+<br><br>
 <table>
 		<thead>
 		<tr>
@@ -148,7 +141,7 @@ Para los encabezamientos de los dos primeros niveles existe también otra manera
 				<pre class="no_mrkdwn">Esto es un h1<br>=============</pre>
 			</td>
 			<td>
-				<h1>Esto es un h1</h1>
+				<h2 style="font-size:30px;">Esto es un h1</h2>
 			</td>
 		</tr>
 			<tr>
@@ -168,7 +161,7 @@ Es decir para los encabezamientos principales se subraya el texto con el signo i
 
 ---
 
-### <a name="mark2">Enlaces</a>
+### <a name="mark2" style="text-decoration:underline;">Enlaces</a>
 
 Existen también dos maneras de crear enlaces, se pueden ver en la siguiente tabla:  
 
@@ -183,28 +176,23 @@ Existen también dos maneras de crear enlaces, se pueden ver en la siguiente tab
 	<tbody>
 		<tr>
 			<td>
-				<pre class="no_mrkdwn">[Con titulo](https://eniblog.com "titulo")</pre>
+				<pre class="no_mrkdwn">[Con título](https://eniblog.com "título")</pre>
 			</td>
 			<td>
-				<a href="#mark2" title="titulo">Con titulo</a>
+				<a href="#mark2" title="título">Con título</a>
 			</td>
 		</tr>
-			<tr>
+		<tr>
 			<td>
 				<pre class="no_mrkdwn">[Sin titulo](https://eniblog.com)</pre>
 			</td>
 			<td>
-				<a href="#mark2">Sin titulo</a>
+				<a href="#mark2">Sin título</a>
 			</td>
 		</tr>
-		</tr>
-			<tr>
+		<tr>
 			<td>
-				<pre class="no_mrkdwn">[Enlace 1][1], [Enlace 2][2], [Enlace 3][3]
-
- [1]: http://eniblog.com/tips
- [2]: http://eniblog.com/tips "Tips"
- [3]: http://eniblog.com/</pre>
+				<pre class="no_mrkdwn">[Enlace 1][1], [Enlace 2][2],<br>[Enlace 3][3]<br>[1]: http://eniblog.com/tips<br>[2]: http://eniblog.com/tips "Tips"<br>[3]: http://eniblog.com/</pre>
 			</td>
 			<td>
 				<a href="#mark2">Enlace1</a>,
@@ -215,7 +203,7 @@ Existen también dos maneras de crear enlaces, se pueden ver en la siguiente tab
 	</tbody>
 </table>
 
-Existe una manera adicional de crear enlaces automáticos para direcciones URL, simplemente encerrarla entre los caracteres < que y > que:
+Existe una manera adicional de crear enlaces automáticos para direcciones URL, simplemente encerrarla entre los caracteres "<" y ">":
 
 <table>
 		<thead>
@@ -241,7 +229,7 @@ Existe una manera adicional de crear enlaces automáticos para direcciones URL, 
 
 ---
 
-### <a name="mark3">Párrafos</a>
+### <a name="mark3" style="text-decoration:underline;">Párrafos</a>
 
 Para crear párrafos se deja una línea en blanco. De este mondo:  
 
@@ -290,7 +278,7 @@ Para crear un salto de línea dentro de un parráfo, simplemente se dejan dos es
 
 ---
 
-### <a name="mark4">Formato</a>
+### <a name="mark4" style="text-decoration:underline;">Formato</a>
 
 El formato básico del texto, es decir negritas y cursivas, se pueden realizar de varias maneras:  
 
@@ -359,7 +347,7 @@ Se pueden emplear indistintamente tanto el asterisco * como el guión bajo _ sie
 
 ---
 
-### <a name="mark5">Citas</a>
+### <a name="mark5" style="text-decoration:underline;">Citas</a>
 
 Para crear bloques de cita, se emplea el carácter mayor que > antes del bloque de texto. En la siguiente tabla se pueden ver las opciones para crearlos:  
 
@@ -417,7 +405,7 @@ Para crear bloques de cita, se emplea el carácter mayor que > antes del bloque 
 
 ---
 
-### <a name="mark6">Listas</a>
+### <a name="mark6" style="text-decoration:underline;">Listas</a>
 
 Markdown permite crear dos tipos de listas, ordenadas y desordenadas, es decir numeradas o listas de puntos. Para distinguir los tipos y como se crean, nada mejor que verlo con ejemplos:  
 
@@ -497,7 +485,7 @@ Markdown permite crear dos tipos de listas, ordenadas y desordenadas, es decir n
 
 ---
 
-### <a name="mark7">Listas de definiciones</a>
+### <a name="mark7" style="text-decoration:underline;">Listas de definiciones</a>
 
 Se pueden crear listas de definiciones, que están compuestas de términos y las definiciones de los mismos, como si fuera un diccionario. Su creación es muy simple:  
 
@@ -557,7 +545,7 @@ Se pueden crear listas de definiciones, que están compuestas de términos y las
 
 ---
 
-### <a name="mark8">Imágenes</a>
+### <a name="mark8" style="text-decoration:underline;">Imágenes</a>
 
 La manera de enlazar imágines es básicamente la misma de crear enlaces, con una única diferencia, se añade el carácter de exclamación <mark>!</mark> al principio de la pareja de corchetes que definen el nombre del enlace.  
 
@@ -602,7 +590,7 @@ Ejemplos:
 
 ---
 
-### <a name="mark9">Tablas</a>
+### <a name="mark9" style="text-decoration:underline;">Tablas</a>
 
 Crear tablas es sumamente sencillo, simplemente debemos indicar cuales son los elementos de la cabecera y separar los campos con el símbolo.  
 
@@ -705,7 +693,7 @@ Ejemplos:
 
 ---
 
-### <a name="mark10">Código</a>
+### <a name="mark10" style="text-decoration:underline;">Código</a>
 
 Se pueden crear bloques de código para albergar extractos de código fuente de un lenguaje de programación o para reproducir literalmente cualquier tipo de texto que sea interpretado por markdown. Lo único necesario es que cada línea de este bloque empiece por al menos 4 espacios o 1 tabulado.  
 
@@ -796,7 +784,7 @@ Para lograr esto debemos encerrar el código entre dos acentos graves (`)
 
 ---
 
-### <a name="mark11">Líneas Horizontales</a>
+### <a name="mark11" style="text-decoration:underline;">Líneas Horizontales</a>
 
 Para crear líneas horizontales se debe crear una línea rodeaba de líneas en blanco y compuesta por 3 o más símbolos, que pueden ser guiones, asteriscos o guiones bajos. Pueden crearse espacios entre caracteres si así se deses por estética.
 
@@ -845,7 +833,7 @@ Para crear líneas horizontales se debe crear una línea rodeaba de líneas en b
 
 ---
 
-### <a name="mark12">Escapar Carácteres</a>
+### <a name="mark12" style="text-decoration:underline;">Escapar Carácteres</a>
 
 ¿Que ocurre cuando queremos mostrar un carácter que markdown emplea para el marcado? Es posible que dependiendo de donde y como se emplee esté símbolo, sea interpretado por markdown y nos estropee el formato del texto. En este caso lo que se necesita es *escapar* el carácter con el símbolo backslash \. En esta tabla se muestran los símbolos que pueden ser escapados por markdown.  
 
@@ -874,7 +862,7 @@ Para crear líneas horizontales se debe crear una línea rodeaba de líneas en b
 
 ---
 
-### <a name="mark13">Notas a pie de página</a>
+### <a name="mark13" style="text-decoration:underline;">Notas a pie de página</a>
 
 Las notas de páginas se crean de una manera muy sencilla en Markdown. Cada nota de pie página se compone de dos elementos: un marcador al lado del texto que se convierte en un superíndice y de una definición que se puede colocar en una lista de notas al pie al final de documento. Ejemplo:  
 
@@ -948,7 +936,7 @@ Cada marcador de nota debe tener un nombre distinto. Ese nombre se utiliza para 
 
 ---
 
-### <a name="mark14">Abreviaturas</a>
+### <a name="mark14" style="text-decoration:underline;">Abreviaturas</a>
 
 Para crear abreviaturas HTML lo único necesario es crear una lista de ellas (normalmente al final del texto) y en cualquier lugar del texto que aparezca la abreviatura se aplicará automáticamente. Las listas de abreviaturas se crean como las listas de enlaces, pero precedidas por un asterisco.
 
@@ -977,7 +965,7 @@ Las abreviaturas son sensibles a mayúsculas, por lo que hay que tenerlo en cuen
 
 ---
 
-### <a name="mark15">Identificadores de Cabecera</a>
+### <a name="mark15" style="text-decoration:underline;">Identificadores de Cabecera</a>
 
 Los identificadores de cabecera nos permiten establecer un Identificador a las cabeceras para luego poder enlazarlas en cualquier otro lugar del texto.
 
@@ -1007,7 +995,7 @@ En Markdown Python todas las cabeceras llevan por defecto asociado un Id que dep
 
 ---
 
-### <a name="mark16">Extras</a>
+### <a name="mark16" style="text-decoration:underline;">Extras</a>
 
 Ejemplo de como dibujar una casilla de verificación en GitHub Markdown:  
 
@@ -1030,7 +1018,7 @@ Function | MySQL / MariaDB | PostgreSQL | SQLite
 :------------ | :-------------| :-------------| :-------------
 substr | :heavy_check_mark: |  :white_check_mark: | :heavy_check_mark:
 
-### <a name="mark17">Pygments: Resaltado de Sintaxis para Código Fuente</a>
+### <a name="mark17" style="text-decoration:underline;">Pygments: Resaltado de Sintaxis para Código Fuente</a>
 
 Para introducir ejemplos de código fuente en el sitio, habilitar el resaltado (o coloreado) de sintaxis mejora la presentación y legibilidad de los mismos. Existen diversos motores que nos permiten realizar esta función y Pugments es uno de los mejores. Está realizado en Python.  
 

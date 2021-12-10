@@ -1,4 +1,4 @@
-## Crear Snippet  
+## Crear Snippet
 
 Para poder crear un nuevo snippet Vamos a **Tools** ->**Developer**->**New Snippet** 
 
@@ -17,7 +17,7 @@ Hello, ${1:this} is a ${2:snippet}.
 ```
 
 
-### Etiqueta content: 
+### Etiqueta content:
 
 En la etiqueta **content** es donde va el contenido de tu código, específicamente dentro de corchetes **CDATA** ahí va a estar el código que vamos a incluir.  
 

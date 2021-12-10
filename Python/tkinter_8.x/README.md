@@ -22,7 +22,7 @@ A continuación sigue una lista detallada de todas las características que se p
 	
 
 - [Widgets](#mark0)
-    + [Contenedores]
+    + [Contenedores](#mark2)
         * [LabelFrame](./widgets/LabelFrame)
     * [Entry](./widgets/Entry/readme.md)
     * [Enlaces](#mark2)
@@ -76,6 +76,47 @@ Cuando se crea un *widget*, se crea una relación *padre-hijo*. Por ejemplo, si 
 [volver a índice](#top)
 
 ---
+
+### <a name="mark2">¿Que son los contenedores o frames?</a>
+
+Los **Frame** son contenedores de otros **widgets**. Pueden tener tamaño propio y posicionarse en distintos lugares de otro contenedor (ya sea la raíz u otro frame):
+
+**Ejemplo**:
+
+
+```python
+from tkinter import *
+
+root = Tk()
+# Podemos establecer las dimensiones para ver el frame dentro de la raiz
+root.geometry('600x500')
+# Color de fondo para diferenciar del frame
+root.config(bg='gray10')
+
+# Hijo de root, no ocurre nada
+frame = Frame(root)  
+
+# Empaqueta el frame en la raíz
+frame.pack()      
+
+# Como no tenemos ningún elemento dentro del frame, 
+# no tiene tamaño y aparece ocupando lo mínimo posible, 0*0 px
+
+# Color de fondo, background
+frame.config(bg="darkorange")     
+
+# Establecemos el tamaño para el frame y verlo
+frame.config(width=480,height=320) 
+
+root.mainloop()
+```
+
+**Resultado**:
+
+<p align="center">
+    <img src="./assets/img/frame-example01.png" width="600" height="500">
+</p>
+
 
 - <a href="./LabelFrame.md">LabelFrame</a>
 - <a href="./Listbox.md">Listbox</a
