@@ -26,7 +26,7 @@ A continuación sigue una lista detallada de todas las características que se p
     * [Notas a pie de página](#mark13)
     * [Abreviaturas](#mark14)
     * [Indentificadores de cabecera](#mark15)
-    * [Extras](#mark16)
+    * [Casillas de verificación](#mark16)
 
 - [Pygments](#mark17)
     - Lexers de Pygments más comunes para resaltado de sintaxis  
@@ -1002,21 +1002,35 @@ En Markdown Python todas las cabeceras llevan por defecto asociado un Id que dep
 
 ---
 
-### <a name="mark16" style="text-decoration:underline;">Extras</a>
+<br>
 
-Ejemplo de como dibujar una casilla de verificación en GitHub Markdown:  
+### <a name="mark16" style="text-decoration:underline;">Casillas de verificación</a>
 
-### Sistema solar exploración, 1950s - 1960s
+Puede crear una lista de tareas pendientes utilizando Markdown que se convertirá en una lista de casillas de verificación.
 
-- [ ] Mercury
-- [x] Venus 
-- [x] Earth (Orbit/Moon)
-- [x] Mars
-- [ ] Jupiter
-- [ ] Saturn
-- [ ] Uranus
-- [ ] Neptune
-- [ ] Comet Haley
+
+<table>
+	<thead>
+		<tr>
+			<th style="width:50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre>### Sistema solar exploración, 1950s - 1960s<br><br>- [ ] Mercury<br>- [x] Venus<br>- [x] Earth (Orbit/Moon)<br>- [x] Mars<br>- [ ] Jupiter<br>- [ ] Saturn<br>- [ ] Uranus<br>- [ ] Neptune<br>- [ ] Comet Haley
+				</pre>
+			</td>
+			<td>
+				 <img src="pictures/check.png" title="checkbox">
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
 
 Así es como uno podría hacer lo mismo en una tabla con emojis:
 
