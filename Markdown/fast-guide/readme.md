@@ -1,7 +1,7 @@
 
 ## Guía rápida Markdown y Pygments Lexers
 
-Esta guía rápida sirve para recordar todas las posibilidades que ofrecen markdown y Pygments para editar y formatear texto y comúnmente empleo para crear los artículos de Blog. Espero que no solo me sirva de guía a mí, si no a cualquiera que se acerque por primera vez a markdown o Pygments.  
+Esta guía rápida sirve para recordar todas las posibilidades que ofrecen markdown y Pygments para editar y formatear texto y comúnmente lo empleo para crear los artículos de Blog. Espero que no solo me sirva de guía a mí, si no a cualquiera que se acerque por primera vez a markdown o Pygments.  
 
 A continuación sigue una lista detallada de todas las características que se pueden emplear en Markdown y Markdown Extra (empleando *Python Markdown*) y los lexers más comunes de Pygments para resaltar el código fuente.  
 
@@ -9,11 +9,12 @@ A continuación sigue una lista detallada de todas las características que se p
 
 - [Markdown](#mark0)
     * [¿Que es Markdown?](#mark-0)
+	* [Editor Markdown online](https://dillinger.io)
 
 - [Sintaxys Markdown](#mark0)
     * [Cabeceras](#mark1)
     * [Enlaces](#mark2)
-    * [Parrafos](#mark3)
+    * [Párrafos](#mark3)
     * [Formato](#mark4)
     * [Citas](#mark5)
     * [Listas](#mark6)
@@ -27,8 +28,9 @@ A continuación sigue una lista detallada de todas las características que se p
     * [Abreviaturas](#mark14)
     * [Indentificadores de cabecera](#mark15)
     * [Casillas de verificación](#mark16)
+	* [Emojis](#mark17)
 
-- [Pygments](#mark17)
+- [Pygments](#mark18)
     - Lexers de Pygments más comunes para resaltado de sintaxis  
 
 ## <a name="mark0">Markdown</a>
@@ -37,7 +39,7 @@ Este es el lenguaje de marcado que permite formatear el texto fácilmente sin la
 
 ## <a name="mark-0">¿Que es Markdown?</a>
 
-Markdown es un lenguaje de marcado ligero parecido al que se emplea en muchas wikis y basado originalmente en convenciones existentes en el marcado de los correos electronicos. Emplea texto plano, procurando que sea legible pero consiguiendo que se convierte en XHTML correctamente formateado. Aunque no es muy conocido, empieza a ser muy popular y utilizado por programadores y blogueros que escriben sus artículos en este formato.  
+Markdown es un lenguaje de marcado ligero parecido al que se emplea en muchas wikis y basado originalmente en convenciones existentes en el marcado de los correos electrónicos. Emplea texto plano, procurando que sea legible pero consiguiendo que se convierta en XHTML correctamente formateado. Aunque no es muy conocido, empieza a ser muy popular y utilizado por programadores y blogueros que escriben sus artículos en este formato.  
 
 <br>
 
@@ -46,7 +48,7 @@ Markdown es un lenguaje de marcado ligero parecido al que se emplea en muchas wi
 
 ### <a name='mark1' style="text-decoration:underline;">Cabeceras</a>
 
-Los encabezamintos HTML se producen colocando un número determinado de almohadillas # antes del texto correspondiente al nivel de encabezamiento deseado (HTML ofrece hasta seis niveles). Los encabezamiento posibles se puedenver en la siguiente tabla:  
+Los encabezamintos HTML se producen colocando un número determinado de almohadillas '`#`' antes del texto correspondiente al nivel de encabezamiento deseado (HTML ofrece hasta seis niveles). Los encabezamientos posibles se pueden ver en la siguiente tabla:  
 
 <table>
 	<thead>
@@ -57,53 +59,53 @@ Los encabezamintos HTML se producen colocando un número determinado de almohadi
 	</thead>
 	<tbody>
 		<tr>
-			<td><pre class="no_mrkdwn"># Esto es un h1</pre></td>
-			<td><h2 style="font-size:30px;">Esto es un h1</h2></td>
+			<td><pre class="no_mrkdwn"># Esto es un &#60;h1&#62; en html</pre></td>
+			<td><h2 style="font-size:30px;">Esto es un &#60;h1&#62; en html</h2></td>
 		</tr>
 		<tr>
 			<td>
-				<pre class="no_mrkdwn">## Esto es un h2</pre>
+				<pre class="no_mrkdwn">## Esto es un &#60;h2&#62; en html</pre>
 			</td>
 			<td>
-				<h2>Esto es un h2</h2>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<pre class="no_mrkdwn">### Esto es un h3</pre>
-			</td>
-			<td>
-				<h3>Esto es un h3</h3>
+				<h2>Esto es un &#60;h2&#62; en html</h2>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				<pre class="no_mrkdwn">#### Esto es un h4</pre>
+				<pre class="no_mrkdwn">### Esto es un &#60;h3&#62; en html</pre>
 			</td>
 			<td>
-				<h4>Esto es un h4</h4>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<pre class="no_mrkdwn">##### Esto es un h5</pre>
-			</td>
-			<td>
-				<h5>Esto es un h5</h5>
+				<h3>Esto es un &#60;h3&#62; en html</h3>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				<pre class="no_mrkdwn">###### Esto es un h6</pre>
+				<pre class="no_mrkdwn">#### Esto es un &#60;h4&#62; en html</pre>
 			</td>
 			<td>
-				<h6>Esto es un h6</h6>
+				<h4>Esto es un &#60;h4&#62; en html</h4>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre class="no_mrkdwn">##### Esto es un &#60;h5&#62; en html</pre>
+			</td>
+			<td>
+				<h5>Esto es un &#60;h5&#62; en html</h5>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre class="no_mrkdwn">###### Esto es un &#60;h6&#62; en html</pre>
+			</td>
+			<td>
+				<h6>Esto es un &#60;h6&#62; en html</h6>
 			</td>
 		</tr>
 	</tbody>
 </table>
 
-Markdown también nos permite encerrar cada encabezado entre almohadillas. Pero con el único fin de esto es un **motivo estético** porque no es necesario en absoluto, es decir, que podemos hacer lo siguiente:
+Markdown también nos permite encerrar cada encabezado entre almohadillas, pero con el único fin de esto es un **motivo estético** porque no es necesario en absoluto, es decir, que podemos hacer lo siguiente:
 
 <br><br>
 <table>
@@ -116,10 +118,10 @@ Markdown también nos permite encerrar cada encabezado entre almohadillas. Pero 
 	<tbody>
 		<tr>
 			<td>
-				<pre class="no_mrkdwn">### Esto es un h3 ###</pre>
+				<pre class="no_mrkdwn">### Esto es un &#60;h3&#62; en html ###</pre>
 			</td>
 			<td>
-				<h3>Esto es un h3</h3>
+				<h3>Esto es un &#60;h3&#62; en html&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
 			</td>
 		</tr>
 	</tbody>
@@ -137,10 +139,10 @@ Para los encabezamientos de los dos primeros niveles existe también otra manera
 	<tbody>
 		<tr>
 			<td>
-				<pre class="no_mrkdwn">Esto es un h1<br>=============</pre>
+				<pre class="no_mrkdwn">Esto es un &#60;h1&#62; en html<br>=======================</pre>
 			</td>
 			<td>
-				<h2 style="font-size:30px;">Esto es un h1</h2>
+				<h2 style="font-size:30px;">Esto es un &#60;h1&#62; en html</h2>
 			</td>
 		</tr>
 			<tr>
@@ -154,9 +156,9 @@ Para los encabezamientos de los dos primeros niveles existe también otra manera
 	</tbody>
 </table>
 
-Es decir para los encabezamientos principales se subraya el texto con el signo igual(=). Para los encabezamientos de segundo nivel se utilizan guiones(-) para subrayar. Es indiferente el número de signos iguales o guiones que se empleen, con uno es suficiente.
+Es decir para los encabezamientos principales se subraya el texto con el signo igual '`=`'. Para los encabezamientos de segundo nivel se utilizan guiones '`-`' para subrayar. Es indiferente el número de signos iguales o guiones que se empleen, con uno es suficiente.
 
-[volver a índice](#top)
+[volver a índice](#top) &#x2934;
 
 ---
 
@@ -219,14 +221,14 @@ Existe una manera adicional de crear enlaces automáticos para direcciones URL, 
 				<pre class="no_mrkdwn">&lt;http://eniblog.com></pre>
 			</td>
 			<td>
-				<a href="#mark2">http://eniblog.com</a>
+				<a href="#mark2">http://eniblog.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			</td>
 		</tr>
 </table>
 
->**Consideración**: Markdown no tiene la opción de publicar links que se abran en una nueva pestaña del navegador. Para eso habría que utilizar HTML.
+>**Consideración**: Markdown no tiene la opción de publicar links que se abran en una nueva pestaña del navegador. Para eso habría que utilizar HTML con el atributo (target='_blank').
 		
-[volver a índice](#top)
+[volver a índice](#top) &#x2934;
 
 ---
 
@@ -250,18 +252,22 @@ Para crear párrafos se deja una línea en blanco. De este mondo:
 			</td>
 			<td>
 				<p>Este es el primer párrafo</p>
-				<p>Este es el segundo párrafo</p>
+				<p>Este es el segundo párrafo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 			</td>
 		</tr>
 	</tbody>
 </table>
 
+<br><br>
+
 Para crear un salto de línea dentro de un parráfo, simplemente se dejan dos espacios al final de la última palabra de esa línea, de este modo:  
+
+<br><br>
 
 <table>
 		<thead>
 		<tr>
-			<th style="width: 50%;">Tecleas</th>
+			<th style="width: 55%;">Tecleas</th>
 			<th>Obtienes</th>
 		</tr>
 	</thead>
@@ -271,13 +277,13 @@ Para crear un salto de línea dentro de un parráfo, simplemente se dejan dos es
 				<pre class="no_mrkdwn">Esta es la primera línea&nbsp;&nbsp;<br>y este es la segunda línea</pre>
 			</td>
 			<td>
-				<p>Esta es la primera línea<br>y este es el salto de línea</p>
+				<p>Esta es la primera línea<br>y este es el salto de línea&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 			</td>
 		</tr>
 	</tbody>
 </table>
 
-[volver a índice](#top)
+[volver a índice](#top) &#x2934;
 
 ---
 
@@ -346,9 +352,9 @@ El formato básico del texto, es decir negritas y cursivas, se pueden realizar d
 	</tbody>
 </table>
 
-Se pueden emplear indistintamente tanto el asterisco * como el guión bajo _ siempre y cuando no se mezclen y lo que determina el formato es el número de ellos antes y después del bloque de texto a formatear. Uno es cursiva, dos es negrita, y tres ambas a la vez, así de sencillo.
+Se pueden emplear indistintamente tanto el asterisco '*' como el guión bajo '_' siempre y cuando no se mezclen y lo que determina el formato es el número de ellos antes y después del bloque de texto a formatear. Uno es cursiva, dos es negrita, y tres ambas, así de sencillo.
 
-[volver a índice](#top)
+[volver a índice](#top) &#x2934;
 
 ---
 
@@ -406,7 +412,7 @@ Para crear bloques de cita, se emplea el carácter mayor que > antes del bloque 
 	</tbody>
 </table>
 
-[volver a índice](#top)
+[volver a índice](#top) &#x2934;
 
 ---
 
@@ -434,7 +440,7 @@ Markdown permite crear dos tipos de listas, ordenadas y desordenadas, es decir n
 				<p>Lista numerada (ordenada)</p>
 				<ol>
 					<li>Este es el primer elemento</li>
-					<li>Este es el segundo elemento</li		<li>Este es el tercer elemento</li>
+					<li>Este es el segundo elemento</li>		<li>Este es el tercer elemento</li>
 				</ol>
 			</td>
 		</tr>
@@ -466,7 +472,7 @@ Markdown permite crear dos tipos de listas, ordenadas y desordenadas, es decir n
 		</tr>
 		<tr>
 			<td>
-				<pre>Se pueden mezclar distintos tipos<br>de listas y anidar unas dentro de<br>otras.<br><br>1. Esto es una lista ordenada<br>2. Segundo elemento de la lista ordenada<br>    1. Esta es una lista ordenada<br> anidada dentro de otra<br>        * Lista desordenada anidada a tercer nivel<br>        * Segundo elemento de esta lista<br>    2. Este es el segundo elemento<br>de la lista ordenada anidada</pre>
+				<pre>Se pueden mezclar distintos tipos<br>de listas y anidar unas dentro de<br>otras.<br><br>1. Esto es una lista ordenada<br>2. Segundo elemento de la lista ordenada<br>&nbsp;&nbsp;&nbsp;&nbsp;1. Esta es una lista ordenada<br> anidada dentro de otra<br>        * Lista desordenada anidada a tercer nivel<br>        * Segundo elemento de esta lista<br>    2. Este es el segundo elemento<br>de la lista ordenada anidada</pre>
 			</td>
 			<td>
 				<p>Se pueden mezclar distintos tipos de listas y anidar unas dentro de otras.</p>
@@ -481,20 +487,19 @@ Markdown permite crear dos tipos de listas, ordenadas y desordenadas, es decir n
 						</ul>
 						<li>Este es el segundo elemento de la lista ordenada anidada</li>
 					</ol>
-
 				</ol>
 			</td>
 		</tr>
 	</tbody>
 </table>
 
-[volver a índice](#top)
+[volver a índice](#top) &#x2934;
 
 ---
 
 ### <a name="mark7" style="text-decoration:underline;">Listas de definiciones</a>
 
-Se pueden crear listas de definiciones, que están compuestas de términos y las definiciones de los mismos, como si fuera un diccionario. Su creación es muy simple:  
+Se pueden crear listas de definiciones, que están compuestas del **término** y la **lista de definiciones** del mismo, como si fuera un diccionario. Su creación es muy simple:  
 
 <table>
 	<thead>
@@ -506,7 +511,7 @@ Se pueden crear listas de definiciones, que están compuestas de términos y las
 	<tbody>
 		<tr>
 			<td>
-				<pre>Primer Termino<br> : Primera definición<br><br>Segundo termino<br> : segunda definición
+				<pre>Primer término<br> : Primera definición<br><br>Segundo término<br> : segunda definición
 				</pre>
 			</td>
 			<td>
@@ -548,13 +553,17 @@ Se pueden crear listas de definiciones, que están compuestas de términos y las
 	</tbody>
 </table>
 
-[volver a índice](#top)
+>**Consideración**: En la primera línea escribimos el término y en la siguiente dejamos un espacio en blanco e ingresamos el carácter **:** y la definición de cuyo término precedido de un espacio en blanco.
+
+<br>
+
+[volver a índice](#top) &#x2934;
 
 ---
 
 ### <a name="mark8" style="text-decoration:underline;">Imágenes</a>
 
-La manera de enlazar imágines es básicamente la misma de crear enlaces, con una única diferencia, se añade el carácter de exclamación <mark>!</mark> al principio de la pareja de corchetes que definen el nombre del enlace.  
+La manera de enlazar imágenes es básicamente la misma de crear enlaces, con una única diferencia de que se añade el carácter de exclamación <mark>!</mark> al principio de la pareja de corchetes que definen el nombre del enlace.  
 
 Ejemplos:  
 
@@ -593,7 +602,7 @@ Ejemplos:
 	</tbody>
 </table>
 
-[volver a índice](#top)
+[volver a índice](#top) &#x2934;
 
 ---
 
@@ -622,7 +631,7 @@ Ejemplos:
 					<thead>
 						<tr>
 							<th style="width:50%;">Cabecera A</th>
-							<th>Cabecera B</th>
+							<th style="width:50%;">Cabecera B</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -640,7 +649,7 @@ Ejemplos:
 		</tr>
 		<tr>
 			<td>
-				<pre>Si prefiere, por estética, se pueden<br>alinear las columnas e incluso comenzar y finalizar<br>las filas con el símbolo |, pero no es necesario<br><br>| Cabecera A | Cabecera B |<br>| ---------- | ---------- |<br>| Campo A0   | Campo B0   |<br>| Campo A1   | Campo B1   |</pre>
+				<pre>Si prefiere, por estética, se<br>pueden alinear las columnas e incluso comenzar y finalizarlas<br>filas con el símbolo '|', pero<br>no es necesario<br><br>| Cabecera A | Cabecera B |<br>| ---------- | ---------- |<br>| Campo A0   | Campo B0   |<br>| Campo A1   | Campo B1   |</pre>
 			</td>
 			<td>
 				<p>Si prefiere, por estética, se pueden alinear las columnas e incluso comenzar y finalizar las filas con el símbolo |, pero no es necesario</p>
@@ -648,7 +657,7 @@ Ejemplos:
 					<thead>
 						<tr>
 							<th style="width:50%;">Cabecera A</th>
-							<th>Cabecera B</th>
+							<th style="width:50%;">Cabecera B</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -666,10 +675,10 @@ Ejemplos:
 		</tr>
 		<tr>
 			<td>
-				<pre>Se puede especificar la alineación de<br>cada columna mediante la adición de dos<br>puntos a las líneas de separación. Dos puntos<br>a la izquierda de la línea de separación hará<br>que columna esté alineada a la izquierda, dos<br>puntos a la derecha de la línea hará que la<br>columna esté alineada a la derecha, dos puntos<br>en ambos lados significa que la columna se<br>alinea al centro.<br><br>| Elemento | Cantidad | Precio |<br>| :------- | :------: | -----: |<br>| Item 1   | 15       | $1.200 |<br>| Item 2   | 103      | $2.500 |</pre>
+				<pre>Se puede especificar la alineación<br>de cada columna mediante la adición de dos puntos ':' a las líneas de separación, ':' a la izquierda de la línea de separación hará que columna esté alineada a la izquierda, ':' a la derecha de la línea hará que la columna esté alineada a la derecha, ':' en ambos lados significa que la columna se<br>alinea al centro.<br><br>| Elemento | Cantidad | Precio |<br>| :------- | :------: | -----: |<br>| Item 1   | 15       | $1.200 |<br>| Item 2   | 103      | $2.500 |</pre>
 			</td>
 			<td>
-				<p>Se puede especificar la alineación de cada columna mediante la adición de dos puntos a las líneas de separación. Dos puntos a la izquierda de la línea de separación hará que la columna esté alineada a la izquierda, dos puntos a la derecha de la línea de separación hará que la columna esté alineada a la derecha, dos puntos en ambos lados significa que la columna se alinea al centro.</p>
+				<p>Se puede especificar la alineación de cada columna mediante la adición de dos puntos ':' a las líneas de separación, ':' a la izquierda de la línea de separación hará que la columna esté alineada a la izquierda, ':' a la derecha de la línea de separación hará que la columna esté alineada a la derecha, ':' en ambos lados significa que la columna se alinea al centro.</p>
 				<table>
 					<thead>
 						<tr>
@@ -696,7 +705,7 @@ Ejemplos:
 	</tbody>
 </table>
 
-[volver a índice](#top)
+[volver a índice](#top) &#x2934;
 
 ---
 
@@ -704,9 +713,12 @@ Ejemplos:
 
 Se pueden crear bloques de código para albergar extractos de código fuente de un lenguaje de programación o para reproducir literalmente cualquier tipo de texto que sea interpretado por markdown. Lo único necesario es que cada línea de este bloque empiece por al menos 4 espacios o 1 tabulado.  
 
-<b>De todos modos, es mucho más recomendable para estas tareas emplear el resaltado de código que especifica en esta [sección](#).</b>
+<b>De todos modos, es mucho más recomendable para estas tareas emplear el resaltado de código que se puede ver en esta [sección](#mark18).</b>
 
+<br><br>
 Ejemplos:
+
+<br>
 
 <table>
 	<thead>
@@ -735,7 +747,7 @@ Ejemplos:
 	</tbody>
 </table>
 
-Existe otro modo de crear un bloque de código, encerrándolo entre dos líneas formadas por tres o más caracteres tilde ~
+Existe otro modo de crear un bloque de código, encerrándolo entre dos líneas formadas por tres o más caracteres tilde '~'.
 
 <table>
 	<thead>
@@ -750,7 +762,7 @@ Existe otro modo de crear un bloque de código, encerrándolo entre dos líneas 
 				<pre>Esto es un parráfo normal</pre>
 			</td>
 			<td>
-				<p>Esto es un parráfo normal</p>
+				<p>Esto es un parráfo normal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 			</td>
 		</tr>
 		<tr>
@@ -765,7 +777,7 @@ Existe otro modo de crear un bloque de código, encerrándolo entre dos líneas 
 </table>
 
 Por último existe una opción para resaltar pequeños trozos de código dentro de parráfos de texto normal.  
-Para lograr esto debemos encerrar el código entre dos acentos graves (`)
+Para lograr esto debemos encerrar el código entre dos acentos graves. Por \`ejemplo`.
 
 
 <table>
@@ -787,13 +799,15 @@ Para lograr esto debemos encerrar el código entre dos acentos graves (`)
 	</tbody>
 </table>
 
-[volver a índice](#top)
+[volver a índice](#top) &#x2934;
 
 ---
 
+<br>
+
 ### <a name="mark11" style="text-decoration:underline;">Líneas Horizontales</a>
 
-Para crear líneas horizontales se debe crear una línea rodeaba de líneas en blanco y compuesta por 3 o más símbolos, que pueden ser guiones, asteriscos o guiones bajos. Pueden crearse espacios entre caracteres si así se deses por estética.
+Para crear líneas horizontales se debe crear una línea rodeaba de líneas en blanco y compuesta por 3 o más símbolos, que pueden ser guiones, asteriscos o guiones bajos. Pueden crearse espacios entre caracteres si así se desea por estética.
 
 <table>
 	<thead>
@@ -815,9 +829,7 @@ Para crear líneas horizontales se debe crear una línea rodeaba de líneas en b
 		</tr>
 		<tr>
 			<td>
-				<pre>
-				- - -
-				</pre>
+				<pre>- - -</pre>
 			</td>
 			<td>
 				<hr>
@@ -836,13 +848,13 @@ Para crear líneas horizontales se debe crear una línea rodeaba de líneas en b
 	</tbody>
 </table>
 
-[volver a índice](#top)
+[volver a índice](#top) &#x2934;
 
 ---
 
 ### <a name="mark12" style="text-decoration:underline;">Escapar Carácteres</a>
 
-¿Que ocurre cuando queremos mostrar un carácter que markdown emplea para el marcado? Es posible que dependiendo de donde y como se emplee esté símbolo, sea interpretado por markdown y nos estropee el formato del texto. En este caso lo que se necesita es *escapar* el carácter con el símbolo backslash \. En esta tabla se muestran los símbolos que pueden ser escapados por markdown.  
+¿Que ocurre cuando queremos mostrar un carácter que markdown emplea para el marcado? Es posible que dependiendo de donde y como se emplee esté símbolo, sea interpretado por markdown y alterará el formato del texto. En este caso lo que se necesita es **escapar el carácter** con el símbolo backslash `\`. En esta tabla se muestran los símbolos que pueden ser escapados por markdown.  
 
 <table>
 	<thead>
@@ -854,8 +866,7 @@ Para crear líneas horizontales se debe crear una línea rodeaba de líneas en b
 	<tbody>
 		<tr>
 			<td>
-				<pre>\\ \` \* \_ \{\} \[\] \(\) \# \+ \- \. \!
-				\: \|
+				<pre>\\ \` \* \_ \{\} \[\] \(\) \# \+ \- \. \! \: \|
 				</pre>
 			</td>
 			<td>
@@ -865,9 +876,11 @@ Para crear líneas horizontales se debe crear una línea rodeaba de líneas en b
 	</tbody>
 </table>
 
-[volver a índice](#top)
+[volver a índice](#top) &#x2934;
 
 ---
+
+<br>
 
 ### <a name="mark13" style="text-decoration:underline;">Notas a pie de página</a>
 
@@ -883,7 +896,7 @@ Las notas de páginas se crean de una manera muy sencilla en Markdown. Cada nota
 	<tbody>
 		<tr>
 			<td>
-				<pre>Esto es un texto con nota al pie<br>[^1]
+				<pre>Esto es un texto con nota al pie[^1]
 				<br><br>[^1]: Esto es una nota al pie de página.</pre>
 			</td>
 			<td>
@@ -932,6 +945,10 @@ Cada marcador de nota debe tener un nombre distinto. Ese nombre se utiliza para 
 							<p>Esto es una nota al pie de página. 
 								<a href="#fnref:1">↩</a></p>
 						</li>
+						<li id="fn:1">
+							<p>Esto es segunda nota al pie. 
+								<a href="#fnref:1">↩</a></p>
+						</li>
 					</ol>
 				</div>
 			</td>
@@ -942,6 +959,8 @@ Cada marcador de nota debe tener un nombre distinto. Ese nombre se utiliza para 
 [volver a índice](#top)
 
 ---
+
+<br><br>
 
 ### <a name="mark14" style="text-decoration:underline;">Abreviaturas</a>
 
@@ -973,6 +992,8 @@ Las abreviaturas son sensibles a mayúsculas, por lo que hay que tenerlo en cuen
 ---
 
 ### <a name="mark15" style="text-decoration:underline;">Identificadores de Cabecera</a>
+
+<br>
 
 Los identificadores de cabecera nos permiten establecer un Identificador a las cabeceras para luego poder enlazarlas en cualquier otro lugar del texto.
 
@@ -1030,8 +1051,6 @@ Puede crear una lista de tareas pendientes utilizando Markdown que se convertir�
 </table>
 
 
-
-
 Así es como uno podría hacer lo mismo en una tabla con emojis:
 
 
@@ -1039,217 +1058,16 @@ Function | MySQL / MariaDB | PostgreSQL | SQLite
 :------------ | :-------------| :-------------| :-------------
 substr | :heavy_check_mark: |  :white_check_mark: | :heavy_check_mark:
 
-### <a name="mark17" style="text-decoration:underline;">Pygments: Resaltado de Sintaxis para Código Fuente</a>
 
-Para introducir ejemplos de código fuente en el sitio, habilitar el resaltado (o coloreado) de sintaxis mejora la presentación y legibilidad de los mismos. Existen diversos motores que nos permiten realizar esta función y Pugments es uno de los mejores. Está realizado en Python.  
+[volver a índice](#top)
 
-Resaltar código con markdown y Pygments es realmente sencillo, solamente hay que hacer lo mismo que haríamos con markdown, pero añadiendo un **lexer** de Pygments en la primera línea. Un lexer es un indentificador del lenguaje que queremos resaltar para que el coloreado se haga correctamente. Los lexer se construyen empleando 2 caracteres `~` seguidos del nombre del lexer, por ejemplo, `~~~python` sería el lexer empleado para identificar un fragmento de código en lenguaje Python o en su lugar puede emplear también el acento grave.  
+---
 
-Lo podemos ver mejor con un ejemplo:
+<br>
 
-<table>
-	<thead>
-		<tr>
-			<th style="width:50%;">Tecleas</th>
-			<th>Obtienes</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				<pre>```python<br>import lifetime<br><br>for each_day in lifetime.days():<br>&nbsp;&nbsp;&nbsp;&nbsp;carpe_diem()<br>```</pre>
-			</td>
-			<td>
-				<pre><span style="color: darkblue;">import</span> <span>lifetine</span><br><br><span style="color: darkblue;">for </span>each_day <span style="color: darkblue;">in</span> <span>lifetime.days</span><span style="color: darkblue;">()</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span>carpe_diem</span><span style="color: darkblue;">()</span>
-				</pre>
-			</td>
-		</tr>
-	</tbody>
-</table>
+### <a name="mark17" style="text-decoration:underline;">Emojis</a>
 
-Lexers de Pygments más comunes para resaltado de sintaxys  
-
-A continuación muestro una relación de los lexers más comunes empleados para el resaltado de código fuente.  
-
-- `apache` - configuración Apache
-
-```apache
-<VirtualHost *:80>
-DocumentRoot /www/example1
-ServerName www.example1.com
-
-# Other directives here
-
-</VirtualHost>
-```
-
-- `bash` y `console` - Bash y Shell
-
-```bash
-#!/bin/bash
-echo "Hola mundo"
-```
-
-- `bat` - Archivos Batch DOS/Windows
-
-```bat
-@echo ¡Hola, Mundo!
-```
-
-- `boo` - Boo
-
-```boo
-print "Hello, world"
-```
-
-- `c` - C
-
-```c
-#include <stdio.h>
-
-int main()
-{
-    printf("¡Hola, mundo!\n");
-    return 0;
-}
-```
-
-- `cpp` - C++
-
-```cpp
-#include <iostream.h>
-using namespace std;
-
-int main() {
-  cout << "¡Hola, mundo!" << endl;
-  return 0;
-}
-```
-- `csharp`- C#
-
-```csharp
-using System;
-
-class MainClass
-{
-	public static void Main()
-	{
-		System.Console.WriteLine("¡Hola, mundo!");
-	}
-}
-```
-
-- `css` - Cascade Style Sheet (CSS)
-
-```css
-</pre>
-   </td>
-   <td class="get">
-<css>
-body {
-    font: 75% georgia, sans-serif;
-    color: #555753;
-    background: #fff;
-    margin: 0;
-    padding: 5px;
-}
-```
-
-- `diff` ó `udiff` - Diff
-
-```diff
---- /path/to/original ''timestamp''
-+++ /path/to/new      ''timestamp''
-@@ -1,3 +1,9 @@
-+This is an important
-+notice! It should
-+therefore be located at
-+the beginning of this
-+document!
-+
- This part of the
- document has stayed the
- same from version to
-```
-
-- `erlang` - Erlang
-
-```erlang
--module (hola).
--export ([hola_mundo/0]).
-
-hola_mundo() -> io:fwrite("Hola mundo!\n").
-```
-
-- `go` - Go
-
-```go
-package main
-
-import "fmt"
-
-func main() {
-   fmt.Println("Hello World!")
-}
-```
-
-- `haskell` - Haskell
-
-```haskell
-holaMundo :: IO ()
-holaMundo = putStrLn "Hola mundo!"
-```
-
-- `html` - HTML
-
-```html
-<html>
-  <head>
-    <title>Hola Mundo</title>
-  </head>
-  <body>
-
-¡Hola Mundo!
-   </body>
-</html>
-```
-
-- `java` - Java
-
-```java
-public class HolaMundo {
-       public static void main(String[] args) {
-          System.out.println("¡Hola, mundo!");
-       }
-}
-```
-
-- `js` - javascript
-
-```js
-<script type="text/javascript">
-  document.write("¡Hola, mundo!");
-</script>
-```
-
-- `latex` - LaTex
-
-```latex
-\documentclass[12pt]{article}
-\usepackage{lingmacros}
-\usepackage{tree-dvips}
-\begin{document}
-
-\section*{Notes for My Paper}
-```
-
-- `cl` - Common Lisp
-
-```cl
-(format t "¡Hola, mundo!")
-```
-
-
+Esta es la lista completa de emojis y emoticonos disponibles en Markdown junto con sus respectivos **shorcodes**. Ten en cuenta que los shortcodes pueden variar entre diferentes aplicaciones. Por ello a continuación de deja el sabor a github.
 
 People
 
@@ -1563,5 +1381,221 @@ Symbols
 | :small_blue_diamond: `:small_blue_diamond:` | :small_orange_diamond: `:small_orange_diamond:` | :small_red_triangle: `:small_red_triangle:` |
 | :small_red_triangle_down: `:small_red_triangle_down:` | :shipit: `:shipit:` |
 
+
+[volver a índice](#top)
+
+---
+
+<br>
+
+### <a name="mark18" style="text-decoration:underline;">Pygments: Resaltado de Sintaxis para Código Fuente</a>
+
+Para introducir ejemplos de código fuente en el sitio, habilitar el resaltado (o coloreado) de sintaxis mejora la presentación y legibilidad de los mismos. Existen diversos motores que nos permiten realizar esta función y Pugments es uno de los mejores. Está realizado en Python.  
+
+Resaltar código con markdown y Pygments es realmente sencillo, solamente hay que hacer lo mismo que haríamos con markdown, pero añadiendo un **lexer** de Pygments en la primera línea. Un lexer es un indentificador del lenguaje que queremos resaltar para que el coloreado se haga correctamente. Los lexer se construyen empleando 2 caracteres `~` seguidos del nombre del lexer, por ejemplo, `~~~python` sería el lexer empleado para identificar un fragmento de código en lenguaje Python o en su lugar puede emplear también el acento grave.  
+
+Lo podemos ver mejor con un ejemplo:
+
+<table>
+	<thead>
+		<tr>
+			<th style="width:50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre>```python<br>import lifetime<br><br>for each_day in lifetime.days():<br>&nbsp;&nbsp;&nbsp;&nbsp;carpe_diem()<br>```</pre>
+			</td>
+			<td>
+				<pre><span style="color: darkblue;">import</span> <span>lifetine</span><br><br><span style="color: darkblue;">for </span>each_day <span style="color: darkblue;">in</span> <span>lifetime.days</span><span style="color: darkblue;">()</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span>carpe_diem</span><span style="color: darkblue;">()</span>
+				</pre>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+Lexers de Pygments más comunes para resaltado de sintaxys  
+
+A continuación muestro una relación de los lexers más comunes empleados para el resaltado de código fuente.  
+
+- `apache` - configuración Apache
+
+```apache
+<VirtualHost *:80>
+DocumentRoot /www/example1
+ServerName www.example1.com
+
+# Other directives here
+
+</VirtualHost>
+```
+
+- `bash` y `console` - Bash y Shell
+
+```bash
+#!/bin/bash
+echo "Hola mundo"
+```
+
+- `bat` - Archivos Batch DOS/Windows
+
+```bat
+@echo ¡Hola, Mundo!
+```
+
+- `boo` - Boo
+
+```boo
+print "Hello, world"
+```
+
+- `c` - C
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    printf("¡Hola, mundo!\n");
+    return 0;
+}
+```
+
+- `cpp` - C++
+
+```cpp
+#include <iostream.h>
+using namespace std;
+
+int main() {
+  cout << "¡Hola, mundo!" << endl;
+  return 0;
+}
+```
+- `csharp`- C#
+
+```csharp
+using System;
+
+class MainClass
+{
+	public static void Main()
+	{
+		System.Console.WriteLine("¡Hola, mundo!");
+	}
+}
+```
+
+- `css` - Cascade Style Sheet (CSS)
+
+```css
+</pre>
+   </td>
+   <td class="get">
+<css>
+body {
+    font: 75% georgia, sans-serif;
+    color: #555753;
+    background: #fff;
+    margin: 0;
+    padding: 5px;
+}
+```
+
+- `diff` ó `udiff` - Diff
+
+```diff
+--- /path/to/original ''timestamp''
++++ /path/to/new      ''timestamp''
+@@ -1,3 +1,9 @@
++This is an important
++notice! It should
++therefore be located at
++the beginning of this
++document!
++
+ This part of the
+ document has stayed the
+ same from version to
+```
+
+- `erlang` - Erlang
+
+```erlang
+-module (hola).
+-export ([hola_mundo/0]).
+
+hola_mundo() -> io:fwrite("Hola mundo!\n").
+```
+
+- `go` - Go
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+   fmt.Println("Hello World!")
+}
+```
+
+- `haskell` - Haskell
+
+```haskell
+holaMundo :: IO ()
+holaMundo = putStrLn "Hola mundo!"
+```
+
+- `html` - HTML
+
+```html
+<html>
+  <head>
+    <title>Hola Mundo</title>
+  </head>
+  <body>
+
+¡Hola Mundo!
+   </body>
+</html>
+```
+
+- `java` - Java
+
+```java
+public class HolaMundo {
+       public static void main(String[] args) {
+          System.out.println("¡Hola, mundo!");
+       }
+}
+```
+
+- `js` - javascript
+
+```js
+<script type="text/javascript">
+  document.write("¡Hola, mundo!");
+</script>
+```
+
+- `latex` - LaTex
+
+```latex
+\documentclass[12pt]{article}
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\begin{document}
+
+\section*{Notes for My Paper}
+```
+
+- `cl` - Common Lisp
+
+```cl
+(format t "¡Hola, mundo!")
+```
 
 

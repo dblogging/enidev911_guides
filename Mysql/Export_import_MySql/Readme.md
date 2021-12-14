@@ -38,7 +38,7 @@ Donde:
 Ejemplo: 
 
 <p align = 'center'>
-  <img src = 'img/01_mysqldump_export.png' width = 900 height = 170/>
+  <img src = 'img/01_mysqldump_export.png' width= "900" height="170"/>
 </p>
 
 Generando un archivo similar a este según sus bases de datos que quieran exportar: 
@@ -121,13 +121,13 @@ CREATE TABLE IF NOT EXISTS contactos (
 CMD: 
 
 <p align = 'center'>
-  <img src = 'img/02_mysql_import.png' width = 900 height = 170/>
+  <img src = 'img/02_mysql_import.png' width ="900" height="170"/>
 </p>
 
 Obtendriamos lo siguiente al revisar:
 
 <p align = 'center'>
-  <img src = 'img/03_mysql_showimport.png' width = 750 height = 500/>
+  <img src = 'img/03_mysql_showimport.png' width="750" height = "500"/>
 </p>
 
 
@@ -153,9 +153,9 @@ mysql> source /home/usuario/archivo.sql
 PROMPT:
 
 <p align = 'center'>
-  <img src = 'img/04_mysql_showimport.png' width = 750 height = 500/>
+  <img src = 'img/04_mysql_showimport.png' width = "750" height="500"/>
 </p>
 
 <p align = 'center'>
-  <img src = 'img/05_mysql_showimport.png' width = 750 height = 500/>
+  <img src = 'img/05_mysql_showimport.png' width="750" height= "500"/>
 </p>

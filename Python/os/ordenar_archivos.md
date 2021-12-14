@@ -67,7 +67,7 @@ def organizer(path: str):
 	if not os.path.exists(path):
 		print(f"ERROR. Not found {path} or not exists.")
 		return
-	files = os.listdisr(path)
+	files = os.listdir(path)
 	extensions = [os.path.splitext(file)[1].strip(".") for file in files]
 ```
 

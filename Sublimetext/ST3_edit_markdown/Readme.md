@@ -1,4 +1,4 @@
-## Cómo configurar ST3 para la edición de Markdown 
+## Cómo configurar ST3 para la edición de Markdown
 
 Recien instalado, Sublime Text no ofrece ningún soporte específico de Markdown, *sin resaltado de sintaxis*, sin formato especial en cursiva o negrita, sin atajos de teclado y sin vista previa de salida HTML.  
 Para agregar estas características debemos instalar algunos complementos y configurar algunas preferencias.  
@@ -7,6 +7,7 @@ Para agregar estas características debemos instalar algunos complementos y conf
 2. Escribimos install y seleccionamos (Install Package)
 3. Escribir el nombre del package (**MarkdownEditing**)  
 4. Reinicia SublimeText  
+
 
 
 <p align="center">
@@ -40,7 +41,7 @@ Simplemente elimine el "Markdown", reinicie ST3
 
 Despues de reiniciar ST3, todas las funciones del paquete **MarkdownEditing** se aplicarán solo a los archivos con extensión.md.  
 
-## Características de MarkdownEditing  
+## Características de MarkdownEditing
 
 La extensión instala un atractivo tema gris sobre gris para los archivos Markdown en el editor, Más importante aún, proporciona *formato en línea de Markdown*. Eso significa negritas editor de título, cursivas para palabras envueltas en los simbolos \*\* Las seleccciones marcadas para las citas de bloque y el código fuente también se sombrearán de manera diferente. También se manejará inteligentemente listas de viñetas y listas numeradas, lo que puede ahorrarle mucho tiempo al escribir. Además de eso, ST también incluirá comillas dobles, paréntesis, guiones bajos y astericos(\*) para asegurarse de cerrarlos mientras escribe.  
 
@@ -59,7 +60,7 @@ Personalmente, el esquema de colores que este paquete incorpora por defecto no e
   <img src="img/mde_yellow.png" alt="Yellow" width="480" height="450"/>
 </p>
 
-## Atajos que se habilitan junto a MarkdownEditing  
+## Atajos que se habilitan junto a MarkdownEditing
 
 |Combinación|Descripción|
 |-----------|-----------|

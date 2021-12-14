@@ -34,7 +34,7 @@ print("El número '8' es equivalente al valor '%o' en el sistema octal" % 8)
 # output El número '8' es equivalente al valor '10' en el sistema octal
 ```
 
-%x o %X - convierte un número en Hexadecimal (con signo) depende el uso con minúscula o mayúscula.
+%x  o  %X - convierte un número en Hexadecimal (con signo) depende el uso con minúscula o mayúscula.
 
 ```py
 print("El número '28' es equivalente al valor '%x' en el sistema hexadecimal" % 28)
@@ -109,4 +109,15 @@ for nombre in ("Pedro", "Juan", "Diego"):
 # .....Juan
 # ....Diego
 ```
+Empleando el caracter "^" causará que los nombres se centre.
 
+```py
+for nombre in ("Pedro", "Juan", "Diego", "Sol"):
+	print("{0:^9}".format(nombre))
+
+# output: 
+# ..Pedro..
+# ..Juan...
+# ..Diego..
+# ...Sol...
+```
