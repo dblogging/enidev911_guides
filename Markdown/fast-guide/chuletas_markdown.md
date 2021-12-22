@@ -25,10 +25,17 @@ del primer nivel.
 &#x1F4DD;
 
 
-📝
+:file_folder: :file_folder::file_folder:
 
 La especificación HTML es mantenida
 por el
 W3C.
 *[HTML]: Hyper Text Markup Language
 *[W3C]: World Wide Web Consortium
+
+Esto es una línea normal
+>Esto es parte de un bloque de
+cita.
+>Esto es parte del mismo bloque de
+cita
+>Una cita más 

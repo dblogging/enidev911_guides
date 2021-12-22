@@ -1,5 +1,5 @@
 
-## Guía rápida Markdown y Pygments Lexers
+## Guía rápida Markdown y Pygments Lexers 
 
 Esta guía rápida sirve para recordar todas las posibilidades que ofrecen markdown y Pygments para editar y formatear texto y comúnmente lo empleo para crear los artículos de Blog. Espero que no solo me sirva de guía a mí, si no a cualquiera que se acerque por primera vez a markdown o Pygments.  
 
@@ -41,7 +41,7 @@ Este es el lenguaje de marcado que permite formatear el texto fácilmente sin la
 
 Markdown es un lenguaje de marcado ligero parecido al que se emplea en muchas wikis y basado originalmente en convenciones existentes en el marcado de los correos electrónicos. Emplea texto plano, procurando que sea legible pero consiguiendo que se convierta en XHTML correctamente formateado. Aunque no es muy conocido, empieza a ser muy popular y utilizado por programadores y blogueros que escriben sus artículos en este formato.  
 
-<br>
+<br><br>
 
 ## <a name="mark0">Sintaxis Markdown</a>
 
@@ -54,7 +54,7 @@ Los encabezamintos HTML se producen colocando un número determinado de almohadi
 	<thead>
 		<tr>
 			<th style="width: 50%;">Tecleas</th>
-			<th>Obtienes</th>
+			<th style="width: 50%;">Obtienes</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -112,7 +112,7 @@ Markdown también nos permite encerrar cada encabezado entre almohadillas, pero 
 		<thead>
 		<tr>
 			<th style="width: 50%;">Tecleas</th>
-			<th>Obtienes</th>
+			<th style="width: 50%;">Obtienes</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -121,7 +121,7 @@ Markdown también nos permite encerrar cada encabezado entre almohadillas, pero 
 				<pre class="no_mrkdwn">### Esto es un &#60;h3&#62; en html ###</pre>
 			</td>
 			<td>
-				<h3>Esto es un &#60;h3&#62; en html&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+				<h3>Esto es un &#60;h3&#62; en html</h3>
 			</td>
 		</tr>
 	</tbody>
@@ -206,22 +206,22 @@ Existen también dos maneras de crear enlaces, se pueden ver en la siguiente tab
 	</tbody>
 </table>
 
-Existe una manera adicional de crear enlaces automáticos para direcciones URL, simplemente encerrarla entre los caracteres "<" y ">":
+Existe una manera adicional de crear enlaces automáticos para direcciones URL, simplemente encerrarla entre los caracteres '`<`' y '`>`':
 
 <table>
 		<thead>
 		<tr>
 			<th style="width: 50%;">Tecleas</th>
-			<th>Obtienes</th>
+			<th style="width: 50%;">Obtienes</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td>
-				<pre class="no_mrkdwn">&lt;http://eniblog.com></pre>
+				<pre class="no_mrkdwn">       &lt;http://eniblog.com>       </pre>
 			</td>
 			<td>
-				<a href="#mark2">http://eniblog.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				<a href="#mark2">http://eniblog.com&nbsp</a>
 			</td>
 		</tr>
 </table>
@@ -242,42 +242,42 @@ Para crear párrafos se deja una línea en blanco. De este mondo:
 		<thead>
 		<tr>
 			<th style="width: 50%;">Tecleas</th>
-			<th>Obtienes</th>
+			<th style="width: 50%;">Obtienes</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td>
-				<pre class="no_mrkdwn">Este es el primer párrado&nbsp;<br><br>Este es el segundo párrado</pre>
+				<pre class="no_mrkdwn">    Este es el primer párrafo         <br><br>    Este es el segundo párrado</pre>
 			</td>
 			<td>
 				<p>Este es el primer párrafo</p>
-				<p>Este es el segundo párrafo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+				<p>Este es el segundo párrafo</p>
 			</td>
 		</tr>
 	</tbody>
 </table>
 
-<br><br>
+<br>
 
 Para crear un salto de línea dentro de un parráfo, simplemente se dejan dos espacios al final de la última palabra de esa línea, de este modo:  
 
-<br><br>
+<br>
 
 <table>
 		<thead>
 		<tr>
-			<th style="width: 55%;">Tecleas</th>
-			<th>Obtienes</th>
+			<th style="width: 50%;">Tecleas</th>
+			<th style="width: 50%;">Obtienes</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td>
-				<pre class="no_mrkdwn">Esta es la primera línea&nbsp;&nbsp;<br>y este es la segunda línea</pre>
+				<pre class="no_mrkdwn">    Esta es la primera línea       <br>    y este es la segunda línea</pre>
 			</td>
 			<td>
-				<p>Esta es la primera línea<br>y este es el salto de línea&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+				<p>Esta es la primera línea<br>y este es el salto de línea</p>
 			</td>
 		</tr>
 	</tbody>
@@ -287,11 +287,13 @@ Para crear un salto de línea dentro de un parráfo, simplemente se dejan dos es
 
 ---
 
-<br>
+<br><br>
 
 ### <a name="mark4" style="text-decoration:underline;">Formato</a>
 
 El formato básico del texto, es decir negritas y cursivas, se pueden realizar de varias maneras:  
+
+<br><br><br>
 
 <table>
 	<thead>
@@ -352,18 +354,19 @@ El formato básico del texto, es decir negritas y cursivas, se pueden realizar d
 	</tbody>
 </table>
 
-Se pueden emplear indistintamente tanto el asterisco '*' como el guión bajo '_' siempre y cuando no se mezclen y lo que determina el formato es el número de ellos antes y después del bloque de texto a formatear. Uno es cursiva, dos es negrita, y tres ambas, así de sencillo.
+Se pueden emplear indistintamente tanto el asterisco '`*`' como el guión bajo '`_`' siempre y cuando no se mezclen y lo que determina el formato es el número de ellos antes y después del bloque de texto a formatear. Uno es cursiva, dos es negrita, y tres ambas, así de sencillo.
 
 [volver a índice](#top) &#x2934;
 
 ---
 
-<br>
+<br><br>
 
 ### <a name="mark5" style="text-decoration:underline;">Citas</a>
 
-Para crear bloques de cita, se emplea el carácter mayor que > antes del bloque de texto. En la siguiente tabla se pueden ver las opciones para crearlos:  
+Para crear bloques de cita, se emplea el carácter mayor que '`>`' antes del bloque de texto. En la siguiente tabla se pueden ver las opciones para crearlos:  
 
+<br><br><br><br><br>
 
 <table>
 	<thead>
@@ -422,6 +425,7 @@ Para crear bloques de cita, se emplea el carácter mayor que > antes del bloque 
 
 Markdown permite crear dos tipos de listas, ordenadas y desordenadas, es decir numeradas o listas de puntos. Para distinguir los tipos y como se crean, nada mejor que verlo con ejemplos:  
 
+<br><br><br><br>
 
 <table>
 	<thead>
@@ -497,6 +501,8 @@ Markdown permite crear dos tipos de listas, ordenadas y desordenadas, es decir n
 
 ---
 
+<br><br>
+
 ### <a name="mark7" style="text-decoration:underline;">Listas de definiciones</a>
 
 Se pueden crear listas de definiciones, que están compuestas del **término** y la **lista de definiciones** del mismo, como si fuera un diccionario. Su creación es muy simple:  
@@ -541,19 +547,18 @@ Se pueden crear listas de definiciones, que están compuestas del **término** y
 		</tr>
 		<tr>
 			<td>
-				<pre>Una definición puede contar de<br>varios párrafos.<br><br>Primer término<br> : Primera definición<br><br>Segundo párrafo de la primera<br>definición<br><br>Segundo término<br> : Segunda definición</pre>
+				<pre>Una definición puede contar de<br>varios párrafos.<br><br>Primer término<br> : Primera definición<br><br>Segundo párrafo de la primera<br>definición</pre>
 			</td>
 			<td>
 				<p>Una definición puede contar de varios párrafos.</p>
 				<p><b>Primer término</b><br>&nbsp;&nbsp;&nbsp;&nbsp;Primera definición<br>
 				<p>&nbsp;&nbsp;&nbsp;&nbsp;Segundo parráfo de la primera definición</p>
-				<p><b>Segundo término</b><br>&nbsp;&nbsp;&nbsp;&nbsp;Segunda definición<br></p>
 			</td>
 		</tr>
 	</tbody>
 </table>
 
->**Consideración**: En la primera línea escribimos el término y en la siguiente dejamos un espacio en blanco e ingresamos el carácter **:** y la definición de cuyo término precedido de un espacio en blanco.
+>**Consideración**: En la primera línea escribimos el término y en la siguiente dejamos un espacio en blanco e ingresamos el carácter **'`:`'** y la definición de cuyo término precedido de un espacio en blanco.
 
 <br>
 
@@ -561,9 +566,11 @@ Se pueden crear listas de definiciones, que están compuestas del **término** y
 
 ---
 
+<br>
+
 ### <a name="mark8" style="text-decoration:underline;">Imágenes</a>
 
-La manera de enlazar imágenes es básicamente la misma de crear enlaces, con una única diferencia de que se añade el carácter de exclamación <mark>!</mark> al principio de la pareja de corchetes que definen el nombre del enlace.  
+La manera de enlazar imágenes es básicamente la misma de crear enlaces, con una única diferencia de que se añade el carácter de exclamación **'`!`'** al principio de la pareja de corchetes que definen el nombre del enlace.  
 
 Ejemplos:  
 
@@ -606,13 +613,15 @@ Ejemplos:
 
 ---
 
+<br>
+
 ### <a name="mark9" style="text-decoration:underline;">Tablas</a>
 
 Crear tablas es sumamente sencillo, simplemente debemos indicar cuales son los elementos de la cabecera y separar los campos con el símbolo.  
 
-
-
 Ejemplos:  
+
+<br><br><br>
 
 <table>
 	<thead>
@@ -709,13 +718,16 @@ Ejemplos:
 
 ---
 
+<br>
+
 ### <a name="mark10" style="text-decoration:underline;">Código</a>
 
 Se pueden crear bloques de código para albergar extractos de código fuente de un lenguaje de programación o para reproducir literalmente cualquier tipo de texto que sea interpretado por markdown. Lo único necesario es que cada línea de este bloque empiece por al menos 4 espacios o 1 tabulado.  
 
+<br><br>
+
 <b>De todos modos, es mucho más recomendable para estas tareas emplear el resaltado de código que se puede ver en esta [sección](#mark18).</b>
 
-<br><br>
 Ejemplos:
 
 <br>
@@ -747,22 +759,22 @@ Ejemplos:
 	</tbody>
 </table>
 
-Existe otro modo de crear un bloque de código, encerrándolo entre dos líneas formadas por tres o más caracteres tilde '~'.
+Existe otro modo de crear un bloque de código, encerrándolo entre dos líneas formadas por tres o más caracteres tilde '`~`'.
 
 <table>
 	<thead>
 		<tr>
 			<th style="width:50%;">Tecleas</th>
-			<th>Obtienes</th>
+			<th style="width:50%;">Obtienes</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td>
-				<pre>Esto es un parráfo normal</pre>
+				<pre>Esto es un parráfo normal         </pre>
 			</td>
 			<td>
-				<p>Esto es un parráfo normal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+				<p>Esto es un parráfo normal</p>
 			</td>
 		</tr>
 		<tr>
@@ -777,7 +789,7 @@ Existe otro modo de crear un bloque de código, encerrándolo entre dos líneas 
 </table>
 
 Por último existe una opción para resaltar pequeños trozos de código dentro de parráfos de texto normal.  
-Para lograr esto debemos encerrar el código entre dos acentos graves. Por \`ejemplo`.
+Para lograr esto debemos encerrar el código entre dos acentos graves '<mark>\` `</mark>'. Por ejemplo:
 
 
 <table>
@@ -803,7 +815,7 @@ Para lograr esto debemos encerrar el código entre dos acentos graves. Por \`eje
 
 ---
 
-<br>
+<br><br><br>
 
 ### <a name="mark11" style="text-decoration:underline;">Líneas Horizontales</a>
 
@@ -852,9 +864,11 @@ Para crear líneas horizontales se debe crear una línea rodeaba de líneas en b
 
 ---
 
-### <a name="mark12" style="text-decoration:underline;">Escapar Carácteres</a>
+<br>
 
-¿Que ocurre cuando queremos mostrar un carácter que markdown emplea para el marcado? Es posible que dependiendo de donde y como se emplee esté símbolo, sea interpretado por markdown y alterará el formato del texto. En este caso lo que se necesita es **escapar el carácter** con el símbolo backslash `\`. En esta tabla se muestran los símbolos que pueden ser escapados por markdown.  
+### <a name="mark12" style="text-decoration:underline;">Escapar caracteres</a>
+
+¿Que ocurre cuando queremos mostrar un carácter que markdown emplea para el marcado? Es posible que dependiendo de donde y como se emplee esté símbolo, sea interpretado por markdown y alterará el formato del texto. En este caso lo que se necesita es **escapar el carácter** con el símbolo backslash '`\`'. En esta tabla se muestran los símbolos que pueden ser escapados por markdown.  
 
 <table>
 	<thead>
@@ -880,11 +894,15 @@ Para crear líneas horizontales se debe crear una línea rodeaba de líneas en b
 
 ---
 
-<br>
+<br><br><br>
 
 ### <a name="mark13" style="text-decoration:underline;">Notas a pie de página</a>
 
-Las notas de páginas se crean de una manera muy sencilla en Markdown. Cada nota de pie página se compone de dos elementos: un marcador al lado del texto que se convierte en un superíndice y de una definición que se puede colocar en una lista de notas al pie al final de documento. Ejemplo:  
+Las notas de páginas se crean de una manera muy sencilla en Markdown. Cada nota de pie página se compone de dos elementos: 
+1. Un marcador al lado del texto que se convierte en un superíndice.
+1. Una definición que se puede colocar en una lista de notas al pie al final de documento. 
+
+Ejemplo:  
 
 <table>
 	<thead>
@@ -916,9 +934,9 @@ Las notas de páginas se crean de una manera muy sencilla en Markdown. Cada nota
 	</tbody>
 </table>
 
-Las definiciones de la nota al pie se pueden encontrar en cualquier parte del documento, pero las notas siempre se mostrarán en el orden en que están vinculados en el texto. Hay que tener en cuenta que no puede hacer dos enlaces a la misma nota al pie: si se intenta, la referencia de la nota segunda quedará como texto sin formato.  
+Las definiciones de la nota al pie se pueden encontrar en cualquier parte del documento, pero las notas siempre se mostrarán en el orden en que están vinculados en el texto. Hay que tener en cuenta que no puede hacer dos enlaces a la misma nota al pie, si se intenta, la referencia de la nota segunda quedará como texto sin formato.  
 
-Cada marcador de nota debe tener un nombre distinto. Ese nombre se utiliza para vincular la nota a la que hace referencia a las definiciones de la nota, pero no tiene ningún efecto sobre la numeración de las notas al pie. Los nombres pueden contener cualquier carácter válido que sirva para la identificación de un atributo HTML (es decir, que cumpla con la expresión regular [A-Za-z][-A-Za-z0-9_:.]*), no tienen porque ser necesariamente números. Ejemplo:  
+Cada marcador de nota debe tener un nombre distinto. Ese nombre se utiliza para vincular la nota a la que hace referencia a las definiciones de la nota, pero no tiene ningún efecto sobre la numeración de las notas al pie. Los nombres pueden contener cualquier carácter válido que sirva para la identificación de un atributo HTML (es decir, que cumpla con la expresión regular `[A-Za-z][-A-Za-z0-9_:.]*`), no tienen porque ser necesariamente números. Ejemplo:  
 
 <table>
 	<thead>
@@ -956,11 +974,11 @@ Cada marcador de nota debe tener un nombre distinto. Ese nombre se utiliza para 
 	</tbody>
 </table>
 
-[volver a índice](#top)
+[volver a índice](#top) &#x2934;
 
 ---
 
-<br><br>
+<br><br><br><br>
 
 ### <a name="mark14" style="text-decoration:underline;">Abreviaturas</a>
 
@@ -987,15 +1005,15 @@ Para crear abreviaturas HTML lo único necesario es crear una lista de ellas (no
 
 Las abreviaturas son sensibles a mayúsculas, por lo que hay que tenerlo en cuenta. Se pueden crear abreviaturas de más de una palabra.
 
-[volver a índice](#top)
+[volver a índice](#top) &#x2934;
 
 ---
 
-### <a name="mark15" style="text-decoration:underline;">Identificadores de Cabecera</a>
-
 <br>
 
-Los identificadores de cabecera nos permiten establecer un Identificador a las cabeceras para luego poder enlazarlas en cualquier otro lugar del texto.
+### <a name="mark15" style="text-decoration:underline;">Identificadores de Cabecera</a>
+
+Los identificadores de cabecera nos permiten establecer un identificador a las cabeceras para luego poder enlazarlas en cualquier otro lugar del texto.
 
 <table>
 	<thead>
@@ -1019,7 +1037,7 @@ Los identificadores de cabecera nos permiten establecer un Identificador a las c
 
 En Markdown Python todas las cabeceras llevan por defecto asociado un Id que depende del texto de la misma, aunque siempre prevalece la que nosotros establezcamos.
 
-[volver a índice](#top)
+[volver a índice](#top) &#x2934;
 
 ---
 
@@ -1029,6 +1047,7 @@ En Markdown Python todas las cabeceras llevan por defecto asociado un Id que dep
 
 Puede crear una lista de tareas pendientes utilizando Markdown que se convertirá en una lista de casillas de verificación.
 
+<br><br>
 
 <table>
 	<thead>
@@ -1047,19 +1066,21 @@ Puede crear una lista de tareas pendientes utilizando Markdown que se convertir�
 				 <img src="pictures/check.png" title="checkbox">
 			</td>
 		</tr>
+		<tr>
+			<td>
+				<pre>Function | MySQL | PostgreSQL<br>:------- | :-----| :---------<br>substr | :heavy_check_mark: |  :white_check_mark: 
+				</pre>
+			</td>
+			<td>
+				<img src="pictures/table_check.png" title="table-checkbox">
+			</td>
+		</tr>
 	</tbody>
 </table>
 
 
-Así es como uno podría hacer lo mismo en una tabla con emojis:
 
-
-Function | MySQL / MariaDB | PostgreSQL | SQLite
-:------------ | :-------------| :-------------| :-------------
-substr | :heavy_check_mark: |  :white_check_mark: | :heavy_check_mark:
-
-
-[volver a índice](#top)
+[volver a índice](#top) &#x2934;
 
 ---
 
@@ -1067,7 +1088,7 @@ substr | :heavy_check_mark: |  :white_check_mark: | :heavy_check_mark:
 
 ### <a name="mark17" style="text-decoration:underline;">Emojis</a>
 
-Esta es la lista completa de emojis y emoticonos disponibles en Markdown junto con sus respectivos **shorcodes**. Ten en cuenta que los shortcodes pueden variar entre diferentes aplicaciones. Por ello a continuación de deja el sabor a github.
+Esta es la lista completa de emojis y emoticonos disponibles en Markdown junto con sus respectivos **shorcodes**. Ten en cuenta que los shortcodes pueden variar entre diferentes aplicaciones. Por ello a continuación de deja el sabor a github o si esta visualizando este documento en formato pdf puede verse distinto.
 
 People
 
@@ -1382,7 +1403,7 @@ Symbols
 | :small_red_triangle_down: `:small_red_triangle_down:` | :shipit: `:shipit:` |
 
 
-[volver a índice](#top)
+[volver a índice](#top) &#x2934;
 
 ---
 
@@ -1390,11 +1411,16 @@ Symbols
 
 ### <a name="mark18" style="text-decoration:underline;">Pygments: Resaltado de Sintaxis para Código Fuente</a>
 
-Para introducir ejemplos de código fuente en el sitio, habilitar el resaltado (o coloreado) de sintaxis mejora la presentación y legibilidad de los mismos. Existen diversos motores que nos permiten realizar esta función y Pugments es uno de los mejores. Está realizado en Python.  
+Para introducir ejemplos de código fuente en el sitio, habilitar el resaltado (o coloreado) de sintaxis mejora la presentación y legibilidad de los mismos. Existen diversos motores que nos permiten realizar esta función y **Pygments** es uno de los mejores. Está realizado en Python.  
 
-Resaltar código con markdown y Pygments es realmente sencillo, solamente hay que hacer lo mismo que haríamos con markdown, pero añadiendo un **lexer** de Pygments en la primera línea. Un lexer es un indentificador del lenguaje que queremos resaltar para que el coloreado se haga correctamente. Los lexer se construyen empleando 2 caracteres `~` seguidos del nombre del lexer, por ejemplo, `~~~python` sería el lexer empleado para identificar un fragmento de código en lenguaje Python o en su lugar puede emplear también el acento grave.  
+Resaltar código con markdown y Pygments es realmente sencillo, solamente hay que hacer lo mismo que haríamos con markdown, pero añadiendo un **lexer** de Pygments en la primera línea. Un lexer es un indentificador del lenguaje que queremos resaltar para que el coloreado se haga correctamente. Los lexer se construyen empleando 2 caracteres '`~`' seguidos del nombre del lexer, por ejemplo, '`~~~python`' sería el lexer empleado para identificar un fragmento de código en lenguaje Python o en su lugar puede emplear también el acento grave '<mark>\` `</mark>'.  
+
+<br>
 
 Lo podemos ver mejor con un ejemplo:
+
+
+<br><br><br><br><br><br>
 
 <table>
 	<thead>
@@ -1416,7 +1442,7 @@ Lo podemos ver mejor con un ejemplo:
 	</tbody>
 </table>
 
-Lexers de Pygments más comunes para resaltado de sintaxys  
+Lexers de Pygments más comunes para resaltado de sintaxys.
 
 A continuación muestro una relación de los lexers más comunes empleados para el resaltado de código fuente.  
 
@@ -1455,7 +1481,6 @@ print "Hello, world"
 
 ```c
 #include <stdio.h>
-
 int main()
 {
     printf("¡Hola, mundo!\n");
@@ -1556,9 +1581,7 @@ holaMundo = putStrLn "Hola mundo!"
   <head>
     <title>Hola Mundo</title>
   </head>
-  <body>
-
-¡Hola Mundo!
+  <body>¡Hola Mundo!
    </body>
 </html>
 ```
@@ -1598,4 +1621,14 @@ public class HolaMundo {
 (format t "¡Hola, mundo!")
 ```
 
+[volver a índice](#top) &#x2934;
 
+<h3 align="center">FIN</h3>
+
+---
+
+<p align="center">
+Sigueme en:<br>
+<a href="https://www.facebook.com/profile.php?id=100009064421475"><img src="pictures/face.png" width="30"></a>
+<a href="https://github.com/EniDev911"><img src="pictures/github.png" width="30"></a>
+</p>

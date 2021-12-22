@@ -1,3 +1,2 @@
-s = "     Hello World" 
-print(s.lstrip())
-# output: Hello World
+a = bin(2)
+print(a)

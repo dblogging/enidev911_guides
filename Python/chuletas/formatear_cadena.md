@@ -1,6 +1,6 @@
-## <u>*Formatear una cadena (string)*</u>  <img src="../assets/img/python(144x144).png" width="30">
+## <u>*Formatear una cadena (string)*</u>  <img src="../assets/img/python(144x144).png" width="30" align="right">
 
-El primer método para formatear una cadena y el más primitivo, es usando el operador "%" (módulo). Dados los `'string' % valores`, las instancias de "%" en los `string` se remplazan con cero o más elementos de `valores`. Esta operación se conoce como interpolación de cadenas. 
+El primer método para formatear una cadena y el más primitivo, es usando el operador **`'%'`** (módulo). Dados los `'string' % valores`, las instancias de "%" en los `string` se remplazan con cero o más elementos de `valores`. Esta operación se conoce como interpolación de cadenas. 
 
 También tenemos símbolos con porcentajes para diferentes resultados:
 
@@ -50,10 +50,11 @@ print('%f' % 1)
 # output: 1.000000
 ```
 
+<br>
 
-## <u>*Formatear una cadena (string) nuevo método y recomendado*</u>  <img src="../assets/img/python(144x144).png" width="30">
+## <u>*Formatear una cadena (string) nuevo método y recomendado*</u>  <img src="../assets/img/python(144x144).png" width="30" align="right">
 
-Si bien el sistema anterior es completamente soportado por Python, el lenguaje a partir de su versión 2.6, incluye un nuevo método que pretende ser el estándar y es el más utilizado. En lugar de utilizar el operador '%' se llama a la función **format()** que es un método de la clase **'str'**.
+Si bien el sistema anterior es completamente soportado por Python, el lenguaje a partir de su versión 2.6, incluye un nuevo método que pretende ser el estándar y es el más utilizado. En lugar de utilizar el operador **`'%'`** se llama a la función **format()** que es un método de la clase **'str'**.
 
 *Ejemplo:*
 
@@ -62,7 +63,7 @@ nombre = "Marco"
 print("El {0} es el problema".format(nombre))
 # output: El Marco es el problema
 ```
-Como ves, en lugar de posicionar el operador % seguido del tipo de valor, simplemente se locan llaves "{}" y no es necesario indicar el tipo de dato (además el método anterior solo soportaba 3 tipos de datos: string, int, y float). Los datos que queremos incluir dentro de la cadena se pasan como argumento a la función **format()**. El numero dentro de las llaves indica la posición del argumento, empezando a contar desde cero, entonces ubicado donde corresponde.
+Como ves, en lugar de posicionar el operador **`'%'`** seguido del tipo de valor, simplemente se locan llaves **`'{}'`** y no es necesario indicar el tipo de dato (además el método anterior solo soportaba 3 tipos de datos: *string*, *int*, y *float*). Los datos que queremos incluir dentro de la cadena se pasan como argumento a la función **`format()`**. El numero dentro de las llaves indica la posición del argumento, empezando a contar desde cero, entonces ubicado donde corresponde.
 
 ```py
 nombre = "Marco"
@@ -91,7 +92,9 @@ print("Tu nombre es {a} y tienes {b} años".format(a="Marco", b=31))
 
 Puedes colocar las llaves tantas veces como quieres sin necesidad de repetir los argumentos, lo que hubiese sido una limitación en el sistema anterior.  
 
-Empleando este sistema también incluye las mismas herramientas que descubrimos anteriormente. Simplemente añadimos dos puntos ':' y especificamos los diversos párametros. Por ejemplo:
+Empleando este sistema también incluye las mismas herramientas que descubrimos anteriormente. Simplemente añadimos dos puntos **`':'`** y especificamos los diversos párametros. Por ejemplo:
+
+<br><br><br>
 
 ```py
 for i in range(-2, 2):
@@ -109,7 +112,7 @@ for nombre in ("Pedro", "Juan", "Diego"):
 # .....Juan
 # ....Diego
 ```
-Empleando el caracter "^" causará que los nombres se centre.
+Empleando el caracter **`'^'`** causará que los nombres se centre.
 
 ```py
 for nombre in ("Pedro", "Juan", "Diego", "Sol"):
@@ -120,4 +123,47 @@ for nombre in ("Pedro", "Juan", "Diego", "Sol"):
 # ..Juan...
 # ..Diego..
 # ...Sol...
+```
+
+<br><br>
+
+## <u>*Un nuevo método en Python 3.6*</u>  <img src="../assets/img/python(144x144).png" width="30" align="right">
+
+
+Con la idea de mejorar la legibilidad respecto a los sistemas anteriores, en Python 3.6 surgen las denominada `"f-string"` o `"cadenas-f"`.  Cuando una cadena esté precedida por una **`f`**, utilizando llaves **`{}`** se podrán ubicar expresiones dentro de la misma cadena que luego serán ejecutadas. 
+
+```py
+nombre = "Marco"
+edad = 31
+altura = 1.78
+print(f"Te llamas {nombre}, tienes {edad} años y mides {altura} mts.")
+# output : Te llamas Marco, tienes 31 años y mides 1.78 mts.
+print(f"Tu nombre al revés es {nombre[::-1]}.")
+# output : Tu nombre al revés es ocraM.
+print(f"Dentro de 5 años tendrás {edad+5} años.")
+# output : Dentro de 5 años tendrás 36 años.
+```
+
+Notese que son expresiones, no simples identificadores, a diferencia de los métodos anteriores. En versiones anteriores, utilizando `str.format` se intentaba emular este funcionamiento vía el siguiente código.
+
+
+```py
+nombre = "Marco"
+edad = 31
+
+print("Tu nombre es {nombre} y tienes {edad} años".format(**locals()))
+# output : Tu nombre es Marco y tienes 31 años
+
+```
+
+Ya que `locals()` retorna un diccionario con los nombres de los objetos y sus respectivos valores. Volviendo al nuevo sistema también incluye las características de **str.format** con la misma sintaxys.
+
+
+```python
+for nombre in ("Pedro", "Juan", "Diego"):
+	print(f"{nombre:>9}")
+# output: 
+# ....Pedro
+# .....Juan
+# ....Diego
 ```
