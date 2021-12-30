@@ -4,23 +4,69 @@ Este módulo provee una manera versátil de usar funcionalidades depndiente del 
 
 ## <a name='TOC'></a>
 
+
 1. [Crear carpetas y archivos](#makedir)
 1. [Eliminar archivos y carpetas](#remove)
 
 
-- **os.name**  
+- [Sintaxys os](#mark0)
+    * [os.name()](#mark1)
+    * [os.environ](#mark2)
+    * [Párrafos](#mark3)
+    * [Formato](#mark4)
+    * [Citas](#mark5)
+    * [Listas](#mark6)
+    * [Listas de definiciones](#mark7)
+    * [Imágenes](#mark8)
+    * [Tablas](#mark9)
+    * [Código](#mark10)
+    * [Lineas Horizontales](#mark11)
+    * [Escapar caracteres](#mark12)
+    * [Notas a pie de página](#mark13)
+    * [Abreviaturas](#mark14)
+    * [Indentificadores de cabecera](#mark15)
+    * [Casillas de verificación](#mark16)
+	* [Emojis](#mark17)
+
+
+### <a name='mark1' style="text-decoration:underline;">Crear carpetas y archivos</a>
+
+
+**makedirs - creación de directorios recursivo**  
+
+
+
+
+
+
+
+### <a name='mark1' style="text-decoration:underline;">os.name</a>
   
-El nombre del módulo dependiente del sistema operativo importado. Los siguientes nombres están registrados: *'posix', 'nt', 'java', 'os2', 'ce','riscos'*.
+El nombre del módulo dependiente del sistema operativo importado. Los siguientes nombres están registrados: **'posix'**, **'nt'**, **'java'**, **'os2'**, **'ce'**,**'riscos'**.
+
+Además de esta función tenemos otros métodos para averiguar en que sistema operativo se está ejecutando: 
+
+- **sys.platform**
+- **platform.system()**
+
+Solo para tener en cuenta. A continuación podemos ver la salida de **os.name**
 
 ejemplo:
 
 ```py
->>>import os
->>>os.name
+## Ejemplo en Windows
+import os
+print(os.name)
 'nt'
 ```
 
-ejemplo para limpiar consola chequeando el valor **os.name**:  
+
+<details><summary>Ver más ejemplos con <b>os.name</b></summary>
+
+
+
+<h4>&#164; Limpiar pantalla de la terminal o símbolo de sistema</h4>
+
 
 ```py
 import os 
@@ -35,25 +81,72 @@ def clear():
 clear()
 ```  
 
----
+</details>
 
-- **os.environ, os.getenv(key)y os.putenv(key, value)**
+<hr>
+<br>
+
+
+### <a name='mark1' style="text-decoration:underline;">os.environ, os.getenv(key), os.putenv(key)</a>
+
+
+- **os.environ**
 
 El valor de **os.environ** se conoce como un objeto de mapeo que devuelve un diccionario de las **variables de entorno del usuario**. Al tratarse de un diccionario puede acceder a las variables de entorno utilizando sus métodos habituales.  
 
-Aquí un ejemplo: 
+
+Aquí un ejemplo:
+
 
 ```py
->>>print(os.environ['TMP'])
+print(os.environ['TMP'])
 'C:\\Users\\user\\AppData\\Local\\temp'
->>># Otra forma
->>>os.getenv('TMP')
+# Otra forma
+print(os.getenv('TMP'))
 'C:\\Users\\user\\AppData\\Local\\temp'
 ```
 
-El beneficio de usar **os.getenv()** en lugar del diccionario **os.environ**  
-es que si intenta acceder a una variable de entorno que no existe.  
-la función **os.getenv()** simplemente devolverá **None**, si lo hicieramos con **os.environ** recibiremos un **raise KeyError (key)**.  
+<details><summary>Ver más ejemplos con <b>os.environ</b></summary>
+
+
+
+<h4>&#164; Escribir las variables de entorno del sistema en un archivo de texto plano.</h4>
+
+
+```py
+import os 
+
+d = os.environ 
+
+with open('environ.txt', 'w+') as file:
+    for key, value in d.items():
+        file.write(f'{key} : {value}'+'\n')
+
+```  
+
+</details>
+
+<hr>
+<br>
+
+
+- **os.getenv(key)**
+
+
+El beneficio de usar **os.getenv()** en lugar del diccionario **os.environ** es que si intenta acceder a una variable de entorno que no existe, la función **os.getenv()** simplemente devolverá **None**, si lo hicieramos con **os.environ** recibiremos una excepción como : `raise KeyError (key)`.
+
+Otro ejemplo: 
+
+
+```py
+print(os.getenv('USER'))
+# output: None
+print(os.getenv('USERNAME'))
+
+```
+<br><br>
+
+- **os.putenv(key, value)**
 
 **os.putenv(key, value)** Establece la variable de entorno llamada key con el valor de la cadena value. Dichos cambios en el entorno impactan a los subprocesos iniciados con **os.system()**, **popen()** o **fork()** y **execv()**.  
 

@@ -1,7 +1,7 @@
 
-## Guía rápida Markdown y Pygments Lexers 
+## Guía rápida Markdown y Pygments Lexers
 
-Esta guía rápida sirve para recordar todas las posibilidades que ofrecen markdown y Pygments para editar y formatear texto y comúnmente lo empleo para crear los artículos de Blog. Espero que no solo me sirva de guía a mí, si no a cualquiera que se acerque por primera vez a markdown o Pygments.  
+Esta guía rápida sirve para recordar todas las posibilidades que ofrecen [Markdown](https://es.wikipedia.org/wiki/Markdown) y [Pygments](https://pygments.org/) para editar y formatear texto y comúnmente lo empleo para crear los artículos de Blog. Espero que no solo me sirva de guía a mí, si no a cualquiera que se acerque por primera vez a markdown o Pygments.  
 
 A continuación sigue una lista detallada de todas las características que se pueden emplear en Markdown y Markdown Extra (empleando *Python Markdown*) y los lexers más comunes de Pygments para resaltar el código fuente.  
 
@@ -19,7 +19,7 @@ A continuación sigue una lista detallada de todas las características que se p
     * [Citas](#mark5)
     * [Listas](#mark6)
     * [Listas de definiciones](#mark7)
-    * [Imágines](#mark8)
+    * [Imágenes](#mark8)
     * [Tablas](#mark9)
     * [Código](#mark10)
     * [Lineas Horizontales](#mark11)
@@ -291,7 +291,7 @@ Para crear un salto de línea dentro de un parráfo, simplemente se dejan dos es
 
 ### <a name="mark4" style="text-decoration:underline;">Formato</a>
 
-El formato básico del texto, es decir negritas y cursivas, se pueden realizar de varias maneras:  
+El formato básico del texto, es decir negritas y cursivas, tachado, markdown no tiene para subrayar texto pero siempre podemos utilizar etiquetas HTML para ello. Se pueden realizar de varias maneras: 
 
 <br><br><br>
 
@@ -349,6 +349,14 @@ El formato básico del texto, es decir negritas y cursivas, se pueden realizar d
 			</td>
 			<td>
 				<b><i>Esto también es negrita y cursiva</i></b>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre class="no_mrkdwn">~~Esto es tachado~~</pre>
+			</td>
+			<td>
+				<del>Esto es tachado</del>
 			</td>
 		</tr>
 	</tbody>
@@ -1066,15 +1074,6 @@ Puede crear una lista de tareas pendientes utilizando Markdown que se convertir�
 				 <img src="pictures/check.png" title="checkbox">
 			</td>
 		</tr>
-		<tr>
-			<td>
-				<pre>Function | MySQL | PostgreSQL<br>:------- | :-----| :---------<br>substr | :heavy_check_mark: |  :white_check_mark: 
-				</pre>
-			</td>
-			<td>
-				<img src="pictures/table_check.png" title="table-checkbox">
-			</td>
-		</tr>
 	</tbody>
 </table>
 
@@ -1402,6 +1401,27 @@ Symbols
 | :small_blue_diamond: `:small_blue_diamond:` | :small_orange_diamond: `:small_orange_diamond:` | :small_red_triangle: `:small_red_triangle:` |
 | :small_red_triangle_down: `:small_red_triangle_down:` | :shipit: `:shipit:` |
 
+A continuación te dejo un ejemplo de como podemos usar emojis dentro de una tabla:  
+
+<table>
+	<thead>
+		<tr>
+			<th style="width:50%;">Tecleas</th>
+			<th>Obtienes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre>Function | MySQL | PostgreSQL<br>:------- | :-----| :---------<br>substr | :heavy_check_mark: |  :white_check_mark: 
+				</pre>
+			</td>
+			<td>
+				<img src="pictures/table_check.png" title="table-checkbox">
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 [volver a índice](#top) &#x2934;
 
@@ -1420,7 +1440,7 @@ Resaltar código con markdown y Pygments es realmente sencillo, solamente hay qu
 Lo podemos ver mejor con un ejemplo:
 
 
-<br><br><br><br><br><br>
+<br><br><br>
 
 <table>
 	<thead>
@@ -1516,10 +1536,6 @@ class MainClass
 - `css` - Cascade Style Sheet (CSS)
 
 ```css
-</pre>
-   </td>
-   <td class="get">
-<css>
 body {
     font: 75% georgia, sans-serif;
     color: #555753;
@@ -1631,4 +1647,7 @@ public class HolaMundo {
 Sigueme en:<br>
 <a href="https://www.facebook.com/profile.php?id=100009064421475"><img src="pictures/face.png" width="30"></a>
 <a href="https://github.com/EniDev911"><img src="pictures/github.png" width="30"></a>
+<a href="https://twitter.com/MarcoContreraas"><img src="pictures/twitter.png" width="30"></a>
 </p>
+
+
