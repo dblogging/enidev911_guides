@@ -9,33 +9,18 @@ Este módulo provee una manera versátil de usar funcionalidades depndiente del 
 1. [Eliminar archivos y carpetas](#remove)
 
 
-- [Sintaxys os](#mark0)
-    * [os.name()](#mark1)
-    * [os.environ](#mark2)
-    * [Párrafos](#mark3)
-    * [Formato](#mark4)
-    * [Citas](#mark5)
-    * [Listas](#mark6)
-    * [Listas de definiciones](#mark7)
-    * [Imágenes](#mark8)
-    * [Tablas](#mark9)
-    * [Código](#mark10)
-    * [Lineas Horizontales](#mark11)
-    * [Escapar caracteres](#mark12)
-    * [Notas a pie de página](#mark13)
-    * [Abreviaturas](#mark14)
-    * [Indentificadores de cabecera](#mark15)
-    * [Casillas de verificación](#mark16)
-	* [Emojis](#mark17)
+- [Funciones](#mark0)
+    * [name](#mark1)
+    * [environ, getenv(), putenv()](#mark2)
+    * [starfile]('#')
+    * [system]('#')
+
 
 
 ### <a name='mark1' style="text-decoration:underline;">Crear carpetas y archivos</a>
 
 
 **makedirs - creación de directorios recursivo**  
-
-
-
 
 
 
@@ -65,7 +50,7 @@ print(os.name)
 
 
 
-<h4>&#164; Limpiar pantalla de la terminal o símbolo de sistema</h4>
+<h6>&#176; Limpiar pantalla de la terminal o símbolo de sistema</h6>
 
 
 ```py
@@ -80,6 +65,20 @@ def clear():
         os.system('clear')
 clear()
 ```  
+
+<h6>&#176; Abrir el explorador en la ruta indicada</h6>
+
+
+
+```py
+def openFolder(self, path):
+     if os.name == 'nt':
+         os.startfile(path)
+     elif os.name == 'posix':
+         os.system('xdg-open "%s"' % path)
+     elif os.name =='os2':
+         os.system('open "%s"' % path)
+```
 
 </details>
 
@@ -207,21 +206,81 @@ Esto intentará de eliminar el archivo o carpeta, probablemente tengamos algún 
  
 ---
 
+### <a name='mark1' style="text-decoration:underline;">Startfile</a>
 
-**os.startfile(file)**  
+El método **os.startfile** nos permite 'iniciar' un archivo con su programa asociado. En otras palabras. Podemos abrir un archivo con su programa asociado, al igual que cuando hace doble clic en un PDF y se abre con AdobeReader o el programa predeterminado que  tiene instalado. 
 
-El método **os.startfile** nos permite 'iniciar' un archivo con su programa asociado. En otras palabras. Podemos abrir un archivo con su programa asociado, al igual que cuando hace doble clic en un PDF y se abre con AdobeReader si esté lo tiene instalado. 
+
+Sintaxis:  
 
 ```py
->>>os.startfile(r'C:\Users\user\Documents\skills.pdf')
+os.startfile(path[, operation][, arguments][, cwd][, show_cmd])
 ```
-Este ejemplo pasa una ruta calificada a el método, esto abrirá el PDF con el programa predeterminadp de cada máquina.  
+
+**Ejemplo:**  
 
 
+```py
+os.startfile(r'C:\Users\user\Documents\escape_de_caracteres.pdf')
+```
+
+**Obtendriamos lo siguiente:**
+
+<p align="center">
+	<img src="assets/img/startfile.png">
+</p>
 
 
+Cuando se de otra operación, debe ser un "verbo de comando" por ejemplo: `print` si lo pasaramos como segundo argumento, mandará a imprimir el documento y lo pondrá en la cola de impresión.
 
 
+**Ejemplo** 
+
+
+```py
+os.startfile(r'C:\Users\home\Documents\Manuales_Linux,redes,programacion\chuletas_python\escape_de_caracteres.pdf', 'print')
+```
+
+**Obtendriamos lo siguiente:**
+
+<p align="center">
+	<img src="assets/img/startfile2.png" height="260">
+</p>
+
+
+Los parámetros **cwd** y **show_cmd** cabe destacar que solo están disponible de la versión 3.10 de Python, pero para conocimiento tiene relación con las dimensiones de la ventana y esto son los posibles valores que puede tomar: 
+
+
+- 0 significa abrir en una ventana oculta.
+- 1 se abre en una ventana normal (posiblemente restaurando una aplicación minimizada).
+- 2 abre minimizados.
+- 3 abre maximizado.
+- 4 abre la aplicación con su ventana en su tamaño y posición más recientes.
+- 10 abre la aplicación "con su ventana en el estado predeterminado especificado por la aplicación".
+
+
+### <a name='mark1' style="text-decoration:underline;">System</a>
+
+Esta función recibe lo siguiente
+
+**Parámetro:**
+
+- **command** : Es de tipo cadena indica qué comando ejecutar.
+
+
+**Retorno:** en Unix, el valor de retorno es el estado de salida del proceso y en Windows, el valor de retorno es el valor devuelto por el shell del sistema después de ejecutar el comando.
+
+
+Ejemplo:  
+
+```py
+# Linux 
+os.system('date')
+# output: Thu Dec 30 17:38:53 HSP 2021
+
+# Windows
+os.system('date /T')
+# output: 30/12/2021
 
 
 

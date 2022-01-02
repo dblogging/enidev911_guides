@@ -1,7 +1,11 @@
 import os 
 
-d = os.environ 
+#a = os.startfile(r'C:\Users\home\Desktop\Enidev911\PythonTk\basic_calculator\main.py')
+#a = os.startfile('environ.txt', show_cmd=3)
 
-with open('environ.txt', 'w+') as file:
-    for key, value in d.items():
-        file.write(f'{key} : {value}'+'\n')
+#a = os.startfile(r'C:\Users\home\Music\lo-fi\info.txt', 'print')
+
+a = os.system('date /T')
+
+print(a)
+
