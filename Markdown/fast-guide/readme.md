@@ -1,5 +1,5 @@
 
-## Guía rápida Markdown y Pygments Lexers
+## <u>Guía rápida Markdown y Pygments Lexers</u> <img src="pictures/logo_markdown.png" width="30" align="right">
 
 Esta guía rápida sirve para recordar todas las posibilidades que ofrecen [Markdown](https://es.wikipedia.org/wiki/Markdown) y [Pygments](https://pygments.org/) para editar y formatear texto y comúnmente lo empleo para crear los artículos de Blog. Espero que no solo me sirva de guía a mí, si no a cualquiera que se acerque por primera vez a markdown o Pygments.  
 
@@ -10,6 +10,7 @@ A continuación sigue una lista detallada de todas las características que se p
 - [Markdown](#mark0)
     * [¿Que es Markdown?](#mark-0)
 	* [Editor Markdown online](https://dillinger.io)
+	* [Ventajas de usar Markdown](#mark-1)
 
 - [Sintaxys Markdown](#mark0)
     * [Cabeceras](#mark1)
@@ -40,6 +41,18 @@ Este es el lenguaje de marcado que permite formatear el texto fácilmente sin la
 ## <a name="mark-0">¿Que es Markdown?</a>
 
 Markdown es un lenguaje de marcado ligero parecido al que se emplea en muchas wikis y basado originalmente en convenciones existentes en el marcado de los correos electrónicos. Emplea texto plano, procurando que sea legible pero consiguiendo que se convierta en XHTML correctamente formateado. Aunque no es muy conocido, empieza a ser muy popular y utilizado por programadores y blogueros que escriben sus artículos en este formato.  
+
+<br><br>
+
+## <a name="mark-1">Ventajas de usar Markdown</a>
+
+- :raised_hands: &nbsp;&nbsp; **Es sencillo de aprender**
+- :rocket: &nbsp;&nbsp; **Es bastante más legible y fácil de mantener**
+- :runner:  &nbsp;&nbsp; **Escribir para web es más rápido y cómodo**
+- :interrobang: &nbsp;&nbsp; **Es más difícil de cometer errores se sintaxis**
+- :pencil: &nbsp;&nbsp; **Es perfecto para usarlo con editores de texto minimalistas**
+- :computer: &nbsp;&nbsp; **Permite que te concentres en generar contenido en lugar de generar formato correctamente**
+- (:eyes:) &nbsp;&nbsp; **Lo que ves es lo que quieres decir**
 
 <br><br>
 

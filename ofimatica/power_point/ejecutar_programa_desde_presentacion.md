@@ -28,6 +28,7 @@ Como en la siguiente imagen usaremos el objeto que esta marcado para asignarle l
 </p>
 
 
+
 **Nota:** Además, puede proporcionar un parámetro con el que desee que se abra la aplicación. Por ejemplo en mi caso:
 
 <p align="center">
@@ -42,6 +43,13 @@ Al momento de guardar los cambios con esta acción por alguna razón no funciona
 <p align="center">
 	<img src="assets/img/argumentos.png" alt="argumentos" width="600">
 </p>
+
+A continuación dejo otro ejemplo, donde se abrirá el navegador y se conectara a Youtube.
+
+<p align="center">
+	<img src="assets/img/argumentos2.png" alt="argumentos" width="600">
+</p>
+
 
 Eso es todo, en el modo presentación puede iniciar el programa sin tener que salir de su presentación. Podría recibir una advertencia de seguridad mientras lo hacem, aceptamos y listo:
 
