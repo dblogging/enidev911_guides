@@ -2,12 +2,23 @@ from organizar_ficheros import organizer
 import os
 
 
+# asignamos a las variables de entornos
+# en variables globales
 
 user_path = os.getenv('userprofile')
 path = os.path.join(user_path, 'Downloads')
 organizer(path)
 
-# import os 
+
+
+
+def clear_screen():
+	"""function clear screen
+	"""
+	i = "some value"
+	os.platform
+
+import os 
 
 current_path = os.getcwd()
 user_path = os.getenv('userprofile')

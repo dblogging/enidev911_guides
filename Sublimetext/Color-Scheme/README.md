@@ -1,6 +1,7 @@
 ## Crear un color-scheme fácilmente  
 
-Para ello vamos a instalar un paquete llamado **PackageDev** y presionamos **Ctrl+P** y le damos en la siguiente opción:  
+Para ello vamos a instalar un paquete llamado **PackageDev** y presionamos **Ctrl+P** y le damos en la siguiente opción: 
+
 
 <p align="center">
     <img src="img/new_color-scheme.png">
