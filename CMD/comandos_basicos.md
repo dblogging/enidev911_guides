@@ -6,8 +6,8 @@
 - [Comandos](#mark0)
     * [attrib](#mark1)
     * [at](#mark2)
-    * [dir](#mark3)
-    * [mkdir](#mark4)
+    * [dir](#dir)
+    * [mkdir - md](#mkdir)
     * [rmdir](#mark5)
     * [start](#start)
     * [Listas de definiciones](#mark7)
@@ -288,12 +288,8 @@ Llama a un programa por lotes desde otro sin detener el programa por lotes princ
 
 
 
-### <u>net</u>
+### <a href="#net"><u>net</u></a>
 
-
-
-;;
-;;;
 
 >
 - **Para listar los usuarios en Windows usamos el comando:**
@@ -342,7 +338,7 @@ Este comando establece o elimina la comprobación extendida de <kbd>Ctrl</kbd> +
 
 
 
-### <u>DIR</u>
+### <a href="#dir"><u>DIR</u></a>
 
 Muestra una lista de archivos y subcarpetas.  
 
@@ -358,23 +354,19 @@ DIR [path(s)[display_format][file_attributes][order][time][options]]
 - **/?:** Mostrar la ayuda del comando
 - **/A:** Muestra los archivos con los atributos especificados
 	- Atributos:
-		+ A Archivos
-		+ D Directorios
-		+ H Archivos ocultos
-		+ S Archivos del sistema
-		+ L Puntos de análisis
-		+ I No archivos indizados (enlaces simbólicos)	
+		+ A : Archivos
+		+ D : Directorios
+		+ H : Archivos ocultos
+		+ S : Archivos del sistema
+		+ L : Puntos de análisis
+		+ I : No archivos indizados (enlaces simbólicos)	
+		+ R : Archivos de solo lectura
+		+ \- : Prefijo de exclusión
+		
 
 		```bash
 		DIR /a:-D 
 		```
-
-
-/A          Muestra los archivos con los atributos especificados.
-  atributos    D  Directorios             R  Archivos de s¢lo lectura
-               H  Archivos ocultos        A  Archivos para archivar
-               S  Archivos de sistema     I  No archivos indizados de contenido
-               L  Puntos de an lisis      -  Prefijo de exclusi¢n
 
 
 - **Listar solo los nombres del directorio raíz**
@@ -404,6 +396,23 @@ DIR /a:-A /s c:\
 ```bash
 DIR %USERPROFILE% /a:i
 ```
+
+
+### <a href="#mkdir"><u>mkdir - md</u></a>
+
+Este comando, nos sirve para crear directorios:
+
+
+**Ejemplos**  
+
+- **Crear dos carpetas en el Escritorio**
+
+```bat
+md folder1 folder2
+```
+
+
+
 
 ### <a name="start"><u>Start</u></a>
 
@@ -485,13 +494,21 @@ goto start
 	width="880">
 </p>
 
+- Se inicia la el bloc de notas **notepad** con la ventana maximizada.
+
+```bash
+start /max notepad
+```
+
 
 - Se inicia la presentación llamada **cmd.pptx** que está en la carpeta "Mis documentos".
 
 
 ```bat
+rem "demo_start.bat"
 @echo off
 start "" "%USERPROFILE%\Documents\cmd.pptx"
+rem "run demostart.bat"
 ```
 - Escribir un correo electrónico desde la misma CMD de allí utilizamos **malito** para redactar el correo y **start** para abrir el gestor de correos.
 
