@@ -52,7 +52,7 @@ Markdown es un lenguaje de marcado ligero parecido al que se emplea en muchas wi
 - :interrobang: &nbsp;&nbsp; **Es más difícil de cometer errores se sintaxis**
 - :pencil: &nbsp;&nbsp; **Es perfecto para usarlo con editores de texto minimalistas**
 - :computer: &nbsp;&nbsp; **Permite que te concentres en generar contenido en lugar de generar formato correctamente**
-- (:eyes:) &nbsp; **Lo que ves es lo que quieres decir**
+- (:eyes:)  **Lo que ves es lo que quieres decir**
 
 <br><br>
 
