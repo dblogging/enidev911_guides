@@ -12,3 +12,10 @@ echo.
 echo Pulsa una tecla para salir.
 pause>nul
 exit
+
+
+**Creación de nuevos archivos:**
+
+
+```bat
+echo TEXTO PRIMERA LINEA>

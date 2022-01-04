@@ -43,3 +43,16 @@ cita
 
 
 <p style="text-align: center;"><a href="https://postcron.com" target="_blank" style="font-family: sans-serif; font-size:11px; color: #333"></a></p> <iframe src="https://whatsapp-for-business.firebaseapp.com/link-generator/es" style="border:0px #ffffff none;" name="postcron" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="800px" width="400px" allowfullscreen></iframe>
+
+
+https://www.reservio.com/es/
+
+<!-- Coloca este código donde quieras que se publique tu botón de reserva. -->
+<div class="reservio-booking-button" data-business-id="6AkHuIbVam" data-text="Reservar cita" data-bgcolor="#cf0d00" data-color="#fff"></div>
+<script id="reservio-widgets-script" type="text/javascript" src="https://static.reservio.com/js/widget.js">
+</script>
+
+
+https://my.survio.com/wizard?new=1
+
+kraft ionic
