@@ -39,3 +39,7 @@ cita.
 >Esto es parte del mismo bloque de
 cita
 >Una cita más 
+
+
+
+<p style="text-align: center;"><a href="https://postcron.com" target="_blank" style="font-family: sans-serif; font-size:11px; color: #333"></a></p> <iframe src="https://whatsapp-for-business.firebaseapp.com/link-generator/es" style="border:0px #ffffff none;" name="postcron" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="800px" width="400px" allowfullscreen></iframe>

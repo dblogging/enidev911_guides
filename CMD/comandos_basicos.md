@@ -1,18 +1,18 @@
 - [Rutas](#mark0)
 	+ [Rutas absolutas](#)
 	+ [Rutas relativas](#)
+	+ [Variable](#variables)
 
 
 - [Comandos](#mark0)
     * [attrib](#mark1)
     * [at](#mark2)
+    * [call](#call)
     * [dir](#dir)
     * [mkdir - md](#mkdir)
     * [rmdir](#mark5)
     * [start](#start)
-    * [Listas de definiciones](#mark7)
-    * [Imágenes](#mark8)
-    * [Tablas](#mark9)
+    * [ipconfig](#ipconfig)
     * [Código](#mark10)
     * [Lineas Horizontales](#mark11)
     * [Escapar caracteres](#mark12)
@@ -41,7 +41,8 @@ attrib
 - **Sintaxis**:
 
 ```
-ATTRIB [+ attribute| - attribute] [pathname] [/S [/D] [/L]]
+ATTRIB [+R | -R] [+A | -A] [+S | -S] [+H | -H] [+I | -I]
+	   [unidad:] [ruta] [nombreArchivo] [/S [/D] [/L]]
 ```
 
 - **Key**:
@@ -49,7 +50,14 @@ ATTRIB [+ attribute| - attribute] [pathname] [/S [/D] [/L]]
 	- **(-)**: Borrar un atributo 
 
 
-- **Pathname**: Unidad y/o nombre de archivo, por ejemplo, **C:\*.txt**
+- **ruta**: Unidad y/o nombre de archivo, por ejemplo, **C:\*.txt**
+
+
+- **Parámetros:**
+	+ **/S**: Procesa archivos que coinciden en la carpeta y todas las subcarpetas actuales.
+	+ **/D**: También procesa carpetas.
+	+ **/L**: Se trabaja en los atributos del vínculo simbólico en vez de en el destino del vínculo simbólico.
+
 
 
 
@@ -284,8 +292,53 @@ AT 2 /DELETE
 
 ### <u>call</u>
 
-Llama a un programa por lotes desde otro sin detener el programa por lotes principal
+Llama a un programa por lotes desde otro sin detener el programa por lotes principal.
 
+El comando **CALL** lanzará un nuevo contexto de archivo por lotes junto con los parámetros especificados. Cuando se alzanza el final del segundo archivo por lotes (o si se usa EXIT), el control volverá justo después de la instrucción CALL inicial.
+
+Los argumentos se pueden pasar como una cadena simple o usando una variable:
+
+
+```bat
+CALL myscrit.cmd "1234"
+CALL otherscript.cmd %VARIABLE%
+
+```
+
+**Ejemplo**:
+
+```bat
+::----------start main.cmd-----------
+@echo off
+CALL function.cmd 10 first
+Echo  %_description% - %_number%
+::---------end main.cmd--------------
+
+::---------start function.cmd--------
+@echo off 
+:: Add 25 to %1
+SET /a _number=%1 + 25
+:: Store %2
+SET _description=[%2]
+::----------end function.cmd--------
+
+```
+
+En muchos casos, también querrá usar **SETLOCAL** y **ENDLOCAL** para mantener las variables endiferentes archivos por lotes completamente separadas, esto evitará cualquier problema potencial si dos scripts usan el mismo nombre de variable.
+
+Si ejecuta un segundo archivo por lotes **sin usar CALL**, puede encontrarse con algún comportamiento erróneo
+
+
+**CALL subrutine (:label)**
+
+El comando **CALL** pasará el control de la declaración después de la etiqueta especificada junto con los parámetros especificados. Para salir de la subrutina especifique **GOTO:** esto transferirá el control al final de la subrutina actual.
+
+
+Una etiqueta se define de la siguiente manera:
+
+```bat
+: myShineLabel
+```
 
 
 ### <a href="#net"><u>net</u></a>
@@ -565,4 +618,18 @@ Ejemplo:
 color 17
 # 1 = Azul para el fondo
 # 7 = Blanco para el primer plano
+```
+
+
+
+### <a name="#variables"><u>Variables</u></a>
+
+
+**Pedir la entrada del usuario**
+
+```bat
+@echo off
+set /p MYNAME="Name :"
+rem Mostrar entrada
+echo Your name is: %MYNAME%
 ```
