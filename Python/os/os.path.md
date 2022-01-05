@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 - **os.path.abspath(path)**
 
 

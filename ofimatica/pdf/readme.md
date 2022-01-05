@@ -7,7 +7,7 @@ Ventajas
 
 - **Multidimensional**: El formato de PDF le permite integrar varios tipos de contenido **texto**, **imágines**, **gráficos vectoriales**, **videos**, **animaciones**, **archivos de audio**, **modelado 3D**, **campos interactivos**, **enlaces** y **botones**. Todos esos elementos pueden ser combinados dentro del mismo archivo PDF y ordenados como un reporte, una presentación o un portafolio.
 
--
+- **Conveniente**: PDFs son fáciles de crear, leer y usar por cada uno.
 
 Desventajas
 
