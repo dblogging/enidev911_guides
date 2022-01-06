@@ -118,3 +118,4 @@ Al igual que la forma en que accedemos a los valores en la lista usando el índi
 A = range(10, 100)[29]
 print(A) # output: 39
 ```
+
