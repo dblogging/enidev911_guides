@@ -625,6 +625,68 @@ color 17
 ### <a name="#variables"><u>Variables</u></a>
 
 
+**SET**
+
+Muestra, establece o quita las variables de entorno de cmd.exe.
+
+```cmd
+SET [variable=[cadena]]
+```
+
+- **variable**: Especifica el nombre de la variable de entorno.
+- **cadena**: Especifica una serie de caracteres que se asignar  a la variable.
+
+Escriba SET sin par metros para ver las variables de entorno actuales.
+
+<p align="center">
+	<img src="assets/img/set_example.png" alt="set"
+	width="780" height="560">
+</p>
+
+
+mostrar  todas las variables que empiecen con la letra 'P'.
+
+```
+SET P
+```
+El comando SET devuelve ERRORLEVEL en 1 si no se encuentra el nombre
+de la variable en el entorno actual.
+
+El comando SET no permite  que un signo de igual "=" sea parte de una variable.
+
+Se han agregado dos modificadores nuevos al comando SET:
+
+```
+SET /A expression
+SET /P variable=[promptString]
+```
+
+El modificador **/A**:
+
+Especifica que la cadena a la derecha del signo de igual es una expresión numérica que es evaluada. El evaluador de expresiones es bastante simple y es compatible con las siguientes operaciones, en orden de precedencia decreciente:
+
+ - **()** : agrupar
+ - **! ~ -** : operadores unarios
+ - **+ -** : operadores aritméticos
+ - **<< >>** : desplazamiento logico
+ - **&** : bit a bit 
+ - **^** : bit a bit o exclusivo
+ - **|** : bit a bit
+ - **=, =\*, /=, %=, +=, -=** : asignación 
+ - **&=, ^=, |=, <<=, >>=** : separador de expresión
+
+El modificador **/P**:
+
+Permite establecer el valor de una variable para una línea de entrada escrita por el usuario. Muestra la cadena del símbolo del sistema
+antes de leer la línea de entrada. La cadena del símbolo del sistema puede
+estar vacía.
+
+La sustitución de variables de entorno ha sido mejorada así:
+
+```
+%PATH:str1=str2%
+```
+
 **Pedir la entrada del usuario**
 
 ```bat
@@ -633,3 +695,310 @@ set /p MYNAME="Name :"
 rem Mostrar entrada
 echo Your name is: %MYNAME%
 ```
+
+
+
+
+
+La sintaxis normal del comando FOR es: 
+
+```bat
+FOR %var IN (lista) DO (
+	comando
+	comando
+)
+```
+
+Pero si lo vamos a usar dentro de un archivo BAT será así:
+
+```bat
+FOR %%var IN (lista) DO (
+	comando
+	comando
+	...
+)
+```
+
+Observa que ahora la variable "var" va precedida por dos simbolos de "%". Además, si este for está dentro de un archivo BAT el nombre de la variable debe usar UNA SOLA LETRA (p.ej: $$n, %%i, %%j, etc.)
+
+**Ejemplos:**
+
+```bat
+@echo off
+echo example for: 
+
+FOR %%A IN (uno dos tres cuatro cinco) DO (
+	echo %%A
+)
+pause>nul
+```
+
+
+
+
+
+Si el ciclo "for" está dentro de un archivo BAT, y tome los valores posicionales que se pasan cuando se llama al archivo desde la consola.
+
+```bat
+@echo off
+echo example for: 
+
+FOR %%x IN (%*) DO (
+	echo %%x
+)
+pause>nul
+```
+
+Cuando lo llamemos debemos hacerlo de la siguiente manera:
+
+```cmd
+example_for.bat uno dos tres cuatro cinco
+```
+
+Si queremos recorrer una lista de archivos de un determinado directorio (solo archivos, no directorios):
+
+```bat
+@echo off
+echo example for: 
+
+FOR %%f IN (*) DO (
+	echo %%f
+)
+pause>nul
+```
+
+Y si queremos mover a la papelera de reciclaje algunos archivos con determinadas extensiones:
+
+```bat
+@echo off
+echo example for: 
+
+FOR %%f IN (*.jpg, *.mp3, *.bmp) DO (
+	move %%f %UserProfile%\Desktop
+)
+pause>nul
+```
+
+### Mejoras en el for
+
+**Recursivida:**
+
+FOR /R [ruta] %V IN (lista) DO comando
+
+**Directorios:**
+
+FOR /D [ruta] %V IN (lista) DO comando
+
+**Lista con contador:**
+
+FOR /L [ruta] %V IN (inicio, incremento, fin) DO comando
+
+**Recorrido de Tokens en lineas de texto:**
+
+FOR /F ["tokens=... delims=..."] %V IN (inicio, incremento, fin) DO comando
+
+
+**Ejemplo: parametro/R**
+
+Recorrer y mostrar todos los archivos de la unidad C: empezando en su directorio raiz y recorriendo recursivamente el resto de directorio que contiene:
+
+```bat
+@echo off
+echo example for: 
+
+FOR /R c:\ %%v IN (*) DO (
+	echo %%v
+)
+pause>nul
+```
+
+Una variación de este ejemplo sería el buscar un determinado tipo de archivos dentro de un directorio recursivamente. Voy a buscar todos los archivos "dll" y "exe" dentro del directorio "windows":
+
+```bat
+@echo off
+echo example for: 
+
+FOR /R c:\windows %%v IN (*.dll, *.exe) DO (
+	echo %%v
+)
+pause>nul
+```
+
+**Ejemplo: parametro/D**
+
+Si lo que me interesa es listar los directorios en vez de los archivos:
+
+```bat
+@echo off
+echo example for: 
+
+FOR /D %%v IN (*) DO (
+	echo %%v
+)
+pause>nul
+```
+
+Y si lo quiero hacer recursivamente puedo añadir "/R" al comando anterior:
+
+```bat
+@echo off
+echo example for: 
+
+FOR /R /D %%v IN (*) DO (
+	echo %%v
+)
+pause>nul
+```
+
+Y si quiero hacerlo recursivamente desde un directorio concreto (p.ej: c:\windows):
+
+```bat
+@echo off
+echo example for: 
+
+FOR /R c:\windows /D %%v IN (*) DO (
+	echo %%v
+)
+pause>nul
+```
+
+**Ejemplo: parametro/L**
+
+Para crear un tipico bucle contador 1 a 10, saltando de 1 en 1:
+
+```bat
+@echo off
+echo example for: 
+
+FOR /L %%x IN (1, 1, 10) DO (
+	echo %%x
+)
+pause>nul
+```
+
+
+
+Y saltando de 2 en 2:
+
+```bat
+@echo off
+echo example for: 
+
+FOR /L %%x IN (1, 2, 10) DO (
+	echo %%x
+)
+pause>nul
+```
+
+Hay que observar que el primer numero dentro del parentesis es el valor inicial que tomará la variable "%x", el segundo numero es el incremento que sufrirá dicha variable en la proxima iteracion del FOR, y el tercer número es el valor máximo que tomará dicha variable y que cuando alcance o supere dicho valor, el bucle FOR terminará de ejecutarse.
+
+
+**Otro ejemplo**:
+
+Archivo BAT que crea varios archivos vacios y los llama a todos con el mismo nombre, pero terminados en un numero diferente:
+
+```bat
+@echo off
+cls
+
+set/p nombre=Indica el nombre de los archivos a crear:
+
+set/p num=Cuantos archivos hay que crear?:
+
+for /L %%x in (1, 1, %num%) do (
+  echo 2> %%x%nombre%
+)
+pause>nul
+```
+
+**EJEMPLO: (parametro /F)**
+
+Recorrer un archivo y mostrar solo la primera palabra de cada linea:
+
+```bat
+@echo off
+cls
+
+for /F %%x in (archivo.txt) do (
+  echo %%x
+)
+pause>nul
+```
+
+ El FOR va recorriendo todas las lineas, y cada linea se ha dividido en "tokens" (token=palabra). La variable del for almacena la primera palabra de cada linea.
+
+
+**EJEMPLO: (parametro /F con tokens)**
+
+ Podemos seleccionar varios tokens mediante la clausula tokens=. Los distintos tokens se irán guardando automáticamente en variables alfabeticamente consecutivas a partir de la variable creada en el for.
+
+ En el siguiente ejemplo nos quedamos con los tokens (palabras) 1,3 y 5 de cada linea:
+
+ ```bat
+ @echo off
+cls
+
+for /F "tokens=1, 3, 5" %%a in (archivo.txt) do (
+  echo %%a %%b %%c
+)
+pause>nul
+ ```
+
+observa que aunque yo solamente he definido la variable "%%a" en el FOR, las variables "b" y "c" se crean automaticamente.
+
+Podemos escoger rangos, como en el siguiente ejemplo, en el que vamos a escoger los tokens del 1 al 3, y además el token 5
+
+ ```bat
+ @echo off
+cls
+
+for /F "tokens=1-3,5" %%a in (archivo.txt) do (
+  echo %%a %%b %%c %%d
+)
+pause>nul
+ ```
+
+ O si queremos capturar la línea completa a partir de la septima palabra:
+
+  ```bat
+ @echo off
+cls
+
+for /F "tokens=7*" %%a in (archivo.txt) do (
+  echo %%a
+)
+pause>nul
+ ```
+
+O si queremos capturar la linea completa:
+
+
+  ```bat
+ @echo off
+cls
+
+for /F "tokens=*" %%a in (archivo.txt) do (
+  echo %%a
+)
+pause>nul
+ ```
+
+
+ EJEMPLO8: (parametro /F con delimitadores)
+
+Además de la clausula "tokens" con el parámetro "/F", podemos usar la clausula "delims", que indica la separacion entre los distintos tokens. Por defecto, los caracteres delimitadores entre tokens son los espacios en blanco y los tabuladores.
+
+En el siguiente ejemplo anulamos los delimitadores y obtenemos lo mismo que antes:
+
+for /F "delims=" %%a in (fichero.txt) do (
+  echo %%a
+)
+
+Si queremos usar como delimitadores los simbolos de puntuacion, como el punto, la coma, el punto y coma, etc...:
+
+for /F "delims=.,;:" %%a in (fichero.txt) do (
+  echo %%a
+
+
+http://profesoremiliobarco.blogspot.com/2012/05/comando-for-para-archivos-bat.html
+
