@@ -177,3 +177,19 @@ Windows Registry Editor Version 5.00
 "NullFile"=""
 "Data"=""
 ```
+
+
+### Guardar los ajustes de configuración de la consola en el Registro de Windows.
+
+
+Los valores de la configuración de la consola CMD para el uso general, se encuentran en la siguiente clave de registro: 
+
+
+
+```
+HKEY_CURRENT_USER\Console\
+```
+
+```
+HKEY_CURRENT_USER 
+```

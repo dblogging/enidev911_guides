@@ -1,6 +1,6 @@
 <body style="background-color: darkorange">
 
-### BASH 
+### BASH
 
 Bash es el ácrinomo de 
 
