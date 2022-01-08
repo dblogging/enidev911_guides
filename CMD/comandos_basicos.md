@@ -442,6 +442,65 @@ Ejecutar "bcdedit" por sí solo equivale a ejecutar "bcdedit /enum ACTIVE".
 - **/debug**: Habilita o deshabilita la depuración de kernel para la entrada de un sistema operativo.
 - **/hypervisorsettings**: Establece los parámetros para el hipervisor.
 
+
+<b><u>Resumen:</u></b>
+
+BCDEDIT es un comando disponible en la consola de CMD que permite mediante la herramienta Bcdedit.exe, cambiar, modificar y personalizar la configuración de arranque de Windows. Podemos usarlo de forma sencilla para establecer el orden de los sistemas operativos, su nombre en el menú de arranque, usar sistemas en discos virtuales, habilitar o deshabilitar efectos, etc. 
+Es imprescindible en los casos que tenemos instalados dos o más versiones de Windows diferentes en un mismo equipo.
+
+**Sistemas de arranque de Windows**
+
+Los parámetros de inicio de Windows se guardan de forma diferente, dependiendo de la versión del sistema operativo.
+
+- **Arranque de Windows XP**: En Windows XP y sistemas anteriores se usa NTLDR (abreviatura de NT Loader), que es el gestor de arranque. Su archivo de configuración es **Boot.ini**, un sencillo archivo de texto que se puede ver en la raíz de la unidad principal. En él se relacionan los sistemas operativos instalados en el equipo, cuál de ellos es el predeterminado, el *timeout* o tiempo de espera, etc. Boot.ini se puede modificar usando el Bloc de notas u otro editor de texto.
+
+- **Arranque de Windows Vista y 7**: En Windows Vista se introduce y se usa también en Windows 7, el nuevo Administrador de arranque de Windows (Windows Boot Manager) BCD (Boot Configuration Data), en ingles: Datos de la Configuración de arranque.
+Este sistema más moderno permite el arranque en sistemas que no usan BIOS.
+La información se guarda en una base de datos similar al Registro de Windows, en un archivo llamado: **bootmgr** y en **C:\Boot\BCD.LOG.** Para modificarla se usa el comando BCDEDIT
+
+- **Arranque de Windows 8**: Windows 8 incluye un nuevo sistema de arranque, UEFI Secure Boot que según Microsoft ofrece más seguridad y aprovecha la nueva función de Inicio rápido que permite arrancar el sistema con más rapidez.
+No obstante en caso de desearlo se puede cambiar al anterior Windows Boot Manager.
+
+
+<b><u>Uso de BCDEDIT:</u></b>
+
+
+Usando BCDEDIT se puede agregar, eliminar, editar y anexar entradas en el almacén de datos de la configuración de arranque del equipo. BCDEDIT es necesario usarlo en la consola de CMD con permisos de administrador.
+
+Al usar en la consola el comando BCDEDIT sin ningún parámetro, solo se muestra la configuración de arranque actual del equipo.
+
+- **En la sección Administrador de arranque de Windows**: se muestra el sistema de arranque, el sistema operativo predeterminado (default), etc.
+- **En la sección Cargador de arranque de Windows**: se muestran los sistemas operativos instalados.
+
+<p align="center">
+	<img src="assets/img/bcdedit.png">
+</p>
+
+Los principales valores son los siguientes:
+
+- **Identificador**: es el identificador usado para dicha partición, encerrado entre dos llaves. Es necesario conocerlo para hacer algunos ajustes usando BCDEDIT. En caso del sistema operativo predeterminado el valor es: {current}. Otro sistema operativo se representa con un identificador único global (GUID), es una secuencia alfanumérica, por ejemplo: {2807aaab-f2a8-11de-8e0c-b4db26ac8165}. Si el sistema es Windows XP o anterior se indica: {ntldr}. Para conocer todos los identificadores usa en la consola: `bcdedit /? ID`
+- **Description**: indica el nombre que aparece en el menú de arranque.
+- **Bootmenupolicy**: solo en Windows 8, tiene dos valores:
+Legacy, sistema de arranque clasico, igual que en Windows 7
+Standard, sistema de arranque predeterminado
+
+
+<b><u>Usos prácticos del comando BCDEDIT</u></b>
+
+
+Crear y guardar un respaldo de la configuración de arranque Usa:
+
+```bat
+bcdedit /export C:\respaldo.txt
+```
+
+Restaurar el respaldo guardado:
+
+
+```bat
+bcdedit /import C:\respaldo.txt
+```
+
 [volver a índice](#top) &#x2934;
 
 ---
