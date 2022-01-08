@@ -1,19 +1,31 @@
+## <u style="padding-left:15px;">Guía rápida CMD</u> <img src="assets/img/cmd.ico" width="30" align="left">
+
+
+
 - [Rutas](#mark0)
 	+ [Rutas absolutas](#)
 	+ [Rutas relativas](#)
 	+ [Variable](#variables)
 
+<a name="top"></a>
 
 - [Comandos](#mark0)
-    * [attrib](#mark1)
-    * [at](#mark2)
+	* [assoc](#assoc)
+    * [at](#at)
+    * [attrib](#attrib)
+    * [bcdedit](#bcdedit)
+    * [break](#break)
+    * [cacls](#cacls)
     * [call](#call)
+    * [cls](#cls)
     * [dir](#dir)
     * [exit](#exit)
+    * [if](#if)
     * [mkdir - md](#mkdir)
     * [rem](#rem)
     * [rmdir](#mark5)
     * [pause](#pause)
+    * [prompt](#prompt)
     * [start](#start)
     * [shutdown](#shutdown)
     * [ipconfig](#ipconfig)
@@ -21,144 +33,78 @@
     * [title](#title)
     * [type](#type)
 
-### <a name="mark1"><u>Attrib</u></a>
 
 
-Muestra o cambia los atributos del archivos o directorios. Si se usa sin parámetros, **attrib** muestra los atributos de todos los archivos en el directorio actual.
+### <a name="assoc"><u>Assoc</u></a>
 
+Muestra o modifica las asociaciones de extensiones de archivos. La asociación de las extensiones le permite a Windows saber con qué aplicación podrá abrir un archivo por ejemplo, la extensión *xls* está asociada a Excel.
 
-Ejemplo:  
-
-```bash
-attrib
-```
-
-<p>
-	<img src="assets/img/attrib.png" alt="attrib"/>
-</p>
-
-- **Sintaxis**:
 
 ```
-ATTRIB [+R | -R] [+A | -A] [+S | -S] [+H | -H] [+I | -I]
-	   [unidad:] [ruta] [nombreArchivo] [/S [/D] [/L]]
+ASSOC [.ext[=[fileType]]]
 ```
 
-- **Key**:
-	- **(+)**: Activar un atributo
-	- **(-)**: Borrar un atributo 
+**Parámetros**
 
+- **.ext**: Especifica la extensi¢n con la cual asociar el tipo de archivo
+- **fileType**: Especifica el tipo de archivo con el que asociar la extensi¢n
 
-- **ruta**: Unidad y/o nombre de archivo, por ejemplo, **C:\*.txt**
+**Observaciones**
 
+- Escribir ASSOC sin parámetros para ver las asociaciones de archivo actuales.
+- Si ASSOC es llamado con solo la extensión de archivo, mostrárá la asociación actual del archivo para esa extensión. Si no especifica nada para el tipo de archivo y el comando se eliminará la asociación para la extensión de archivo.
+- Para eliminar una asociación de una extensión de archivo agrega un espacio en blanco despues del signo igual =.
+- Puedes utilizar el operador de redirección > para enviar la salida del comando **ASSOC** a un archivo de texto.
+- Para realizar modificaciones debemos abrir la sesión de CMD con permisos de administrador.
 
-- **Parámetros:**
-	+ **/S**: Procesa archivos que coinciden en la carpeta y todas las subcarpetas actuales.
-	+ **/D**: También procesa carpetas.
-	+ **/L**: Se trabaja en los atributos del vínculo simbólico en vez de en el destino del vínculo simbólico.
+**Ejemplos**
 
+Para ver las asociaciones de la extensión .xls ejecuta lo siguiente:
 
-
-
-**Comodines**  
-
-Puede utilizar los comodines (**? y ***) con el parámetro de **pathname** para mostrar o cambiar los attributos de un grupo de archivos.
-
-Cuando se crea un archivo suele tener el atributo **'A'**, pero podemos añadirle otro o quitarle el que tiene. Los atributos son: 
-
-
-**Atributos**
-
-- **A**: Sirve para saber si se ha modificado o no el directorio. Se suele asignar por defecto cuando se crea un nuevo archivo o directorio.
-- **R** (Solo lectura): Sirve para que no se pueda ni borrar ni modificar el contenido de un archivo o directorio. Solo podemos ver lo que contiene.
-- **H** (Oculto): Sirve para ocultar archivos y directorios durante las operaciones normales.
-- **S** (Sistema): Sirve para asignar a un archivo o directorio como si fuera un archivo del sistema, esto hace que este oculto y sea solo de lectura. Muchos archivos de windows están con este atributo con la finalidad de no ser modificados.
-
-
-Por ejemplo si quisieramos que nuestro archivo fuera de solo lectura, podríamos asignarle ese atributo de la siguiente manera:  
-
-```bash
-attrib +r file1.txt
-# Ahora si vemos los atributos nuevamente con:
-attrib file1.txt
-# Obtendriamos la siguiente salida: 
-# A    R       C:\Users\home\Desktop\file1.txt
+```bat
+assoc .xls
+:: .xls=Excel.Sheet.8
 ```
 
-Si quisiera modificar este archivo de texto **file1.txt** y guardarlo con el mismo nombre obtendrá un error como el siguiente: 
+Para ver enviar todas las asociaciones a un archivo txt.
 
-<center>![attrib](assets/img/file1_fail.png)</center>
-
-Estos cambios también afectan el modo gráfico en en algunos programas como word:
-
-<center>![attrib2](assets/img/attrib2.png)</center>
-
-
-Si queremos mantener nuestro archivo **file1.txt** además del atributo de solo lectura que sea también oculto, volvemos a nuestro símbolo de sistema y ejecutamos el siguiente comando: 
-
-```bash
-attrib +h file1.txt
-# Ahora si vemos los atributos nuevamente con:
-attrib file1.txt
-# Obtendriamos la siguiente salida: 
-# A    HR       C:\Users\home\Desktop\file1.txt
-```
-Si listaramos los archivos y carpetas con el comandor **dir** pasaría lo siguiente:  
-
-
-```bash
-dir /b
-# repository
-# comandos.txt
-# ====Ver los archivos ocultos y resumido con:
-dir /b/a
-# repository
-# comandos.txt
-# file1.txt
-# ====Ver solo los archivos oculos y resumido con:
-dir /b/a:h
-# file1.txt
+```bat
+assoc > asociaciones.txt
 ```
 
-Una cosa a tener en cuenta es que no podemos tener asignado el **atributo S** con el **atributo H** y viceversa. Lo mismo pasa con **S** y **R**. Para poder asignarlo, debemos primero quitar el atributo correspondiente:
+Para borrar la asociación txt, recuerda incluir un espacio en blanco después del signo igual.
 
-Ejemplo:  
-
-```bash
-attrib -r +s file1.txt
-# o en caso contrario
-attrib -s +r file1.txt
+```bat
+assoc .txt= 
 ```
 
-Por otra parte, los atributos también pueden ser modificados desde el modo gráfico, simplemente con seleccionar o deseleccionar el atributo, para ello debemos hacer clic derecho en el archivo e ir a sus propiedades:  
+Para asociar las extensión *.txt* con el programa Word.
 
+```bat
+assoc .txt=Word.Document.8
+:: Varía según Versión del Producto y del S.O 
+```
 
-<p align="center">
-	<img src="assets/img/properties.png" alt="properties"
-	width="400">
-	<img src="assets/img/properties2.png" alt="properties2"
-	width="400" height="510">
-</p>
+[volver a índice](#top) &#x2934;
 
+---
 
-### <a name="mark2"><u>At</u></a>
+### <a name="at"><u>At</u></a>
 
 
 El comando **AT** programa la ejecución de comandos y programas en un equipo a una hora y fecha especificadas. El comando aún se encuentra disponible por cuestiones de compatibilidad, pero ha sido extendido en el comando [SCHTASKS](#) que permite opciones más avanzadas. No obstante es posible emplearlo para la programación de tareas sencillas. Para poder usar esta herramientas necesita  **'Abrir como Administrador'** el símbolo de sistema.  
 
+
+```
+at [\Computername][{[ID] [/delete] | /delete [/yes]}]
+at [[\Computername] Hours:Minutes [/interactive] [{/every:date[,...] | /next:date[,...]}] command]
+```
 
 <p align="center">
 	<img src="assets/img/open_admin.png" alt="open_admin"
 	width="500">
 </p>
 
-
-Sintaxis:  
-
-```bash
-at [\Computername][{[ID] [/delete] | /delete [/yes]}]
-at [[\Computername] Hours:Minutes [/interactive] [{/every:date[,...] | /next:date[,...]}] command]
-```
 
 **Parámetros:**
 
@@ -236,7 +182,6 @@ Esto nos abrirá la ventana de configuración regional e idioma, vamos a la pestañ
 </p>
 
 
-
 Abreviaturas de los días de la semana en español:
 
 - **lunes**: l
@@ -247,7 +192,6 @@ Abreviaturas de los días de la semana en español:
 - **sábado**: s
 - **domingo**: d
 
-
 Abreviaturas de los días de la semana en inglés:
 
 - **monday**: m
@@ -257,8 +201,6 @@ Abreviaturas de los días de la semana en inglés:
 - **friday**: f
 - **saturday**: s
 - **sunday**: su
-
-
 
 Según nuestra configuración regional ingresaremos los valores para el argumento **/EVERY**. A continuación te dejo un ejemplo usando los nombres completos en lugar de sus abreviaturas en español: 
 
@@ -274,8 +216,6 @@ A continuación te dejo un ejemplo usando las abreviaturas en inglés, en caso de 
 	width="880">
 </p>
 
----
-
 
 - **Eliminar todos los comandos programados**
 
@@ -289,7 +229,295 @@ AT /DELETE /Y
 AT 2 /DELETE 
 ```
 
-### <u>call</u>
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="attrib"><u>Attrib</u></a>
+
+
+Muestra o cambia los atributos del archivos o directorios. Si se usa sin parámetros, **attrib** muestra los atributos de todos los archivos en el directorio actual.
+
+
+```
+ATTRIB [+R | -R] [+A | -A] [+S | -S] [+H | -H] [+I | -I]
+	   [unidad:] [ruta] [nombreArchivo] [/S [/D] [/L]]
+```
+
+**Parámetros:**
+
+- **/S**: Procesa archivos que coinciden en la carpeta y todas las subcarpetas actuales.
+- **/D**: También procesa carpetas.
+- **/L**: Se trabaja en los atributos del vínculo simbólico en vez de en el destino del vínculo simbólico.
+- **ruta**: Unidad y/o nombre de archivo, por ejemplo, **C:\*.txt**
+
+
+**Key**:
+
+- **(+)**: Activar un atributo
+- **(-)**: Borrar un atributo 
+
+
+**Ejemplo:**
+
+
+<p>
+	<img src="assets/img/attrib.png" alt="attrib"/>
+</p>
+
+
+**Comodines**  
+
+Puede utilizar los comodines (**? y ***) con el parámetro de **pathname** para mostrar o cambiar los attributos de un grupo de archivos.
+
+Cuando se crea un archivo suele tener el atributo **'A'**, pero podemos añadirle otro o quitarle el que tiene. Los atributos son: 
+
+
+**Atributos**
+
+- **A**: Sirve para saber si se ha modificado o no el directorio. Se suele asignar por defecto cuando se crea un nuevo archivo o directorio.
+- **R** (Solo lectura): Sirve para que no se pueda ni borrar ni modificar el contenido de un archivo o directorio. Solo podemos ver lo que contiene.
+- **H** (Oculto): Sirve para ocultar archivos y directorios durante las operaciones normales.
+- **S** (Sistema): Sirve para asignar a un archivo o directorio como si fuera un archivo del sistema, esto hace que este oculto y sea solo de lectura. Muchos archivos de windows están con este atributo con la finalidad de no ser modificados.
+
+
+Por ejemplo si quisieramos que nuestro archivo fuera de solo lectura, podríamos asignarle ese atributo de la siguiente manera:  
+
+```bash
+attrib +r file1.txt
+# Ahora si vemos los atributos nuevamente con:
+attrib file1.txt
+# Obtendriamos la siguiente salida: 
+# A    R       C:\Users\home\Desktop\file1.txt
+```
+
+Si quisiera modificar este archivo de texto **file1.txt** y guardarlo con el mismo nombre obtendrá un error como el siguiente: 
+
+<p align="center">
+	<img src="assets/img/file1_fail.png" alt="fail"/>
+</p>
+
+Estos cambios también afectan el modo gráfico en en algunos programas como word:
+
+<p align="center">
+	<img src="assets/img/attrib2.png" alt="example"/>
+</p>
+
+
+Si queremos mantener nuestro archivo **file1.txt** además del atributo de solo lectura que sea también oculto, volvemos a nuestro símbolo de sistema y ejecutamos el siguiente comando: 
+
+```bash
+attrib +h file1.txt
+# Ahora si vemos los atributos nuevamente con:
+attrib file1.txt
+# Obtendriamos la siguiente salida: 
+# A    HR       C:\Users\home\Desktop\file1.txt
+```
+
+Si listaramos los archivos y carpetas con el comandor **dir** pasaría lo siguiente:  
+
+```bat
+dir /b
+:: repository
+:: comandos.txt
+
+:: Ver los archivos ocultos y resumido con:
+dir /b/a
+:: repository
+:: comandos.txt
+:: file1.txt
+
+:: Ver solo los archivos oculos y resumido con:
+dir /b/a:h
+:: file1.txt
+```
+
+Una cosa a tener en cuenta es que no podemos tener asignado el **atributo S** con el **atributo H** y viceversa. Lo mismo pasa con **S** y **R**. Para poder asignarlo, debemos primero quitar el atributo correspondiente:
+
+Ejemplo:  
+
+```bat
+attrib -r +s file1.txt
+:: o en caso contrario
+attrib -s +r file1.txt
+```
+
+Por otra parte, los atributos también pueden ser modificados desde el modo gráfico, simplemente con seleccionar o deseleccionar el atributo, para ello debemos hacer clic derecho en el archivo e ir a sus propiedades:  
+
+
+<p align="center">
+	<img src="assets/img/properties.png" alt="properties"
+	width="400">
+	<img src="assets/img/properties2.png" alt="properties2"
+	width="400" height="510">
+</p>
+
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="bcdedit"><u>Bcdedit</u></a>
+
+**BCDEDIT**: Editor del almacén de datos de la configuración de arranque (BCD)
+
+La herramienta de la línea de comandos Bcdedit.exe modifica el almacén de datos de la configuración de arranque. El almacén de datos de la configuración de arranque contiene parámetros de configuraci¢n de arranque y controla el modo en que arranca el sistema operativo.
+
+Estos parámetros se encontraban antes en el archivo **Boot.ini** en sistemas operativos BIOS o en las entradas RAM no volátil en sistemas operativos basados en EFI (Extensible Firmware Interface). Puede usar Bcdedit.exe para agregar, eliminar, editar y anexar entradas en el almacén de datos de la configuración de arranque.
+
+Para obtener información detallada sobre comandos y opciones, escriba:
+
+```bat
+bcdedit.exe /? <comando>
+``` 
+
+Por ejemplo, para mostrar información detallada sobre el comando **/createstore**, escriba:
+
+```bat
+bcdedit.exe /? /createstore
+```
+
+Para obtener una lista alfabática de temas del archivo de ayuda, ejecute:
+
+```bat
+bcdedit /? TOPICS
+```
+
+<b><u>Comandos que operan en un almacén</u></b>
+
+
+- **/createstore**: Crea un nuevo almacén de datos de la configuración de arranque vacío.
+- **/export**: Exporta el contenido del almacén del sistema a un archivo. Este archivo se puede usar más adelante para restaurar el estado del almacén del sistema.
+- **/import**: Restaura el estado del almacén del sistema mediante un archivo de copia de seguridad creado con el comando /export.
+- **/sysstore**: Establece el dispositivo de almacén del sistema (solo afecta a los sistemas EFI, pero no se mantiene entre reinicios y solo se usa en los casos en que el dispositivo de almacén del sistema es ambiguo).
+
+
+<b><u>Comandos que operan en entradas de un almacén</u></b>
+
+- **/copy**: Hace copias de las entradas del almacén.
+- **/create**: Crea nuevas entradas en el almacén.
+- **/delete**: Elimina entradas del almacén.
+- **/mirror**: Crea un reflejo de las entradas del almacén.
+
+Ejecute bcdedit /? ID para obtener información sobre los identificadores usados por estos comandos.
+
+
+<b><u>Comandos que operan en opciones de entrada</u></b>
+
+- **/deletevalue**: Elimina las opciones de entrada del almacén.
+- **/set**: Establece valores de opciones de entrada en el almacén.
+
+
+Ejecute bcdedit /? TYPES para ver una lista de tipos de datos usados por estos
+comandos.
+
+Ejecute bcdedit /? FORMATS para ver una lista de formatos de datos válidos.
+
+
+<b><u>Comandos que controlan la salida</u></b>
+
+- **/enum**: Muestra la lista de entradas del almacén.
+- **/v**: Opción de la línea de comandos que muestra identificadores de entrada completos, en lugar de usar nombres para los identificadores conocidos. Use /v por sí solo como comando para mostrar los identificadores de entrada completos para el tipo ACTIVE.
+
+Ejecutar "bcdedit" por sí solo equivale a ejecutar "bcdedit /enum ACTIVE".
+
+
+<b><u>Comandos que controlan el administrador de arranque</u></b>
+
+- **/bootsequence**: Establece la secuencia de arranque única para el administrador de arranque.
+- **/default**: Establece la entrada predeterminada que usará el administrador de arranque.
+- **/displayorder**: Establece el orden en que el administrador de arranque muestra el menú de arranque múltiple.
+- **/timeout**: Establece el valor de tiempo de espera del administrador de arranque.
+- **/toolsdisplayorder**: Establece el orden en que el administrador de arranque muestra el menú de herramientas.
+
+<b><u>Comandos que controlan los Servicios de administración de emergencia para una aplicación de arranque</u></b>
+
+- **/bootems**: Habilita o deshabilita los Servicios de administración de emergencia para una aplicación de arranque.
+- **/ems**: Habilita o deshabilita los Servicios de administración de emergencia para una entrada del sistema operativo.
+- **/emssettings**: Establece los parámetros globales de los Servicios de administración de emergencia.
+
+<b><u>Comandos que controlan la depuración</u></b>
+
+- **/bootdebug**: Habilita o deshabilita la depuración de arranque para una aplicación de arranque.
+- **/dbgsettings**: Establece los parámetros globales del depurador.
+- **/debug**: Habilita o deshabilita la depuración de kernel para la entrada de un sistema operativo.
+- **/hypervisorsettings**: Establece los parámetros para el hipervisor.
+
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="break"><u>Break</u></a>
+
+Activa o desactiva Ctrl+C extendido en DOS
+
+Está presente para que haya compatibilidad con sistemas DOS, pero no tiene efecto en Windows.
+
+Si se habilitan las extensiones de comando y se ejecuta en la plataforma de Windows, el comando BREAK insertará un punto de interrupci¢n dentro del código, si está siendo depurado por un depurador.
+
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="cacls"><u>Cacls</u></a>
+
+
+**NOTA**: el comando Cacls está obsoleto, use Icacls.
+
+Muestra o modifica listas de control de acceso (ACL) de archivos
+
+```
+CACLS archivo [/T] [/M] [/L] [/S[:SDDL]] [/E] [/C] [/G usuario:perm]
+
+               [/R usuario [...]] [/P usuario:perm [...]] [/D usuario [...]]
+```
+
+
+- **archivo**: Muestra las ACL.
+- **/T**: Cambia las ACL de archivos especificados en el directorio actual y todos los subdirectorios.
+- **/L**: Trabaja en el propio vínculo simbólico en lugar del destino.
+- **/M**: Cambia las ACL de los volúmenes montados en un directorio.
+- **/S**: Muestra la cadena SDDL para la DACL.
+- **/S:SDDL**: Reemplaza las ACL por las especificadas en la cadena SDDL (no válido con /E, /G, /R, /P ni /D).
+- **/E**: Edita la ACL en vez de remplazarla.
+- **/C**: Continúa, omitiendo los errores de acceso denegado.
+- **/G usuario:perm**: Concede derechos de acceso del usuario. Perm puede ser: 
+	+ **R**: Leer
+	+ **W**: Escribir
+	+ **C**: Cambiar (escribir)
+	+ **F**: Control total
+- **/R usuario**: Revoca derechos del usuario (solo válida con /E).
+- **/P usuario:perm**: Reemplaza derechos de acceso del usuario. Perm puede ser: 
+	+ **N**: Ninguno
+	+ **R**: Leer
+	+ **W**: Escribir
+	+ **C**: Cambiar (escribir)
+	+ **F**: Control total
+- **/D usuario**: Deniega acceso al usuario especificado.
+
+Se pueden usar comodines para especificar más de un archivo. Puede especificar más de un usuario.
+
+<b><u>Abreviaturas:</u></b>
+
+- **CI**: Herencia de contenedor.
+- **ACE**: Se heredará por directorios.
+- **OI**: Herencia de objeto.
+- **ACE**: se heredará por archivos.
+- **IO**: Solo heredar. ACE no se aplica al archivo o directorio actual.
+- **ID**: Heredado. ACE se heredó de la ACL del directorio principal.
+
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="cls"><u>Cls</u></a>
+
+Borra la pantalla
+
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="call"><u>Call</u></a>
 
 Llama a un programa por lotes desde otro sin detener el programa por lotes principal.
 
@@ -338,6 +566,119 @@ Una etiqueta se define de la siguiente manera:
 ```bat
 : myShineLabel
 ```
+
+
+### <a name="if"><u>If</u></a>
+
+
+Realiza el procesamiento condicional de los programas por lotes.
+	
+```
+IF [NOT] ERRORLEVEL número comando
+IF [NOT] cadena1==cadena2 comando
+IF [NOT] EXIST archivo comando
+```
+
+
+- **NOT**: Especifica que Windows debe llevar a cabo el comando solo si la condici¢n es falsa.
+
+- **ERRORLEVEL número**: El número especifica una condición verdadera si el último programa que se ejecutó devolvió un código de salida igual o mayor que el número especificado.
+
+- **cadena1==cadena2**:  Especifica una condición verdadera si las cadenas de texto especificadas coinciden.
+
+- **EXIST archivo**: Especifica una condición verdadera si el archivo especificado existe.
+
+- **comando**: Especifica el comando que se va a ejecutar si se cumple la condición. El comando puede ir seguido de la palabra clave **ELSE**, que ejecutará el comando tras las palabra clave ELSE si la condición especificada es FALSE.
+
+La cláusula **ELSE** debe aparecer en la misma línea que la del comando que sigue a IF  Por ejemplo:
+
+```bat
+IF EXIST archivo. (
+    del archivo.
+) ELSE (
+    echo archivo. no existente.
+)
+```
+Lo siguiente NO funcionará porque el comando del debe terminar con una nueva línea:
+
+```bat
+IF EXIST archivo. del archivo. ELSE echo archivo. no existente
+```
+
+Tampoco funcionará lo siguiente, ya que el comando ELSE debe estar en la 
+misma línea que el comando IF:
+
+```bat
+IF EXIST archivo. del archivo.
+ELSE echo archivo. no existente
+```
+
+Si desea mantenerlo todo en una misma línea, lo siguiente funcionará:
+
+```bat
+IF EXIST archivo.txt (del archivo.txt) ELSE echo archivo.txt no existente
+```
+
+Si los comandos de extensión están habilitados, IF cambia así:
+
+ 
+ - **IF [/I] cadena1 op-de-comparación cadena2 comando**
+ - **IF CMDEXTVERSION número comando**
+ - **IF DEFINED variable comando**
+
+donde **op-de-comparación** puede ser:
+
+- **EQU**: igual
+- **NEQ**: no igual
+- **LSS**: menor que
+- **LEQ**: menor que o igual
+- **GTR**: mayor que
+- **GEQ**: mayor que o igual
+
+Y el modificador **/I**, si se especifica, realiza comparaciones de cadena que
+no distinguen entre mayúsculas y minúsculas. El modificador **/I** también puede
+usarse en la forma cadena1==cadena2 de IF. Estas comparaciones son genéricas,
+por lo que si tanto cadena1 como cadena2 se constituyen únicamente por dígitos
+numéricos, entonces las cadenas se convierten a números y se realiza una
+comparación numérica.
+
+El condicional CMDEXTVERSION funciona solo como ERRORLEVEL, excepto si se
+compara con un número de versión interna asociada con las extensiones de
+comando. La primera versión es 1. Será incrementada en uno cuando las
+significantes mejoras sean agregadas a las extensiones de comando. El
+condicional CMDEXTVERSION nunca es verdadero cuando las extensiones de
+comando están deshabilitadas.
+
+El condicional DEFINED funciona solo como EXIST excepto cuando toma un
+nombre de variable de entorno y vuelve como verdadero si se define la
+variable de entorno.
+
+%ERRORLEVEL% se expandirá a una representación de cadena del valor actual
+de ERRORLEVEL, siempre y cuando no exista ya una variable de entorno con el 
+nombre ERRORLEVEL, en cuyo caso obtendrá su valor. 
+
+Después de ejecutar un programa, lo siguiente ilustrará el uso de ERRORLEVEL
+
+```bat
+goto answer%ERRORLEVEL%
+:answer0
+echo El programa devolvió el código 0
+:answer1
+echo El programa devolvió el c¢digo 1
+```
+
+También puede usar las comparaciones numéricas anteriores:
+
+```bat    
+IF %ERRORLEVEL% LEQ 1 goto okay
+```
+
+%CMDCMDLINE% se expandirá a una línea de comandos original pasada al anterior
+CMD.EXE a cualquier proceso CMD.EXE, siempre y cuando no exista ya una variable de entorno con el nombre CMDCMDLINE, en cuyo caso obtendrá su valor.
+
+%CMDEXTVERSION% se expandirá a una representación de la cadena del valor actual CMDEXTVERSION, siempre y cuando no exista ya una variable de entorno con el nombre CMDEXTVERSION, en cuyo caso obtendrá su valor
+
+
 
 
 ### <a href="#net"><u>net</u></a>
@@ -1155,6 +1496,49 @@ TYPE [unidad:][ruta]archivo
 Suspende el proceso de un programa por lotes y muestra el mensaje  
 `Presione una tecla para continuar. . .` 
 
+
+### <a href="#prompt"><u>Prompt</u></a>
+
+Cambia el símbolo del sistema de cmd.exe.
+
+
+```
+PROMPT [texto]
+```
+
+
+- **texto**: Especifica un nuevo s¡mbolo del sistema.
+
+
+En el símbolo del sistema se pueden escribir caracteres normales y los
+siguientes códigos especiales:
+
+- **$A**: & (Símbolo de unión)
+- **$B**: | (barra vertical)
+- **$C**: ( (Paréntesis izquierdo)
+- **$D**: Fecha actual
+- **$E**: <- Código de escape (código ASCII 27)
+- **$F**: ) (Paréntesis derecho)
+- **$G**: > (signo mayor que)
+- **$H**: Retroceso (elimina el carácter previo)
+- **$L**: < (signo menor que)
+- **$N**: Unidad actual
+- **$P**: Unidad y ruta de acceso actual
+- **$Q**: = (signo igual)
+- **$S**: (espacio)
+- **$T**: Hora actual
+- **$V**: Versión de Windows
+- **$_**: Retorno de carro y alimentación de línea
+- **$$**: $ (signo del dólar)
+
+Si las Extensiones de comando están habilitadas, el comando PROMPT
+admite los siguientes caracteres de formato adicionales:
+
+- **$+**: Cero o más caracteres de signo "más" (+) en función de la profundidad del directorio de pila PUSHD, un carácter por cada nivel insertado.
+- **$M**: Muestra el nombre remoto asociado a la letra de unidad actual o la cadena vacía si la unidad actual no es una unidad de red.
+
+
+
 ### <a href="#pause"><u>Shutdown</u></a>
 
 
@@ -1221,4 +1605,130 @@ Uso: shutdown [/i | /l | /s | /r | /g | /a | /p | /h | /e | /o] [/hybrid] [/f]
     |U   |6	    |11	    |Error de alimentación: se desconectó el enchufe|
     |U   |6	    |12	    |Error de alimentación: externo|
     |P 	 |7	    |0	    |Apagado de la API heredada|
+
+
+
+### <a href="#rmdir"><u>Rd o rmdir</u></a>
+
+
+Quita (elimina) un directorio.
+
+```
+RMDIR [/S] [/Q] [unidad:]ruta
+RD [/S] [/Q] [unidad:]ruta
+```
+
+- **/S**: Quita todos los directorios y archivos del directorio además del mismo directorio. Se usa principalmente cuando se desea quitar un árbol.
+- **/Q**:  Modo silencioso, no pide confirmación para quitar un árbol de directorio con /S
+
+
+
+
+
+
+Ejecuta el comando para cada uno de los archivos especificados en el conjunto de archivos.
+
+```
+FOR %variable IN (conjunto) DO comando [parámetros]
+```
+  
+- **%variable**: Especifica un parámetro reemplazable de una sola letra.
+- **(conjunto)**:  Especifica un conjunto de uno o más archivos. Se pueden usar comodines.
+- **comando**: Especifica el comando que se ejecutará para cada archivo. 
+- **parámetros**: Especifica los parámetros o modificadores del comando especificado.
+
+
+Para usar el comando FOR en un programa por lotes, especificar %%variable en vez de %variable. Los nombres de las variables distinguen entre mayúsculas y minúsculas, por lo tanto %i no es lo mismo que %I.
+
+Si las extensiones de comandos están habilitadas, se admiten las siguientes formas adicionales del comando FOR:
+
+
+```
+FOR /D %variable IN (conjunto) comando DO [parámetros]
+```
+
+Si el conjunto contiene comodines, se especifica para coincidir con el nombre del directorio en vez de los nombres de archivo.
+
+```
+FOR /R [[unidad:]ruta] %variable IN (set) comando DO [par metros]
+```
+
+Guía el directorio del árbol de raíz a [unidad:]ruta, ejecutando la instrucción FOR en cada directorio del árbol. Si no se especifica el directorio después de /R entonces se asume que es el directorio actual. Si el conjunto es solamente un simple carácter de punto (.) entonces enumerará el árbol del directorio.
+
+```
+FOR /L %variable IN (inicio, paso, fin) comando DO [parámetros]
+```
+
+El conjunto es una sucesión de números que va desde inicio hasta fin y que aumenta (o disminuye) en función de lo especificado en paso. 
+
+Así (1, 1, 5) generará la sucesión: 1 2 3 4 5 y (5, -1, 1) generará la sucesión: 5 4 3 2 1
+
+
+```
+FOR /F ["opciones"] %variable IN (conjunto de archivos) comando DO
+[parámetros]
+FOR /F ["opciones"] %variable IN ('cadena') comando DO [comando-par metros]
+FOR /F ["opciones"] %variable IN ('comando') comando DO [comando-par metros]
+```
+
+O, si la opción usebackq está presente:
+
+
+```
+FOR /F ["opciones"] %variable IN (conjunto de archivos) comando DO
+       [comando-parámetros]
+FOR /F ["opciones"] %variable IN ('cadena') comando DO [comando-par metros]
+FOR /F ["opciones"] %variable IN (`comando`) comando DO [comando-par metros]
+```
+
+Conjunto de archivos es uno o más nombres de archivos. Cada archivo es abierto, leído y procesado antes de ir al siguiente archivo del conjunto de archivos. Procesar consiste en leer el archivo, partirlo en líneas individuales de texto y analizar cada línea en cero o más tokens. El cuerpo del bucle se llama con los valores de la variable establecidos para las cadenas de token encontradas. De forma predeterminada, /F pasa el primer token separado en blanco desde cada línea. Las líneas en blanco se omiten. Puede invalidar el comportamiento de análisis predeterminado si especifica el parámetro opcional "opciones". Esto es una cadena entre comillas que contiene una o más palabras claves para especificar diferentes opciones de análisis. Las palabras claves son:
+
+- **eol=c**: especifica un carácter de comentario al final de la línea (solo uno)
+- **skip=n**: especifica el n£mero de líneas que hay que saltarse al principio del archivo.
+- **delims=xxx**: especifica un grupo de delimitadores. Esto reemplaza al grupo de delimitadores predeterminados de espacio y tabulación.
+- **tokens=x,y,m-n**: especifica qué token de cada línea deben pasarse al cuerpo de la cláusula "for" en cada iteración. Esto causará que los nombres de variables adicionales sean asignados. La forma m-n es un intervalo del token m-‚ al token n-‚. Si el último carácter en la cadena tokens= es un asterisco, se asigna una variable adicional que recibe el resto del texto en la línea posterior al último token analizado. 
+- **usebackq**: especifica que la nueva semántica está vigente, donde una cadena entre comillas inversas se ejecuta como un comando y una cadena con comillas simples es un comando de cadena literal y permite el uso de comillas dobles para entrecomillar los nombres de archivo en un conjunto de archivos.
+
+
+Estos ejemplos pueden ayudar:
+
+```
+FOR /F "eol=; tokens=2,3* delims=, " %i in (archivo.txt) do @echo %i %j %k
+```
+
+analizará cada línea en mi archivo.txt excepto las que se inicien con un punto y coma, pasando el segundo y tercer símbolo (token) de cada línea al cuerpo de FOR. Los símbolos están delimitados por comas y/o espacios. Tenga en cuenta que las instrucciones del cuerpo de FOR hacen referencia a %i para obtener el segundo símbolo, a %j para obtener el tercero y a %k para obtener el resto de los símbolos posteriores al tercero. Para los nombres de archivo que contengan espacios, necesita poner comillas dobles en los nombres de archivos. Para usar comillas dobles de esta manera, también necesita usar la opción usebackq; de lo contrario se interpretará que las comillas dobles están definiendo el análisis de una cadena literal. %i está explícitamente declarado en la instrucción FOR y %j y %k están declarados implícitamente a través de la opción =tokens. Puede especificar hasta 26 símbolos a través de la línea tokens=, siempre y cuando no cause un intento de declarar una variable mayor que la letra 'z' o 'Z'. Recuerde, los nombres de variables de FOR son de una sola letra y distinguen mayúsculas de minúsculas. Además, las variables son globales y no puede haber más de 52 variables activas al mismo tiempo.
+
+También puede usar la lógica de análisis de FOR /F en una cadena inmediata convirtiendo el conjunto de archivos entre paréntesis en una cadena entre comillas simples. Será tratada y analizada como una sola línea de entrada de un archivo. Finalmente, puede usar el comando FOR /F para analizar la salida de un comando. Se hace convirtiendo el conjunto de archivos entre paréntesis una cadena con comillas invertidas. Se tratará como una línea de comandos que se pasa a un CMD.EXE secundario y la salida se captura en memoria y se evalúa como si fuera un archivo. Como en el siguiente ejemplo:
+
+```
+FOR /F "usebackq delims==" %i IN (`conjunto`) DO @echo %i
+```
+
+enumerará los nombres de variable de entorno en el entorno actual. Además, la sustitución de las referencias de variables FOR ha sido mejorada. Ahora puede usar la siguiente sintaxis opcional:
+
+
+- **%~I**: expande %I quitando las comillas (") que pudiera haber
+- **%~fI**: expande %I a un nombre de ruta calificado
+- **%~dI**: expande %I solo a una letra de unidad
+- **%~pI**: expande %I solo a una ruta
+- **%~nI**: expande %I solo a un nombre de archivo
+- **%~xI**: expande %I solo a una extensión de archivo
+- **%~sI**: ruta expandida contiene solo nombres cortos
+- **%~aI**: expande %I a atributos de archivos
+- **%~tI**: expande %I a fecha/hora del archivo
+- **%~zI**: expande %I a tamaño del archivo
+- **%\~$PATH:I**: busca los directorios de la lista de la variablende entorno de PATH y expande %I al nombre totalmente calificado del primero que se encuentre. Si el nombre de la variable de entorno no es definido o no se encuentra el archivo en la búsqueda, el modificador se expande a la cadena vacía
+
+
+Los modificadores se pueden combinar para conseguir resultados compuestos:
+
+
+- **%~dpI**: expande %I solo a una letra de unidad y ruta
+- **%~nxI**: expande %I solo a un nombre de archivo y extensión
+- **%~fsI**: expande %I solo a un nombre de ruta con nombres cortos
+- **%~dp$PATH:i**: busca los directorios de la lista de la variable de entorno de PATH para %I y se expande a la letra de unidad y ruta del primero que encuentre.
+- **%\~ftzaI**: expande %I a DIR como línea de salida.S
+
+En los ejemplos anteriores %I y PATH pueden ser reemplazados por otros valores válidos. La sintaxis %~ está terminada por un nombre de variablem FOR válido. El código se vuelve más legible si se usan variables en mayúscula como %I, además esto evita confundir las variables con los modificadores, los cuales no distinguen entre mayúsculas y minúsculas.
+
 

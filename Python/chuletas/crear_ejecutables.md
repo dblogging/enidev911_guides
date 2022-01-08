@@ -7,7 +7,6 @@ Afortunadamente, hay algunas herramientas de código abierto bastante impresiona
 ### Pyinstaller
 
 
-
 ```bash
 pyinstaller --onefile --windowed --icon=app.ico app.py
 ```
