@@ -480,6 +480,7 @@ EXIT [/B] [código]
 
 
 
+
 ### <a href="#rem"><u>Rem</u></a>
 
 
@@ -552,14 +553,14 @@ start /NODE 1 /AFFINITY 0x3 application1.exe
 start /NODE 1 /AFFINITY 0xc application2.exe
 ```
 
-Si las extensiones de comandos est n habilitadas, la invocaci¢n del
-comando externo a trav‚s de la l¡nea de comandos o del comando START
-cambia as¡:
+Si las extensiones de comandos están habilitadas, la invocación del
+comando externo a través de la línea de comandos o del comando START se
+cambia así:
 
-Se pueden invocar archivos no ejecutables a trav‚s de la asociaci¢n del
+Se pueden invocar archivos no ejecutables a través de la asociación del
 archivo solo con escribir el nombre del archivo como un comando. (por ej.,
 WORD.DOC abrir¡a la aplicación asociada con la extensión de archivo .DOC).
-Consulte los comandos ASSOC y FTYPE para saber c¢mo crear estas asociaciones
+Consulte los comandos ASSOC y FTYPE para saber cómo crear estas asociaciones
 dentro de un script de comandos.
 
 Cuando se ejecuta una aplicación de 32 bits con interfaz gráfica, CMD.EXE
