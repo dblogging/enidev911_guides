@@ -1,3 +1,8 @@
+<p align="center">
+	<img src="assets/img/logo_48.png" width="50">
+</p>
+	
+
 ## Pasos para incluir la ejecución de programas en una diapositiva
 
 
@@ -36,9 +41,9 @@ Como en la siguiente imagen usaremos el objeto que esta marcado para asignarle l
 </p>
 
 
-Lo que causará que cuando yo presione sobre mi objeto, se abrirá el programa **CMD** y ejecutará el comando **cd /** para que cambie de ubicación a la raiz del disco C:.
+Lo que causará que cuando yo presione sobre mi objeto, se abrirá el programa **CMD** y ejecutará el comando **cd /** para que cambie de ubicación a la raíz del disco C:.
 
-Al momento de guardar los cambios con esta acción por alguna razón no funciona los argumentos, la solución que pude encontrar es colocando lo siguiente en el campo de ejecutar el programa:
+Al momento de guardar los cambios con esta acción por alguna razón no funciona los argumentos por lo que se abre el programa sin aplicar el argumento, la solución que pude encontrar es colocando lo siguiente en el campo de ejecutar el programa:
 
 <p align="center">
 	<img src="assets/img/argumentos.png" alt="argumentos" width="600">
@@ -51,7 +56,7 @@ A continuación dejo otro ejemplo, donde se abrirá el navegador y se conectara 
 </p>
 
 
-Eso es todo, en el modo presentación puede iniciar el programa sin tener que salir de su presentación. Podría recibir una advertencia de seguridad mientras lo hacem, aceptamos y listo:
+Eso es todo, en el modo presentación puede iniciar el programa sin tener que salir de su presentación. Podría recibir una advertencia de seguridad mientras al momento de iniciar la presentación, aceptamos y listo:
 
 <p align="center">
 	<img src="assets/img/habilitar.png" alt="final">

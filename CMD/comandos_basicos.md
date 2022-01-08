@@ -9,24 +9,22 @@
     * [at](#mark2)
     * [call](#call)
     * [dir](#dir)
+    * [exit](#exit)
     * [mkdir - md](#mkdir)
+    * [rem](#rem)
     * [rmdir](#mark5)
+    * [pause](#pause)
     * [start](#start)
+    * [shutdown](#shutdown)
     * [ipconfig](#ipconfig)
-    * [CÃ³digo](#mark10)
-    * [Lineas Horizontales](#mark11)
-    * [Escapar caracteres](#mark12)
-    * [Notas a pie de pÃ¡gina](#mark13)
-    * [Abreviaturas](#mark14)
-    * [Indentificadores de cabecera](#mark15)
-    * [Casillas de verificaciÃ³n](#mark16)
-	* [Emojis]()
-
+    * [time](#time)
+    * [title](#title)
+    * [type](#type)
 
 ### <a name="mark1"><u>Attrib</u></a>
 
 
-Muestra o cambia los atributos del archivos o directorios. Si se usa sin parÃ¡metros, **attrib** muestra los atributos de todos los archivos en el directorio actual.
+Muestra o cambia los atributos del archivos o directorios. Si se usa sin parámetros, **attrib** muestra los atributos de todos los archivos en el directorio actual.
 
 
 Ejemplo:  
@@ -35,8 +33,9 @@ Ejemplo:
 attrib
 ```
 
-<center>![Attrib](assets/img/attrib.png)</center>
-
+<p>
+	<img src="assets/img/attrib.png" alt="attrib"/>
+</p>
 
 - **Sintaxis**:
 
@@ -53,19 +52,19 @@ ATTRIB [+R | -R] [+A | -A] [+S | -S] [+H | -H] [+I | -I]
 - **ruta**: Unidad y/o nombre de archivo, por ejemplo, **C:\*.txt**
 
 
-- **ParÃ¡metros:**
+- **Parámetros:**
 	+ **/S**: Procesa archivos que coinciden en la carpeta y todas las subcarpetas actuales.
-	+ **/D**: TambiÃ©n procesa carpetas.
-	+ **/L**: Se trabaja en los atributos del vÃ­nculo simbÃ³lico en vez de en el destino del vÃ­nculo simbÃ³lico.
+	+ **/D**: También procesa carpetas.
+	+ **/L**: Se trabaja en los atributos del vínculo simbólico en vez de en el destino del vínculo simbólico.
 
 
 
 
 **Comodines**  
 
-Puede utilizar los comodines (**? y ***) con el parÃ¡metro de **pathname** para mostrar o cambiar los attributos de un grupo de archivos.
+Puede utilizar los comodines (**? y ***) con el parámetro de **pathname** para mostrar o cambiar los attributos de un grupo de archivos.
 
-Cuando se crea un archivo suele tener el atributo **'A'**, pero podemos aÃ±adirle otro o quitarle el que tiene. Los atributos son: 
+Cuando se crea un archivo suele tener el atributo **'A'**, pero podemos añadirle otro o quitarle el que tiene. Los atributos son: 
 
 
 **Atributos**
@@ -73,10 +72,10 @@ Cuando se crea un archivo suele tener el atributo **'A'**, pero podemos aÃ±adirl
 - **A**: Sirve para saber si se ha modificado o no el directorio. Se suele asignar por defecto cuando se crea un nuevo archivo o directorio.
 - **R** (Solo lectura): Sirve para que no se pueda ni borrar ni modificar el contenido de un archivo o directorio. Solo podemos ver lo que contiene.
 - **H** (Oculto): Sirve para ocultar archivos y directorios durante las operaciones normales.
-- **S** (Sistema): Sirve para asignar a un archivo o directorio como si fuera un archivo del sistema, esto hace que este oculto y sea solo de lectura. Muchos archivos de windows estÃ¡n con este atributo con la finalidad de no ser modificados.
+- **S** (Sistema): Sirve para asignar a un archivo o directorio como si fuera un archivo del sistema, esto hace que este oculto y sea solo de lectura. Muchos archivos de windows están con este atributo con la finalidad de no ser modificados.
 
 
-Por ejemplo si quisieramos que nuestro archivo fuera de solo lectura, podrÃ­amos asignarle ese atributo de la siguiente manera:  
+Por ejemplo si quisieramos que nuestro archivo fuera de solo lectura, podríamos asignarle ese atributo de la siguiente manera:  
 
 ```bash
 attrib +r file1.txt
@@ -86,16 +85,16 @@ attrib file1.txt
 # A    R       C:\Users\home\Desktop\file1.txt
 ```
 
-Si quisiera modificar este archivo de texto **file1.txt** y guardarlo con el mismo nombre obtendrÃ¡ un error como el siguiente: 
+Si quisiera modificar este archivo de texto **file1.txt** y guardarlo con el mismo nombre obtendrá un error como el siguiente: 
 
 <center>![attrib](assets/img/file1_fail.png)</center>
 
-Estos cambios tambiÃ©n afectan el modo grÃ¡fico en en algunos programas como word:
+Estos cambios también afectan el modo gráfico en en algunos programas como word:
 
 <center>![attrib2](assets/img/attrib2.png)</center>
 
 
-Si queremos mantener nuestro archivo **file1.txt** ademÃ¡s del atributo de solo lectura que sea tambiÃ©n oculto, volvemos a nuestro sÃ­mbolo de sistema y ejecutamos el siguiente comando: 
+Si queremos mantener nuestro archivo **file1.txt** además del atributo de solo lectura que sea también oculto, volvemos a nuestro símbolo de sistema y ejecutamos el siguiente comando: 
 
 ```bash
 attrib +h file1.txt
@@ -104,7 +103,7 @@ attrib file1.txt
 # Obtendriamos la siguiente salida: 
 # A    HR       C:\Users\home\Desktop\file1.txt
 ```
-Si listaramos los archivos y carpetas con el comandor **dir** pasarÃ­a lo siguiente:  
+Si listaramos los archivos y carpetas con el comandor **dir** pasaría lo siguiente:  
 
 
 ```bash
@@ -131,7 +130,7 @@ attrib -r +s file1.txt
 attrib -s +r file1.txt
 ```
 
-Por otra parte, los atributos tambiÃ©n pueden ser modificados desde el modo grÃ¡fico, simplemente con seleccionar o deseleccionar el atributo, para ello debemos hacer clic derecho en el archivo e ir a sus propiedades:  
+Por otra parte, los atributos también pueden ser modificados desde el modo gráfico, simplemente con seleccionar o deseleccionar el atributo, para ello debemos hacer clic derecho en el archivo e ir a sus propiedades:  
 
 
 <p align="center">
@@ -145,7 +144,7 @@ Por otra parte, los atributos tambiÃ©n pueden ser modificados desde el modo grÃ¡
 ### <a name="mark2"><u>At</u></a>
 
 
-El comando **AT** programa la ejecuciÃ³n de comandos y programas en un equipo a una hora y fecha especificadas. El comando aÃºn se encuentra disponible por cuestiones de compatibilidad, pero ha sido extendido en el comando [SCHTASKS](#) que permite opciones mÃ¡s avanzadas. No obstante es posible emplearlo para la programaciÃ³n de tareas sencillas. Para poder usar esta herramientas necesita  **'Abrir como Administrador'** el sÃ­mbolo de sistema.  
+El comando **AT** programa la ejecución de comandos y programas en un equipo a una hora y fecha especificadas. El comando aún se encuentra disponible por cuestiones de compatibilidad, pero ha sido extendido en el comando [SCHTASKS](#) que permite opciones más avanzadas. No obstante es posible emplearlo para la programación de tareas sencillas. Para poder usar esta herramientas necesita  **'Abrir como Administrador'** el símbolo de sistema.  
 
 
 <p align="center">
@@ -161,11 +160,11 @@ at [\Computername][{[ID] [/delete] | /delete [/yes]}]
 at [[\Computername] Hours:Minutes [/interactive] [{/every:date[,...] | /next:date[,...]}] command]
 ```
 
-**ParÃ¡metros:**
+**Parámetros:**
 
-- **\Computername**: utilice este parÃ¡metro para especificar una computadora remota. Si omite este parÃ¡metro, las tareas estÃ¡n programadas para ejecutarse en el equipo local.
-- **ID**: Especifica el nÃºmero de identificaciÃ³n asignado a un comando programado.
-- **EVERY:DAY**: Ejecuta el comando el o los dÃ­as especificados, las iniciales de los dÃ­as utilizados tienen que corresponder a los dÃ­as en el idioma correspondiente.
+- **\Computername**: utilice este parámetro para especificar una computadora remota. Si omite este parámetro, las tareas están programadas para ejecutarse en el equipo local.
+- **ID**: Especifica el número de identificación asignado a un comando programado.
+- **EVERY:DAY**: Ejecuta el comando el o los días especificados, las iniciales de los días utilizados tienen que corresponder a los días en el idioma correspondiente.
 - **/DELETE**: Cancela una tarea programa. Si se omite el **ID**, se cancelan todas las tareas programadas en el equipo.
 
 
@@ -179,13 +178,13 @@ at [[\Computername] Hours:Minutes [/interactive] [{/every:date[,...] | /next:dat
 AT
 ```
 
-- **A la 6:55 de la maÃ±ana inicia el navegador y conecta el equipo a Google.com**
+- **A la 6:55 de la mañana inicia el navegador y conecta el equipo a Google.com**
 
 ```bash
 AT 06:55 cmd /c start http://google.com
 ```
 
-Si revisamos con el primer comando, obtendrÃ¡ algo parecido a lo siguiente:
+Si revisamos con el primer comando, obtendrá algo parecido a lo siguiente:
 
 <p align="center">
 	<img src="assets/img/at.png" alt="at"
@@ -195,13 +194,13 @@ Si revisamos con el primer comando, obtendrÃ¡ algo parecido a lo siguiente:
 
 
 
-- **Realiza un respaldo, a las 07:00 de la maÃ±ana copia todos los archivos de la carpeta Mis Documentos en la carpeta Backup situada en el disco B:**
+- **Realiza un respaldo, a las 07:00 de la mañana copia todos los archivos de la carpeta Mis Documentos en la carpeta Backup situada en el disco B:**
 
 ```bash
 AT 07:00 cmd /c copy %USERPROFILE%\Documents\*.* B:\Backup
 ```
 
-Tener en cuenta que solo copiarÃ¡ los archivos, no las carpetas ni los archivos que se encuentren en las subcarpetas. A continuaciÃ³n te dejo una ilustraciÃ³n de ejemplo: 
+Tener en cuenta que solo copiará los archivos, no las carpetas ni los archivos que se encuentren en las subcarpetas. A continuación te dejo una ilustración de ejemplo: 
 
 <p align="center">
 	<img src="assets/img/at_backup.png" alt="at"
@@ -212,24 +211,24 @@ Tener en cuenta que solo copiarÃ¡ los archivos, no las carpetas ni los archivos 
 ---
 
 
-- **Todos los dÃ­as ejecuta a las 11:30 de la maÃ±ana el script en batch llamado copia_diaria.cmd**
+- **Todos los días ejecuta a las 11:30 de la mañana el script en batch llamado copia_diaria.cmd**
 
 
 ```bash
-# En caso de tener la configuraciÃ³n regional en inglÃ©s
+# En caso de tener la configuración regional en inglés
 AT 11:30 /EVERY:m,t,w,th,f,s,su c:\backup\copy_daily.cmd
-# En caso de tener la configuraciÃ³n regional en espaÃ±ol
+# En caso de tener la configuración regional en español
 AT 11:30 /EVERY:l,m,mi,j,v,s,d c:\backup\copy_daily.cmd
 
 ```
 
-Para ver la configuraciÃ³n del teclado e idioma, podemos desde el sÃ­mbolo del sistema ingresar el comando: 
+Para ver la configuración del teclado e idioma, podemos desde el símbolo del sistema ingresar el comando: 
 
 ```bash
 intl.cpl
 ```
 
-Esto nos abrirÃ¡ la ventana de configuraciÃ³n regional e idioma, vamos a la pestaÃ±a que dice teclado e idiomas o en su lugar Keyboards and Languages:  
+Esto nos abrirá la ventana de configuración regional e idioma, vamos a la pestaña que dice teclado e idiomas o en su lugar Keyboards and Languages:  
 
 <p align="center">
 	<img src="assets/img/settings_region.png" alt="settings"
@@ -238,18 +237,18 @@ Esto nos abrirÃ¡ la ventana de configuraciÃ³n regional e idioma, vamos a la pest
 
 
 
-Abreviaturas de los dÃ­as de la semana en espaÃ±ol:
+Abreviaturas de los días de la semana en español:
 
 - **lunes**: l
 - **martes**: m
-- **miÃ©rcoles**: mi
+- **miércoles**: mi
 - **jueves**: j
 - **viernes**: v
-- **sÃ¡bado**: s
+- **sábado**: s
 - **domingo**: d
 
 
-Abreviaturas de los dÃ­as de la semana en inglÃ©s:
+Abreviaturas de los días de la semana en inglés:
 
 - **monday**: m
 - **tuesday**: t
@@ -261,14 +260,14 @@ Abreviaturas de los dÃ­as de la semana en inglÃ©s:
 
 
 
-SegÃºn nuestra configuraciÃ³n regional ingresaremos los valores para el argumento **/EVERY**. A continuaciÃ³n te dejo un ejemplo usando los nombres completos en lugar de sus abreviaturas en espaÃ±ol: 
+Según nuestra configuración regional ingresaremos los valores para el argumento **/EVERY**. A continuación te dejo un ejemplo usando los nombres completos en lugar de sus abreviaturas en español: 
 
 <p align="center">
 	<img src="assets/img/at_every.png" alt="at_every"
 	width="880">
 </p>
 
-A continuaciÃ³n te dejo un ejemplo usando las abreviaturas en inglÃ©s, en caso de que la configuraciÃ³n se encuentre en ese idioma: 
+A continuación te dejo un ejemplo usando las abreviaturas en inglés, en caso de que la configuración se encuentre en ese idioma: 
 
 <p align="center">
 	<img src="assets/img/at_every2.png" alt="at_every"
@@ -294,7 +293,7 @@ AT 2 /DELETE
 
 Llama a un programa por lotes desde otro sin detener el programa por lotes principal.
 
-El comando **CALL** lanzarÃ¡ un nuevo contexto de archivo por lotes junto con los parÃ¡metros especificados. Cuando se alzanza el final del segundo archivo por lotes (o si se usa EXIT), el control volverÃ¡ justo despuÃ©s de la instrucciÃ³n CALL inicial.
+El comando **CALL** lanzará un nuevo contexto de archivo por lotes junto con los parámetros especificados. Cuando se alzanza el final del segundo archivo por lotes (o si se usa EXIT), el control volverá justo después de la instrucción CALL inicial.
 
 Los argumentos se pueden pasar como una cadena simple o usando una variable:
 
@@ -324,14 +323,14 @@ SET _description=[%2]
 
 ```
 
-En muchos casos, tambiÃ©n querrÃ¡ usar **SETLOCAL** y **ENDLOCAL** para mantener las variables endiferentes archivos por lotes completamente separadas, esto evitarÃ¡ cualquier problema potencial si dos scripts usan el mismo nombre de variable.
+En muchos casos, también querrá usar **SETLOCAL** y **ENDLOCAL** para mantener las variables endiferentes archivos por lotes completamente separadas, esto evitará cualquier problema potencial si dos scripts usan el mismo nombre de variable.
 
-Si ejecuta un segundo archivo por lotes **sin usar CALL**, puede encontrarse con algÃºn comportamiento errÃ³neo
+Si ejecuta un segundo archivo por lotes **sin usar CALL**, puede encontrarse con algún comportamiento erróneo
 
 
 **CALL subrutine (:label)**
 
-El comando **CALL** pasarÃ¡ el control de la declaraciÃ³n despuÃ©s de la etiqueta especificada junto con los parÃ¡metros especificados. Para salir de la subrutina especifique **GOTO:** esto transferirÃ¡ el control al final de la subrutina actual.
+El comando **CALL** pasará el control de la declaración después de la etiqueta especificada junto con los parámetros especificados. Para salir de la subrutina especifique **GOTO:** esto transferirá el control al final de la subrutina actual.
 
 
 Una etiqueta se define de la siguiente manera:
@@ -357,12 +356,12 @@ net user
 net user <nameUser> /add
 ```
 
-- **Para agregar una contraseÃ±a a un usuario o quitarsela:**
+- **Para agregar una contraseña a un usuario o quitarsela:**
 
 ```bash
 net user <nameUser> *
 ```
-Cuando pulsemos <kbd>Enter</kbd> nos pedirÃ¡ la contraseÃ±a, la debemos de indicar dos veces como medida de precauciÃ³n. Si presionamos dos veces la tecla <kbd>Enter</kbd>, representarÃ¡ que dejamos la contraseÃ±a vacia; es decir; le quitamos la contraseÃ±a.
+Cuando pulsemos <kbd>Enter</kbd> nos pedirá la contraseña, la debemos de indicar dos veces como medida de precaución. Si presionamos dos veces la tecla <kbd>Enter</kbd>, representará que dejamos la contraseña vacia; es decir; le quitamos la contraseña.
 
 
 - **Para eliminar un usuario del sistema usaremos el comando:**
@@ -377,7 +376,7 @@ net user <userName> /delete
 net localgroup
 ```
 
-- **Nos muestra los servicios que estÃ¡n corriendo en Windows**
+- **Nos muestra los servicios que están corriendo en Windows**
 
 ```bash
 net start
@@ -387,7 +386,7 @@ net start
 ### <u>break</u>
 
 
-Este comando establece o elimina la comprobaciÃ³n extendida de <kbd>Ctrl</kbd> + <kbd>C</kbd>
+Este comando establece o elimina la comprobación extendida de <kbd>Ctrl</kbd> + <kbd>C</kbd>
 
 
 
@@ -402,7 +401,7 @@ Sintaxis:
 DIR [path(s)[display_format][file_attributes][order][time][options]]
 ```
 
-**ParÃ¡metro**
+**Parámetro**
 
 - **/?:** Mostrar la ayuda del comando
 - **/A:** Muestra los archivos con los atributos especificados
@@ -411,10 +410,10 @@ DIR [path(s)[display_format][file_attributes][order][time][options]]
 		+ D : Directorios
 		+ H : Archivos ocultos
 		+ S : Archivos del sistema
-		+ L : Puntos de anÃ¡lisis
-		+ I : No archivos indizados (enlaces simbÃ³licos)	
+		+ L : Puntos de análisis
+		+ I : No archivos indizados (enlaces simbólicos)	
 		+ R : Archivos de solo lectura
-		+ \- : Prefijo de exclusiÃ³n
+		+ \- : Prefijo de exclusión
 		
 
 		```bash
@@ -422,29 +421,29 @@ DIR [path(s)[display_format][file_attributes][order][time][options]]
 		```
 
 
-- **Listar solo los nombres del directorio raÃ­z**
+- **Listar solo los nombres del directorio raíz**
 
 ```bash
 DIR /b c:\
-# Mostrar solo los nombres de todos los directorio y archivos de la raÃ­z
+# Mostrar solo los nombres de todos los directorio y archivos de la raíz
 # Incluyendo los ocultos
 DIR /b/a c:\
 ```
 
-- **Listar solo los archivos (no carpeta) del directorio raÃ­z de forma recursiva en todas las subcarpertas e incluye los archivos ocultos:**
+- **Listar solo los archivos (no carpeta) del directorio raíz de forma recursiva en todas las subcarpertas e incluye los archivos ocultos:**
 
 ```bash
 DIR /a:-D /s c:\
 ```
 
-- **Listar solo las carpetas (no archivos) del directorio raÃ­z de forma recursiva en todas las subcarpertas e incluye los archivos ocultos:**
+- **Listar solo las carpetas (no archivos) del directorio raíz de forma recursiva en todas las subcarpertas e incluye los archivos ocultos:**
 
 ```bash
 DIR /a:-A /s c:\
 ```
 
 
-- **Listar todos los enlaces simbÃ³licos en el perfil de usuario actual:**
+- **Listar todos los enlaces simbólicos en el perfil de usuario actual:**
 
 ```bash
 DIR %USERPROFILE% /a:i
@@ -464,38 +463,131 @@ Este comando, nos sirve para crear directorios:
 md folder1 folder2
 ```
 
+### <a name="exit"><u>Exit</u></a>
 
+Abandona el programa CMD.EXE (intérprete de comandos) o el script por lotes actual.
+
+```
+EXIT [/B] [código]
+```
+
+- **/B**: Especifica que se debe abandonar el archivo por lotes actual y no CMD.EXE. Si se ejecuta desde fuera de un archivo por lotes, abandonará CMD.EXE
+- **código**: Especifica un número.  Si se ha especificado /B, establece ERRORLEVEL con este número. Si abandona CMD.EXE, establece el código de salida del proceso con este número.
+
+
+
+
+
+
+
+### <a href="#rem"><u>Rem</u></a>
+
+
+Registra los comentarios en un archivo por lotes o en CONFIG.SYS. Cabe destacar que también puede utilizar los siguientes símbolos en una línea de comentario:
+
+
+```bat
+REM [comentario]
+:: [comentario]
+% comentario %
+```
 
 
 ### <a name="start"><u>Start</u></a>
 
-Inicia de sÃ­mbolo del sistema separada para ejecutar un programa o comando especÃ­fico.
+Inicia una ventana separada para ejecutar un programa o comando especificado.
 
 
-Sintaxis: 
-
-
-```bash
-start [<title>] [/d <path>] 
-      [/i] [{/min | /max}] 
-      [{/separate | /shared}] 
-      [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] 
-      [/node <NUMA node>] [/affinity <hexaffinity>] 
-      [/wait] [/b] [<command> [<parameter>... ] | <program> [<parameter>... ]]
+```
+START ["título"] [/D ruta] [/I] [/MIN] [/MAX] [/SEPARATE | /SHARED]
+      [/LOW | /NORMAL | /HIGH | /REALTIME | /ABOVENORMAL | /BELOWNORMAL]
+      [/NODE <nodo NUMA>] [/AFFINITY <m scara de afinidad hex>] [/WAIT] [/B]
+      [comando o programa] [parámetros]
 ```
 
-**ParÃ¡metros:**
 
-- **title**: Especifica el tÃ­tulo que se mostrarÃ¡ en la barra de tÃ­tulo de la ventana se **sÃ­mbolo del sistema**.
-- **/D <path>**: Especifica el directorio de inicio.
-- **/I**: Pasa el entorno de inicio de **Cmd.exe** a la nueva ventana del **sÃ­mbolo del sistema**. Si no se especifica **/i**, se utiliza el entorno actual.
-- **{/min | /max}**: Especifica minimizar (/min) o maximizar (/max) la nueva ventana del **sÃ­mbolo del sistema**.
+- **"título"**: Título que se mostrará en la barra de título de la ventana.
+- **ruta**: Directorio de inicio.
+- **B**: Iniciar la aplicación sin crear una nueva ventana. La aplicación omite el manejo de ^C. A menos que la aplicación habilite el procesamiento de ^C, solo se podrá interrumpir la aplicación con ^Enter. El nuevo entorno será el entorno original pasado a cmd.exe, y no el entorno actual.
+- **MIN**: Iniciar la ventana minimizada.
+- **MAX**: Iniciar la ventana maximizada.
+- **SEPARATE**: Iniciar un programa de Windows de 16 bits en un espacio de memoria separado.
+- **SHARED**: Iniciar un programa de Windows de 16 bits en un espacio de memoria compartido.
+- **LOW**: Iniciar la aplicación en la clase de prioridad Inactiva.
+- **NORMAL**: Iniciar la aplicación en la clase de prioridad Normal.
+- **HIGH**: Iniciar la aplicación en la clase de prioridad Alta.
+- **REALTIME**: Iniciar la aplicación en la clase de prioridad Tiempo real.
+- **ABOVENORMAL**: Iniciar la aplicación en la clase de prioridad por encima de lo normal.
+- **BELOWNORMAL**: Iniciar la aplicación en la clase de prioridad por debajo de lo normal.
+- **NODE**: Especifica el nodo de arquitectura de memoria no uniforme (NUMA) preferido como un entero decimal.
+- **AFFINITY**: Especifica la máscara de afinidad de procesador como un número hexadecimal. La ejecución del proceso se restringe a estos procesadores. La máscara de afinidad se interpreta de distinta forma si /AFFINITY y /NODE se combinan. Especifique la máscara de afinidad como si la máscara del procesador del nodo NUMA estuviera desplazada a la derecha para comenzar por el bit cero. La ejecución del proceso se restringe a los procesadores en común entre la máscara de afinidad especificada y el nodo NUMA. Si no hay ning£n procesador en común, la ejecución del proceso se restringe al nodo NUMA especificado.
+- **WAIT**: Iniciar aplicación y esperar a que finalice comando o programa. Si se trata de un comando cmd interno o un archivo por lotes, el procesador de comandos se ejecuta con el modificador /K en cmd.exe. Esto significa que la ventana permanecerá después de que el comando se ejecute. Si no es un comando cmd interno ni archivo por lotes, entonces se considera un programa y se ejecutará como una aplicación de ventana o aplicación de consola.
+- **parámetros**:  Parámetros transmitidos al comando o programa.
 
+NOTA: las opciones SEPARATE y SHARED no se admiten en plataformas de 64 bits.
 
+La especificación de /NODE permite crear los procesos de forma que se pueda
+aprovechar la ubicación de memoria en los sistemas NUMA. Por ejemplo, se
+pueden crear dos procesos con una comunicación estrecha entre sí mediante la
+memoria compartida para compartir el mismo nodo NUMA preferido y minimizar las
+latencias de memoria. Asignan memoria del mismo nodo NUMA si es posible y se
+pueden ejecutar en procesadores externos al nodo especificado.
+
+```cmd
+start /NODE 1 application1.exe
+start /NODE 1 application2.exe
+```
+
+Estos dos procesos se pueden restringir aún más para ejecutarse en
+procesadores específicos en el mismo nodo NUMA. En el siguiente ejemplo,
+application1 se ejecuta en los dos procesadores de valor inferior del nodo y
+application2 se ejecuta en los siguientes dos procesadores del nodo. En este
+ejemplo, se da por supuesto que el nodo especificado tiene como mínimo
+cuatro procesadores lógicos. Tenga en cuenta que el número de nodo se puede
+cambiar a cualquier número de nodo válido para el equipo sin necesidad de
+cambiar la máscara de afinidad.
+
+```cmd
+start /NODE 1 /AFFINITY 0x3 application1.exe
+start /NODE 1 /AFFINITY 0xc application2.exe
+```
+
+Si las extensiones de comandos est n habilitadas, la invocaci¢n del
+comando externo a trav‚s de la l¡nea de comandos o del comando START
+cambia as¡:
+
+Se pueden invocar archivos no ejecutables a trav‚s de la asociaci¢n del
+archivo solo con escribir el nombre del archivo como un comando. (por ej.,
+WORD.DOC abrir¡a la aplicación asociada con la extensión de archivo .DOC).
+Consulte los comandos ASSOC y FTYPE para saber c¢mo crear estas asociaciones
+dentro de un script de comandos.
+
+Cuando se ejecuta una aplicación de 32 bits con interfaz gráfica, CMD.EXE
+no espera a que la aplicación termine antes de volver al s¡mbolo del sistema.
+Este nuevo comportamiento NO ocurre si se ejecuta dentro de un
+script. Cuando se ejecuta una l¡nea de comandos cuyo primer token es la
+cadena "CMD " sin extensión o ruta, entonces se reemplaza "CMD" con el valor
+de la variable COMSPEC. Esto evita tomar CMD.EXE del directorio actual.
+
+Cuando se ejecuta una línea de comandos cuyo primer token NO contiene una
+extensión, entonces CMD.EXE usa el valor de la variable de entorno PATHEXT
+para determinar las extensiones que hay que buscar y en que orden. El valor
+predeterminado para la variable PATHEXT es:
+
+.COM;.EXE;.BAT;.CMD
+
+Tenga en cuenta que la sintaxis es la misma que la variable PATH, con los
+puntos y comas separando los elementos diferentes.
+
+Cuando se busca un archivo ejecutable, si no hay ninguna coincidencia en
+ninguna extensión, entonces se comprueba si el nombre coincide con el nombre
+de un directorio. Si es así, el comando START inicia el explorador en esa
+ruta. Si se hace desde la línea de comandos, es equivalente a hacer CD /D
+en esa ruta.
 
 **Observaciones:**
 
-- Puede ejecutar archivos no ejecutable a travÃ©s de su asociaciÃ³n de archivos escribiendo el nombre del archivo como comando.
+- Puede ejecutar archivos no ejecutable a través de su asociación de archivos escribiendo el nombre del archivo como comando.
 
 <p align="center">
 	<img src="assets/img/start_1.png" alt="start"
@@ -503,21 +595,21 @@ start [<title>] [/d <path>]
 </p>
 
 
-El comando **START** es de utilidad para todos los que le guste crear sus propias aplicaciones ejecutables (archivos batch) que puedan usar para facilitar la ejecuciÃ³n de una infinidad de tareas.
+El comando **START** es de utilidad para todos los que le guste crear sus propias aplicaciones ejecutables (archivos batch) que puedan usar para facilitar la ejecución de una infinidad de tareas.
 
 
 **Ejemplos:**
 
 
-- Si ejecutamos solo el comando **start** junto a un punto "." se nos abre el explorador de archivos en esa ubicaciÃ³n.
+- Si ejecutamos solo el comando **start** junto a un punto "." se nos abre el explorador de archivos en esa ubicación.
 
 
-```bash
+```bat
 start.
-# Si colocamos dos puntos, retrocede un nivel.
+:: Si colocamos dos puntos, retrocede un nivel.
 start..
-# Si le pasamos una ruta, una variable con algÃºn path abrirÃ¡ 
-# el explorador en esa ruta:
+:: Si le pasamos una ruta, una variable con algún path abrirá 
+:: el explorador en esa ruta:
 start %USERPROFILE%
 ```
 
@@ -554,7 +646,7 @@ start /max notepad
 ```
 
 
-- Se inicia la presentaciÃ³n llamada **cmd.pptx** que estÃ¡ en la carpeta "Mis documentos".
+- Se inicia la presentación llamada **cmd.pptx** que está en la carpeta "Mis documentos".
 
 
 ```bat
@@ -563,7 +655,7 @@ rem "demo_start.bat"
 start "" "%USERPROFILE%\Documents\cmd.pptx"
 rem "run demostart.bat"
 ```
-- Escribir un correo electrÃ³nico desde la misma CMD de allÃ­ utilizamos **malito** para redactar el correo y **start** para abrir el gestor de correos.
+- Escribir un correo electrónico desde la misma CMD de allí utilizamos **malito** para redactar el correo y **start** para abrir el gestor de correos.
 
 ```bat
 @echo off
@@ -599,14 +691,14 @@ F:
 
 Colores: 
 
-| CÃ³digo | Color    | CÃ³digo | Color          |
+| Código | Color    | Código | Color          |
 |--------|----------|--------|----------------|
 |0       |Negro     | 8      |Gris.           |
 |1       |Azul      | 9      |Azul claro      |
 |2       |Verde     | A      |Verde claro     |
 |3       |Aguamarina| B      |Aguamarina claro|
 |4       |Rojo      | C      |Rojo Claro      |
-|5       |PÃºrpura   | D      |PÃºrpura claro   |
+|5       |Púrpura   | D      |Púrpura claro   |
 |6       |Amarillo  | E      |Amarillo claro  |
 |7       |Blanco    | F      |Blanco brillante|
 
@@ -634,9 +726,9 @@ SET [variable=[cadena]]
 ```
 
 - **variable**: Especifica el nombre de la variable de entorno.
-- **cadena**: Especifica una serie de caracteres que se asignarÂ  a la variable.
+- **cadena**: Especifica una serie de caracteres que se asignar  a la variable.
 
-Escriba SET sin parÂ metros para ver las variables de entorno actuales.
+Escriba SET sin par metros para ver las variables de entorno actuales.
 
 <p align="center">
 	<img src="assets/img/set_example.png" alt="set"
@@ -644,15 +736,15 @@ Escriba SET sin parÂ metros para ver las variables de entorno actuales.
 </p>
 
 
-mostrarÂ  todas las variables que empiecen con la letra 'P'.
+mostrar todas las variables que empiecen con la letra 'P'.
 
 ```
 SET P
 ```
-El comando SET devuelveÂ ERRORLEVEL en 1 si no se encuentra el nombre
+El comando SET devuelve ERRORLEVEL en 1 si no se encuentra el nombre
 de la variable en el entorno actual.
 
-El comando SET no permiteÂ  que un signo de igual "=" sea parte de una variable.
+El comando SET no permite  que un signo de igual "=" sea parte de una variable.
 
 Se han agregado dos modificadores nuevos al comando SET:
 
@@ -663,25 +755,25 @@ SET /P variable=[promptString]
 
 El modificador **/A**:
 
-Especifica que la cadena a la derecha del signo de igual es una expresiÃ³n numÃ©rica que es evaluada. El evaluador de expresiones es bastante simple y es compatible con las siguientes operaciones, en orden de precedencia decreciente:
+Especifica que la cadena a la derecha del signo de igual es una expresión numérica que es evaluada. El evaluador de expresiones es bastante simple y es compatible con las siguientes operaciones, en orden de precedencia decreciente:
 
  - **()** : agrupar
  - **! ~ -** : operadores unarios
- - **+ -** : operadores aritmÃ©ticos
+ - **+ -** : operadores aritméticos
  - **<< >>** : desplazamiento logico
  - **&** : bit a bit 
  - **^** : bit a bit o exclusivo
  - **|** : bit a bit
- - **=, =\*, /=, %=, +=, -=** : asignaciÃ³n 
- - **&=, ^=, |=, <<=, >>=** : separador de expresiÃ³n
+ - **=, =\*, /=, %=, +=, -=** : asignación 
+ - **&=, ^=, |=, <<=, >>=** : separador de expresión
 
 El modificador **/P**:
 
-Permite establecer el valor de una variable para una lÃ­nea de entrada escrita por el usuario. Muestra la cadena del sÃ­mbolo del sistema
-antes de leer la lÃ­nea de entrada. La cadena del sÃ­mbolo del sistema puede
-estar vacÃ­a.
+Permite establecer el valor de una variable para una línea de entrada escrita por el usuario. Muestra la cadena del símbolo del sistema
+antes de leer la línea de entrada. La cadena del símbolo del sistema puede
+estar vacía.
 
-La sustituciÃ³n de variables de entorno ha sido mejorada asÃ­:
+La sustitución de variables de entorno ha sido mejorada así:
 
 ```
 %PATH:str1=str2%
@@ -709,7 +801,7 @@ FOR %var IN (lista) DO (
 )
 ```
 
-Pero si lo vamos a usar dentro de un archivo BAT serÃ¡ asÃ­:
+Pero si lo vamos a usar dentro de un archivo BAT será así:
 
 ```bat
 FOR %%var IN (lista) DO (
@@ -719,7 +811,7 @@ FOR %%var IN (lista) DO (
 )
 ```
 
-Observa que ahora la variable "var" va precedida por dos simbolos de "%". AdemÃ¡s, si este for estÃ¡ dentro de un archivo BAT el nombre de la variable debe usar UNA SOLA LETRA (p.ej: $$n, %%i, %%j, etc.)
+Observa que ahora la variable "var" va precedida por dos simbolos de "%". Además, si este for está dentro de un archivo BAT el nombre de la variable debe usar UNA SOLA LETRA (p.ej: $$n, %%i, %%j, etc.)
 
 **Ejemplos:**
 
@@ -737,7 +829,7 @@ pause>nul
 
 
 
-Si el ciclo "for" estÃ¡ dentro de un archivo BAT, y tome los valores posicionales que se pasan cuando se llama al archivo desde la consola.
+Si el ciclo "for" está dentro de un archivo BAT, y tome los valores posicionales que se pasan cuando se llama al archivo desde la consola.
 
 ```bat
 @echo off
@@ -812,7 +904,7 @@ FOR /R c:\ %%v IN (*) DO (
 pause>nul
 ```
 
-Una variaciÃ³n de este ejemplo serÃ­a el buscar un determinado tipo de archivos dentro de un directorio recursivamente. Voy a buscar todos los archivos "dll" y "exe" dentro del directorio "windows":
+Una variación de este ejemplo sería el buscar un determinado tipo de archivos dentro de un directorio recursivamente. Voy a buscar todos los archivos "dll" y "exe" dentro del directorio "windows":
 
 ```bat
 @echo off
@@ -838,7 +930,7 @@ FOR /D %%v IN (*) DO (
 pause>nul
 ```
 
-Y si lo quiero hacer recursivamente puedo aÃ±adir "/R" al comando anterior:
+Y si lo quiero hacer recursivamente puedo añadir "/R" al comando anterior:
 
 ```bat
 @echo off
@@ -890,7 +982,7 @@ FOR /L %%x IN (1, 2, 10) DO (
 pause>nul
 ```
 
-Hay que observar que el primer numero dentro del parentesis es el valor inicial que tomarÃ¡ la variable "%x", el segundo numero es el incremento que sufrirÃ¡ dicha variable en la proxima iteracion del FOR, y el tercer nÃºmero es el valor mÃ¡ximo que tomarÃ¡ dicha variable y que cuando alcance o supere dicho valor, el bucle FOR terminarÃ¡ de ejecutarse.
+Hay que observar que el primer numero dentro del parentesis es el valor inicial que tomará la variable "%x", el segundo numero es el incremento que sufrirá dicha variable en la proxima iteracion del FOR, y el tercer número es el valor máximo que tomará dicha variable y que cuando alcance o supere dicho valor, el bucle FOR terminará de ejecutarse.
 
 
 **Otro ejemplo**:
@@ -930,7 +1022,7 @@ pause>nul
 
 **EJEMPLO: (parametro /F con tokens)**
 
- Podemos seleccionar varios tokens mediante la clausula tokens=. Los distintos tokens se irÃ¡n guardando automÃ¡ticamente en variables alfabeticamente consecutivas a partir de la variable creada en el for.
+ Podemos seleccionar varios tokens mediante la clausula tokens=. Los distintos tokens se irán guardando automáticamente en variables alfabeticamente consecutivas a partir de la variable creada en el for.
 
  En el siguiente ejemplo nos quedamos con los tokens (palabras) 1,3 y 5 de cada linea:
 
@@ -946,7 +1038,7 @@ pause>nul
 
 observa que aunque yo solamente he definido la variable "%%a" en el FOR, las variables "b" y "c" se crean automaticamente.
 
-Podemos escoger rangos, como en el siguiente ejemplo, en el que vamos a escoger los tokens del 1 al 3, y ademÃ¡s el token 5
+Podemos escoger rangos, como en el siguiente ejemplo, en el que vamos a escoger los tokens del 1 al 3, y además el token 5
 
  ```bat
  @echo off
@@ -958,7 +1050,7 @@ for /F "tokens=1-3,5" %%a in (archivo.txt) do (
 pause>nul
  ```
 
- O si queremos capturar la lÃ­nea completa a partir de la septima palabra:
+ O si queremos capturar la línea completa a partir de la septima palabra:
 
   ```bat
  @echo off
@@ -986,7 +1078,7 @@ pause>nul
 
  EJEMPLO8: (parametro /F con delimitadores)
 
-AdemÃ¡s de la clausula "tokens" con el parÃ¡metro "/F", podemos usar la clausula "delims", que indica la separacion entre los distintos tokens. Por defecto, los caracteres delimitadores entre tokens son los espacios en blanco y los tabuladores.
+Además de la clausula "tokens" con el parámetro "/F", podemos usar la clausula "delims", que indica la separacion entre los distintos tokens. Por defecto, los caracteres delimitadores entre tokens son los espacios en blanco y los tabuladores.
 
 En el siguiente ejemplo anulamos los delimitadores y obtenemos lo mismo que antes:
 
@@ -1001,4 +1093,131 @@ for /F "delims=.,;:" %%a in (fichero.txt) do (
 
 
 http://profesoremiliobarco.blogspot.com/2012/05/comando-for-para-archivos-bat.html
+
+
+
+
+### <a name="time"><u>Time</u></a>
+
+
+Muestra o establece la hora del sistema.
+
+
+```
+TIME  [/T | hora]
+```
+
+Escriba TIME sin parámetros para mostrar la hora actual y poder
+especificar una nueva hora. Presione Entrar si no desea cambiar la hora.
+
+Si están habilitadas las extensiones de comandos el comando TIME admite
+el parámetro **/T** que indica al comando mostrar tan solo la
+hora actual, sin pedir una nueva hora.
+
+
+### <a name="title"><u>Title</u></a>
+
+
+Fija el título de la ventana en la ventana del s¡mbolo del sistema.
+
+
+```
+TITLE [cadena]
+```
+
+- **cadena** : Especifica el título de la ventana del símbolo del sistema.
+
+<p align="center">
+	<img src="assets/img/title_command.png" alt="title" width="650" height="350"/>
+</p>
+
+
+
+### <a name="type"><u>Type</u></a>
+
+
+Muestra el contenido de uno o más archivos de texto.
+
+```
+TYPE [unidad:][ruta]archivo
+```
+
+
+<p align="center">
+	<img src="assets/img/type_command.png" alt="title" width="650" height="350"/>
+</p>
+
+
+
+### <a href="#pause"><u>Pause</u></a>
+
+Suspende el proceso de un programa por lotes y muestra el mensaje  
+`Presione una tecla para continuar. . .` 
+
+### <a href="#pause"><u>Shutdown</u></a>
+
+
+```
+Uso: shutdown [/i | /l | /s | /r | /g | /a | /p | /h | /e | /o] [/hybrid] [/f]
+    [/m \\equipo][/t xxx][/d [p|u:]xx:yy [/c "comentario"]]
+```
+
+- **Sin argumentos**: Muestra la ayuda. Es lo mismo que escribir /?.
+- **/?**: Muestra la ayuda. Es lo mismo que no especificar argumentos.
+- **/i**: Muestra la interfaz gráfica de usuario (GUI). Debe ser la primera opción.
+- **/l**: Cierra la sesión. No se puede utilizar con las opciones /m o /d.
+- **/s**: Apaga el equipo.
+- **/r**: Apaga completamente y reinicia el equipo.
+- **/g**: Apaga completamente y reinicia el equipo. Después de que el sistema reinicie las aplicaciones registradas.
+- **/a**: Anula el apagado del sistema. Solo se puede usar durante el período de tiempo de espera.
+- **/p**: Apaga el equipo local sin tiempo de espera ni advertencia. Se puede usar con las opciones /d y /f.
+- **/h**: Hiberna el equipo local. Se puede usar con la opción /f.
+- **/hybrid**: Realiza un apagado del equipo y lo prepara para un inicio rápido. Debe usarse con la opción /s.
+- **/e**: Documenta la razón del apagado inesperado de un equipo.
+- **/o**: Va al menú de opciones de arranque avanzadas y reinicia el equipo. Debe usarse con la opción /r.
+- **/m \\\\equipo**: Especifica el equipo de destino.
+- **/t xxx**: Establece el período de tiempo de espera antes del apagado en xxx segundos. El intervalo válido es de 0 a 315360000 (10 años); el valor predeterminado es 30. Si el período de tiempo de espera es superior a 0, el parámetro /f es implícito.
+- **/c "comentario"**: Comentario acerca de la razón del reinicio o apagado. Se permiten 512 caracteres como máximo.
+- **/f**: Fuerza el cierre de las aplicaciones que se ejecutan sin advertir previamente a los usuarios. El parámetro /f es implícito cuando se especifica un valor mayor que 0 para el parámetro /t.
+- **/d [p|u:]xx:yy**:  Proporciona la razón del reinicio o apagado.
+	+ **p**: indica que el reinicio o el apagado está planeado.
+	+ **u**: indica que la razón está definida por el usuario. Si no se especifica p ni u, el reinicio o el apagado no estarán planeados.
+	+ **xx**: es el número de razón principal (entero positivo inferior a 256).
+	+ **yy**: es el número de razón secundario (entero positivo inferior a 65536).  
+	**Razones en este equipo**:  
+	(E = Se esperaba U = No se esperaba P = Planeado, C = Definido por el cliente)
+
+	|Tipo|Princ.|Secund.|Título|
+	|----|------|-------|------|
+	|U   |0	    |0	    |Otros (no planeado)|
+	|E   |0	    |0	    |Otros (no planeado)|
+    |E P |0	    |0	    |Otros (planeado)|
+    |U   |0	    |5	    |Otro error: el equipo no responde|
+    |E   |1	    |1	    |Hardware: mantenimiento (no planeado)|
+    |E P |1	    |1	    |Hardware: mantenimiento (planeado)|
+    |E   |1	    |2	    |Hardware: instalación (planeada)|
+    |E P |1	    |2	    |Hardware: instalación (planeada)|
+    |E   |2	    |2	    |Sistema operativo: recuperación (no planeada)|
+    |E P |2	    |2	    |Sistema operativo: recuperación (planeada)|
+    |P 	 |2	    |3	    |Sistema operativo: actualización (planeada)|
+    |E   |2	    |4	    |Sistema operativo: reconfiguración (no planeada)|
+    |E P |2	    |4	    |Sistema operativo: reconfiguración (planeada)|
+    |P 	 |2	    |16	    |Sistema operativo: service pack (planeado)|
+    |	 |2	    |17	    |Sistema operativo: corrección urgente (no planeada)|
+    |P 	 |2	    |17	    |Sistema operativo: corrección urgente (planeada)|
+    |    |2	    |18	    |Sistema operativo: corrección de seguridad (no plan.)|
+    |P 	 |2	    |18	    |Sistema operativo: corrección de seguridad (planeada)|
+    |E   |4	    |1	    |Aplicación: mantenimiento (no planeado)|
+    |E P |4	    |1	    |Aplicación: mantenimiento (planeado)|
+    |E P |4	    |2	    |Aplicación: instalación (planeada)|
+    |E   |4	    |5	    |Aplicación: sin respuesta|
+    |E   |4	    |6	    |Aplicación: inestable|
+    |U   |5	    |15	    |Error del sistema: sistema detenido|
+    |U   |5     |19	    |Problema de seguridad (no planeado)|
+    |E   |5	    |19	    |Problema de seguridad (no planeado)|
+    |E P |5	    |19	    |Problema de seguridad (planeado)|
+    |E   |5	    |20	    |Pérdida de conectividad de red (no planeada)|
+    |U   |6	    |11	    |Error de alimentación: se desconectó el enchufe|
+    |U   |6	    |12	    |Error de alimentación: externo|
+    |P 	 |7	    |0	    |Apagado de la API heredada|
 

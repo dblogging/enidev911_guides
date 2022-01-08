@@ -1,4 +1,3 @@
-
 ## <u>Escape de caracteres</u> <img src="../assets/img/python(144x144).png" width="30" align="right">
 
 Cuando use un carácter de escape, Python lo interpretará. Los caracteres de escape usarán comillas simples o dobles. Antes de que pueda usar un carácter de escape, necesitará usar una barra invertida "\\" para que Python sepa lo que esta tratando de hacer.
