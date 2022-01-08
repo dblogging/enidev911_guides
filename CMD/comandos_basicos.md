@@ -580,7 +580,7 @@ IF [NOT] EXIST archivo comando
 ```
 
 
-- **NOT**: Especifica que Windows debe llevar a cabo el comando solo si la condici¢n es falsa.
+- **NOT**: Especifica que Windows debe llevar a cabo el comando solo si la condición es falsa.
 
 - **ERRORLEVEL número**: El número especifica una condición verdadera si el último programa que se ejecutó devolvió un código de salida igual o mayor que el número especificado.
 
