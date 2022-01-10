@@ -1053,6 +1053,8 @@ Comprima un archivo desde la línea de comandos:
 compact /c archivo.txt
 ```
 
+
+
 [volver a índice](#top) &#x2934;
 
 ---

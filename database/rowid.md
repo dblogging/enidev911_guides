@@ -34,3 +34,6 @@ INSERT INTO people (first_name, last_name) VALUES('Will', 'Smith');
 ```
 
 <a href="https://www.sqlitetutorial.net/tryit/query/sqlite-autoincrement/#1"><button name="button" style="border-radius: 5%; border: 0; background: #4D80DF; padding: 6px 12px; cursor: pointer; color: #fff">Intentalo</button></a>
+
+
+
