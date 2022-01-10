@@ -7,7 +7,12 @@ git branch nueva
 ```
 
 Este comando en sí no produce ninguna salida, pero podrías ver las "branches" de un proyecto con el comando "git branch", 
-u obtener una descripción más detallada de las ramas con el siguiente comando:  
+u obtener una descripción más detallada de las ramas con: `git show-branch`  
+
+<p align="center">
+    <img src="../assets/screenshoot/create_branch1.png" width="760"/>
+</p>
+
 
 ```
 git show-branch
@@ -15,10 +20,10 @@ git show-branch
 
 Esto nos muestra todas las ramas del proyecto con sus commits realizados.
 
+
 <p align="center">
     <img src="img/01.png" width="700">
 </p>
-
 
 
 
@@ -30,6 +35,12 @@ Para moverse entre ramas usando el comando "git checkout" seguido del nombre de 
 git checkout nueva
 ```
 
+<p align="center">
+    <img src="../assets/screenshoot/switch_branch1.png" width="760"/>
+</p>
+
+
+
 Esta sencilla instrucción tiene mucha potencia, porque nos cambiará automáticamente todos los archivos de nuestro proyecto, 
 los de todas las carpetas, para que tenga el contenido en el que se encuentra en la correspondiente rama.  
 
@@ -37,8 +48,7 @@ De momento en nuestro ejemplo las dos ramas tenían exactamente el mismo conteni
 y sus correspondientes commit y entonces los archivos tendrán códigos diferentes, de modo que puedas ver que al pasar de una rama a otra 
 hay cambios en los archivos.  
 
-El comando "checkout" tiene la posibilidad de permitirte crear una rama nueva y moverte a ella en un único paso. Para crear una nueva rama y situarte sobre ella 
-tendrás que darle un nombre y usar el parámetro -b  
+El comando `checkout` tiene la posibilidad de permitirte crear una rama nueva y moverte a ella en un único paso. Para crear una nueva rama y situarte sobre ella tendrás que darle un nombre y usar el parámetro -b  
 
 ```
 git checkout -b otrarama
