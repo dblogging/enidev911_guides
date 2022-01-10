@@ -93,5 +93,99 @@ print('Primer número {} y segundo número es {}'.format(a, b))
 <p align="center">
 <a href="https://colab.research.google.com/drive/1Xii73KEHvw8y9Utu1KlSH8FGWfrPaSO8?usp=sharing">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/> 
+<<<<<<< HEAD
 </a> <br> <img src="assets/ico/point_up.ico" width="30"><img src="assets/ico/ninja_head.ico" width="45"><img src="assets/png/message.png" width="125" height="30"> 
+=======
+</a> <br> <img src="assets/ico/point_up.ico" width="30" style="margin-left: 35px;"><img src="assets/ico/ninja_head.ico" width="35"><img src="assets/png/message.png" width="125" height="30"> 
+</p>
+
+
+## Complementando para ocultar la información de entrada
+
+
+Otro aspecto que es importante son las contraseñas al momento de manejar entradas, debemos buscar la manera segura de ingresar esta información Python propociona la función **getpass()** del módulo con el mismo nombre. Le solicita al usuario una contraseña sin hacer eco. El módulo **getpass** proporciona una forma segura de manejar las solicitudes de contraseña donde los programas interactúan con los usuarios a través del terminal. Este módulo proporciona dos funciones:
+
+
+- **getpass.getpass()**
+- **getpass.getuser()**
+
+
+
+1. **getpass()**: 
+
+```
+getpass.getpass(prompt='Password: ', stream=None) 
+```
+
+La función **getpass()** se utiliza para solicitar a los usuarios que utilicen la solicitud de cadena y lee la entrada del usuario como Contraseña. La lectura de entrada predeterminada es "Password: " se devuelve a la persona que llama como una cadena.
+
+
+Veamos el siguiente ejemplo para comprender su implementación.
+
+```py
+# Ejemplo 1: Sin argumentos en la llamada.
+import getpass
+ 
+try:
+    p = getpass.getpass()
+    
+except Exception as error:
+    print('ERROR', error)
+else:
+    print('Contraseña ingresada: ', p)
+# Entrada del usuario:
+# Password : (No se muestra lo que se escribe.)
+# output: Contraseña ingresada: salchipapa123
+```
+
+Al no proporcionar una cadena como argumento se imprime el valor **Password: ** para mostrar al usuario es el valor por defecto que tiene la función. Hay ciertos programas que solicitan preguntas de seguridad en lugar de solicitar contraseñas para mejorar la seguridad. Aquí, la solicitud se puede cambiar a cualquier valor. 
+
+
+```py
+# Ejemplo 2: cambiamos la pregunta
+import getpass
+ 
+p = getpass.getpass(prompt='¿Cuál es tu color favorito? ')
+ 
+if p.lower() == 'azul':
+    print('Bienvenido..!!!')
+else:
+    print('La respuesta ingresada es incorrecta..!!!')
+# Entrada: ¿Cuál es tu color favorito? Azul
+# output: Bienvenido
+```
+
+
+2. **getuser()** 
+
+
+```
+getpass.getuser()
+```
+
+La función **getuser()** muestra el nombre de inicio de sesión del usuario. Esta función verifica las variables de entorno LOGNAME, USER, LNAME y USERNAME, en orden, y devuelve el valor de la primera cadena no vacía. 
+
+
+
+```py
+#Ejemplo 3: Mostrando el usuario 
+import getpass
+ 
+user = getpass.getuser()
+ 
+while True:
+    pwd = getpass.getpass("Usuario : %s " % user)
+ 
+    if pwd == 'abcd123':
+        print "Bienvenido!!!"
+        break
+    else:
+        print "La contraseña es incorrecta."
+# Entrada : Usuario: Will 
+```
+
+<p align="center">
+<a href="https://colab.research.google.com/drive/1Xii73KEHvw8y9Utu1KlSH8FGWfrPaSO8?usp=sharing#scrollTo=_8VwvC5fSO7k">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/> 
+</a> <br> <img src="assets/ico/point_up.ico" width="30" style="margin-left: 35px;"><img src="assets/ico/ninja_head.ico" width="40"><img src="assets/png/message.png" width="125" height="30"> 
 </p>
