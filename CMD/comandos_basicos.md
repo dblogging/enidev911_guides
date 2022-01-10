@@ -17,7 +17,18 @@
     * [break](#break)
     * [cacls](#cacls)
     * [call](#call)
+    * [chcp](#chcp)
+    * [chdir o cd](#chdir)
+    * [chkdsk](#chkdsk)
+    * [chkntfs](#chkntfs)
     * [cls](#cls)
+    * [cmd](#cmd)
+    * [color](#color)
+    * [comp](#comp)
+    * [compact](#compact)
+    * [convert](#convert)
+    * [copy](#copy)
+    * [date](#date)
     * [dir](#dir)
     * [exit](#exit)
     * [if](#if)
@@ -501,6 +512,64 @@ Restaurar el respaldo guardado:
 bcdedit /import C:\respaldo.txt
 ```
 
+Cambiar el nombre del sistema operativo en el menú de arranque
+
+En caso de tener dos o más sistemas instalados en el equipo, cambia los nombres que aparecen en el menú de arranque de la siguiente forma:
+
+```bat
+:: bcdedit /set {identificador} description "Nombre"
+
+:: Tres ejemplos:
+bcdedit /set {c15d0021-1aec-11dc-b49c-9726d7e2da89} description "Windows 7" 
+bcdedit /set {current} description "Windows 8" 
+bcdedit /set {ntldr} description "Windows XP"
+```
+
+Agregar al menú de arranque otro sistema en una unidad virtual usa:
+
+```bat
+bcdedit /set {cea643bf-b4b4-6786-543a-fa67654f5d71} device partition=F:
+```
+
+Habilitar en Windows 8 el sistema clásico de arranque
+
+Windows 8 usa un sistema de arranque mucho más rápido, pero en caso de tener dos o más sistemas operativos en el equipo, esto se vuelve una molestia cuando hay necesidad de alternar entre sistemas diferentes. Para usar el mismo Windows Boot Manager que en Windows 7, usa el siguiente comando:
+
+```bat
+bcdedit /set {default} bootmenupolicy legacy
+:: Para cambiar al modo predeterminado usa:
+bcdedit /set {default} bootmenupolicy standard
+```
+
+En ambos casos asegúrate que aparece el mensaje: La operación se completó correctamente.
+
+
+
+Deshabilitar el logotipo de arranque en Windows 8 usa:
+
+```bat
+bcdedit /set {globalsettings} custom:16000067 true
+```
+
+Para restaurarlo usa:
+
+```bat
+bcdedit /set {globalsettings} custom:16000067 false
+:: o
+bcdedit /deletevalue {globalsettings} custom:16000067
+```
+
+Deshabilitar mensajes de Windows 8 en el arranque usa:
+
+```bat
+bcdedit /set {globalsettings} custom:16000068 true
+:: Para restaurarlos usa:
+bcdedit /set {globalsettings} custom:16000068 false
+:: o
+bcdedit /deletevalue {globalsettings} custom:16000068
+```
+
+
 [volver a índice](#top) &#x2934;
 
 ---
@@ -568,14 +637,6 @@ Se pueden usar comodines para especificar más de un archivo. Puede especificar m
 
 ---
 
-### <a name="cls"><u>Cls</u></a>
-
-Borra la pantalla
-
-[volver a índice](#top) &#x2934;
-
----
-
 ### <a name="call"><u>Call</u></a>
 
 Llama a un programa por lotes desde otro sin detener el programa por lotes principal.
@@ -625,6 +686,470 @@ Una etiqueta se define de la siguiente manera:
 ```bat
 : myShineLabel
 ```
+
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="chcp"><u>Chcp</u></a>
+
+Muestra o establece el número de la página de códigos activa.
+
+```
+CHCP [nnn]
+```
+
+- **nnn**: Especifica una página de códigos.
+
+Escriba CHCP sin parámetro para mostrar el número de la página de códigos activa.
+
+
+|Página de códigos|	País o región, o idioma|
+|-----------------|------------------------|
+|437              |Estados Unidos          |
+|850	          |Multilingüe (Latino I)  |
+|852	          |Eslavo (Latino II)      |
+|855	          |Cirílico (Ruso)         |
+|857	          |Turco                   |
+|860	          |Portugués               |
+|861	          |Islandés                |
+|863	          |Francés canadiense      |
+|865	          |Nórdico                 |
+|866	          |Ruso                    |
+|869	          |Griego moderno          |
+
+
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="chdir"><u>Chdir o cd</u></a>
+
+
+Muestra el nombre del directorio actual o cambia de directorio.
+
+```
+CHDIR [/D] [unidad:][ruta]
+CHDIR [..]
+CD [/D] [unidad:][ruta]
+CD [..]
+```
+
+- **CD ..**: Especifica que desea cambiar al directorio superior.
+- **CD unidad**: (Ej: CD C:) para ver el directorio actual de la unidad especificada.
+- **CD sin parámetros**: para ver la unidad y el directorio actual.
+- **/D**: Use el modificador /D para cambiar la unidad actual además del directorio actual para una unidad de disco.
+
+
+Si las extensiones de comando están habilitadas, CHDIR cambia así:
+
+El uso de mayúsculas y minúsculas de la cadena del directorio actual se convierte al mismo uso que se tiene en los nombres de unidades. Así:
+
+```bat
+CD C:\Users\username\AppData\Local\Temp
+::establecerá  Temp como el directorio actual 
+:: si éste es el uso de mayúsculas y minúsculas en la unidad.
+```
+
+El comando CHDIR no trata los espacios como separadores, así que es posible usar CD para cambiar a un directorio cuyo nombre de subdirectorio contenga un espacio, sin necesidad de escribir el nombre entre comillas. Por ejemplo:
+
+```bat
+CD C:\Users\username\Desktop\Mis repositorios
+```
+
+es lo mismo que:
+
+```bat
+CD "C:\Users\username\Desktop\Mis repositorios"
+```
+
+que sería lo que hay que escribir si las extensiones estuvieran
+deshabilitadas.
+
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="cls"><u>Cls</u></a>
+
+Borra la pantalla
+
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="chkdsk"><u>Chkdsk</u></a>
+
+Comprueba un disco y muestra un informe de estado.
+
+
+```
+CHKDSK [volumen[[ruta]archivo]]] [/F] [/V] [/R] [/X] [/I] [/C] [/L[:tamaño]][/B]
+```
+
+
+- **volumen**: Especifica la letra de unidad (seguida por dos puntos), el punto de montaje o el nombre de volumen.
+- **archivo**: sólo para FAT/FAT32 especifica los archivos en donde se comprobar  la fragmentación.
+- **/F**: Corrige los errores del disco.
+- **/V**: Para FAT/FAT32 muestra la ruta completa y el nombre de cada archivo en el disco. Para NTFS muestra mensajes de limpieza si hay.
+- **/R**: Encuentra sectores dañados y recupera la información legible (implica /F).
+- **/L**: Tamaño Sólo para NTFS: cambia el tamaño del archivo de registro al número especificado de KB. Si no se especifica ningún tamaño, muestra el tamaño actual.
+- **/X**: Obliga al volumen a desmontarse previamente si es necesario. Todos los identificadores abiertos al volumen no serán válidos (implica /F).
+- **/I**: Sólo para NTFS: realiza una comprobación menos exhaustiva de entradas de índice.
+- **/C**: Sólo NTFS omite la comprobación de ciclos dentro de la estructura de carpetas.
+- **/B**: Sólo NTFS vuelve a evaluar los clústeres incorrectos en el volumen (implica el uso de /R). 
+
+
+Los modificadores /I o /C reducen la cantidad de tiempo necesario para ejecutar Chkdsk ya que omiten ciertas comprobaciones en el volumen.
+
+
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="chkntfs"><u>Chkntfs</u></a>
+
+```
+CHKNTFS volumen [...]
+CHKNTFS /D
+CHKNTFS /T[: tiempo]
+CHKNTFS /X volumen [...]
+CHKNTFS /C volumen [...]
+```
+
+- **volumen**: Especifica la letra de unidad (seguida por dos puntos), el punto de montaje o el nombre de volumen.
+- **/D**: Restaura el funcionamiento predeterminado del equipo; todas las unidades se comprueban al arrancar y chkdsk se ejecuta en aquéllas que están dañadas.
+- **/T: tiempo**: Cambia el tiempo de la cuenta atrás en el inicio de AUTOCHK a la cantidad de tiempo dada en segundos. Si el tiempo no se específica, se mostrará la configuración actual.
+- **/X**: Excluye una unidad de la comprobación predeterminada al arrancar. Las unidades excluidas no se acumulan entre invocaciones de comandos.
+- **/C**: Programa una unidad para ser comprobada al arrancar; chkdsk se ejecutará si la unidad está dañada.
+
+
+Si no se especifican modificadores, CHKNTFS mostrará  si la unidad especificada está dañada o programada para ser revisada al reiniciar el equipo de nuevo.
+
+
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="cmd"><u>Cmd</u></a>
+
+
+Inicia una nueva instancia del intérprete de comandos de Windows
+
+```
+CMD [/A | /U] [/Q] [/D] [/E:ON | /E:OFF] [/F:ON | /F:OFF] [/V:ON | /V:OFF]
+    [[/S] [/C | /K] cadena]
+```
+
+- **/C**: Ejecuta el comando especificado en cadena y luego finaliza.
+- **/K**: Ejecuta el comando especificado en cadena pero sigue activo.
+- **/S**: Modifica el tratamiento de cadena después de /C o /K (consultar más abajo).
+- **/Q**: Desactiva el eco
+- **/D**: Deshabilita le ejecución de los comandos de AutoRun del Registro (consultar m s abajo)
+- **/A**: Usa ANSI para la salida de comandos internos hacia una canalización o un archivo.
+- **/U**: Usa Unicode para la salida de comandos internos hacia una canalización o un archivo.
+- **/T:fg** Configura los colores de primer y segundo plano (para obtener más información, consulte COLOR /?) ej:  
+`cmd /t:5f`.
+- **/E:ON**: Habilita las extensiones de comando (consultar más abajo).
+- **/E:OFF**: Deshabilita las extensiones de comando (consultar más abajo).
+- **/F:ON**: Habilita los caracteres de terminación de los nombres de archivos y directorios (consultar más abajo)
+- **/F:OFF**: Deshabilita los caracteres de terminación de los nombres de archivos y directorios (consultar más abajo).
+- **/V:ON**: Habilita la extensión de variables de entorno retardada con `!` como delimitador. Por ejemplo, /V:ON permitir  que !var! extienda la variable var en tiempo de ejecución.  La sintaxis var extiende variables en tiempo de entrada, lo que es bastante diferente cuando se está dentro de un bucle FOR.
+- **/V:OFF**: Deshabilita la extensión de variables de entorno retardada.Tenga en cuenta que los comandos múltiples separados por el separador de comandos '&&' se aceptan como cadena si están entre comillas. Por razones de compatibilidad, /X equivale a /E:ON, /Y equivale a /E:OFF y /R equivale a
+/C. Se omitirá cualquier otro tipo de modificador.
+
+Si se especifica /C o /K, lo que viene después de la línea de comandos se ejecuta como línea de comandos, siguiendo la lógica siguiente para procesar caracteres de comillas ("):
+
+1. Se conservan las comillas del comando si se cumplen todas las condiciones siguientes:
+    + no aparece el modificador /S
+    + hay exactamente dos caracteres de comillas
+    + no hay caracteres especiales entre ambas comillas, siendo los, caracteres especiales: `&<>()@^|`
+    + hay uno o más espacios en blanco entre ambas comillas
+    + la cadena entre ambas comillas es el nombre de un archivo ejecutable.
+
+2. En caso contrario, el comportamiento clásico es comprobar si el primer carácter es una comilla y de ser así, quitar ésta y también la última comilla de la línea de comandos, conservando el texto que venga después de ésta.
+
+Si no se especificó /D en la línea de comandos, cuando CMD.EXE se inicie, buscar  las variables del Registro REG_SZ/REG_EXPAND_SZ, y si alguna de ellas está presente, se ejecutarán en primer lugar.
+
+```
+HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\AutoRun
+
+y (o)
+
+HKEY_CURRENT_USER\Software\Microsoft\Command Processor\AutoRun
+```
+
+Las extensiones de comando están habilitadas de forma predeterminada. Puede deshabilitar las extensiones de una invocación particular con el modificador /E:OFF. Puede habilitar o deshabilitar las extensiones de todas las
+invocaciones de CMD.EXE en una sesión de inicio de usuario o de equipo si establece con `REGEDIT.EXE` los dos valores de REG_DWORD del Registro siguientes:
+
+```
+HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\EnableExtensions
+
+y/o
+
+HKEY_CURRENT_USER\Software\Microsoft\Command Processor\EnableExtensions
+```
+
+En 0x1 o 0x0. La configuración específica del usuario tiene preferencia respecto a la del equipo. Los modificadores de la línea de comandos tienen prioridad sobre la configuración del Registro. En un archivo por lotes, los argumentos SETLOCAL ENABLEEXTENSIONS o DISABLEEXTENSIONS tienen prioridad sobre los modificadores /E:ON o /E:OFF. Para obtener información más detallada, vea SETLOCAL /?. Las extensiones de comando implican cambios y ampliaciones en los siguientes comandos:
+
+- **DEL o ERASE**
+- **COLOR**
+- **CD o CHDIR**
+- **MD o MKDIR**
+- **PROMPT**
+- **PUSHD**
+- **POPD**
+- **SET**
+- **SETLOCAL**
+- **ENDLOCAL**
+- **IF**
+- **FOR**
+- **CALL**
+- **SHIFT**
+- **GOTO**
+- **START** (también incluye cambios en la invocación de comandos externos)
+- **ASSOC**
+- **FTYPE**
+
+Para obtener detalles específicos, escriba nombreDelComando /?.
+La expansión de variables de entorno retardada NO está habilitada de forma predeterminada. Puede habilitar o deshabilitar la expansi¢n de variables de entorno retardada para una invocación particular de CMD.EXE con los
+modificadores /V:ON o /V:OFF. Puede habilitar o deshabilitar la expansión retardada para todas las invocaciones de CMD.EXE en una sesión de inicio de usuario o equipo si establece con REGEDIT.EXE los dos valores de REG_DWORD del Registro siguientes:
+
+```
+HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\DelayedExpansion
+
+y/o
+
+HKEY_CURRENT_USER\Software\Microsoft\Command Processor\DelayedExpansion
+```
+
+en 0x1 o 0x0. La configuración específica del usuario tiene prioridad sobre la configuración del equipo. Los modificadores de la línea de comandos tienen prioridad sobre la configuración del Registro. En un archivo por lotes, los argumentos SETLOCAL ENABLEDELAYEDEXPANSION o DISABLEDELAYEDEXPANSION tienen prioridad sobre los modificadores /V:ON o /V:OFF. Para obtener información más detallada, vea SETLOCAL /?.
+
+Si la expansión de variables de entorno retardada está habilitada, se puede usar el carácter de exclamación para sustituir el valor de la variable de entorno en tiempo de ejecución.
+
+Puede habilitar o deshabilitar la terminación de un nombre de archivo para una invocación particular de CMD.EXE con el modificador /F:ON o /F:OFF. Se puede habilitar o deshabilitar la terminación para todas las invocaciones de CMD.EXE en una sesión de inicio de equipo o de usuario estableciendo cualquiera de los dos siguientes valores REG_DWORD en el Registro con REGEDT.EXE:
+
+```
+HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\CompletionChar
+
+HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\PathCompletionChar
+        
+y/o
+
+HKEY_CURRENT_USER\Software\Microsoft\Command Processor\CompletionChar
+
+HKEY_CURRENT_USER\Software\Microsoft\Command Processor\PathCompletionChar
+```
+
+con el valor hex de un carácter de control para usarlo en una función particular (por ej. 0x4 es Ctrl-D y 0x6 es Ctrl-F). La configuración de usuario específica tiene precedencia sobre la configuración de la máquina. Los modificadores de la línea de comandos tiene precedencia sobre la configuración del Registro.
+Si la terminación está habilitada con el modificador /F:ON, los dos caracteres de control usados son Ctrl-D para la terminación del nombre del directorio y Ctrl-F para la terminación del nombre de archivo. Para deshabilitar una
+terminación de carácter determinada en el Registro, use el valor del espacio en blanco (0x20), ya que no es un carácter de control válido.
+
+Se invoca la terminación cuando se escriben cualquiera de los dos caracteres de control. La función de terminación, desplaza el contenido de la ruta de acceso hacia la izquierda del cursor, le anexa un carácter comodín si no hay ninguno todavía presente y genera una lista de rutas de acceso que coincidan. Después muestra la primera ruta de acceso que coincida. Si no
+coincide ninguna ruta de acceso, emite un sonido y no muestra nada. Posteriormente, el presionar repetidamente el mismo carácter de control se desplazará a través de la lista de las rutas de acceso que coinciden. Si presiona la tecla Mayús con el carácter de control se mover  a través de la lista hacia atrás. Si se edita la línea de cualquier manera y presiona el
+carácter de control de nuevo, la lista de ruta de acceso guardada es anulada y se generará una nueva. Ocurrirá lo mismo si pasa de una terminación de nombre de archivo a uno de directorio. La única diferencia entre los dos caracteres de control es que la terminación del carácter del archivo
+coincide con ambos nombres del archivo y del directorio, mientras que la terminación del carácter del directorio sólo coincide con los nombres del directorio. Si la terminación del archivo es usada en cualquier construcción de comandos de directorio (CD, MD o RD) entonces se asume la terminación del directorio.
+
+El código de terminación trata adecuadamente con nombres de archivo que contienen espacios u otros caracteres especiales colocando comillas entre la ruta de acceso que coincide. También, si se hace una copia de seguridad, se llamará a una terminación dentro de la misma línea, el texto a la derecha
+del cursor que fue llamado en el punto de la terminación es descartado.
+
+Los caracteres especiales que requieren comillas son:
+
+```
+<espacio>&()[]{}^=;!'+,`~
+```
+
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="color"><u>Color</u></a>
+
+
+Establece los colores de primer plano y fondo predeterminados de la consola. 
+
+```
+COLOR [atr]
+```
+
+- **atr**: Especifica el atributo de color de la salida de consola
+
+Los atributos de color están especificados con dos dígitos hex (el primero corresponde al segundo plano; el segundo al pr
+imer plano). Los dígitos pueden
+ser cualquiera de los siguientes valores:
+
+
+Colores: 
+
+| Código | Color    | Código | Color          |
+|--------|----------|--------|----------------|
+|0       |Negro     | 8      |Gris.           |
+|1       |Azul      | 9      |Azul claro      |
+|2       |Verde     | A      |Verde claro     |
+|3       |Aguamarina| B      |Aguamarina claro|
+|4       |Rojo      | C      |Rojo Claro      |
+|5       |Púrpura   | D      |Púrpura claro   |
+|6       |Amarillo  | E      |Amarillo claro  |
+|7       |Blanco    | F      |Blanco brillante|
+
+
+
+**Ejemplo:**
+
+```bash
+color 17
+# 1 = Azul para el fondo
+# 7 = Blanco para el primer plano
+```
+
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="comp"><u>Comp</u></a>
+
+Compara el contenido de dos archivos o conjuntos de archivos.
+
+```
+COMP [datos1] [datos2] [/D] [/A] [/L] [/N=número] [/C] [/OFF[LINE]]
+```
+
+- **datos1**: Especifica la ubicación y los nombres de los primeros archivos que se van a comparar.
+- **datos2**: Especifica la ubicación y los nombres de los segundos archivos que se van a comparar.
+- **/D**: Muestra las diferencias en formato decimal. Esta es la configuraci¢n predeterminada.
+- **/A**: Muestra las diferencias en caracteres ASCII.
+- **/L**: Muestra los números de línea para las diferencias.
+- **/N=número**: Compara sólo el número de líneas especificado de cada archivo.
+- **/C**: Omite las mayúsculas/minúsculas de ASCII al comparar archivos.
+- **/OFF[LINE]**: No omite archivos con el atributo "sin conexión" establecido.
+
+Para comparar conjuntos de archivos, use comodines en datos1 y datos2.
+
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="compact"><u>Compact</u></a>
+
+Muestra o altera la compresión de los archivos en particiones NTFS.
+
+```
+COMPACT [/C | /U] [/S[:dir]] [/A] [/I] [/F] [/Q] [archivo [...]]
+```
+
+- **/C**: Comprime los archivos especificados. Los directorios serán marcados para que los archivos agregados después sean comprimidos.
+- **/U**: Descomprime los archivos especificados. Los directorios serán marcados para que los archivos agregados después no sean comprimidos.
+- **/S**: Efectúa la operación especificada en los archivos del directorio dado y todos los subdirectorios. De forma predeterminada, "dir" es el directorio actual.
+- **/A**: Muestra los archivos ocultos o los atributos del sistema. Estos archivos se omiten de manera predeterminada.
+- **/I**: Continúa efectuando la operación especificada incluso después de que hayan ocurrido los errores. De forma predeterminada, COMPACT para cuando se encuentra un error.
+- **/F**: Exige la operación de compresión en todos los archivos especificados, incluso en los que ya están comprimidos. Los archivos ya comprimidos se omiten de manera predeterminada.
+- **/Q**: Muestra sólo la información más esencial.
+- **archivo**: Especifica un patrón, archivo o directorio. Si se usa sin parámetros, COMPACT muestra el estado de la compresión del directorio actual y cualquier archivo que contenga. Puede usar múltiples nombres de archivo y comodines. Debe poner espacios entre los parámetros.
+
+
+Comprima un archivo desde la línea de comandos:
+
+```bat
+compact /c archivo.txt
+```
+
+
+
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="convert"><u>Convert</u></a>
+
+Convierte un volumen FAT a NTFS.
+
+```
+CONVERT volumen /FS:NTFS [/V] [/CvtArea:nombre_archivo] [/NoSecurity] [/X]
+```
+
+- **volumen**: Especifica la letra de unidad (seguida por dos puntos) punto de montaje o nombre de volumen.
+- **/FS:NTFS**: Especifica que el volumen se convertirá a NTFS.
+- **/V**: Especifica que Convert se ejecutará en modo detallado.
+- **/CvtArea:nombre_archivo**: Especifica un archivo contiguo en el directorio raíz, que ser el marcador de posición para los archivos de sistema NTFS.
+- **/NoSecurity**: Especifica que la configuración de seguridad en los archivos y directorios convertidos permitir  que todos los usuarios tengan acceso a ellos.
+- **/X**: Fuerza a que el volumen se desmonte primero si es necesario. Todos los identificadores abiertos al volumen no serán válidos.
+
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="copy"><u>Copy</u></a>
+
+Copia uno o más archivos en otra ubicación.
+
+```
+COPY [/D] [/V] [/N] [/Y | /-Y] [/Z] [/L] [/A | /B ] origen [/A | /B]
+     [+ origen [/A | /B] [+ ...]] [destino [/A | /B]]
+```
+
+
+- **origen**: Especifica el archivo o archivos que deben copiarse.
+- **/A**: Indica un archivo de texto ASCII.
+- **/B**: Indica un archivo binario.
+- **/D**: Permite que el archivo de destino se cree sin cifrar.
+- **destino**: Especifica el directorio y/o el nombre de archivo de los nuevos archivos.
+- **/V**: Comprueba si los nuevos archivos están escritos correctamente.
+- **/N**: Si está disponible, usa un nombre de archivo corto al copiar un archivo cuyo nombre no tiene el formato 8.3.
+- **/Y**: Suprime la solicitud de confirmación antes de sobrescribir un archivo de destino existente.
+- **/-Y**: Solicita confirmación antes de sobrescribir un archivo de destino existente.
+- **/Z**: Copia archivos de red en modo reiniciable.
+- **/L**: Si el origen es un vínculo simbólico, copia el vínculo al destino en lugar del archivo real al que apunta el vínculo.
+
+El modificador /Y puede preestablecerse en la variable de entorno COPYCMD. Esto puede anularse con el modificador /-Y en la línea de comando. La confirmación del usuario se solicita de forma predeterminada antes de sobrescribir algo, excepto si el comando COPY se ejecuta desde un script por lotes.
+
+Para anexar archivos, especifique un único archivo de destino pero varios archivos de origen (con caracteres comodines o el formato archivo1+archivo2+archivo3).
+
+
+**Ejemplos:**
+
+
+Copia el archivo.txt dentro de la carpeta 'Mis textos'
+
+
+```bat
+copy archivo.txt "Mis repositorios"
+```
+
+
+Hace una copia en el directorio actual del archivo `contactos.txt` y lo nombra `contactos.bak.txt`
+
+
+```bat
+copy contactos.txt contactos.bak.txt
+```
+
+
+
+[volver a índice](#top) &#x2934;
+
+---
+
+### <a name="date"><u>Date</u></a>
+
+
+Muestra o establece la fecha.
+
+```
+DATE  [/T | fecha]
+```
+
+Escriba DATE sin parámetros para mostrar la fecha actual y poder 
+especificar una nueva. Presione <kbd>Enter</kbd> para mantener la misma fecha.
+
+Si están habilitadas las extensiones de comandos, el comando DATE admite
+el par metro /T, que indica al comando mostrar tan sólo la fecha actual
+sin pedir una nueva fecha.
+
+
+[volver a índice](#top) &#x2934;
+
+---
+
 
 
 ### <a name="if"><u>If</u></a>
@@ -876,11 +1401,6 @@ EXIT [/B] [código]
 
 
 
-
-
-
-
-
 ### <a href="#rem"><u>Rem</u></a>
 
 
@@ -1066,13 +1586,6 @@ exit
 ```
 
 
-
-
-
-
-
-
-
 - **help**:  
 
 - **Ir a otra unidad extraible**: Ingresando la letra del volumen
@@ -1083,37 +1596,6 @@ Ejemplo:
 F:
 
 ```
-
-- **cls**: Este comando limpia la ventana de la consola de Windows; es decir, borra todos los comandos que has escrito anteriormente
-
-
-- **color** : Establece los colores de primer plano y fondo predeterminados de la consola. 
-
-
-Colores: 
-
-| Código | Color    | Código | Color          |
-|--------|----------|--------|----------------|
-|0       |Negro     | 8      |Gris.           |
-|1       |Azul      | 9      |Azul claro      |
-|2       |Verde     | A      |Verde claro     |
-|3       |Aguamarina| B      |Aguamarina claro|
-|4       |Rojo      | C      |Rojo Claro      |
-|5       |Púrpura   | D      |Púrpura claro   |
-|6       |Amarillo  | E      |Amarillo claro  |
-|7       |Blanco    | F      |Blanco brillante|
-
-
-
-Ejemplo:  
-
-```bash
-color 17
-# 1 = Azul para el fondo
-# 7 = Blanco para el primer plano
-```
-
-
 
 ### <a name="#variables"><u>Variables</u></a>
 
@@ -1789,5 +2271,6 @@ Los modificadores se pueden combinar para conseguir resultados compuestos:
 - **%\~ftzaI**: expande %I a DIR como línea de salida.S
 
 En los ejemplos anteriores %I y PATH pueden ser reemplazados por otros valores válidos. La sintaxis %~ está terminada por un nombre de variablem FOR válido. El código se vuelve más legible si se usan variables en mayúscula como %I, además esto evita confundir las variables con los modificadores, los cuales no distinguen entre mayúsculas y minúsculas.
+Muestra o modifica la comprobaci¢n del disco en el tiempo de arranque.
 
 
