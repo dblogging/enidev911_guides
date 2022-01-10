@@ -4,15 +4,13 @@ Siempre que crea una tabla sin especificar la opción **WITHOUT ROWID**, obtiene
 
 **Ejemplo:**
 
-Primero, cree una nueva tabla nombrada `personas` que tenga dos columnas:  
+Primero, cree una nueva tabla nombrada `personas` que tenga dos columnas: 
 
-
-```
- ____________________
 |first_name|last_name|
-|----------|---------|
+|:--------:|:-------:|
+|    -     |    -    |
 
-```
+
 
 
 ```sql
@@ -23,10 +21,16 @@ CREATE TABLE people (
 
 ```
 
-<a class="sql" href="https://www.sqlitetutorial.net/tryit/query/sqlite-autoincrement/#1" target="_blank" rel="noopener noreferrer"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Intentalo</font></font></a>
+
+<a href="https://www.sqlitetutorial.net/tryit/query/sqlite-autoincrement/#1"><button name="button" style="border-radius: 5%; border: 0; background: #4D80DF; padding: 6px 12px; cursor: pointer; color: #fff">Intentalo</button></a>
+
+
+En segundo lugar, inserte una fila en la tabla `personas` utilizando la declaración `INSERT`:
 
 
 
+```sql
+INSERT INTO people (first_name, last_name) VALUES('Will', 'Smith');
+```
 
-
-<a href="https://www.sqlitetutorial.net/tryit/query/sqlite-autoincrement/#1"><button name="button">Click me</button></a>
+<a href="https://www.sqlitetutorial.net/tryit/query/sqlite-autoincrement/#1"><button name="button" style="border-radius: 5%; border: 0; background: #4D80DF; padding: 6px 12px; cursor: pointer; color: #fff">Intentalo</button></a>
