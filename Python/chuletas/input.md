@@ -93,5 +93,5 @@ print('Primer número {} y segundo número es {}'.format(a, b))
 <p align="center">
 <a href="https://colab.research.google.com/drive/1Xii73KEHvw8y9Utu1KlSH8FGWfrPaSO8?usp=sharing">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/> 
-</a> <br> <img src="assets/ico/point_up.ico" width="30"><img src="assets/ico/ninja_head.ico" width="30"><img src="assets/png/message.png" width="125" height="30"> 
+</a> <br> <img src="assets/ico/point_up.ico" width="30"><img src="assets/ico/ninja_head.ico" width="45"><img src="assets/png/message.png" width="125" height="30"> 
 </p>
