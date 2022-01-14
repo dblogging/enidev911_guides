@@ -1,3 +1,17 @@
+### os.path - Manipular nombre comunes de rutas
+
+
+Este módulo implementa algunas funciones útiles
+
+
+
+
+
+
+
+
+
+
 - **os.path.abspath(path)**
 
 
@@ -57,4 +71,3 @@ os.getcwd()
 
 El módulo os nos provee el submódulo **path** (os.path) el cual nos permite
 
->>>>>>> 315d04ccc44a7c693a93c4e57af73dd7702ae3a2

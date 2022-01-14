@@ -71,10 +71,48 @@ La sintaxis de Tcl es similar a la de muchos lenguajes de shell, donde la primer
 
 Al buscar cómo usar una API, es útil saber el nombre exacto de la clase, la opción o el método que está usando. La introspección, ya sea en un shell de Python interactivo o con **print()**, puede ayudarlo a identificar lo que necesita.
 
+Para averiguar qué opciones de configuración están disponibles en cualquier widget, llame a su método **configure()**, que devuelve un diccionario que contiene una variedad de información sobre cada objeto, incluidos sus valores predeterminado y actuales. Use **keys()** para obtener solo los nombres de cada opción 
+
+
+```py
+btn = ttk.Button(frm, ...)
+print(btn.configure().keys())
+```
+
+Como la mayoría de los widgets tienen muchas opciones de configuración en común, puede resultar útil averiguar cuáles son específicas de una clase de widget en particular. Comparar la lista de opciones con la de un widget más simple, como un frame, es una forma de hacerlo.
+
+
+
+```py
+print(set(btn.configure().keys()) - set(frm.configure().keys()))
+```
+
+De manera similar, puede encontrar los métodos disponibles para un objeto de widget utilizando la función **dir()**. Si lo prueba, verá que hay más de 200 métodos comunes de widgets, por lo que nuevamente es útil identificar aquellos específicos para una clase de widget.
+
+
+```py
+print(dir(btn))
+print(set(dir(btn)) - set(dir(frm)))
+```
 
 
 
 
+### El empacador (The packer)
+
+El empacador es uno de los mecanismo de gestión de geometría de Tk. Los administradores de geometría se utilizan para especificar el posicionamiento relativo de los widgets dentro de su contenedor, su maestro mutuo. En contraste con el método place que es más engorroso (se usa con menos frecuencia), el empacador toma la especificación de la relación cualitativa ('above', 'to the left of', 'filling', etc) y resuelve todo para determinar las coordenadas de ubicación exactas. para ti.
+
+
+El tamaño de cualquier widget maestro está determinado por el tamaño de los **widgets esclavos** en su interior, el empaquetador se usa para controlar dónde aparecen los widgets esclavos dentro del maestro en el que están empaquetados. Puede empaquetar widgets en frames y frame en otros frames para lograr el tipo de diseño que desea. Además, la disposición se ajusta dinámicamente para acomodar cambios incrementales a la configuración, una vez que se empaqueta. 
+
+Tenga en cuenta que los widgets no aparecen hasta que se hayan especificado su geometría con un administrador de geometría. Es un error temprano común omitir la especificación de la geometría y luego sorprenderse cuando se crea el widget pero no aparece nada. Un widget aparecerá solo después de que se le haya aplicado el método **pack()**, por ejemplo, el método del empaquetador.
+
+
+```py
+fred.pack()
+fred.pack(side="left")
+fred.pack(expand=1)
+```
 
 
 

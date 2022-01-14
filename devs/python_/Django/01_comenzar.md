@@ -1,4 +1,4 @@
-## Comenzar un proyecto con Django  
+## Comenzar un proyecto con Django
 
 Asumiendo que ya tenemos la librería instalada, ya sea en virtual o en local, podemos crear un proyecto con el siguiente comando utilizando el script habilitado por django.  
 
@@ -15,7 +15,7 @@ Ya hecha la migración, podemos correr el servidor que trae Django por defecto p
     python manage.py runserver
 
 
-## Crear una primera petición y responder con un mensaje  
+## Crear una primera petición y responder con un mensaje
 
 Para eso Django trabaja con objetos de tipo **Request** y **HttpResponse**, dentro del proyecto creamos un archivo llamado **views.py**  
 
