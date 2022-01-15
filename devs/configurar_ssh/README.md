@@ -111,6 +111,7 @@ clip < ~/.ssh/id_rsa.pub
 ```
 
 - **~**: es un símbolo llamado virgulilla que en los sistemas operativos UNIX se refiere al valor de la variable $HOME, esto es, el directorio del usuario que está logueado.
+- **id_rsa.pub**: Este archivo es el que almacena el contenido de la llave pública, por ende, debemos tener mucho cuidado en verificar que estemos copiando el contenido de este archivo.   
 
 **Ejemplo:**
 
@@ -123,47 +124,47 @@ clip < ~/.ssh/id_rsa.pub
 
 
 <p align="center">
-    <img src="img_ssh/05_settings.png" alt="settings" width="350" height="550" >
+    <img src="img_ssh/05_settings.png" alt="settings" width="350" height="550">
 </p> 
 
 3. En la barra laterar de configuración de usuario, da clic en LLaves SSH y GPG.  
 
 
 <p align="center">
-    <img src="img_ssh/06_settings_ssh.png" alt="settings" width="600" height="300">
+    <img src="img_ssh/06_settings_ssh.png" alt="settings" height="400">
 </p>  
 
 
 4. Haz clic en **New SSH key** o **Add SSH key**.
 
 <p align="center">
-    <img src="img_ssh/07_add_ssh.png" alt="add shh" width="800" height="280">
+    <img src="img_ssh/07_add_ssh.png" alt="add shh">
 </p>
 
 5. En el campo "Title" (Título), agrega una etiqueta descriptiva para la clave nueva. Por ejemplo, si estás usando tu Mac personal, es posible que llames a esta tecla "Personal MacBook Air".
 Copia tu clave en el campo "Key" (Clave).
 
 <p align="center">
-    <img src="img_ssh/08_paste_ssh.png" alt="paste" width="850" height="500">
+    <img src="img_ssh/08_paste_ssh.png" alt="paste">
 </p>
 
 
 <p align="center">
-    <img src="img_ssh/09_paste_ssh.png" alt="paste" width="850" height="500">
+    <img src="img_ssh/09_paste_ssh.png" alt="paste">
 </p>
 
 
 6. Si se te solicita, confirma tu contraseña GitHub.
 
 <p align="center">
-    <img src="img_ssh/10_corfim.png" alt="corfim" width="650" height="500">
+    <img src="img_ssh/10_corfim.png" alt="corfim">
 </p>
 
 
 Está lista nuestra llave para poder utilizarla con GitHub.
 
 <p align="center">
-    <img src="img_ssh/10_see_ssh.png" alt="see ssh" width="650" height="500">
+    <img src="img_ssh/10_see_ssh.png" alt="see ssh">
 </p>
 
 
