@@ -1,4 +1,4 @@
-## <u>Entrada estándar: input()</u> <img src="../assets/img/python(144x144).png" width="30" align="right">
+## <u>Entrada estándar: input()</u> <img src="../../assets/img/python(144x144).png" width="30" align="right">
 
 Los desarrolladores a menudo tienen la necesidad de interactuar con los usuarios, ya sea para obtener datos o para proporcionar algún tipo de resultado. La mayoría de los programas actuales utilizan un cuadro de diálogo como una forma de pedirle al usuario que proporcione algún tipo de entrada (*input*). Mientras que Python nos proporciona dos funciones incorporadas para leer la entrada desde el teclado.
 
@@ -38,7 +38,7 @@ print(val)
 # output: ValueError: invalid literal for int() with base 10: 'diez'
 ```
 <p align="center">
-<img src="assets/png/exception_input.png" width="690"/>
+<img src="../assets/png/exception_input.png" width="690"/>
 </p>
 
 
@@ -93,7 +93,7 @@ print('Primer número {} y segundo número es {}'.format(a, b))
 <p align="center">
 <a href="https://colab.research.google.com/drive/1Xii73KEHvw8y9Utu1KlSH8FGWfrPaSO8?usp=sharing">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/> 
-</a> <br> <img src="assets/ico/point_up1.ico" width="30" style="margin-left: 55px;"><img src="assets/ico/ninja_head.ico" width="35"><img src="assets/png/message1.png" width="125" height="30"> 
+</a><br><img src="../assets/ico/point_up1.ico" width="30" style="margin-left: 55px;"><img src="../assets/ico/ninja_head.ico" width="35"><img src="../assets/png/message1.png" width="125" height="30"> 
 </p>
 
 
@@ -211,7 +211,7 @@ while True:
 <p align="center">
 <a href="https://colab.research.google.com/drive/1Xii73KEHvw8y9Utu1KlSH8FGWfrPaSO8?usp=sharing#scrollTo=_8VwvC5fSO7k">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/> 
-</a> <br> <img src="assets/ico/point_up1.ico" width="30" style="margin-left: 55px;"><img src="assets/ico/ninja_head.ico" width="40"><img src="assets/png/message1.png" width="125" height="35"> 
+</a> <br> <img src="../assets/ico/point_up1.ico" width="30" style="margin-left: 55px;"><img src="../assets/ico/ninja_head.ico" width="40"><img src="../assets/png/message1.png" width="125" height="35"> 
 </p>
 
 
@@ -223,11 +223,13 @@ while True:
 
 <p align="center">
 Sigueme en:<br>
-<a href="https://www.facebook.com/profile.php?id=100009064421475"><img src="assets/ico/_Facebook.ico" width="30"></a>
-<a href="https://github.com/EniDev911"><img src="assets/ico/_Github.ico" width="30"></a>
-<a href="https://twitter.com/MarcoContreraas"><img src="assets/ico/_Twitter.ico" width="30"></a><br>
+<a href="https://www.facebook.com/profile.php?id=100009064421475"><img src="../assets/ico/_Facebook.ico" width="30"></a>
+<a href="https://github.com/EniDev911"><img src="../assets/ico/_Github.ico" width="30"></a>
+<a href="https://twitter.com/MarcoContreraas"><img src="../assets/ico/_Twitter.ico" width="30"></a><br>
 <a href="https://www.buymeacoffee.com/9111592">
-<img src="assets/png/love_coffe.png" width="95"></a>
+<img src="../assets/png/love_coffe.png" width="95"></a>
 </p>
 
 
+
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FFDD00" data-position="Right" data-x_margin="18" data-y_margin="18"></script>

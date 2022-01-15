@@ -1,10 +1,11 @@
-- Ìnstalación
+- Instalación
 
 ```bash
 pip install --user pipenv
 ```
 
 Nota: Esto se hace para prevenir romper cualquier paquete de sistema. Si **pipenv** no esta disponible en tu shell después de la instalación, vas a necesitar agregar la carpeta raiz de binarios del usuario a tu **PATH** en mi caso `C:\Users\home\AppData\Roaming\Python\Python38\Scripts`
+
 
 - Instalar paquetes
 

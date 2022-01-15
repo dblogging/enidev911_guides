@@ -36,7 +36,7 @@ A continuación sigue una lista detallada de todas las características que se p
 
 ## <a name="mark0">Markdown</a>
 
-Este es el lenguaje de marcado que permite formatear el texto fácilmente sin la necesidad de emplear HTML o emplear un editor visual.  
+Este es el lenguaje de marcado que permite formatear el texto fácilmente sin la necesidad de emplear HTML o emplear un editor visual. 
 
 ## <a name="mark-0">¿Que es Markdown?</a>
 
