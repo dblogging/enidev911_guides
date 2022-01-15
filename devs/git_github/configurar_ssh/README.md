@@ -111,7 +111,7 @@ clip < ~/.ssh/id_rsa.pub
 ```
 
 - **~**: es un símbolo llamado virgulilla que en los sistemas operativos UNIX se refiere al valor de la variable $HOME, esto es, el directorio del usuario que está logueado.
-- **id_rsa.pub**: Este archivo es el que almacena el contenido de la llave pública, por ende, debemos tener mucho cuidado en verificar que estemos copiando el contenido de este archivo.   
+- **id_rsa.pub**: Este archivo es el que almacena el contenido de la llave pública, por ende, debemos tener mucho cuidado en verificar que estemos copiando el contenido de este archivo y no de otro.   
 
 **Ejemplo:**
 
@@ -124,8 +124,8 @@ clip < ~/.ssh/id_rsa.pub
 
 
 <p align="center">
-    <img src="img_ssh/05_settings.png" alt="settings" width="350" height="550">
-</p> 
+    <img src="img_ssh/05_settings.png" alt="settings" width="510" height="600">
+</p>
 
 3. En la barra laterar de configuración de usuario, da clic en LLaves SSH y GPG.  
 
