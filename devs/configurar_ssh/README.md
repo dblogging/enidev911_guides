@@ -156,12 +156,18 @@ Copia tu clave en el campo "Key" (Clave).
 6. Si se te solicita, confirma tu contraseña GitHub.
 
 <p align="center">
-    <img src="img_ssh/10_corfim.png" alt="corfim" width="450" height="500">
+    <img src="img_ssh/10_corfim.png" alt="corfim" width="650" height="500">
 </p>
 
-Ya se esta lista nuestra llave para poder utilizarla con GitHub.
 
-## Probar la conexión SSH a GitHub
+Está lista nuestra llave para poder utilizarla con GitHub.
+
+<p align="center">
+    <img src="img_ssh/10_see_ssh.png" alt="see ssh" width="650" height="500">
+</p>
+
+
+### Probar la conexión SSH a GitHub
 
 Ahora podemos probar nuestra conexión a través de SSH a GitHub  
 
@@ -169,7 +175,7 @@ Ahora podemos probar nuestra conexión a través de SSH a GitHub
 ssh -T git@github.com
 ```
 <p align="center">
-    <img src="img_ssh/11_validate.png" alt="validate" width="850" height="550">
+    <img src="img_ssh/11_validate.png" alt="validate">
 </p>
 
 Si la última línea contiene su nombre de usuario en GitHub, ¡está autenticado correctamente!.
