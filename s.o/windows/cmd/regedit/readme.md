@@ -227,3 +227,6 @@ HKEY_CURRENT_USER\Console\
 ```
 HKEY_CURRENT_USER 
 ```
+
+
+Mediante la línea de comandos es posible modificar, editar y cambiar 
