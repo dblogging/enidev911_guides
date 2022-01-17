@@ -1,26 +1,38 @@
-## Exportar e Importar Base de Datos MySQL
-**Proceso para exportar e importar una base de datos MySQL desde linea de comandos.**
+[comment]: <> (Author: Marco Contreras Herrera)
+[comment]: <> (Email: enidev911@gmail.com)
 
-## <a name='TOC'></a>
+<h2 align="center">
+  <u>Exportar e Importar bases de datos MySQL</u>
+  <img src="../assets/ico/MySQL_Logo.ico">
+</h2>
+
+<br>
 
 1. [Objetivo y descripción](#intro)
 1. [Dependencias](#dependencies)
 1. [Puesta en marcha](#run)
 
-## <a name='intro'>Objetivo y Descripción</a>
-
-Si bien los clientes de base de datos ( Navycat, MySQLWorkbrench, etc… ) son una excelente herramienta que facilitan la gestión de bases de datos, no siempre tendremos la opción de utilizarlos, por lo que es necesario saber hacer la mayoría de tareas más comunes desde línea de comandos.  **mysqldump** es una pequeña pero muy potente utilidad que acompaña al servidor MySql. Su principal uso es para realizar copias de seguridad de las bases de datos mysql. Con esto en mente, en esta ocasión revisaremos los comandos que nos permitirán exportar e importar una base de datos.
-
-## <a name='dependencies'>Dependencias</a>
-
-- [MySQL](http://www.mysql.com/) - Tener instalado o en su lugar(XAMP, MAMP, LAMP,etc)
-
-## <a name='run'>Puesta en marcha</a>
-**Con nuestra Terminal y MySQL corriendo**
-
 ## <a name='TOC'></a>
 
+### <a name='intro'>Objetivo y Descripción</a>
+
+Si bien los clientes de base de datos ( Navycat, MySQLWorkbrench, etc… ) son una excelente herramienta que facilitan la gestión de bases de datos, no siempre tendremos la opción de utilizarlos, por lo que es necesario saber hacer la mayoría de tareas más comunes desde línea de comandos. Es por eso que en esta guía vamos a ver el **proceso para exportar e importar una base de datos MySQL desde linea de comandos.** Vamos a conocer algunas utilidades incluidas junto al servidor de MySQL.
+
+
+### <a name='dependencies'>Dependencias</a>
+
+
+- [MySQL](http://www.mysql.com/) - Tener instalado o en su lugar(XAMP, MAMP, LAMP,etc)
+    * **mysqldump**: es una pequeña pero muy potente utilidad que acompaña al servidor MySql. Su principal uso es para realizar copias de seguridad de las bases de datos mysql. Con esto en mente, en esta ocasión revisaremos los comandos que nos permitirán exportar e importar una base de datos.
+
+
+### <a name='run'>Puesta en marcha</a>
+
+
+
 **Exportar**
+
+Con nuestra Terminal y nuestro servidor corriendo hacemos lo siguiente:
 
 1. Accedemos a nuestra terminal y ejecutamos el siguiente comando:
 ```
