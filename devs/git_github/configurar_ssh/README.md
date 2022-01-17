@@ -1,5 +1,12 @@
 ### <u>Configurar llaves SSH en Git y Github</u>
 
+
+**¿Por qué usar SSH?**
+
+- Intercepción de la comunicación entre dos sistemas: un tercero en algún lugar de la red entre entidades en comunicación hace una copia de la información que pasa entre ellas. La parte interceptora puede interceptar y conservar la información, o puede modificar la información y luego enviarla al recipiente al cual estaba destinada.
+- Personificación de un determinado host: un sistema interceptor finge ser el receptor a quien está destinado un mensaje. Si funciona la estrategia, el cliente no se da cuenta del engaño y continúa la comunicación con el interceptor como 
+
+
 **¿Para que necesitamos la criptografía asimétrica?** 
 
 Cuando enviamos datos por internet, ya sea una imagen, un archivo o sólo mensajes, corremos el riesgos de que nos roben nuestra información en el intento, antes de que llegue al receptor.

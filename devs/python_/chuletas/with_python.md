@@ -1,6 +1,5 @@
 ## <u>WITH - PYTHON</u> <img src="../assets/img/python(144x144).png" width="30" align="right">
 
-<br>
 
 La sentencia **with** en Python es usado en el manejo de excepciones para hacer que el código sea más limpio y mucho más legible. Simplifica la gestión de recursos comunes como el flujo de archivos. En el siguiente ejemplo de código sobre cómo el uso de la instrucción with:
 
@@ -37,7 +36,7 @@ with open('file_path', 'w') as file:
 
 Tenga en cuenta que, a diferencia de las dos primeras implementaciones, no es necesario llamar al método **close()**. La instrucción **with** garantiza la adquisición y liberación adecuado de recursos. El uso de la declaración **with** hace que el código sea más compacto y mucho más legible. Por lo tanto **with** mps ayuda a evitar errores y fugas al garantizar que un recurso de libere correctamente.
 
-## <p align="left"><u>Apoyando la declaración with con objetos definidos por el usuario</u><p> 
+## <p align="left"><u>Apoyando la declaración with con objetos definidos por el usuario</u><p>
 
 <br>
 
