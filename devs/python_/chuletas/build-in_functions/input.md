@@ -229,7 +229,3 @@ Sigueme en:<br>
 <a href="https://www.buymeacoffee.com/9111592">
 <img src="../assets/png/love_coffe.png" width="95"></a>
 </p>
-
-
-
-<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FFDD00" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
