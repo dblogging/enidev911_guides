@@ -37,7 +37,7 @@ with open('file_path', 'w') as file:
 
 Tenga en cuenta que, a diferencia de las dos primeras implementaciones, no es necesario llamar al método **close()**. La instrucción **with** garantiza la adquisición y liberación adecuado de recursos. El uso de la declaración **with** hace que el código sea más compacto y mucho más legible. Por lo tanto **with** mps ayuda a evitar errores y fugas al garantizar que un recurso de libere correctamente.
 
-## <p align="left"><u>Apoyando la declaración with con objetos definidos por el usuario</u><p> 
+## <p align="left">Apoyando la declaración with con objetos definidos por el usuario<p>
 
 <br>
 
