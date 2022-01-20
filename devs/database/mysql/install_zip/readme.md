@@ -6,27 +6,32 @@
   <img src="../assets/ico/MySQL_Logo.ico">
 </h2>
 
+<br>
 
+### 1. Descargamos el archivo zip de [aquí](https://dev.mysql.com/downloads/file/?id=509736)
 
-1. Descargamos el archivo zip de [aquí](https://dev.mysql.com/downloads/file/?id=509736)
-	- Ya esta seleccionado el archivo solo damos clic en el siguinte enlace y comenzará la descarga.
+- Ya esta seleccionado el archivo, solo damos clic en donde está señalado en la siguiente ilustración y comenzará la descarga.
 
 <p align="center">
 	<img src="../assets/png/download_2.png" width="800" height="600">
-	<img src="../assets/png/download_2.1.png" width="800" height="100">
+	<img src="../assets/png/download_2.1.png" width="800" height="80">
 </p>
 
 
-1.1 Extraemos el contenido del archivo dentro del directorio de instalación deseado. Por ej: "C:\MySQl":
+1.1 Extraemos el contenido del archivo dentro del directorio de instalación deseado. Por ejemplo en: "C:\MySQl8":
 
 <p align="center">
 	<img src="../assets/png/directory_install.png" width="800" height="300">
 </p>
 
+---
+
+<br>
 
 ### 2. Crear un archivo de opciones.
 
 Si es necesario especificarle opciones al servidor durante su inicio, esto puede hacerse desde la línea de comandos o bien colocando las opciones en un archivo de opciones. Aquellas opciones que se usarán cada vez que se inicie el servidor, es conveniente colocarlas en un archivo. Esto es especialmente cierto en las siguiente circuntancias:
+
 
 - El directorio de instalación o de datos son diferentes de los usados por defecto (C:\Archivos de Programa\MySQL\MySQL Server 8.x y C:\Archivos de Programa\MySQL\MySQL Server 8.x\data)
 - Es necesario afinar la configuración del servidor
