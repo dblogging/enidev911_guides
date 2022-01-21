@@ -152,6 +152,8 @@ La función **getpass()** se utiliza para solicitar a los usuarios que utilicen 
 
 Veamos el siguiente ejemplo para comprender su implementación.
 
+<br>
+
 ```py
 # Ejemplo 1: Sin argumentos en la llamada.
 import getpass
@@ -185,6 +187,7 @@ else:
 # output: Bienvenido
 ```
 
+<br><br>
 
 2. **getuser()** 
 

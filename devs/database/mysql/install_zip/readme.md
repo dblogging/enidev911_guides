@@ -6,7 +6,7 @@
   <img src="../../../../assets/ico/MySQL_Logo.ico">
 </h2>
 
-<br>
+<br><br>
 
 ### 1. Descargamos el archivo zip de [aquí](https://dev.mysql.com/downloads/file/?id=509736)
 
@@ -17,8 +17,9 @@
 	<img src="../assets/png/download_2.1.png" width="800" height="80">
 </p>
 
+<br><br><br><br><br><br><br><br><br>
 
-1.1 Extraemos el contenido del archivo dentro del directorio de instalación deseado. Por ejemplo en: "C:\MySQl8":
+1.1 Extraemos el contenido del archivo dentro del directorio de instalación deseado. Por ejemplo en: "C:\MySQL8":
 
 <p align="center">
 	<img src="../assets/png/directory_install.png" width="800" height="300">
@@ -30,15 +31,15 @@
 
 ### 2. Crear un archivo de opciones.
 
-Si es necesario especificarle opciones al servidor durante su inicio, esto puede hacerse desde la línea de comandos o bien colocando las opciones en un archivo de opciones. Aquellas opciones que se usarán cada vez que se inicie el servidor, es conveniente colocarlas en un archivo. Esto es especialmente cierto en las siguiente circuntancias:
+Si es necesario especificarle opciones al servidor durante su inicio, esto puede hacerse desde la línea de comandos o bien colocando las opciones en un archivo de opciones. Aquellas opciones que se usarán cada vez que se inicie el servidor, es conveniente colocarlas en un archivo. Esto es especialmente necesario en las siguiente circuntancias:
 
 1. El directorio de instalación o de datos son diferentes de los usados por defecto Por ejemplo:  
-  - C:\Program Files\MySQL\MySQL Server 8.x  
-  - C:\Program Files\MySQL\MySQL Server 8.x\data
+    - C:\Program Files\MySQL\MySQL Server 8.x  
+    - C:\Program Files\MySQL\MySQL Server 8.x\data
 
 2. Es necesario afinar la configuración del servidor.
 
-Un archivo de opciones puede crearse y modificarse con cualquier editor de textos, como el Bloc de Notas o Notepad. Por ejemplo, si MySQL está descomprimido en **C:\MySQL8** y el directorio de datos es **C:\data**, se puede crear un archivo de opciones que contenga una sección [mysqld] para especificar los valores que tendrán los parámetros `basedir` y `datadir`. Una demostración de un archivo `my.ini` con algunas secciones que suelo utilizar.
+Un archivo de opciones puede crearse y modificarse con cualquier editor de textos, como el Bloc de Notas o Notepad. Por ejemplo, si MySQL está descomprimido en **C:\MySQL8** y el directorio de datos es **C:\data**, se puede crear un archivo de opciones que contenga una sección [mysqld] para especificar los valores que tendrán los parámetros `basedir` y `datadir`. Un archivo **my.ini** es un archivo de configuración utilizado en la base de datos MySQL. La modificación de este archivo conlleva el actualizar las configuraciones del servidor al iniciarse, este archivo se almacena en el directorio raíz de la instalación. La sección **[client\]** las opciones definidas aqui serán leídas por aplicaciones clientes enviadas por MySQL. A continuación veremos una demostración de un archivo `my.ini` con algunas secciones que suelo utilizar.
 
 <p align="center">
   <img src="../assets/png/my_ini.png" width="850" height="620">
