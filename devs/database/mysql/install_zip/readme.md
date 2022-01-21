@@ -17,7 +17,7 @@
 	<img src="../assets/png/download_2.1.png" width="800" height="80">
 </p>
 
-<br><br><br><br><br><br><br><br><br>
+
 
 1.1 Extraemos el contenido del archivo dentro del directorio de instalación deseado. Por ejemplo en: "C:\MySQL8":
 
