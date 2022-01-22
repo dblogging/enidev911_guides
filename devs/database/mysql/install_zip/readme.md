@@ -6,7 +6,7 @@
   <img src="../../../../assets/ico/MySQL_Logo.ico">
 </h2>
 
-<br><br>
+<br>
 
 ### 1. Descargamos el archivo zip de [aquí](https://dev.mysql.com/downloads/file/?id=509736)
 
@@ -75,11 +75,32 @@ basedir=C:\\MySQL8
 datadir=C:\\data
 ```
 
-El archivo ZIP no incluye un directorio **data**. Para inicializar una instalación de MySQL creando el directorio **data** y llenando las tablas en la base de datos del sistema mysql, inicialice MySQL usando las siguientes opción:
+El archivo ZIP no incluye un directorio **data**. Para inicializar una instalación de MySQL, en caso de que no hayamos creando el archivo de opciones, se creara un directorio **data** y llenando las tablas en la base de datos del sistema mysql, cuando inicialicemos MySQL usando el siguiente comando:
 
 ```mysql
 mysqld --initialize o --initialize-insecure.
 ```
+
+**Este comando hace lo siguiente:** 
+
+- Incializa el directorio de datos de MySQL y crea las tablas del sistema.
+
+- Instala el esquema [sys](https://dev.mysql.com/doc/refman/8.0/en/sys-schema.html)
+
+- Crea una cuenta administrativa. Las versiones anteriores de **mysql_install_db** pueden crear cuentas de usuario anónimas.
+
+
+**Implementación segura por defecto**
+
+- Se crea una sola cuenta administrativa **'root'@'localhost'** con una contraseña generada aleatoriamente, que se marca como caducada.
+
+- No se crean cuentas de usuario anónimo.
+
+- No se crea ninguna base de datos como **test** accesible para todos los usuarios.
+
+- La opción **--random-password-file** está disponible para controlar dónde se escribe la contraseña aleatoria.
+
+
 
 <p align="center">
   <img src="../assets/png/initialize.png" width="850" height="420">
