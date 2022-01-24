@@ -7,6 +7,7 @@ La mayoría de las guías están escritas y desarrolladas en formato markdown, y
   + [bases de datos](#)
     + [mysql](#)
         * [exportar e importar bases de datos con la línea de comandos](devs/database/mysql/mysqldump_import_export)
+        * [instalación y configuración manual usando los archivos binarios contenidos en zip](devs/database/mysql/install_zip)
 
 
 
