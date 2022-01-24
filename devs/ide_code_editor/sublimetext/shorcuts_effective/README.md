@@ -1,24 +1,24 @@
-## Ir a cualquier lugar  
+### Ir a cualquier lugar
 
 Los IDE tienen una tecla de atajo para ir a un nombre de clase, una diferente para ir a un nombre de función y otra para símbolos. Esto puede causar mucha confusión sobre cómo navegar por un archivo.  
 
-Para Sublime Text, todo lo que tiene que hacer es presionar **Ctrl + R** para navegar a cualquier función/clase/símbolo en el archivo que está editando actualmente.  
+En SublimeText, todo lo que tiene que hacer es presionar **<kbd>Ctrl</kbd> + <kbd>R</kbd>** se abrirá una modal para navegar a cualquier función/clase/símbolo en el archivo que está editando actualmente. 
 
 
 <p align="center">
-    <img src="img/01.png">
+    <img src="img/01.png" width="900" height="530">
 </p>
 
 
-## Abra cualquier archivo 
+### Abra cualquier archivo
 
-Sublime Text le permite ir a cualquier nombre de archivo con bastante rapidez. Simplemente presione **Ctrl + P** para abrir cualquier archivo de su espacio de trabajo. 
+SublimeText le permite ir a cualquier nombre de archivo con bastante rapidez. Simplemente presione **Ctrl + P** para abrir cualquier archivo de su espacio de trabajo. 
 
 <p align="center">
     <img src="img/02.png">
 </p>
 
-## Mostrar / Ocultar barra lateral  
+### Mostrar / Ocultar barra lateral
 
 Pulsando las teclas siguientes en la sucesión **Ctrl+K** y **Ctrl+B**  
 
@@ -26,17 +26,17 @@ Pulsando las teclas siguientes en la sucesión **Ctrl+K** y **Ctrl+B**
     <img src="img/03.png">
 </p>
 
-## Duplicar líneas.  
+## Duplicar líneas.
 
 Duplicar línea actual: **Ctrl + Shift +D**
 Cortar línea actual: **Ctrl + X**
 Pegar: **Ctrl + V**  
 
-## Ir a número de línea  
+## Ir a número de línea
 
 Los reportes o registradores de errores siempre lo dirigen a un número de línea específico en cualquier archivo dado. Pulse **Ctrl + G** para ir a cualquier número de línea dado.
 
-## Varios cursores 
+## Varios cursores
 
 Primero, seleccione cualquier palabra o palabras que desee editar. Luego presione **Ctrl + D** para seleccionar la ocurrencia de la palabra seleccionada una por una. También puede presionar **Alt + F3** para seleccionar todas las apariciones de la palabra en un archivo determinado.  
 

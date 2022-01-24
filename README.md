@@ -1,9 +1,14 @@
-## *Enidev911*
+### Guías para conocer herramientas y recursos de aprendizaje
 
-## Guías para conocer herramientas y recursos de aprendizaje
---- 
+La mayoría de las guías están escritas y desarrolladas en formato markdown, ya que si utilizas la herramienta multimarkdown, podrás convertir a cualquier formato, personalmente yo las convierto en PDF ya que es mi fomato portable preferido.
 
-## MySql
+
+- [Tabla de contenido](#)
+  + [bases de datos](#)
+    + [mysql](#)
+        * [exportar e importar bases de datos con la línea de comandos](devs/database/mysql/mysqldump_import_export)
+
+
 
 - *Exportar e importar bases de datos Mysql con la línea de comandos.*
 

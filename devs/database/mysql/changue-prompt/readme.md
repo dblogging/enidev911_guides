@@ -1,5 +1,12 @@
-## Cambiar el prompt del cliente MySQL desde variables de entorno y BASH
+[comment]: <> (Author: Marco Contreras Herrera)
+[comment]: <> (Email: enidev911@gmail.com)
 
+<h2 align="center">
+  <u>Cambiar el prompt del cliente MySQL</u>
+  <img src="../../../../assets/ico/MySQL_Logo.ico">
+</h2>
+
+<br>
 
 En los sistemas se suele personalizar el **prompt** para ofrecer cierta información a simple vista. En MySQL también lo podemos personalizar mediante la variable de entorno **MYSQL_PS1** o con el parámetro **prompt**.  
 
@@ -21,7 +28,7 @@ Buscamos la sección mysql y añadimos lo siguiente:
 
 ```
 [mysql]
-prompt=\\u@\\h [\\d]>\\_
+prompt=\\u@\\h[\\d]>\\_
 ```
 
 <p align="center">

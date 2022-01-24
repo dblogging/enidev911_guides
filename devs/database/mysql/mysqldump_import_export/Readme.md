@@ -3,13 +3,14 @@
 
 <h2 align="center">
   <u>Exportar e Importar bases de datos MySQL</u>
-  <img src="../assets/ico/MySQL_Logo.ico">
+  <img src="../../../../assets/ico/MySQL_Logo.ico">
 </h2>
 
 <br>
 
 1. [Objetivo y descripción](#intro)
-1. [Dependencias](#dependencies)
+1. [Requerimientos](#dependencies)
+1. [Uso básico](#uso)
 1. [Puesta en marcha](#run)
 
 ## <a name='TOC'></a>
@@ -19,11 +20,59 @@
 Si bien los clientes de base de datos ( Navycat, MySQLWorkbrench, etc… ) son una excelente herramienta que facilitan la gestión de bases de datos, no siempre tendremos la opción de utilizarlos, por lo que es necesario saber hacer la mayoría de tareas más comunes desde línea de comandos. Es por eso que en esta guía vamos a ver el **proceso para exportar e importar una base de datos MySQL desde linea de comandos.** Vamos a conocer algunas utilidades incluidas junto al servidor de MySQL.
 
 
-### <a name='dependencies'>Dependencias</a>
+### <a name='dependencies'>Requerimientos</a>
 
 
 - [MySQL](http://www.mysql.com/) - Tener instalado o en su lugar(XAMP, MAMP, LAMP,etc)
     * **mysqldump**: es una pequeña pero muy potente utilidad que acompaña al servidor MySql. Su principal uso es para realizar copias de seguridad de las bases de datos mysql. Con esto en mente, en esta ocasión revisaremos los comandos que nos permitirán exportar e importar una base de datos.
+
+
+### <a name='uso'>Uso básico</a>
+
+Tres formas básicas de invocar a **mysqldump** son posibles:
+
+**1.** 
+
+```bash
+mysqldump [opciones] nombre_bd [nombre_tabla nombre_tabla2 ...] > respaldo.sql
+```
+
+Respalda una sola base de datos, indicando su nombre, y opcionalmente una o más tablas de la misma base de datos. Si no se indican tablas, se respaldan todas.
+
+
+**2.** 
+
+```bash
+mysqldump [opciones] --databases nombre_bd1 nombrebd2 > respaldo.sql
+```
+
+Respalda una o más bases de datos de forma completa, no se pueden indicar tablas individuales de esta manera.
+
+**3.**
+
+```bash
+mysqldump [opciones] --all-databases > respaldo.sql
+```
+
+Respalda de forma completa todas las bases de datos del servidor MySQL de forma completa, no se pueden indicar tablas individuales de esta manera.
+
+#### Opciones más comunes
+
+**mysqldump** es una herramienta con decenas de opciones, para verlas todas podemos utilizar el siguiente comando:  
+
+```cmd
+mysqldump --help
+```
+
+Lo anterior muestra las posibles opciones específicas de la versión de MySQL que utilices asi que pueden variar con respecto a la siguiente tabla: 
+
+
+|Opción|Corto|Descripción|
+|------|-----|-----------|
+|--add-drop-database| |Añade la sentencia 'DROP DATABASES' antes de cada sentencia 'CREATE DATABASE'|
+|--add-drop-table| |Añade la sentencia 'DROP TABLE' antes de cada sentencia 'CREATE TABLE'|
+|--all-databases|-A|Respalda todas las tablas de todas las bases de datos.|
+
 
 
 ### <a name='run'>Puesta en marcha</a>
@@ -35,15 +84,18 @@ Si bien los clientes de base de datos ( Navycat, MySQLWorkbrench, etc… ) son u
 Con nuestra Terminal y nuestro servidor corriendo hacemos lo siguiente:
 
 1. Accedemos a nuestra terminal y ejecutamos el siguiente comando:
+
 ```
 $ mysqldump -h ip_servidor -u usuario_bd -p base_de_datos > archivo.sql
 ```
+
 Donde:
-  * -h ip_servidor, es el servidor de acceso (generalmente localhost), o la dirección IP del servidor.
-  * -u usuario_bd, es el usuario de la base de datos (puede ser root por ejemplo).
-  * -p es para que nos pregunte el password.
-  * base_de_datos es el nombre de la BBDD a exportar.
-  * archivo.sql es el fichero resultante de la exportación, > es para volcar el contenido al archivo con la extensión sql
+
+- **-h ip_servidor**: es el servidor de acceso (generalmente localhost), o la dirección IP del servidor.
+- **-u usuario_bd**: es el usuario de la base de datos (puede ser root u otro usuario con privilegios de administrador).
+- **-p**: es para que nos pregunte el password.
+- **base_de_datos**: es el nombre de la base de datos a exportar.
+- **archivo.sql**: es el fichero resultante de la exportación, (**>**) es para volcar el contenido al archivo con la extensión sql
   
 2. Una vez que la ejecución del comando termine, se creará el archivo **archivo.sql** con los querys que crean las tablas e información que pudiera contener nuestra base de datos. 
 
@@ -113,7 +165,7 @@ Esta variación exporta solo la información de nuestra base de datos, excluyend
 
 **Importar**
 
-Para importar una base de datos desde un archivo .sql tenemos dos caminos.
+Para importar una base de datos desde un archivo **.sql** tenemos dos caminos.
 
 El más sencillo y directo consiste en ejecutar el siguiente comando en la terminal ( asegurándonos que base_de_datos ya exista ).
 ```
@@ -122,6 +174,7 @@ $ mysql -u usuario_mysql -p base_de_datos < archivo.sql
 Ejemplo: 
 
 Suponiendo que tengamos el siguiente script llamado **base_datos.sql** y previamente tengamos creada una base de datos llamada **importdb**
+
 ```sql
 CREATE TABLE IF NOT EXISTS contactos (
     id int(11) NOT NULL AUTO_INCREMENT,
@@ -139,7 +192,7 @@ CMD:
 Obtendriamos lo siguiente al revisar:
 
 <p align = 'center'>
-  <img src = 'img/03_mysql_showimport.png' width="750" height = "500"/>
+  <img src = 'img/03_mysql_showimport.png' width="900" height = "550"/>
 </p>
 
 
@@ -165,9 +218,9 @@ mysql> source /home/usuario/archivo.sql
 PROMPT:
 
 <p align = 'center'>
-  <img src = 'img/04_mysql_showimport.png' width = "750" height="500"/>
+  <img src = 'img/04_mysql_showimport.png' width = "900" height="550"/>
 </p>
 
 <p align = 'center'>
-  <img src = 'img/05_mysql_showimport.png' width="750" height= "500"/>
+  <img src = 'img/05_mysql_showimport.png' width="900" height= "550"/>
 </p>
