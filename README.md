@@ -22,7 +22,7 @@ La mayoría de las guías están escritas y desarrolladas en formato markdown, y
 
     * [Editores de códigos](#)
         - [SublimeText](#) <img src='assets/ico/sublime_text.ico' width='25'/>
-            + [configuración para markdown](#)
+            + [configuración para markdown](devs/ide_code_editor/sublimetext/edit_markdown)
             + [mejorar aspecto visual de la interfaz](#)
             + [crear snippets](#)
 
