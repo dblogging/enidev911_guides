@@ -4,12 +4,16 @@ La mayoría de las guías están escritas y desarrolladas en formato markdown, y
 
 
 - [Tabla de contenido](#)
-  + [bases de datos](#)
-    + [mysql](#)
-        * [exportar e importar bases de datos con la línea de comandos](devs/database/mysql/mysqldump_import_export)
-        * [instalación y configuración manual usando los archivos binarios contenidos en zip](devs/database/mysql/install_zip)
 
-
+    * [Bases de datos](#)
+        - [MySQL](#)
+            + [exportar e importar bases de datos con la línea de comandos](devs/database/mysql/mysqldump_import_export)
+            + [instalación y configuración manual usando los archivos binarios contenidos en zip](devs/database/mysql/install_zip)
+            + [Administrar usuarios y privilegios](devs/database/mysql/manager_users_privileges)
+        - [MSSQL Server](#)
+            * [instalación en ubuntu linux](#)
+    
+  
 
 - *Exportar e importar bases de datos Mysql con la línea de comandos.*
 

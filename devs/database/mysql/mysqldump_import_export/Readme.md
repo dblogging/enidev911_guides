@@ -67,11 +67,20 @@ mysqldump --help
 Lo anterior muestra las posibles opciones específicas de la versión de MySQL que utilices asi que pueden variar con respecto a la siguiente tabla: 
 
 
+
 |Opción|Corto|Descripción|
 |------|-----|-----------|
 |--add-drop-database| |Añade la sentencia 'DROP DATABASES' antes de cada sentencia 'CREATE DATABASE'|
 |--add-drop-table| |Añade la sentencia 'DROP TABLE' antes de cada sentencia 'CREATE TABLE'|
 |--all-databases|-A|Respalda todas las tablas de todas las bases de datos.|
+|--comments|-i|Añade comentarios en el archivo de respaldo. Esta opción está por defecto activada, para desactivar los comentarios utiliza --skip-comments.|
+|--compatible=nombre| |Produce una salida más compatible con otros sistemas de bases de datos o versiones anteriores de MySQL. nombre puede tomar los siguientes valores: ansi, mysql323, mysql40, postgresql, mssql, oracle, db2, maxdb.|
+|--complete-insert|-c|Usa sentencias INSERT completas que incluyen nombres de columnas.|
+|--create-options| |Incluye todas las opciones específicas de MySQL para la creación de tablas que se usan en la sentencia 'CREATE TABLE'.|
+|--databases|-B|Permite respaldar una o más bases de datos. Después de la opción se indican el(los) nombre(s) de las base de datos a respaldar. Se respalda cada base de datos completa. En la salida se incluye con esta opción las sentencias 'CREATE DATABASE' y 'USE' antes de cada nueva base de datos.|
+|--extended-insert|-e|Usa la sentencia 'INSERT' con el formato de múltiples registros con varias listas de 'VALUES'. Esto produce una salida más reducida y acelera el proceso de INSERTS cuando el archivo es restaurado. Ideal para bases de datos con tablas que contienen miles de registros.|
+|--force|-f|Si se te tienen views o vistas en la base de datos a respaldar y la vista hace referencia a una tabla que ya no existe, el vaciado del respaldo terminará con un error sin completarse. Con esta opción se podrá continuar.|
+|--host=
 
 
 

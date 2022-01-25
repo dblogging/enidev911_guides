@@ -1,6 +1,15 @@
-<h2 align="center">Administrar usuarios en mysql.</h2>
+[comment]: <> (Author: Marco Contreras Herrera)
+[comment]: <> (Email: enidev911@gmail.com)
 
-Para crear cuentas de usuario en <b>mysql</b> se necesita tener permisos de usuarios. Por medio del comando <strong>CREATE USER</strong>. A cada cuenta se le puede asignar una contraseña por medio de la cláusula <strong>IDENTIFIED BY</strong>, si desea que la contraseña se guarde en texto plano, no se utilizará la palabra <strong>Password</strong> caso contrario la contraseña se guardará cifrada con el valor hash que es devuelto por la función <strong>Password()</strong>   
+<h2 align="center">
+  <u>Administrar usuarios -  MySQL</u>
+  <img src="../../../../assets/ico/MySQL_Logo.ico">
+</h2>
+
+<br>
+
+
+Para crear cuentas de usuario en **mysql** se necesita tener permisos de usuarios. Por medio del comando **CREATE USER**. A cada cuenta se le puede asignar una contraseña por medio de la cláusula **IDENTIFIED BY**, si desea que la contraseña se guarde en texto plano, no se utilizará la palabra <strong>Password</strong> caso contrario la contraseña se guardará cifrada con el valor hash que es devuelto por la función <strong>Password()</strong>   
 
 <b>Ejemplo:</b>  
 
