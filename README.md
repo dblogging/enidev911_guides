@@ -11,7 +11,7 @@ La mayoría de las guías están escritas y desarrolladas en formato markdown, y
 - [Tabla de contenido](#)
 
     * [Bases de datos](#)
-        - [MySQL](#) <img src='assets/ico/MySQL_logo.ico' width='25'/>
+        - [MySQL](#) <img src='assets/ico/MySQL_Logo.ico' width='25'/>
             + [exportar e importar bases de datos con la línea de comandos](devs/database/mysql/mysqldump_import_export)
             + [instalación y configuración manual usando los archivos binarios contenidos en zip](devs/database/mysql/install_zip)
             + [Administrar usuarios y privilegios](devs/database/mysql/manager_users_privileges)
