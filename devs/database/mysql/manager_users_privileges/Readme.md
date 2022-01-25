@@ -3,7 +3,7 @@
 
 <h2 align="center">
   <u>Administrar usuarios -  MySQL</u>
-  <img src="../../../../assets/ico/MySQL_Logo.ico">
+  <img src="../../../../assets/ico/database_administrators_group.ico">
 </h2>
 
 <br>
