@@ -118,3 +118,4 @@ mysql>SHOW GRANTS FOR user;
 <p align="center">
     <img src="img/05_delete_user.png" width="700" height="450">
 </p>
+n  
