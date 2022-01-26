@@ -1,11 +1,17 @@
 [comment]: <> (Author: Marco Contreras Herrera)
 [comment]: <> (Email: enidev911@gmail.com)
 
+<h2 align="center">
+  <u>Guías y recursos de aprendizaje.</u>
+  <img src="./assets/ico/hand_with_pen.ico">
+</h2>
+
+<br>
 
 
-### Guías para conocer herramientas y recursos de aprendizaje
 
-La mayoría de las guías están escritas y desarrolladas en formato markdown, ya que si utilizas la herramienta multimarkdown, podrás convertir a cualquier formato, personalmente yo las convierto en PDF ya que es mi fomato portable preferido.
+
+En este repositorio la gran mayoría de ficheros están escritos en [Markdown](https://es.wikipedia.org/wiki/Markdown), son básicamente guías rápida que me sirven para recordar ciertos conceptos y utilidades con ciertas tecnologías, también gracias a las posibilidades que ofrecen  [Pygments](https://pygments.org/) y [Markdown](https://es.wikipedia.org/wiki/Markdown) para editar y formatear texto yo comúnmente lo empleo para crear documentación, entre otras cosas algunos artículos de blog, generar páginas web estáticas. Las ventajas de tener estas guías en este formato son bastantes. Algo que hago a menudo es utilizar alguna herramienta [Multimarkdown](https://fletcherpenney.net/multimarkdown/#whatismultimarkdown) con la que podrás convertir a cualquier otro formato incluidos HTML, PDF (a través de [LaTeX](https://es.wikipedia.org/wiki/LaTeX)), OPML u [OpenDocument](https://es.wikipedia.org/wiki/OpenDocument) (específicamente, Flat OpenDocument o '.fodt', que puede convertirse a su vez a RTF como Microsoft Word o prácticamente a cualquier otro formato de procesamiento de texto). Personalmente yo las convierto en PDF a través de un plugín para [VS Code-Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf) ya que es mi fomato portable preferido. Las guías se encuentran organizadas en categorías para mayor facilidad de navegación puedes explorar la tabla de contenidos de a continuación:
 
 
 - [Tabla de contenido](#)
@@ -27,6 +33,10 @@ La mayoría de las guías están escritas y desarrolladas en formato markdown, y
             + [crear snippets](#)
 
 
+---
 
 
-
+*[HTML]: Hyper Text Markup Language
+*[PDF]: Poratble Document Format
+*[OPML]: Outline Processor Markup Language
+*[RTF]: Rich Text Format

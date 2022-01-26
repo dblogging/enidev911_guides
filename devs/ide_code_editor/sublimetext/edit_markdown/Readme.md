@@ -1,4 +1,13 @@
-## Cómo configurar ST3 para la edición de Markdown
+[comment]: <> (Author: Marco Contreras Herrera)
+[comment]: <> (Email: enidev911@gmail.com)
+
+<h2 align="center">
+  <u>Configurar SublimeText para editar archivos markdown.</u>
+  <img src="../../../../assets/ico/MySQL_Logo.ico">
+</h2>
+
+<br>
+
 
 Recien instalado, Sublime Text no ofrece ningún soporte específico de Markdown, *sin resaltado de sintaxis*, sin formato especial en cursiva o negrita, sin atajos de teclado y sin vista previa de salida HTML.  
 Para agregar estas características debemos instalar algunos complementos y configurar algunas preferencias.  
