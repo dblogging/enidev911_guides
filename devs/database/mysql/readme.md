@@ -56,7 +56,7 @@ La parte del **servidor** es donde reiden realmente sus datos. Pero para poder a
 
 Un cliente realiza peticiones por medio de SQL al servidor para recuperar información almacenada.
 
----
+
 
 
 *[SQL]: Structured Query Language
