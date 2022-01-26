@@ -3,7 +3,7 @@
 
 <h2 align="center">
   <u>Configurar SublimeText para editar archivos markdown.</u>
-  <img src="../../../../assets/ico/MySQL_Logo.ico">
+  <img src="../../../../assets/ico/.ico">
 </h2>
 
 <br>
