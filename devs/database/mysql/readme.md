@@ -8,7 +8,7 @@
 
 <br>
 
-MySQl es un sistema open source de administración de bases de datos que actualmente es desarrollado y soportado por Oracle.  
+MySQL es un sistema open source de administración de bases de datos que actualmente es desarrollado y soportado por Oracle.  
 
 Una base de datos es una colección  estructurada de datos que está organizada para ser usada y extraída de forma sencilla.  
 
