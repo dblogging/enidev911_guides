@@ -30,7 +30,7 @@ En este repositorio la gran mayoría de ficheros están escritos en [Markdown](h
     * [Editores de códigos](#)
         - [SublimeText](#) <img src='assets/ico/sublime_text.ico' width='25'/>
             + [configuración para markdown](devs/ide_code_editor/sublimetext/edit_markdown)
-            + [mejorar aspecto visual de la interfaz](#)
+            + [mejorar aspecto visual de la interfaz](devs/ide_code_editor/sublimetext/theme_better)
             + [crear snippets](#)
 
 
