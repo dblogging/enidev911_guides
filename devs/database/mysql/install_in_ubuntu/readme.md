@@ -28,13 +28,13 @@ sudo apt install mysql-server
 sudo systemctl status mysql
 
 # output ============================================================================
-● mysql.service - MySQL Community Server
-   Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
-   Active: active (running) since Wed 2018-06-20 11:30:23 PDT; 5min ago
- Main PID: 17382 (mysqld)
-    Tasks: 27 (limit: 2321)
-   CGroup: /system.slice/mysql.service
-           `-17382 /usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.pid
+#● mysql.service - MySQL Community Server
+#   Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+#   Active: active (running) since Wed 2018-06-20 11:30:23 PDT; 5min ago
+# Main PID: 17382 (mysqld)
+#    Tasks: 27 (limit: 2321)
+#   CGroup: /system.slice/mysql.service
+#           `-17382 /usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.pid
 ```
 
 
