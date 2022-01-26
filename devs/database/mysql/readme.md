@@ -58,4 +58,5 @@ Un cliente realiza peticiones por medio de SQL al servidor para recuperar inform
 
 ---
 
+
 *[SQL]: Structured Query Language
