@@ -4,30 +4,49 @@
 <h2 align="center">
   <u>Instalación de MySQL en Ubuntu</u>
   <img src="../../../../assets/ico/MySQL_Logo.ico">
-  <img src="../../../../assets/ico/ubuntu_gr.ico">
+  <img src="../../../../assets/ico/ubuntu_gr.ico" width="48">
 </h2>
 
+<br>
 
-## Instalar MySQL en distros basadas en Debian
+**1. Actualizar el índice de paquetes apt con el siguiente comando:**  
+
+```bash
+sudo apt update
+```
 
 
+**2. Instalar el paquete de MySQL con el comando:**  
 
 ```bash
 sudo apt install mysql-server
 ```
-Este comando instala MySQL, pero ahora debemos configurarlo para usarlo de manera más 
 
-## Configuración: MySQL
+**3. Concluida la instalación, el demonio de MySQL se iniciará automáticamente. Para verificar si esta ejecutandose el servidor usamos el comando:**  
 
-Para cuando instalamos MySQL nos da una secuencia de comandos incluida en DBMS. Esta secuencia cambia algunas de las opciones predeterminadas menos seguras para cosas como inicios de sesión root remotos y usuarios de ejemplos.  
+```bash
+sudo systemctl status mysql
 
-Ejecutamos el script de seguridad con sudo:
+# output ============================================================================
+● mysql.service - MySQL Community Server
+   Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+   Active: active (running) since Wed 2018-06-20 11:30:23 PDT; 5min ago
+ Main PID: 17382 (mysqld)
+    Tasks: 27 (limit: 2321)
+   CGroup: /system.slice/mysql.service
+           `-17382 /usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.pid
+```
+
+
+**4. Utilizar el script para una configuración segura con el comando:**  
 
 ```bash
 sudo mysql_secure_installation
 ```
 
-La primera pregunta nos solicitará si queremos validar que nuestro password para conectarnos al servidor sea seguro, si lo deseamos al momento de crear nuestro password MySQL nos validará si cumple con las condiciones mínimas de seguridad. Si no queremos esto solamente ingresamos N
+
+La primera pregunta nos solicitará si queremos validar que nuestro password para conectarnos al servidor sea seguro, si lo deseamos al momento de crear nuestro password MySQL nos validará si cumple con las condiciones mínimas de seguridad. Si no queremos esto solamente ingresamos **`N`**
+
 
 ```
 Securing the MySQL server deployment.
@@ -84,7 +103,14 @@ Luego nos pregunta si queremos recargar la tabla de privilegios. Pondremos si (Y
 Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y
 ```
 
-## Ajustar la autenticación y los privilegios de usuario (opcional):
+
+<h2 align="center">
+  <u>Ajustes de autenticación y privilegios de usuario</u>
+  <img src="../../../../assets/ico/MySQL_Logo.ico">
+  <img src="../../../../assets/ico/database_administrators_group(48).ico">
+</h2>
+
+<br>
 
 En los sistemas Ubuntu con MySQL 5.7 (y versiones posteriores), el usuario **root** de MySQL se configura para la autenticación usando el complemento **auth_socket** de manera predeterminada en lugar de una contraseña. Esto en muchos casos proporciona mayor seguridad y utilidad, pero también puede generar complicaciones cuando deba permitir que un programa externo (como phpMyAdmin) acceda al usuario.  
 
@@ -97,6 +123,7 @@ sudo mysql
 Para ver el método de autenticación utilizado por las cuentas de usuarios de MySQL ejecutamos la siguiente sentencia dentro de la consola de MySQL:  
 
 ```bash
+# shell mysql
 SELECT user, authentication_string, plugin, host FROM mysql.user;
 
 Output
@@ -121,16 +148,23 @@ Cambiamos por un password seguro,la siguiente instrucción cambiará el password
 ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'password';
 ```
 
-Luego, ejecutamos la instrucción:  
+Recarga la tabla de permisos:  
 
 ```bash
 # Shell de mysql
 FLUSH PRIVILEGES;
 ```
-Para indicar al servidor que vuelva a cargar la tabla de permisos y aplique los nuevos cambios.  
+
+Otra opción recomendada es crear un nuevo usuario administrativo con todos los privilegios y acceso a todas las bases de datos:
+
+```bash
+# Shell de mysql
+GRANT ALL PRIVILEGES ON *.* TO 'admin_user'@'localhost' IDENTIFIED BY 'very_strong_password';
+```
 
 
+**Finalización**
 
+Ahora que su servidor MySQL está en funcionamiento y sabe cómo conectarse al servidor MySQL desde la línea de comandos, es posible que desee consultar las siguientes guías:
 
-
-
+- [Administrar cuentas de usuarios](https://github.com/EniDev911/enidev911_guides/tree/main/devs/database/mysql/manager_users_privileges)

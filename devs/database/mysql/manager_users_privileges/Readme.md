@@ -3,7 +3,7 @@
 
 <h2 align="center">
   <u>Administrar usuarios -  </u>
-  <img src="../../../../assets/ico/database_administrators_group.ico">
+  <img src="../../../../assets/ico/database_administrators_group(48).ico">
 </h2>
 
 <br>
