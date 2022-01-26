@@ -1,3 +1,13 @@
+[comment]: <> (Author: Marco Contreras Herrera)
+[comment]: <> (Email: enidev911@gmail.com)
+
+<h2 align="center">
+  <u>Instalación de MySQL en Ubuntu</u>
+  <img src="../../../../assets/ico/MySQL_Logo.ico">
+  <img src="../../../../assets/ico/ubuntu_gr.ico">
+</h2>
+
+
 ## Instalar MySQL en distros basadas en Debian
 
 
