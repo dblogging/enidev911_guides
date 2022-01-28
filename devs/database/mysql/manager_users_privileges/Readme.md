@@ -118,4 +118,32 @@ mysql>SHOW GRANTS FOR user;
 <p align="center">
     <img src="img/05_delete_user.png" width="700" height="450">
 </p>
-n  
+
+
+<h2 align="center">
+  <u>Tipos de autenticaciones</u>
+  <img src="../../../../assets/ico/database_administrators_group(48).ico">
+</h2>
+
+<br>
+
+
+MySQL incluye el complemento **mysql_native_password** que implementa la autenticación nativa; es decir; autenticación basada en el método de hash.  
+
+**Nombres de complementos y bibliotecas para autenticación de contraseña nativa.**  
+
+
+|Complemento o archivo|Complemento o nombre de archivo|
+|:-------------------:|-------------------------------|
+|Complemento del lado del servidor|mysql_native_password|
+|Complemento del lado del cliente|mysql_native_password|
+|Biblioteca|Ninguno (los complementos están integrados)|
+
+- El complemento del lado sel servidor está integrado en el servidor, no es necesario cargarlo explícitamente y no se puede deshabilitar descargándolo.
+
+- El complemento del lado del cliente está integrado en la biblioteca `libmysqlclient` y está disponible para cualquier programa vinculado a libmysqlclient.
+
+
+
+
+En el caso de usar el complemento auth_socket, este autentica a los clientes que se conectan desde el localhost a través del archivo de socket Unix. Este complemento auth_socket verifica si el nombre de usuario del socket coincide con el nombre de usuario MySQL del programa cliente con el servidor.

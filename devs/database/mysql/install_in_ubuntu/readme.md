@@ -9,6 +9,7 @@
 
 <br>
 
+
 **1. Actualizar el índice de paquetes apt con el siguiente comando:**  
 
 ```bash
@@ -22,19 +23,26 @@ sudo apt update
 sudo apt install mysql-server
 ```
 
+<p align="center">
+  <img src="../assets/png/ub/step1_mysql.png"/>
+</p>
+
+
 **3. Concluida la instalación, el demonio de MySQL se iniciará automáticamente. Para verificar si esta ejecutandose el servidor usamos el comando:**  
 
 ```bash
 sudo systemctl status mysql
+```
 
-# output ============================================================================
-#● mysql.service - MySQL Community Server
-#   Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
-#   Active: active (running) since Wed 2018-06-20 11:30:23 PDT; 5min ago
-# Main PID: 17382 (mysqld)
-#    Tasks: 27 (limit: 2321)
-#   CGroup: /system.slice/mysql.service
-#           `-17382 /usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.pid
+<p align="center">
+  <img src="../assets/png/ub/status_mysql.png" height="450" width="900"/>
+</p>
+
+
+**3.1 Ver en que puerto está abierto**
+
+```bash
+cat /etc/services | grep mysql
 ```
 
 
@@ -44,64 +52,40 @@ sudo systemctl status mysql
 sudo mysql_secure_installation
 ```
 
+La primera pregunta nos solicitará si queremos validar password para conectarnos al servidor sea seguro, si lo deseamos al momento de crear un nuevo usuario en el sistema MySQL nos validará si el password cumple con las condiciones mínimas de seguridad. Si no queremos esto solamente ingresamos **`N`**
 
-La primera pregunta nos solicitará si queremos validar que nuestro password para conectarnos al servidor sea seguro, si lo deseamos al momento de crear nuestro password MySQL nos validará si cumple con las condiciones mínimas de seguridad. Si no queremos esto solamente ingresamos **`N`**
+
+<p align="center">
+  <img src="../assets/png/ub/step1_mysql_secure_install.png"/>
+</p>
 
 
-```
-Securing the MySQL server deployment.
+Luego de acuerdo a la opción que ingresemos nos solicitará ingresar el password para el usuario root (Ojo: esto no tendrá efecto hasta que cambiemos el método de autenticación al usuario root de **auth_socket** a  otro complemento). Una vez ingresamos nuestro password, nos preguntará si deseamos remover a los usuarios ánonimos que se crean por defecto junto a la instalación de MySQL, lo mejor es removerlos.  
 
-Connecting to MySQL using a blank password.
+<p align="center">
+  <img src="../assets/png/ub/step2_mysql_secure_install.png"/>
+</p>
 
-VALIDATE PASSWORD COMPONENT can be used to test passwords
-and improve security. It checks the strength of password
-and allows the users to set only those passwords which are
-secure enough. Would you like to setup VALIDATE PASSWORD component?
-
-Press y|Y for Yes, any other key for No: Y
-```
-
-Luego de acuerdo a la opción que ingresemos nos solicitará ingresar el password para el usuario root:
-
-```bash
-New password: 
-
-Re-enter new password: 
-```
-
-Una vez ingresamos nuestro password, nos preguntará si deseamos remover a los usuarios ánonimos que se crean por defecto junto a la instalación de MySQL, lo mejor es removerlos.  
-
-```bash
-By default, a MySQL installation has an anonymous user,
-allowing anyone to log into MySQL without having to have
-a user account created for them. This is intended only for
-testing, and to make the installation go a bit smoother.
-You should remove them before moving into a production
-environment.
-
-Remove anonymous users? (Press y|Y for Yes, any other key for No) : Y
-```
 
 Normalmente, a root solo se le debe permitir conectarse desde 'localhost'. Para así asegurar que no puedan adivinar la password de root desde la red. Así que deshabilitamos el logín remoto.  
 
-```bash
-Normally, root should only be allowed to connect from
-'localhost'. This ensures that someone cannot guess at
-the root password from the network.
-
-Disallow root login remotely? (Press y|Y for Yes, any other key for No) : Y 
-```
+<p align="center">
+  <img src="../assets/png/ub/step3_mysql_secure_install.png"/>
+</p>
 
 Luego nos preguntá si queremos eliminar la base de datos de prueba, esto es opcional. 
 
-```bash
-Remove test database and access to it? (Press y|Y for Yes, any other key for No) : Y
-```
+<p align="center">
+  <img src="../assets/png/ub/step4_mysql_secure_install.png"/>
+</p>
+
+
 Luego nos pregunta si queremos recargar la tabla de privilegios. Pondremos si (Y).  
 
-```bash
-Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y
-```
+<p align="center">
+  <img src="../assets/png/ub/step5_mysql_secure_install.png"/>
+</p>
+
 
 
 <h2 align="center">
@@ -123,48 +107,49 @@ sudo mysql
 Para ver el método de autenticación utilizado por las cuentas de usuarios de MySQL ejecutamos la siguiente sentencia dentro de la consola de MySQL:  
 
 ```bash
-# shell mysql
 SELECT user, authentication_string, plugin, host FROM mysql.user;
-
-Output
-+------------------+------------------------------------------------------------------------+-----------------------+-----------+
-| user             | authentication_string                                                  | plugin                | host      |
-+------------------+------------------------------------------------------------------------+-----------------------+-----------+
-| debian-sys-maint | $A$005$lS|M#3K #XslZ.xXUq.crEqTjMvhgOIX7B/zki5DeLA3JB9nh0KwENtwQ4 | caching_sha2_password | localhost |
-| mysql.infoschema | $A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED | caching_sha2_password | localhost |
-| mysql.session    | $A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED | caching_sha2_password | localhost |
-| mysql.sys        | $A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED | caching_sha2_password | localhost |
-| root             |                                                                        | auth_socket           | localhost |
-+------------------+------------------------------------------------------------------------+-----------------------+-----------+
-5 rows in set (0.00 sec)
 ```
 
-Para configurar la cuenta **root** para autenticar con una password, ejecute una instrucción **ALTER USER** para cambiar qué complemento de autenticación utiliza y establecer una nueva password.  
+<p align="center">
+  <img src="../assets/png/ub/auth_user.png"/>
+</p>
 
-Cambiamos por un password seguro,la siguiente instrucción cambiará el password de **root**:  
 
-```bash
-# Shell de mysql
+Para cambiar el método de autenticación de **root** con una password, utilizaremos el comando **ALTER USER** para cambiar el complemento de autenticación. Lo podriamos hacer todo en una sola línea como lo siguiente:
+
+
+```sql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'password';
 ```
 
-Recarga la tabla de permisos:  
+O realizar el cambio en dos pasos:
 
-```bash
-# Shell de mysql
+1. Cambiamos solo el complemento.
+```sql
+  ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password;
+```
+2. Cambiamos el password. (La función **`user()`** devuelve al usuario en sessión) 
+```sql
+  ALTER USER user() IDENTIFIED BY 'Strong_Password;
+```
+
+
+Y por último recargamos la tabla de permisos:  
+
+```sql
 FLUSH PRIVILEGES;
 ```
 
 Otra opción recomendada es crear un nuevo usuario administrativo con todos los privilegios y acceso a todas las bases de datos:
 
-```bash
-# Shell de mysql
+```sql
 GRANT ALL PRIVILEGES ON *.* TO 'admin_user'@'localhost' IDENTIFIED BY 'very_strong_password';
 ```
 
 
-**Finalización**
+Para desinstalar MySQL con:
 
-Ahora que su servidor MySQL está en funcionamiento y sabe cómo conectarse al servidor MySQL desde la línea de comandos, es posible que desee consultar las siguientes guías:
+```bash
+sudo apt-get remove --purge mysql-server mysql-client mysql-common
+```
 
-- [Administrar cuentas de usuarios](https://github.com/EniDev911/enidev911_guides/tree/main/devs/database/mysql/manager_users_privileges)
