@@ -56,7 +56,31 @@ La parte del **servidor** es donde reiden realmente sus datos. Pero para poder a
 
 Un cliente realiza peticiones por medio de SQL al servidor para recuperar información almacenada.
 
+---
+
+
+<h2 align="center">
+  <u>Pequeña historia de MySQL y MariaDB</u><br>
+</h2>
+
+<br>
+
+El SGBD MySQL fue desarrollado por la empresa sueca de Michael Widenius, MySQL AB, en 1995. Después, la empresa estadounidense Sun Microsystems adquirió MySQL AB en 2009 y siguió desarrollando el sistema de gestión de base de datos **open source**. Sin embargo, un año más tarde, Oracle compró la empresa Sun Microsystems y, junto con otros productos, Oracle se hizo con MySQL.
+
+Michael Widenius decidió fundar MariaDB Foundation y crear el SGBD MariaDB cuando Oracle adquirió la empresa Sun Microsystems. El creador y fundador de MySQL quería asegurarse de que siguiera habiendo un sistema de gestión de base de datos open source, por lo que empezó MariaDB. MariaDB se hizo basándose en la estructura de MySQL lo que hace que haya una gran compatibilidad entre ambos sistemas de gestión de base de datos. Además, el término LAMP funciona cada vez más con el SGBD MariaDB en vez de MySQL.
+
+
+
+>¿Sabías que? Michael Widenius ha creado 3 sistemas de gestión de bases de datos y cada uno de ellos ha recibido el nombre de uno de sus hijos. El sistema de gestión de base de datos MySQL se llama así por la primera hija del desarrollador del sistema, My, y combinándolo con el acrónimo del lenguaje SQL, forma el nombre, MySQL. También desarrolló MaxDB, por su hijo Max, ahora propiedad de SAP y ahora está trabajando en MariaDB, llamado por su hija menor, Maria.
+
+
+
+- :link: &nbsp;&nbsp; <a href="./install_zip">Instalación manual MySQL archivo zip</a>
+- :link: &nbsp;&nbsp; <a href="./install_in_ubuntu">Instalación de MySQL en Ubuntu</a>
 
 
 
 *[SQL]: Structured Query Language
+
+
+

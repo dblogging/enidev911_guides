@@ -9,21 +9,23 @@
 <br>
 
 
-Para crear cuentas de usuario en **mysql** se necesita tener permisos de usuarios. Por medio del comando **`CREATE USER`**. 
+Para crear cuentas de usuario en **MySQL** se necesita tener permisos administrativos. 
 
-A cada cuenta se le puede asignar una contraseña por medio de la cláusula **`IDENTIFIED BY`**, si desea que la contraseña se guarde en texto plano, no se utilizará la palabra <strong>password</strong> caso contrario la contraseña se guardará cifrada con el valor hash que es devuelto por la función <strong>Password()</strong>   
+Por medio del comando **`CREATE USER`** podemos crear y configurar un usuario de bases de datos, que es una cuenta a través de la cual puede iniciar sesión y se le puede asignar una contraseña por medio de la cláusula **`IDENTIFIED BY`**, si desea que la contraseña se guarde en texto plano, la contraseña se guardará cifrada con el valor hash que es devuelto por la función <strong>Password()</strong>
+
 
 <b>Ejemplo:</b>  
 
 ```sql
-mysql>CREATE USER 'user'@'server' IDENTIFIED BY 'passworduser';
+CREATE USER 'user'@'server' IDENTIFIED BY 'passworduser';
 ```
 
 <p align="center">
-    <img src="img/01_create_user.png" width="700" height="450">
+    <img src="img/01_create_user.png" width="900" height="500">
 </p>
 
-El usaurio ha sido creado, sin embargo puede conectarse al servidor pero hace falta asignarle los diferentes privilegios, para que pueda realizar cualquier tipo de tarea.  
+El usuario ha sido creado, sin embargo puede conectarse al servidor pero hace falta asignarle los diferentes privilegios, para que pueda realizar cualquier tipo de tarea.  
+
 
 ---
 
@@ -32,15 +34,30 @@ El usaurio ha sido creado, sin embargo puede conectarse al servidor pero hace fa
 
 <br>
 
-Para ver los privilegios asignados a una cuenta utilizamos la sentencia **`SHOW GRANTS`** para el usuario conectado. Para consultar los privilegios que tiene otro usuario con la siguiente sentencia:  
+Para ver una lista de todos los privilegios que pueden ser asignado a una cuenta, se utiliza el siguiente comando:
+
 
 ```sql
-mysql>SHOW GRANTS FOR user;
+SHOW PRIVILEGES;
+```
+
+Para ver los privilegios asignados al usuario conectado con el comando:
+
+
+```sql
+SHOW GRANTS;
+```
+
+Para consultar los privilegios que tiene otro usuario con el siguiente comando (debe poseer permisos para realizar este comando):  
+
+
+```sql
+SHOW GRANTS FOR user;
 ```
 
 
 <p align="center">
-    <img src="img/02_show_privileges.png" width="700" height="450">
+    <img src="img/02_show_privileges.png" width="900" height="500">
 </p>
 
 
