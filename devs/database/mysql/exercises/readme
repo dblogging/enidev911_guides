@@ -1,0 +1,12 @@
+Cómo agregar una restricción no nula en MySQL 
+
+Las restricciones 'NOT NULL' son una excelente manera de agregar otra capa de validación a sus datos. Claro, que esto se podría realizar desde una aplicación agregar esta capa de validación, pero suceden dos cosas: alguien olvidará de agregar la validación, alguien la eliminará por accidente, alguien omitirá de agregar la validación en una consola e insertará valores nulos. etc. La única forma de ser realmente seguro es aplicarlo en la definición de su columna. Si también está validando valores nulos en la capa de base de datos, está protegido.  
+
+Para hacer cumplir un constrint 'NOT NULL' en una columna en MySQL, usamos el comando ALTER .... MODIFY y vuelve a establecer la definición de la columna, agregando el atrinbuto. }
+
+
+```sql
+ALTER TABLE products MODIFY stocks INT NOT NULL;
+```
+
+Siempre y cuando no tengamos filas con el campo a modificar con el valor 'NULL'

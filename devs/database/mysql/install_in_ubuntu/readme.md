@@ -10,14 +10,14 @@
 <br>
 
 
-**1. Actualizar el índice de paquetes apt con el siguiente comando:**  
+**- Actualizar el índice de paquetes apt con el siguiente comando:**  
 
 ```bash
 sudo apt update
 ```
 
 
-**2. Instalar el paquete de MySQL con el comando:**  
+**- Instalar el paquete de MySQL con el comando:**  
 
 ```bash
 sudo apt install mysql-server
@@ -28,7 +28,7 @@ sudo apt install mysql-server
 </p>
 
 
-**3. Concluida la instalación, el demonio de MySQL se iniciará automáticamente. Para verificar si esta ejecutandose el servidor usamos el comando:**  
+**- Concluida la instalación, el demonio de MySQL se iniciará automáticamente. Para verificar si esta ejecutandose el servidor usamos el comando:**  
 
 ```bash
 sudo systemctl status mysql
@@ -39,14 +39,20 @@ sudo systemctl status mysql
 </p>
 
 
-**3.1 Ver en que puerto está abierto**
+**- Ver en que puerto está abierto**
 
 ```bash
 cat /etc/services | grep mysql
 ```
 
+En Debian y derivados, el paquete mysql-server incluye el script Perl **mysql_secure_installation**, el cual permite mejorar la seguridad de la instalación por defecto. Es recomendable correr este script en todas las instalaciones de servidores MySQL para sistemas en producción. En resumen nos permite:
 
-**4. Utilizar el script para una configuración segura con el comando:**  
+- Cambiar la contraseña del usuario "root".
+- Deshabilitar el acceso remoto para el usuario "root".
+- Eliminar cuentas de usuario anónimas que pueden ingresar sin necesidad de una contraseña.
+- Eliminar la base de datos "test" (si existe), y todo privilegio que permita a cualquier usuario el acceso a bases de datos cuyos nombres comienzan con "test_".
+
+**- Utilizar el script para una configuración segura:**  
 
 ```bash
 sudo mysql_secure_installation

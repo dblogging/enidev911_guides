@@ -1,3 +1,18 @@
+Python DB-API  
+
+Python DB-API es un conjutno de estándares recomendados por un grupo de interés especial para la estandarización de módulos de base de datos. Los módulos de Python proporcionan funcionalidad  de interfaz de base de datos, todos los productos de base de datos deben cumplir con este estándar. Los estándares DB-API se modificaron aún más a DB-API 2.0 mediante otra propuesta de mejora Python (PEP-249)
+
+Según los estándares prescritos, el primer paso del proceso es obtener la conexión con el objeto que representa la base de datos. Para establecer una conexión con una base de datos SQLite, es necesario importar el módulo sqlite3 y ejecutar la función **connect()**.  
+
+La fuinción **connect()** devuelve un objeto de conexión que hace referencia a la base de datos existente o una nueva base de datos si no existe.  
+
+Los siguientes métodos se definen en la clase de conexión
+
+| Método | Descripción |
+| ------ | ----------- |
+|**cursor()**| Devuelve un objeto cursor que usa esta conexión.|
+
+
 SQLite en general, es una base de datos server-less que se puede utilizar en casi todos los lenguajes de programación, incluido Python. Server-less significa que no hay necesidad de instalar un sevidor separado para trabajar con SQLite para que pueda conectarse directamente con la base de datos.
 
 SQLite es una base de datos liviana que proporciona un sistema de administración para bases de datos relacionales y sin mucha configuración.  
