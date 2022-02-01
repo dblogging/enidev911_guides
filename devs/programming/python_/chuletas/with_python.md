@@ -36,11 +36,8 @@ with open('file_path', 'w') as file:
 
 Tenga en cuenta que, a diferencia de las dos primeras implementaciones, no es necesario llamar al método **close()**. La instrucción **with** garantiza la adquisición y liberación adecuado de recursos. El uso de la declaración **with** hace que el código sea más compacto y mucho más legible. Por lo tanto **with** mps ayuda a evitar errores y fugas al garantizar que un recurso de libere correctamente.
 
-<<<<<<< HEAD:Python/chuletas/with_python.md
-## <p align="left">Apoyando la declaración with con objetos definidos por el usuario<p>
-=======
-## <p align="left"><u>Apoyando la declaración with con objetos definidos por el usuario</u><p>
->>>>>>> 6753f85d97a8860af6c2816747806763f6b1f3c3:devs/python_/chuletas/with_python.md
+
+### <p align="left"><u>Apoyando la declaración with con objetos definidos por el usuario</u><p>
 
 <br>
 

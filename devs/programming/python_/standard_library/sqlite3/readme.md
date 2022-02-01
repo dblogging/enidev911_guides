@@ -6,16 +6,219 @@ Según los estándares prescritos, el primer paso del proceso es obtener la cone
 
 La fuinción **connect()** devuelve un objeto de conexión que hace referencia a la base de datos existente o una nueva base de datos si no existe.  
 
-Los siguientes métodos se definen en la clase de conexión
+Los siguientes métodos se definen en la clase de conexión.
 
 | Método | Descripción |
 | ------ | ----------- |
 |**cursor()**| Devuelve un objeto cursor que usa esta conexión.|
+|**commit()**| Compromete explícitamente cualquier transacción pendiente a la base de datos.|
+|**rollback()**| Este método opcional hace que una transacción se retrotraiga al punto de partida. Puede que no se implemente en todas partes.|
+|**close()**| Cierra la conexión a la base de datos de forma permanente. Los intentos de usar la conexión después de llamar a este método generarán un error DB-API.|
 
+Un cursor es un objeto de Python que le permite trabajar con la base de datos. Actúa como un identificador para una consulta SQL determinada; permite la recuperación de una o más filas del resultado. Por lo tanto, se obtiene un objeto de cursor de la conexión para ejecutar consultas SQL utilizando la siguiente declaración:  
+
+```
+cur = db.cursor()
+``` 
+
+Los siguientes métodos del objeto cursor son útiles.
+
+| Método | Descripción |
+| ------ | ----------- |
+|**execute()**| Ejecuta la consulta SQL en un parámetro de cadena.|
+|**executemany()**| Ejecuta la consulta SQL usando un conjunto de parámetros en la lista de tuplas.|
+|**fetchone()**| Obtiene la siguiente fila del conjunto de resultados de la consulta.|
+|**fetchall()**| Obtiene todas las filas restante del conjunto de resultados de la consulta.|
+|**close()**| Cierra el objeto cursor.|
+
+Los métodos **`commit()`** y **rollback()** de la clase de conexión garantizan el control de transacciones. El método **execute()** del cursor recibe una cadena que contiene la consulta SQL. Una cadena que tiene una consulta SQL incorrecta genera una excepción, que debe manejarse correctamente. Es por eso que el método **`execute()`** se coloca dentro del bloque **`try`** y el efecto de la consulta SQL se guarda persistentemente usando el método **`commit()`**. Sin embargo, si la consulta SQL falla, el bloque **`except`** procesa la excepción resultante y la transacción pendiente se deshace mediante el método **`rollback()`**. El uso típico del método **`execute()`** es el siguiente:
+
+```py
+try:
+	cur = db.cursor()
+	cur.execute("Query")
+	db.commit()
+	print("success message")
+except:
+	print("error")
+	db.rollback()
+db.close()
+```
+
+### <a name="#1">Crear una nueva tabla</a>
+
+Una cadena que encierra la consulta **`CREATE TABLE`** se pasa como parámetros al método **`execute()`** del objeto cursor. El siguiente código crea las tabla **students** en la base de datos **university.db**
+
+```py
+import sqlite3
+db = sqlite3.connect('university.db')
+try:
+	cur = db.cursor()
+	cur.execute('''CREATE TABLE students(
+					ID INTEGER PRIMARY KEY AUTOINCREMENT,
+					name TEXT(30) NOT NULL,
+					age INTEGER,
+					note REAL);
+					''')
+	print('Table created successfully')
+except:
+	print('Error in operation')
+	db.rollback()
+db.close()
+```
+
+Esto se puede verificar usando el comando **.tables** en sqlite shell. 
+
+```
+sqlite3 univerty.db
+===================
+Sqlite>.tables
+```
+
+### <a name="#1">Insertar un registro</a>
+
+Una vez más, el método **execute()** del objeto cursor debe llamarse con un argumento de cadena que represente la sintaxis de la consulta **`INSERT`** se define de la siguiente forma: 
+
+```py
+qry = '''INSERT INTO students (name, age, note) 
+		 VALUES ('mark', 31, 6.5);'''
+```
+
+Tenemos que usarlo como parámetro del método **execute()**. Para obtener en cuenta las posibles excepciones, la declaración **execute()** se coloca en el bloque **try** como se explicó anteriormente.  
+
+Puede verificar el resultado utilizando la consulta **SELECT** en el shell Sqlite.
+
+
+```
+sqlite3 univerty.db
+===================
+Sqlite>.SELECT * FROM students;
+===============================
+1 | Mark | 31 | 6.5,0 
+```  
+
+### <a name="#1">Usar parámetros en una consulta</a>
+
+A menudo, los valores de las variables de Python deben usarse en operaciones SQL. Una forma es usar la función **`format()`** de las cadenas de Python para poner los datos de Python en una cadena. Sin embargo, esto puede provocar una brecha de seguridad para ataques de inyección SQL a un programa. En su lugar utilice la sustitución de parámetros como se recomienda en DB-API de Python. El carácter "?" se utiliza como marcador de posición en la cadena de consulta y se proporciona los valores en forma de tupla en el método **execute()**. El siguiente ejemplo inserta un registro utilizando el método de sustitución de parámetros:  
+
+```py
+import sqlite3 
+db = sqlite3.connect('univerty.db')
+qry = """INSERT INTO students (name, age, note) VALUES (?, ?, ?);"""
+try:
+	cur = db.cursor()
+	cur.execute(qry, ('Jhon', 24, 5.5))
+	db.commit()
+	print("Inserted successfully..")
+except:
+	print("Error in operation")
+	db.rollback()
+db.close()
+```
+
+El método **`executemany()`** se utiliza para agregar varios registros a la vez. Los datos que se agregarán deben incluirse en una lista de tuplas, y cada tupla debe contener un registro. El objeto de lista (que contiene tuplas) es el parámetro del método **`executemany()`**, junto con la cadena de consulta.  
+
+
+```py
+import sqlite3
+
+db=sqlite3.connect('university.db')
+qry="INSERT INTO students (name, age, note) VALUES (?,?,?);"
+students = [('angel', 19, 7.0), ('deepak', 25, 4.6)]
+
+try:
+	cur=db.cursor()
+	cur.executemany(qry, students)
+	db.commit()
+	print("rows inserted successfully..")
+except:
+	print("error in operation")
+	db.rollback()
+db.close()
+```
+
+### <a name="#1">Recuperar registros</a>
+
+
+Cuando la cadena de consulta contiene una consulta **`SELECT`**, el método **`execute()`** forma un objeto de conjunto de resultados que contiene los registros devueltos. Python DB-API define los métodos para recuperar los registros:  
+
+- **`fetchone()`**: recupera el siguiente registro disponible del conjunto de resultados. Es una tupla que consta de valores de cada columna del registro obtenido.
+- **`fetchall()`**: recupera todos los registros restantes en forma de lista de tuplas. Cada tupla corresponde a un registro y contiene valores de cada columna de la tabla.
+
+Cuando use el método **`fetchone()`**, use un bucle para iterar a través del conjunto de resultados, como se muestra a continuación:  
+
+```py
+import sqlite3
+db = sqlite3.conect('university.db')
+qry = 'SELECT * FROM students;'
+
+cur = db.cursor()
+cur.execute(qry)
+while True:
+	record = cur.fetchone()
+	if record == None:
+		break
+	print(record)
+db.close()
+```
+
+
+### <a name="#1">Actualizar registros</a>
+
+
+La cadena de consulta en el método **`execute()`** de contener una sintaxis de una consulta para actualizar. Por ejemplo el valor de `age` a 26 para el estudiante con nombre **mark** definiría una cadena de la siguiente manera:  
+
+```py
+qry = "UPDATE students SET age = 26 WHERE name = 'mark';"
+``` 
+
+También puede utilizar la técnica de sustitución para pasar el parámetro a la consulta **`UPDATE`**.
+
+
+```py
+import sqlite3
+db = sqlite3.connect('university.db')
+qry = 'UPDATE FROM students SET age=? WHERE name=?;'
+try:
+	cur = db.cursor()
+	cur.execute(qry, (26, 'mark'))
+	print('row updated successfully...')
+except:
+	print('error in operation')
+	db.rollback()
+db.close()
+```
+
+### <a name="#1">Eliminar registros</a>
+
+La cadena de consulta debe contener la sintaxis de consultas **`DELETE`**. Por ejemplo, el siguiente código se utiliza para eliminar a **mark** de la tabla de de `students`.
+
+
+```py
+qry = "DELETE FROM students WHERE name = 'mark'"
+```
+
+Usando la sustitución para pasar el parámetro:
+
+```py
+import sqlite3
+db = sqlite3.connect('university.db')
+qry = "DELETE FROM students WHERE name = ?;"
+
+try:
+	cur=db.cursor()
+	cur.execute(qry, ('mark',))
+	db.commit()
+	print("Row deleted successfully...")
+except:
+	print("error in operation")
+	db.rollback()
+db.close()
+```
 
 SQLite en general, es una base de datos server-less que se puede utilizar en casi todos los lenguajes de programación, incluido Python. Server-less significa que no hay necesidad de instalar un sevidor separado para trabajar con SQLite para que pueda conectarse directamente con la base de datos.
 
-SQLite es una base de datos liviana que proporciona un sistema de administración para bases de datos relacionales y sin mucha configuración.  
+SQLite es una base de datos liviana que proporciona un sistema de administración para bases de datos relacionales y sin mucha configuración. 
 
 
 ### <a name="#1">Crear una conexión</a>

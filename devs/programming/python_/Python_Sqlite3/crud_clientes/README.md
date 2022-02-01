@@ -1,4 +1,4 @@
-## Crear una clase cliente  
+## Crear una clase cliente
 
 Antes de sumergirnos en el ejemplo CRUD de Python SQLite, digamos que queremos crear una aplicación que maneje los datos del cliente. La aplicación creada debe tener la funcionalidad para crear, actualizar, leer y eliminar clientes. Tenemos que guardar esos datos del cliente en una base de datos para que podamos realizar las operaciones CRUD anteriores desde la base de datos. 
 
@@ -33,7 +33,7 @@ class Customer:
 ```
 @property es un decorador incorporado para el iso de captadores y definidores en Python orientado a objetos. He definido dos métodos para el correo electrónico del cliente y el nombre completo del cliente y los marqué como decoradores. Usando el método, puedo obtener la representación del objeto real de la clase de cliente. \_\_repre\_\_  
 
-## Trabajando con SQLite 
+## Trabajando con SQLite
 
 Creamos un archivo **sqlite_demo.py**. Toda la funcionalidad relacionada con la base de datos va aquí. En primer lugar, tenemos que importar la biblioteca estándar SQLite3 a nuestro código para que podamos trabajar con las operaciones de la base de datos.  
 
@@ -174,7 +174,7 @@ Después del método **execute()**, obtendremos un resultado de consulta para qu
 |fetchall()|Deuvle las filas restantes como una lista que queda. Si no hay filas, devolverá una lista vacía.|
 
 
-## Utilizando la clase de cliente(customer)  
+## Utilizando la clase de cliente(customer)
 
 Primero, importamos la clase de cliente al archivo **sqlite_demo.py**. Ahora, tenemos que crear una instancia(objeto) de una clase de cliente. Crearemos dos instancias y las nombraremos como customer_1 y customer_2:  
 
