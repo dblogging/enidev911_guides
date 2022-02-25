@@ -12,7 +12,7 @@ En este repositorio la gran mayoría de archivos están escritos en [Markdown](h
       * [instalación y configuración en ubuntu](devs/database/mysql/install\_in\_ubuntu/)
       * [administrar usuarios y privilegios](devs/database/mysql/manager\_users\_privileges/)
       * [exportar e importar bases de datos con la línea de comandos](devs/database/mysql/mysqldump\_import\_export/)
-    * [MSSQL Server](./) ![](assets/ico/microsoft\_sql\_server.ico)
+    * [MSSQL Server](./)&#x20;
       * [instalación en ubuntu linux](./)
   * [Editores de códigos](./)
     * [SublimeText](./) ![](assets/ico/sublime\_text.ico)
@@ -20,6 +20,8 @@ En este repositorio la gran mayoría de archivos están escritos en [Markdown](h
       * [mejorar aspecto visual de la interfaz](devs/ide\_code\_editor/sublimetext/theme\_better/)
       * [crear un color-scheme](devs/ide\_code\_editor/sublimetext/create\_color-scheme/)
       * [crear snippets](./)
+
+![](assets/ico/microsoft\_sql\_server.ico)
 
 ***
 
