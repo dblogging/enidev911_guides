@@ -16,7 +16,9 @@ Para entender un poco el funcionamiento de MySQL, es importante conocer dos conc
 * \[Bases de datos relacionales]
 * \[Modelo de Cliente-Servidor]
 
-### Bases de datos relacionales  ![](../../../assets/png/relationship\_database.png)
+### Bases de datos relacionales  
+
+![](../../../assets/png/relationship\_database.png)
 
 Cuando se trata de almacenar datos en una base de datos, hay distintos enfoques que se pueden utilizar.
 
