@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # Guías y recursos de aprendizaje.
 
 \
