@@ -37,7 +37,9 @@ Si intenta poner todos estos datos juntos en un gran almacen, tendrá algunos pr
 
 Para resolver esos problemas, una base de datos relacional podría almacenar una tabla separada para los clientes y otra tabla separada para las ordenes.
 
-### Modelo Cliente - Servidor ![](../../../assets/png/server\_client.png)
+### Modelo Cliente - Servidor 
+
+![](../../../assets/png/server\_client.png)
 
 MySQL también utiliza una arquitectura conocida como **modelo cliente-servidor.**
 
