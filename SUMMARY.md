@@ -1,7 +1,6 @@
 # Table of contents
 
-* [LICENSE](README.md)
-* [Guías y recursos de aprendizaje.](<README (1).md>)
+* [Guías y recursos de aprendizaje.](README.md)
 * [ofimatica](ofimatica/readme.md)
   * [pdf](ofimatica/pdf/readme.md)
   * [power\_point](ofimatica/power\_point/README.md)
