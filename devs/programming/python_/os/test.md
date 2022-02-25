@@ -1,12 +1,15 @@
-<details><summary>CLICK ME</summary>
+# test
 
+<details>
 
+<summary>CLICK ME</summary>
 
-<h3> We can hide anything, even code!</h3>
+#### We can hide anything, even code!
 
-
-    ```ruby
-      puts "Hello World"
-    ```
+````
+```ruby
+  puts "Hello World"
+```
+````
 
 </details>

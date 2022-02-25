@@ -1,37 +1,31 @@
-[comment]: <> (Author: Marco Contreras Herrera)
-[comment]: <> (Email: enidev911@gmail.com)
+# mysqldump\_import\_export
 
-<h2 align="center">
-  <u>Exportar e Importar bases de datos MySQL</u>
-  <img src="../../../../assets/ico/MySQL_Logo.ico">
-</h2>
+### Exportar e Importar bases de datos MySQL ![](../../../../assets/ico/MySQL\_Logo.ico)
 
-<br>
+\
 
-1. [Objetivo y descripción](#intro)
-1. [Requerimientos](#dependencies)
-1. [Uso básico](#uso)
-1. [Puesta en marcha](#run)
 
-## <a name='TOC'></a>
+1. [Objetivo y descripción](./#intro)
+2. [Requerimientos](./#dependencies)
+3. [Uso básico](./#uso)
+4. [Puesta en marcha](./#run)
 
-### <a name='intro'>Objetivo y Descripción</a>
+### &#x20;<a href="#toc" id="toc"></a>
+
+#### Objetivo y Descripción
 
 Si bien los clientes de base de datos ( Navycat, MySQLWorkbrench, etc… ) son una excelente herramienta que facilitan la gestión de bases de datos, no siempre tendremos la opción de utilizarlos, por lo que es necesario saber hacer la mayoría de tareas más comunes desde línea de comandos. Es por eso que en esta guía vamos a ver el **proceso para exportar e importar una base de datos MySQL desde linea de comandos.** Vamos a conocer algunas utilidades incluidas junto al servidor de MySQL.
 
+#### Requerimientos
 
-### <a name='dependencies'>Requerimientos</a>
+* [MySQL](http://www.mysql.com) - Tener instalado o en su lugar(XAMP, MAMP, LAMP,etc)
+  * **mysqldump**: es una pequeña pero muy potente utilidad que acompaña al servidor MySql. Su principal uso es para realizar copias de seguridad de las bases de datos mysql. Con esto en mente, en esta ocasión revisaremos los comandos que nos permitirán exportar e importar una base de datos.
 
-
-- [MySQL](http://www.mysql.com/) - Tener instalado o en su lugar(XAMP, MAMP, LAMP,etc)
-    * **mysqldump**: es una pequeña pero muy potente utilidad que acompaña al servidor MySql. Su principal uso es para realizar copias de seguridad de las bases de datos mysql. Con esto en mente, en esta ocasión revisaremos los comandos que nos permitirán exportar e importar una base de datos.
-
-
-### <a name='uso'>Uso básico</a>
+#### Uso básico
 
 Tres formas básicas de invocar a **mysqldump** son posibles:
 
-**1.** 
+**1.**
 
 ```bash
 mysqldump [opciones] nombre_bd [nombre_tabla nombre_tabla2 ...] > respaldo.sql
@@ -39,8 +33,7 @@ mysqldump [opciones] nombre_bd [nombre_tabla nombre_tabla2 ...] > respaldo.sql
 
 Respalda una sola base de datos, indicando su nombre, y opcionalmente una o más tablas de la misma base de datos. Si no se indican tablas, se respaldan todas.
 
-
-**2.** 
+**2.**
 
 ```bash
 mysqldump [opciones] --databases nombre_bd1 nombrebd2 > respaldo.sql
@@ -56,37 +49,31 @@ mysqldump [opciones] --all-databases > respaldo.sql
 
 Respalda de forma completa todas las bases de datos del servidor MySQL de forma completa, no se pueden indicar tablas individuales de esta manera.
 
-#### Opciones más comunes
+**Opciones más comunes**
 
-**mysqldump** es una herramienta con decenas de opciones, para verlas todas podemos utilizar el siguiente comando:  
+**mysqldump** es una herramienta con decenas de opciones, para verlas todas podemos utilizar el siguiente comando:
 
-```cmd
+```
 mysqldump --help
 ```
 
-Lo anterior muestra las posibles opciones específicas de la versión de MySQL que utilices asi que pueden variar con respecto a la siguiente tabla: 
+Lo anterior muestra las posibles opciones específicas de la versión de MySQL que utilices asi que pueden variar con respecto a la siguiente tabla:
 
+| Opción              | Corto | Descripción                                                                                                                                                                                                                                                                                  |
+| ------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --add-drop-database |       | Añade la sentencia 'DROP DATABASES' antes de cada sentencia 'CREATE DATABASE'                                                                                                                                                                                                                |
+| --add-drop-table    |       | Añade la sentencia 'DROP TABLE' antes de cada sentencia 'CREATE TABLE'                                                                                                                                                                                                                       |
+| --all-databases     | -A    | Respalda todas las tablas de todas las bases de datos.                                                                                                                                                                                                                                       |
+| --comments          | -i    | Añade comentarios en el archivo de respaldo. Esta opción está por defecto activada, para desactivar los comentarios utiliza --skip-comments.                                                                                                                                                 |
+| --compatible=nombre |       | Produce una salida más compatible con otros sistemas de bases de datos o versiones anteriores de MySQL. nombre puede tomar los siguientes valores: ansi, mysql323, mysql40, postgresql, mssql, oracle, db2, maxdb.                                                                           |
+| --complete-insert   | -c    | Usa sentencias INSERT completas que incluyen nombres de columnas.                                                                                                                                                                                                                            |
+| --create-options    |       | Incluye todas las opciones específicas de MySQL para la creación de tablas que se usan en la sentencia 'CREATE TABLE'.                                                                                                                                                                       |
+| --databases         | -B    | Permite respaldar una o más bases de datos. Después de la opción se indican el(los) nombre(s) de las base de datos a respaldar. Se respalda cada base de datos completa. En la salida se incluye con esta opción las sentencias 'CREATE DATABASE' y 'USE' antes de cada nueva base de datos. |
+| --extended-insert   | -e    | Usa la sentencia 'INSERT' con el formato de múltiples registros con varias listas de 'VALUES'. Esto produce una salida más reducida y acelera el proceso de INSERTS cuando el archivo es restaurado. Ideal para bases de datos con tablas que contienen miles de registros.                  |
+| --force             | -f    | Si se te tienen views o vistas en la base de datos a respaldar y la vista hace referencia a una tabla que ya no existe, el vaciado del respaldo terminará con un error sin completarse. Con esta opción se podrá continuar.                                                                  |
+| --host=             |       |                                                                                                                                                                                                                                                                                              |
 
-
-|Opción|Corto|Descripción|
-|------|-----|-----------|
-|--add-drop-database| |Añade la sentencia 'DROP DATABASES' antes de cada sentencia 'CREATE DATABASE'|
-|--add-drop-table| |Añade la sentencia 'DROP TABLE' antes de cada sentencia 'CREATE TABLE'|
-|--all-databases|-A|Respalda todas las tablas de todas las bases de datos.|
-|--comments|-i|Añade comentarios en el archivo de respaldo. Esta opción está por defecto activada, para desactivar los comentarios utiliza --skip-comments.|
-|--compatible=nombre| |Produce una salida más compatible con otros sistemas de bases de datos o versiones anteriores de MySQL. nombre puede tomar los siguientes valores: ansi, mysql323, mysql40, postgresql, mssql, oracle, db2, maxdb.|
-|--complete-insert|-c|Usa sentencias INSERT completas que incluyen nombres de columnas.|
-|--create-options| |Incluye todas las opciones específicas de MySQL para la creación de tablas que se usan en la sentencia 'CREATE TABLE'.|
-|--databases|-B|Permite respaldar una o más bases de datos. Después de la opción se indican el(los) nombre(s) de las base de datos a respaldar. Se respalda cada base de datos completa. En la salida se incluye con esta opción las sentencias 'CREATE DATABASE' y 'USE' antes de cada nueva base de datos.|
-|--extended-insert|-e|Usa la sentencia 'INSERT' con el formato de múltiples registros con varias listas de 'VALUES'. Esto produce una salida más reducida y acelera el proceso de INSERTS cuando el archivo es restaurado. Ideal para bases de datos con tablas que contienen miles de registros.|
-|--force|-f|Si se te tienen views o vistas en la base de datos a respaldar y la vista hace referencia a una tabla que ya no existe, el vaciado del respaldo terminará con un error sin completarse. Con esta opción se podrá continuar.|
-|--host=
-
-
-
-### <a name='run'>Puesta en marcha</a>
-
-
+#### Puesta en marcha
 
 **Exportar**
 
@@ -100,21 +87,19 @@ $ mysqldump -h ip_servidor -u usuario_bd -p base_de_datos > archivo.sql
 
 Donde:
 
-- **-h ip_servidor**: es el servidor de acceso (generalmente localhost), o la dirección IP del servidor.
-- **-u usuario_bd**: es el usuario de la base de datos (puede ser root u otro usuario con privilegios de administrador).
-- **-p**: es para que nos pregunte el password.
-- **base_de_datos**: es el nombre de la base de datos a exportar.
-- **archivo.sql**: es el fichero resultante de la exportación, (**>**) es para volcar el contenido al archivo con la extensión sql
-  
-2. Una vez que la ejecución del comando termine, se creará el archivo **archivo.sql** con los querys que crean las tablas e información que pudiera contener nuestra base de datos. 
+* **-h ip\_servidor**: es el servidor de acceso (generalmente localhost), o la dirección IP del servidor.
+* **-u usuario\_bd**: es el usuario de la base de datos (puede ser root u otro usuario con privilegios de administrador).
+* **-p**: es para que nos pregunte el password.
+* **base\_de\_datos**: es el nombre de la base de datos a exportar.
+* **archivo.sql**: es el fichero resultante de la exportación, (**>**) es para volcar el contenido al archivo con la extensión sql
 
-Ejemplo: 
+1. Una vez que la ejecución del comando termine, se creará el archivo **archivo.sql** con los querys que crean las tablas e información que pudiera contener nuestra base de datos.
 
-<p align = 'center'>
-  <img src = 'img/01_mysqldump_export.png' width= "900" height="170"/>
-</p>
+Ejemplo:
 
-Generando un archivo similar a este según sus bases de datos que quieran exportar: 
+![](img/01\_mysqldump\_export.png)
+
+Generando un archivo similar a este según sus bases de datos que quieran exportar:
 
 ```sql
 -- MySQL dump 10.13  Distrib 5.7.24, for Win32 (AMD64)
@@ -161,28 +146,34 @@ CREATE TABLE `tareas` (
 ```
 
 Adicional a esto, podemos ejecutar el mismo comando con las siguientes variaciones:
+
 ```
 $ mysqldump -h ip_servidor -u usuario_bd -p --no-data=TRUE base_de_datos > archivo.sql
 ```
+
 Esta variación exporta solo la estructura de la base de datos, sin la información que pudiera contener nuestra base.
+
 ```
 $ mysqldump -h ip_servidor -u usuario_bd -p --no-create-info=TRUE base_de_datos > archivo.sql
 ```
+
 Esta variación exporta solo la información de nuestra base de datos, excluyendo la estructura de la misma.
 
-## <a name='TOC'></a>
+### &#x20;<a href="#toc" id="toc"></a>
 
 **Importar**
 
 Para importar una base de datos desde un archivo **.sql** tenemos dos caminos.
 
-El más sencillo y directo consiste en ejecutar el siguiente comando en la terminal ( asegurándonos que base_de_datos ya exista ).
+El más sencillo y directo consiste en ejecutar el siguiente comando en la terminal ( asegurándonos que base\_de\_datos ya exista ).
+
 ```
 $ mysql -u usuario_mysql -p base_de_datos < archivo.sql
 ```
-Ejemplo: 
 
-Suponiendo que tengamos el siguiente script llamado **base_datos.sql** y previamente tengamos creada una base de datos llamada **importdb**
+Ejemplo:
+
+Suponiendo que tengamos el siguiente script llamado **base\_datos.sql** y previamente tengamos creada una base de datos llamada **importdb**
 
 ```sql
 CREATE TABLE IF NOT EXISTS contactos (
@@ -192,44 +183,43 @@ CREATE TABLE IF NOT EXISTS contactos (
     PRIMARY KEY (id)
 );
 ```
-CMD: 
 
-<p align = 'center'>
-  <img src = 'img/02_mysql_import.png' width ="900" height="170"/>
-</p>
+CMD:
+
+![](img/02\_mysql\_import.png)
 
 Obtendriamos lo siguiente al revisar:
 
-<p align = 'center'>
-  <img src = 'img/03_mysql_showimport.png' width="900" height = "550"/>
-</p>
-
+![](img/03\_mysql\_showimport.png)
 
 O bien podemos seguir estos pasos:
 
 1. Nos conectamos a la base de datos a donde vamos a importar.
+
 ```
 $ mysql -h ip_servidor -u usuario -p
 ```
-2. Una vez dentro de la consola MySQL, si la base de datos no existe, la creamos con:
+
+1. Una vez dentro de la consola MySQL, si la base de datos no existe, la creamos con:
+
 ```
 mysql> create database base_datos;
 ```
-3. En cualquier caso indicamos la base de datos a usar:
+
+1. En cualquier caso indicamos la base de datos a usar:
+
 ```
 mysql> use base_datos;
 ```
-4. Y ahora, el proceso de importación, que sería tan sencillo como ejecutar:
+
+1. Y ahora, el proceso de importación, que sería tan sencillo como ejecutar:
+
 ```
 mysql> source /home/usuario/archivo.sql
 ```
 
 PROMPT:
 
-<p align = 'center'>
-  <img src = 'img/04_mysql_showimport.png' width = "900" height="550"/>
-</p>
+![](img/04\_mysql\_showimport.png)
 
-<p align = 'center'>
-  <img src = 'img/05_mysql_showimport.png' width="900" height= "550"/>
-</p>
+![](img/05\_mysql\_showimport.png)

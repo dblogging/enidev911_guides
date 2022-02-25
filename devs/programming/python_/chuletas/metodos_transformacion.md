@@ -1,7 +1,8 @@
-## <u>*Métodos de transformación de cadenas (string)*</u>  <img src="../assets/img/python(144x144).png" width="30">
-<br>
-Recordemos que las cadenas (*string*) son inmutables, por ende todos los métodos de a continuación no actuán sobre el objeto original sino que retorna uno nuevo.
-<br>
+# Métodos de transformación de cadenas (string)
+
+\
+Recordemos que las cadenas (\*string\*) son inmutables, por ende todos los métodos de a continuación no actuán sobre el objeto original sino que retorna uno nuevo.\
+
 
 **Capitalize()** - retorna la cadena con su primera letra en mayúsculas
 
@@ -19,12 +20,9 @@ Recordemos que las cadenas (*string*) son inmutables, por ende todos los método
 
 **center()**, **ljust**, **rjust()** - estos métodos alinean una cadena en el centro,a la izquierda o la derecha respectivamente.
 
-Sintaxis:
-ljust (len, fillchr)
+Sintaxis: ljust (len, fillchr)
 
-Parámetros:
-len: el ancho de la cadena para expandirla.
-fillchr (opcional): el carácter para completar el espacio restante.
+Parámetros: len: el ancho de la cadena para expandirla. fillchr (opcional): el carácter para completar el espacio restante.
 
 ```py
 "python".center(10, "*")

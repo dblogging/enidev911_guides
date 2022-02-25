@@ -1,9 +1,9 @@
-<a name="top"></a>
+# variable-control
 
-* [declarar variables de control](#mark2)
-* [métodos](#mark3)
+* [declarar variables de control](./#mark2)
+* [métodos](./#mark3)
 
-## Variables de control
+### Variables de control
 
 Las variables de control son objetos especiales que se asocian a los widgets para almacenar sus valores y facilitar su disponibilidad en otras partes del programa. Pueden ser del tipo númerico, de cadena y booleano.
 
@@ -11,7 +11,7 @@ Cuando una variable de control cambia de valor el widget que la utiliza lo refle
 
 Las variables de control también se emplean para conectar varios widget del mismo tipo por ejemplo, varios controles del tipo **Radiobutton**. En este caso tomarán un valor de varios posibles.
 
-## <a name="mark2">Declarar variables de control</a>
+### Declarar variables de control
 
 Las variables de control se declaran de forma diferente en función al tipo de dato que almacenan.
 
@@ -28,15 +28,15 @@ También, en el momento de declarar una variable es posible asignar un valor ini
 nombre = StringVar(value="Enidev911")
 ```
 
-[volver a índice](#top)
+[volver a índice](./#top)
 
----
+***
 
-## <a name="mark3">Métodos</a>
+### Métodos
 
-### set()
+#### set()
 
-El método ***set()*** asigna un valor a una variable de control. Se utiliza para modificar el valor o estado de un widget:
+El método _**set()**_ asigna un valor a una variable de control. Se utiliza para modificar el valor o estado de un widget:
 
 ```python
 nombre = StringVar()
@@ -49,9 +49,9 @@ Label(ventana, textvariable=id_usuario, width=5)
 Label(ventana, textvariable=nombre, width=20)
 ```
 
-### get()
+#### get()
 
-El método ***get()*** obtiene el valor que tenga una variable de control, en un momento dado. Se utiliza cuando es necesario leer el valor de un control:
+El método _**get()**_ obtiene el valor que tenga una variable de control, en un momento dado. Se utiliza cuando es necesario leer el valor de un control:
 
 ```python
 # usando el método get
@@ -59,24 +59,25 @@ print('Nombre: ' + nombre.get())
 print('Id usuario: ' + id_usuario.get())
 ```
 
-### trace()
+#### trace()
 
-El método ***trace()*** se emplea para "detectar" cuando una variable es leída, cambia de valor o es borrada.
+El método _**trace()**_ se emplea para "detectar" cuando una variable es leída, cambia de valor o es borrada.
 
 **Ej sintaxis:**
 
 ```python
 widget.trace(type, function)
 ```
-El primer argumento estable el tipo de suceso a comprobar:  
 
-- **'r':** lectura (read)
-- **'w':** escritura (write)
-- **'u':** borrado
+El primer argumento estable el tipo de suceso a comprobar:
 
-El segundo argumento indica la función que será llamada cuando se produzca el suceso. 
+* **'r':** lectura (read)
+* **'w':** escritura (write)
+* **'u':** borrado
 
-En el siguiente ejemplo se define una variable de control de tipo cadena y con el método ***trace()*** se asocian su lectura y cambio de valor a dos funciones que son llamadas cuando ocurren estos sucesos. Concretamente, cuando se utilice el método ***set()*** se llamará a la función 'change' y cuando se use ***get()*** a la función 'read'.
+El segundo argumento indica la función que será llamada cuando se produzca el suceso.
+
+En el siguiente ejemplo se define una variable de control de tipo cadena y con el método _**trace()**_ se asocian su lectura y cambio de valor a dos funciones que son llamadas cuando ocurren estos sucesos. Concretamente, cuando se utilice el método _**set()**_ se llamará a la función 'change' y cuando se use _**get()**_ a la función 'read'.
 
 ```python
 fullname = StringVar()
@@ -92,16 +93,13 @@ fullname.set('Enidev911')
 print(fullname.get())
 ```
 
-[volver a índice](#top)
+[volver a índice](./#top)
 
----
+***
 
-## <a name="mark3">Validar y calcular datos</a>
+### Validar y calcular datos
 
 Cuando se construye una ventana con varios widgets se pueden seguir distintas estrategias para validar los datos que se introducen durante la ejecución de un programa.
 
-- Una opción podria validar la información y realizar los cálculos después de que sea introducida, por ejemplo, despues de presionar un botón.
-
-- Otra posibilidad podría ser haciendo uso del método **trace()** y la opción 'command', para validar y calcular la información justo en el momento que un widget y su variable asociada cambien de valor.
-
-
+* Una opción podria validar la información y realizar los cálculos después de que sea introducida, por ejemplo, despues de presionar un botón.
+* Otra posibilidad podría ser haciendo uso del método **trace()** y la opción 'command', para validar y calcular la información justo en el momento que un widget y su variable asociada cambien de valor.

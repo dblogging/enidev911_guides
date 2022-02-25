@@ -1,39 +1,27 @@
-[comment]: <> (Author: Marco Contreras Herrera)
-[comment]: <> (Email: enidev911@gmail.com)
+# edit\_markdown
 
-<h2 align="center">
-  <u>Configurar SublimeText para editar archivos markdown.</u>
-  <img src="../../../../assets/ico/.ico">
-</h2>
+### Configurar SublimeText para editar archivos markdown. ![](../../../../assets/ico/.ico)
 
-<br>
+\
 
 
-Recien instalado, Sublime Text no ofrece ningún soporte específico de Markdown, *sin resaltado de sintaxis*, sin formato especial en cursiva o negrita, sin atajos de teclado y sin vista previa de salida HTML.  
-Para agregar estas características debemos instalar algunos complementos y configurar algunas preferencias.  
+Recien instalado, Sublime Text no ofrece ningún soporte específico de Markdown, _sin resaltado de sintaxis_, sin formato especial en cursiva o negrita, sin atajos de teclado y sin vista previa de salida HTML.\
+Para agregar estas características debemos instalar algunos complementos y configurar algunas preferencias.
 
 1. Abrimos package control (CTRL+SHIFT+P)
 2. Escribimos install y seleccionamos (Install Package)
-3. Escribir el nombre del package (**MarkdownEditing**)  
-4. Reinicia SublimeText  
+3. Escribir el nombre del package (**MarkdownEditing**)
+4. Reinicia SublimeText
 
+![Install Markdown Editing](img/install\_mde.png)
 
+**Nota:** Si esta utilizando ST2 posiblemente al instalarlo te encuentres con una ventana emergente como esta o tambien en ST3.
 
-<p align="center">
-  <img src="img/install_mde.png" alt="Install Markdown Editing">
-</p>
-                                                                 
-<p align="center">
-  <strong>Nota:</strong> Si esta utilizando ST2 posiblemente al instalarlo te encuentres con una ventana emergente como esta o tambien en ST3. 
-</p>
+![Error Loading](img/ErrorLoading.png)
 
-<p align="center">
-  <img src="img/ErrorLoading.png" alt="Error Loading"/>
-</p>
+Esto se debe que cuando descargas el la extensión te cargará automaticamente el README.MD del mismo, por lo que de manera inmediata te arrojará este error, por otro lado, para poder evitar este mensaje de error, para evitar es muy sencillo, vamos a buscar en la barra del menú debemos abrir **Preferences**> **Settings**, y quitamos Markdown de la lista en **"ignored\_packages"** en las Preferencias del usuario:
 
-Esto se debe que cuando descargas el la extensión te cargará automaticamente el README.MD del mismo, por lo que de manera inmediata te arrojará este error, por otro lado, para poder evitar este mensaje de error, para evitar es muy sencillo, vamos a buscar en la barra del menú debemos abrir **Preferences**> **Settings**, y quitamos Markdown de la lista en **"ignored_packages"** en las Preferencias del usuario:
-
-```JSON
+```
 // Preferences.sublime-settings -- User
 {
 
@@ -46,56 +34,50 @@ Esto se debe que cuando descargas el la extensión te cargará automaticamente e
  }
 ```
 
-Simplemente elimine el "Markdown", reinicie ST3  
+Simplemente elimine el "Markdown", reinicie ST3
 
-Despues de reiniciar ST3, todas las funciones del paquete **MarkdownEditing** se aplicarán solo a los archivos con extensión.md.  
+Despues de reiniciar ST3, todas las funciones del paquete **MarkdownEditing** se aplicarán solo a los archivos con extensión.md.
 
-## Características de MarkdownEditing
+### Características de MarkdownEditing
 
-La extensión instala un atractivo tema gris sobre gris para los archivos Markdown en el editor, Más importante aún, proporciona *formato en línea de Markdown*. Eso significa negritas editor de título, cursivas para palabras envueltas en los simbolos \*\* Las seleccciones marcadas para las citas de bloque y el código fuente también se sombrearán de manera diferente. También se manejará inteligentemente listas de viñetas y listas numeradas, lo que puede ahorrarle mucho tiempo al escribir. Además de eso, ST también incluirá comillas dobles, paréntesis, guiones bajos y astericos(\*) para asegurarse de cerrarlos mientras escribe.  
+La extensión instala un atractivo tema gris sobre gris para los archivos Markdown en el editor, Más importante aún, proporciona _formato en línea de Markdown_. Eso significa negritas editor de título, cursivas para palabras envueltas en los simbolos \*\* Las seleccciones marcadas para las citas de bloque y el código fuente también se sombrearán de manera diferente. También se manejará inteligentemente listas de viñetas y listas numeradas, lo que puede ahorrarle mucho tiempo al escribir. Además de eso, ST también incluirá comillas dobles, paréntesis, guiones bajos y astericos(\*) para asegurarse de cerrarlos mientras escribe.
 
-Personalmente, el esquema de colores que este paquete incorpora por defecto no es malo. Sin embargo, podemos cambiarlo seleccionando otro tema desde el  menú **Preferences**> **Packages Settings**>**Markdown Editing**>**Change color scheme...**
+Personalmente, el esquema de colores que este paquete incorpora por defecto no es malo. Sin embargo, podemos cambiarlo seleccionando otro tema desde el menú **Preferences**> **Packages Settings**>**Markdown Editing**>**Change color scheme...**
 
-**Capturas** 
-<p align="center">
-  <img src="img/mde_arcdark.png" alt="ArcDark" width="480" height="450"/>
-  &nbsp;&nbsp;
-  <img src="img/mde_dark.png" alt="Dark" width="480" height="450"/>
-</p>
+**Capturas**
 
-<p align="center">
-  <img src="img/mde_focus.png" alt="Focus" width="480" height="450"/>
-  &nbsp;&nbsp;&nbsp;
-  <img src="img/mde_yellow.png" alt="Yellow" width="480" height="450"/>
-</p>
+![ArcDark](img/mde\_arcdark.png) ![Dark](img/mde\_dark.png)
 
-## Atajos que se habilitan junto a MarkdownEditing
+![Focus](img/mde\_focus.png) ![Yellow](img/mde\_yellow.png)
 
-|Combinación|Descripción|
-|-----------|-----------|
-|**CTRL+1**|Agrega almohadilla para escribir un título (puedes ir desde el 1 al 6)|
-|**CTRL+B**|Te compila el archivo de markdown a html(debes tener el build en automatic)|
-|**CTRL+D**|Selecciona la palabra en el cursor, luego presiona el asterísco(\*) se convierte en italic si le das dos veces se convierte en bold|
---- 
+### Atajos que se habilitan junto a MarkdownEditing
 
-## Cómo configurar SublimeText para visualizar nuestros archivos de Markdown  
-### *MarkdownPreview*  
+| Combinación | Descripción                                                                                                                         |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **CTRL+1**  | Agrega almohadilla para escribir un título (puedes ir desde el 1 al 6)                                                              |
+| **CTRL+B**  | Te compila el archivo de markdown a html(debes tener el build en automatic)                                                         |
+| **CTRL+D**  | Selecciona la palabra en el cursor, luego presiona el asterísco(\*) se convierte en italic si le das dos veces se convierte en bold |
+| ---         |                                                                                                                                     |
+
+### Cómo configurar SublimeText para visualizar nuestros archivos de Markdown
+
+#### _MarkdownPreview_
 
 Ya tenemos instalada la extensión que nos provee la edición de archivos Markdown en SublimeText, esta extensión no tiene alguna forma de ver nuestro archivo específico de Markdown en el navegador, para ello debemos de instalar otro complemento que es fundamental para la previsualización en el navegador este complemento lo buscamos con el nombre de **MarkdownPreview**, este complemento nos ayuda a obtener una vista previa en el navegador de nuestros archivos markdown
-  
+
 1. Abrimos package control (CTRL+SHIFT+P)
 2. Escribimos install y seleccionamos (Install Package)
-3. Escribir el nombre del package (**MarkdownPreview**)  
-4. Reinicia SublimeText 
+3. Escribir el nombre del package (**MarkdownPreview**)
+4. Reinicia SublimeText
 
-<p align="center">
-  <img src="img/install_mdp.png" alt="MarkdownPreview install"/>
-</p>
+![MarkdownPreview install](img/install\_mdp.png)
 
 Para aprovechar su capacidad podemos configurar un atajo de teclado de la siguiente manera:
 
 Vamos a **Preferences** ->**Key Bindings - User** y añadimos entre los corchetes lo siguiente.
+
 ```json
 { "keys": ["alt+m"], "command": "markdown_preview", "args": {"target": "browser", "parser":"markdown"} }
 ```
+
 Salvamos cambios con **Ctrl + S**
